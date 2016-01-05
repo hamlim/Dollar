@@ -43,12 +43,25 @@
 				</section>
 			</nav>
 
-			<section class="container" id="examples">
-
+			<section class="container" id="input">
+                <h1>Enter New Transaction:</h1>
+                <div id="form">
+                    <form>
+                        <fieldset class="clearfix">
+                            <label for="amountField" >Transaction Amount: </label>
+                            <input type="number" placeholder="$1.23" min="0" v-model="amount" id="amountField">
+                            <label for="transactionLocation">Transaction Location: </label>
+                            <input type="text" placeholder="McDonalds" v-model="location" id="transactionLocation">
+                            <label for="transactionType">Type of Purchase: </label>
+                            <input type="text" placeholder="Food/Drink" v-model="type" id="transactionType">
+                            <button class="button-primary float-right">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
 			</section>
 
-			<section class="container" id="contributing">
-
+			<section class="container" id="past-transactions">
+                Loading...
 			</section>
 
 			<footer class="footer">
