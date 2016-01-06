@@ -10,7 +10,24 @@ $(document).ready(function(){
     var amount = document.getElementById('transactionAmount'),
       loc = document.getElementById('transactionLocation'),
       category = document.getElementById('transactionType'),
-      submitBtn = document.getElementById('submit-btn');
+      submitBtn = document.getElementById('submit-btn'),
+      localStore = {};
+    //handle loading in all current transactions
+    var getSettings = {
+        "async": true,
+        "crossDomain": true,
+        "method": "GET",
+        "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%20Card?limit=10&view=Main%20View",
+        "headers": {
+            "authorization": "Bearer keyIye3zskPSBMQ6Q"
+        }
+    };
+    $.ajax(getSettings).done(function(resp){
+        console.log(resp);
+        
+    })
+
+    //handle the adding of new transactions
 
     submitBtn.onclick = function(){
         //now we check that everything is selected
@@ -50,7 +67,8 @@ $(document).ready(function(){
             $.ajax(settings).done(function (response) {
               console.log(response);
               // we want to add the response to the rendered transactions
-              
+              localStore.transactions.push(response);
+
             });
             //now we want to push this to the server
 
