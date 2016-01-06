@@ -50,6 +50,7 @@ $(document).ready(function(){
             $.ajax(settings).done(function (response) {
               console.log(response);
               // we want to add the response to the rendered transactions
+              
             });
             //now we want to push this to the server
 
