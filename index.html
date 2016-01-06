@@ -45,18 +45,46 @@
 
 			<section class="container" id="input">
                 <h1>Enter New Transaction:</h1>
-                <div id="form">
+                <div id="form" class="clearfix">
                     <form>
-                        <fieldset class="clearfix">
+                        <fieldset>
                             <label for="amountField" >Transaction Amount: </label>
-                            <input type="number" placeholder="$1.23" min="0" v-model="amount" id="amountField">
+                            <input type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
                             <label for="transactionLocation">Transaction Location: </label>
-                            <input type="text" placeholder="McDonalds" v-model="location" id="transactionLocation">
+                            <input type="text" placeholder="Some Place" id="transactionLocation" required>
                             <label for="transactionType">Type of Purchase: </label>
-                            <input type="text" placeholder="Food/Drink" v-model="type" id="transactionType">
-                            <button class="button-primary float-right">Submit</button>
+							<select id="transactionType" required>
+								<option>
+									Other
+								</option>
+								<option selected>
+									Personal
+								</option>
+								<option>
+									Food
+								</option>
+								<option>
+									Health
+								</option>
+								<option>
+									Home
+								</option>
+								<option>
+									Gifts
+								</option>
+								<option>
+									Transportation
+								</option>
+								<option>
+									Utilities
+								</option>
+								<option>
+									Travel
+								</option>
+							</select>
                         </fieldset>
                     </form>
+					<button id="submit-btn" class="button-primary float-right">Submit</button>
                 </div>
 			</section>
 
