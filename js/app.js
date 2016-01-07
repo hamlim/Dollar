@@ -17,13 +17,14 @@ $(document).ready(function(){
         "async": true,
         "crossDomain": true,
         "method": "GET",
-        "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%20Card?limit=10&view=Main%20View",
+        "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%20Card?limit=10&sortField=Transaction%20Date&sortDirection=desc",
         "headers": {
             "authorization": "Bearer keyIye3zskPSBMQ6Q"
         }
     };
     $.ajax(getSettings).done(function(resp){
         console.log(resp);
+        var records = resp.records;
         
     })
 
