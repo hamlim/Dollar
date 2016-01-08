@@ -1,6 +1,6 @@
 # Financial Manager
 
-This is a small side project that I will write about at sometime in the future. 
+This is a small side project that I will write about at sometime in the future.
 
 If you plan on using this, I suggest cloning the repository, then change the Airtable API calls in the JS files listed below:
 
@@ -23,4 +23,3 @@ The database is going to be hosted on Airtable, and will be connected via Ajax c
 
   2. Analysis.html
     3. This is a basic page to render stats about the total transactions
-

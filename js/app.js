@@ -25,7 +25,7 @@ $(document).ready(function(){
     $.ajax(getSettings).done(function(resp){
         console.log(resp);
         var records = resp.records;
-        
+
     })
 
     //handle the adding of new transactions
@@ -44,7 +44,7 @@ $(document).ready(function(){
             var transactionTime = year+"-"+month+"-"+day;
             var amt = amount.value, locv = loc.value, type = category.value;
             var data = {
-                "Amount": amt,
+                "Amount": parseFloat(amt),
                 "Location": locv,
                 "Category": type,
                 "Transaction Date": transactionTime
@@ -52,24 +52,25 @@ $(document).ready(function(){
             var pckge = {
                 "fields": data
             };
+            var spackage = JSON.stringify(pckge);
             var settings = {
               "async": true,
               "crossDomain": true,
-              "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%2520Card",
+              "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%20Card",
               "method": "POST",
               "headers": {
                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                 "content-type": "application/json"
               },
-              "processData": false,
-              "data": pckge
+              "data": spackage
             }
-
+            console.log(pckge);
             $.ajax(settings).done(function (response) {
-              console.log(response);
-              // we want to add the response to the rendered transactions
-              localStore.transactions.push(response);
-
+                console.log(response);
+                // we want to add the response to the rendered transactions
+                // localStore.transactions.push(response);
+                notie.alert(1, 'Success!', 1.5);
+                }
             });
             //now we want to push this to the server
 
