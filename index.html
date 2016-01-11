@@ -38,7 +38,7 @@
 		<main class="" id="main">
 
 
-			<header class="navigation bottom-spacer">
+			<header class="navigation bottom-spacer special-green">
 				<nav class="container">
 					<section class="row">
 						<a href="./index.html">
@@ -64,16 +64,16 @@
                     <form>
                         <fieldset>
 							<div class="row">
-								<label for="amountField" >Transaction Amount: </label>
-	                            <input type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
+								<label class="one-half column" for="amountField">Transaction Amount: </label>
+	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
 							</div>
 							<div class="row">
-								<label for="transactionLocation">Transaction Location: </label>
-	                            <input type="text" placeholder="Some Place" id="transactionLocation" required>
+								<label class="one-half column" for="transactionLocation">Transaction Location: </label>
+	                            <input class="one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
 							</div>
 							<div class="row">
-								<label for="transactionType">Type of Purchase: </label>
-								<select id="transactionType" required>
+								<label class="one-half column" for="transactionType">Type of Purchase: </label>
+								<select class="one-half column" id="transactionType" required>
 									<option>
 										Other
 									</option>
@@ -107,13 +107,18 @@
                         </fieldset>
                     </form>
 					<div class="row">
-						<button id="submit-btn" class="button-primary">Submit</button>
+						<button id="submit-btn" class="button button-tertiary">Submit</button>
 					</div>
                 </div>
 			</section>
 
-			<section class="container bottom-spacer" id="past-transactions">
-                Loading...
+			<section class="container bottom-spacer">
+				<div class="row">
+					<h1>Ten most recent transactions: </h1>
+				</div>
+				<div id="past-transactions">
+					Loading...
+				</div>
 			</section>
 
 			<footer class="footer">

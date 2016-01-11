@@ -1,6 +1,4 @@
-.special-green {
-    color: #66A96B;
-}
+
 a.special-green:hover{
     color: #3B5F41;
 }
@@ -15,7 +13,10 @@ a.special-green:hover{
 .navigation {
     background-color: white;
     height: 64px;
-
+    /*box-shadow: 10px 10px 5px #DDDDDD;*/
+}
+.special-green {
+    background-color: #66A96B;
 }
 .emoji img {
     height: 64px;
@@ -29,4 +30,12 @@ a.special-green:hover{
 }
 .bottom-spacer {
     margin-bottom: 5%;
+}
+.button-tertiary {
+    background-color: #66A96B;
+    color: white;
+}
+.button-tertiary:hover {
+    background-color: #3B5F41;
+    color: white;
 }
