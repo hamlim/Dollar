@@ -25,6 +25,10 @@ a.special-green:hover{
     height: 64px;
     width: 64px;
 }
+.emoji.small img {
+    height: 29px !important;
+    width: 29px !important;
+}
 .text-left {
     text-align: left;
 }

@@ -31,7 +31,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script>
 		<script src="./js/moment.js"></script>
 
-        <script src="./js/analysis.js"></script>
+        <script src="./js/app.js"></script>
 
 	</head>
 	<body>
@@ -49,10 +49,10 @@
 						</div>
 						<div class="three columns offset-by-eight columns">
 							<span>
-							<a href="./add.html">
+							<a href="./add.html" class="selected">
 								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
 							</a>
-							<a href="./analysis.html" class="selected">
+							<a href="./analysis.html">
 								<i class="emoji" id="analysis">:chart_with_upwards_trend:</i>
 							</a>
 							</span>
@@ -63,110 +63,63 @@
 
 			<section class="container bottom-spacer" id="input">
 				<div class="row">
-					<h1>Quick Numbers:</h1>
+					<h1>Enter a new transaction:</h1>
 				</div>
-				<div class="row">
-					<h3>Totals:</h3>
-					<table class="u-full-width">
-						<thead>
-							<tr>
-								<th>
-									<span><i class="emoji">:bust_in_silhouette:</i> Personal:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:airplane:</i> Travel:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:house:</i> Home:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:pill:</i> Health:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:red_car:</i> Transportation:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:gift:</i> Gifts:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:tools:</i> Utilities:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:pizza:</i> Food:</span>
-								</th>
-								<th>
-									<span><i class="emoji">:poop:</i> Other:</span>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td id="personal">
+                <div id="form" class="">
+                    <form>
+                        <fieldset>
+							<div class="row">
+								<label class="one-half column" for="amountField">Transaction Amount: </label>
+	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
+							</div>
+							<div class="row">
+								<label class="one-half column" for="transactionLocation">Transaction Location: </label>
+	                            <input class="one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
+							</div>
+							<div class="row">
+								<label class="one-half column" for="transactionType">Type of Purchase: </label>
+								<select class="one-half column" id="transactionType" required>
+									<option>
+										Other
+									</option>
+									<option selected>
+										Personal
+									</option>
+									<option>
+										Food
+									</option>
+									<option>
+										Health
+									</option>
+									<option>
+										Home
+									</option>
+									<option>
+										Gifts
+									</option>
+									<option>
+										Transportation
+									</option>
+									<option>
+										Utilities
+									</option>
+									<option>
+										Travel
+									</option>
+								</select>
+							</div>
 
-								</td>
-								<td id="travel">
-
-								</td>
-								<td id="home">
-
-								</td>
-								<td id="health">
-
-								</td>
-								<td id="transportation">
-
-								</td>
-								<td id="gifts">
-
-								</td>
-								<td id="utilities">
-
-								</td>
-								<td id="food">
-
-								</td>
-								<td id="other">
-
-								</td>
-							</tr>
-							<tr>
-								<td id="personalPCT">
-
-								</td>
-								<td id="travelPCT">
-
-								</td>
-								<td id="homePCT">
-
-								</td>
-								<td id="healthPCT">
-
-								</td>
-								<td id="transportationPCT">
-
-								</td>
-								<td id="giftsPCT">
-
-								</td>
-								<td id="utilitiesPCT">
-
-								</td>
-								<td id="foodPCT">
-
-								</td>
-								<td id="otherPCT">
-
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
+                        </fieldset>
+                    </form>
+					<div class="row">
+						<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
+					</div>
+                </div>
 			</section>
 
 			<section class="container bottom-spacer">
 				<div class="row">
-					<h1>All Transactions: </h1>
+					<h1>Ten most recent transactions: </h1>
 				</div>
 				<table class="u-full-width">
 				  <thead>

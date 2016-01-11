@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 		<meta name="robots" content="index, follow">
 		<meta name="theme-color" content="#66A96B">
 		<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
@@ -19,6 +19,7 @@
 
 
 		<link rel="stylesheet" href="./css/skeleton.css">
+        <link rel="stylesheet" href="./css/landing.css">
 
 		<link rel="stylesheet" href="./css/custom.css">
 
@@ -29,120 +30,105 @@
 
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script>
-		<script src="./js/moment.js"></script>
 
-        <script src="./js/app.js"></script>
+        <!-- FONT
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
 
-	</head>
-	<body>
+    </head>
+    <body>
 
-		<main class="" id="main">
+        <!-- Primary Page Layout
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <header class="navigation special-green">
+            <nav class="container">
+                <section class="row">
+                    <div class="one column text-middle">
+                        <a href="./index.html" class="selected">
+                            <i class="emoji">:dollar:</i>
+                        </a>
+                    </div>
+                    <div class="three columns offset-by-eight columns">
+                        <span>
+                        <a href="./add.html">
+                            <i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
+                        </a>
+                        <a href="./analysis.html">
+                            <i class="emoji" id="analysis">:chart_with_upwards_trend:</i>
+                        </a>
+                        </span>
+                    </div>
+                </section>
+            </nav>
+        </header>
 
-
-			<header class="navigation bottom-spacer special-green">
-				<nav class="container">
-					<section class="row">
-						<div class="one column text-middle">
-							<i class="emoji">:dollar:</i>
-						</div>
-						<div class="three columns offset-by-eight columns">
-							<span>
-							<a href="./index.html" class="selected">
-								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
-							</a>
-							<a href="./analysis.html">
-								<i class="emoji" id="analysis">:chart_with_upwards_trend:</i>
-							</a>
-							</span>
-						</div>
-					</section>
-				</nav>
-			</header>
-
-			<section class="container bottom-spacer" id="input">
-				<div class="row">
-					<h1>Enter a new transaction:</h1>
-				</div>
-                <div id="form" class="">
-                    <form>
-                        <fieldset>
-							<div class="row">
-								<label class="one-half column" for="amountField">Transaction Amount: </label>
-	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionLocation">Transaction Location: </label>
-	                            <input class="one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionType">Type of Purchase: </label>
-								<select class="one-half column" id="transactionType" required>
-									<option>
-										Other
-									</option>
-									<option selected>
-										Personal
-									</option>
-									<option>
-										Food
-									</option>
-									<option>
-										Health
-									</option>
-									<option>
-										Home
-									</option>
-									<option>
-										Gifts
-									</option>
-									<option>
-										Transportation
-									</option>
-									<option>
-										Utilities
-									</option>
-									<option>
-										Travel
-									</option>
-								</select>
-							</div>
-
-                        </fieldset>
-                    </form>
-					<div class="row">
-						<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
-					</div>
+        <div class="section hero">
+            <div class="container">
+                <div class="row">
+                    <div class="one-half column">
+                        <h4 class="hero-heading">Stop using clunky spreadsheets to manage your finances.</h4>
+                        <a class="button button-primary" href="http://getskeleton.com">Try <i class="emoji small">:dollar:</i></a>
+                    </div>
+                    <div class="one-half column phones">
+                        <img class="phone" src="images/iphone.png">
+                        <img class="phone" src="images/iphone.png">
+                    </div>
                 </div>
-			</section>
+            </div>
+        </div>
 
-			<section class="container bottom-spacer">
-				<div class="row">
-					<h1>Ten most recent transactions: </h1>
-				</div>
-				<table class="u-full-width">
-				  <thead>
-				    <tr>
-				      <th><span><i class="emoji">:clock4:</i> Time:</span></th>
-				      <th><span><i class="emoji">:dollar:</i> Amount:</span></th>
-				      <th><span><i class="emoji">:map:</i> Location:</span></th>
-				      <th><span><i class="emoji">:open_file_folder:</i> Category:</span></th>
-				    </tr>
-				  </thead>
-				  <tbody id="past-transactions">
-				  </tbody>
-				</table>
-			</section>
+        <div class="section values">
+            <div class="container">
+                <div class="row">
+                    <div class="one-third column value">
+                        <h2 class="value-multiplier">67%</h2>
+                        <h5 class="value-heading">Purchase Increase</h5>
+                        <p class="value-description">Percentage of users more likely to purchase on mobile friendly site.</p>
+                    </div>
+                    <div class="one-third column value">
+                        <h2 class="value-multiplier">90%</h2>
+                        <h5 class="value-heading">Multi-device Users</h5>
+                        <p class="value-description">Most of the world accesses the internet on multiple devices.</p>
+                    </div>
+                    <div class="one-third column value">
+                        <h2 class="value-multiplier">66%</h2>
+                        <h5 class="value-heading">Sad Users</h5>
+                        <p class="value-description">Percentage of users that are frustrated with page load times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			<footer class="footer">
-				<section class="container">
-					<p>Designed with <i class="fa fa-headphones special-green-color"></i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt Hamlin</a>. </p>
-				</section>
-			</footer>
+        <div class="section get-help">
+            <div class="container">
+                <h3 class="section-heading">Need help getting started?</h3>
+                <p class="section-description">Skeleton is an amazingly easy place to start with responsive development. If you want to learn more, just visit the documentation!</p>
+                <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
+            </div>
+        </div>
 
-		</main>
+        <div class="section categories">
+            <div class="container">
+                <h3 class="section-heading">Responsive Images</h3>
+                <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
+                <div class="row">
+                    <div class="one-half column category">
+                        <img class="u-max-full-width" src="images/placeholder.png">
+                    </div>
+                    <div class="one-half column category">
+                        <img class="u-max-full-width" src="images/placeholder.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<script src="./js/notie.js"></script>
-		<script type="text/javascript">
+
+
+
+        <!-- End Document
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+        <script type="text/javascript">
 		     $(document).ready(function() {
 				 $(".emoji").each(function() {
 		            var original = $(this).html();
@@ -152,6 +138,5 @@
 		        });
 		    });
 		</script>
-
-	</body>
+    </body>
 </html>
