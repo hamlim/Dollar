@@ -31,6 +31,9 @@ a.special-green:hover{
 .text-right {
     text-align: right;
 }
+.text-middle {
+    /*background-color: #7FDBFF;*/
+}
 .bottom-spacer {
     margin-bottom: 5%;
 }
@@ -42,10 +45,8 @@ a.special-green:hover{
     background-color: #3B5F41;
     color: white;
 }
-.cell-parent div {
-    border: solid 1px #7FDBFF;
-}
 
-.selected {
-    background-color: #3B5F41;
+
+.selected i img {
+    box-shadow: 0 5px 2px -2px gray;
 }
