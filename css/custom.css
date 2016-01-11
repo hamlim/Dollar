@@ -27,3 +27,6 @@ a.special-green:hover{
 .text-right {
     text-align: right;
 }
+.bottom-spacer {
+    margin-bottom: 5%;
+}

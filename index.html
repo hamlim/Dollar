@@ -38,7 +38,7 @@
 		<main class="" id="main">
 
 
-			<header class="navigation">
+			<header class="navigation bottom-spacer">
 				<nav class="container">
 					<section class="row">
 						<a href="./index.html">
@@ -56,52 +56,63 @@
 				</nav>
 			</header>
 
-			<section class="container" id="input">
-                <h1>Enter New Transaction:</h1>
-                <div id="form" class="clearfix">
+			<section class="container bottom-spacer" id="input">
+				<div class="row">
+					<h1>Enter a new transaction:</h1>
+				</div>
+                <div id="form" class="">
                     <form>
                         <fieldset>
-                            <label for="amountField" >Transaction Amount: </label>
-                            <input type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
-                            <label for="transactionLocation">Transaction Location: </label>
-                            <input type="text" placeholder="Some Place" id="transactionLocation" required>
-                            <label for="transactionType">Type of Purchase: </label>
-							<select id="transactionType" required>
-								<option>
-									Other
-								</option>
-								<option selected>
-									Personal
-								</option>
-								<option>
-									Food
-								</option>
-								<option>
-									Health
-								</option>
-								<option>
-									Home
-								</option>
-								<option>
-									Gifts
-								</option>
-								<option>
-									Transportation
-								</option>
-								<option>
-									Utilities
-								</option>
-								<option>
-									Travel
-								</option>
-							</select>
+							<div class="row">
+								<label for="amountField" >Transaction Amount: </label>
+	                            <input type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
+							</div>
+							<div class="row">
+								<label for="transactionLocation">Transaction Location: </label>
+	                            <input type="text" placeholder="Some Place" id="transactionLocation" required>
+							</div>
+							<div class="row">
+								<label for="transactionType">Type of Purchase: </label>
+								<select id="transactionType" required>
+									<option>
+										Other
+									</option>
+									<option selected>
+										Personal
+									</option>
+									<option>
+										Food
+									</option>
+									<option>
+										Health
+									</option>
+									<option>
+										Home
+									</option>
+									<option>
+										Gifts
+									</option>
+									<option>
+										Transportation
+									</option>
+									<option>
+										Utilities
+									</option>
+									<option>
+										Travel
+									</option>
+								</select>
+							</div>
+
                         </fieldset>
                     </form>
-					<button id="submit-btn" class="button-primary float-right">Submit</button>
+					<div class="row">
+						<button id="submit-btn" class="button-primary">Submit</button>
+					</div>
                 </div>
 			</section>
 
-			<section class="container" id="past-transactions">
+			<section class="container bottom-spacer" id="past-transactions">
                 Loading...
 			</section>
 
