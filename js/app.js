@@ -34,7 +34,10 @@ $(document).ready(function(){
             var locationDiv = document.createElement('td');
             locationDiv.innerHTML = records[i].fields.Location;
             var timeDiv = document.createElement('td');
-            timeDiv.innerHTML = records[i].fields["Transaction Date"];
+            //change time to date and hours
+            var converted = moment(records[i].fields["Transaction Date"]);
+            var readable = converted._d;
+            timeDiv.innerHTML = readable;
             var categoryDiv = document.createElement('td');
             categoryDiv.innerHTML = records[i].fields.Category;
             divRow.appendChild(timeDiv);
@@ -50,7 +53,10 @@ $(document).ready(function(){
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = records[i].fields.Location;
                 var timeDiv = document.createElement('td');
-                timeDiv.innerHTML = records[i].fields["Transaction Date"];
+                //change time to date and hours
+                var converted = moment(records[i].fields["Transaction Date"]);
+                var readable = converted._d;
+                timeDiv.innerHTML = readable;
                 var categoryDiv = document.createElement('td');
                 categoryDiv.innerHTML = records[i].fields.Category;
                 divRow.appendChild(timeDiv);
@@ -75,7 +81,9 @@ $(document).ready(function(){
             var month = mon.toString();
             var day = time.getDate().toString();
             var year = time.getFullYear().toString();
-            var transactionTime = year+"-"+month+"-"+day;
+            var hours = time.getHours().toString();
+            var minutes = time.getMinutes().toString();
+            var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
             var amt = amount.value, locv = loc.value, type = category.value;
             var data = {
                 "Amount": parseFloat(amt),
@@ -101,6 +109,9 @@ $(document).ready(function(){
             console.log(pckge);
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                amount.value = "";
+                loc.value = "";
+                category.value = "Other";
                 // we want to add the response to the rendered transactions
                 // localStore.transactions.push(response);
                 notie.alert(1, 'Success!', 1.5);
@@ -115,7 +126,10 @@ $(document).ready(function(){
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = locv;
                 var timeDiv = document.createElement('td');
-                timeDiv.innerHTML = transactionTime;
+                //change time to date and hours
+                var converted = moment(transactionTime);
+                var readable = converted._d;
+                timeDiv.innerHTML = readable;
                 var categoryDiv = document.createElement('td');
                 categoryDiv.innerHTML = type;
                 divRow.appendChild(timeDiv);
