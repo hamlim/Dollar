@@ -1,8 +1,3 @@
-function sbmtBtn(){
-    console.log("hey!");
-    alert("hello?");
-};
-
 $(document).ready(function(){
     //dom is loaded
     //lets see if we can load in a Vue
