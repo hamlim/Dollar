@@ -11,56 +11,93 @@
 		<meta name="description" content="A simple transaction manager.">
 
 
-		<title>Transaction Analysis</title>
+		<title>Transaction Management</title>
 
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-		<link rel="stylesheet" href="http://milligram.github.io/css/milligram.min.css">
-		<link rel="stylesheet" href="http://milligram.github.io/css/style.css">
-        <link rel="stylesheet" href="./css/custom.css">
+
+
+		<link rel="stylesheet" href="./css/skeleton.css">
+
+		<link rel="stylesheet" href="./css/custom.css">
+
+		<!-- Emoji One -->
+		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
+
 
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script>
+		<script src="./js/moment.js"></script>
 
-        <script src="./js/analysis.js"></script>
+        <script src="./js/app.js"></script>
 
 	</head>
 	<body>
 
-		<main class="wrapper">
+		<main class="" id="main">
 
-			<nav class="navigation">
-				<section class="container">
-					<a class="navigation-title" href="./index.html">
-						<i class="fa fa-money special-green"></i>
-						<h1 class="title special-green">Transaction Manager</h1>
-					</a>
-					<ul class="navigation-list float-right">
-						<li class="navigation-item ">
-							<a class="navigation-link special-green underline" href="./analysis.html"><i class="fa fa-line-chart special-green"></i> Analysis</a>
-						</li>
-					</ul>
-				</section>
-			</nav>
 
-			<section class="container" id="examples">
+			<header class="navigation bottom-spacer special-green">
+				<nav class="container">
+					<section class="row">
+						<a href="./index.html">
+							<div class="one-half column text-left">
+								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
+								<!-- <h1></h1> -->
+							</div>
+						</a>
+						<a href="./analytics.html">
+							<div class="one-half column text-right">
+								<i class="emoji" id="analytics">:chart_with_upwards_trend:</i>
+							</div>
+						</a>
+					</section>
+				</nav>
+			</header>
+
+			<section class="container bottom-spacer" id="input">
 
 			</section>
 
-			<section class="container" id="contributing">
-
+			<section class="container bottom-spacer">
+				<div class="row">
+					<h1>All Transactions: </h1>
+				</div>
+				<table class="u-full-width">
+				  <thead>
+				    <tr>
+				      <th><span><i class="emoji">:clock4:</i> Time:</span></th>
+				      <th><span><i class="emoji">:dollar:</i> Amount:</span></th>
+				      <th><span><i class="emoji">:map:</i> Location:</span></th>
+				      <th><span><i class="emoji">:open_file_folder:</i> Category:</span></th>
+				    </tr>
+				  </thead>
+				  <tbody id="past-transactions">
+				  </tbody>
+				</table>
 			</section>
 
 			<footer class="footer">
 				<section class="container">
-					<p>Designed with <i class="fa fa-headphones"></i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt Hamlin</a>. </p>
+					<p>Designed with <i class="fa fa-headphones special-green-color"></i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt Hamlin</a>. </p>
 				</section>
 			</footer>
 
 		</main>
 
 		<script src="./js/notie.js"></script>
+		<script type="text/javascript">
+		     $(document).ready(function() {
+				 $(".emoji").each(function() {
+		            var original = $(this).html();
+		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
+		            var converted = emojione.toImage(original);
+		            $(this).html(converted);
+		        });
+		    });
+		</script>
 
 	</body>
 </html>
