@@ -11,7 +11,16 @@ $(document).ready(function(){
         transportationElem = document.getElementById('transportation'),
         utilitiesElem = document.getElementById('utilities'),
         foodElem = document.getElementById('food'),
-        otherElem = document.getElementById('other');
+        otherElem = document.getElementById('other'),
+        personalPCT = document.getElementById('personalPCT'),
+        homePCT = document.getElementById('homePCT'),
+        healthPCT = document.getElementById('healthPCT'),
+        giftsPCT = document.getElementById('giftsPCT'),
+        travelPCT = document.getElementById('travelPCT'),
+        utilitiesPCT = document.getElementById('utilitiesPCT'),
+        transportationPCT = document.getElementById('transportationPCT'),
+        foodPCT = document.getElementById('foodPCT'),
+        otherPCT = document.getElementById('otherPCT');
     var amounts = {
         "food": 0,
         "other": 0,
@@ -23,19 +32,7 @@ $(document).ready(function(){
         "health": 0,
         "home": 0
     };
-    var total = 0;
-    var percentage = {
-        "food": 0,
-        "other": 0,
-        "personal": 0,
-        "travel": 0,
-        "transportation": 0,
-        "utilities": 0,
-        "gifts": 0,
-        "health": 0,
-        "home": 0
-    }
-
+    var totalAMT = 0;
     //handle loading in all current transactions
     var getSettings = {
         "async": true,
@@ -71,6 +68,7 @@ $(document).ready(function(){
             pastTransactions.appendChild(divRow);
             //analytics
             //totals
+            totalAMT += records[i].fields.Amount;
             if(records[i].fields.Category === "Food"){
                 //increment food totals
                 var amtString = records[i].fields.Amount;
@@ -126,6 +124,16 @@ $(document).ready(function(){
         utilitiesElem.innerHTML = "$" + amounts.utilities.toFixed(2);
         foodElem.innerHTML = "$" + amounts.food.toFixed(2);
         otherElem.innerHTML = "$" + amounts.other.toFixed(2);
+
+        personalPCT.innerHTML = (amounts.personal/totalAMT).toFixed(2) + "%";
+        homePCT.innerHTML = (amounts.home/totalAMT).toFixed(2) + "%";
+        healthPCT.innerHTML = (amounts.health/totalAMT).toFixed(2) + "%";
+        giftsPCT.innerHTML = (amounts.gifts/totalAMT).toFixed(2) + "%";
+        travelPCT.innerHTML = (amounts.travel/totalAMT).toFixed(2) + "%";
+        transportationPCT.innerHTML = (amounts.transportation/totalAMT).toFixed(2) + "%";
+        utilitiesPCT.innerHTML = (amounts.utilities/totalAMT).toFixed(2) + "%";
+        foodPCT.innerHTML = (amounts.food/totalAMT).toFixed(2) + "%";
+        otherPCT.innerHTML = (amounts.other/totalAMT).toFixed(2) + "%";
     });
 
 
