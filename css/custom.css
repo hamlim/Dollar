@@ -18,6 +18,9 @@ a.special-green:hover{
 .special-green {
     background-color: #66A96B;
 }
+.special-green-color {
+    color: #66A96B;
+}
 .emoji img {
     height: 64px;
     width: 64px;

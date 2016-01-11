@@ -24,21 +24,43 @@ $(document).ready(function(){
         }
     };
     $.ajax(getSettings).done(function(resp){
+        console.log("resp: ");
         console.log(resp);
         var records = resp.records;
         for(var i=0; i<records.length; i++){
-            var divRow = document.createElement('div');
-            divRow.setAttribute('class', 'row');
-            divRow.setAttribute('id', i+'-parent');
-            var amountDiv = document.createElement('div');
-            amountDiv.setAttribute('class', 'one-third column');
-            amountDiv.setAttribute('data-financial-amount', records[i].Amount);
-            var locationDiv = document.createElement('div');
-            amountDiv.setAttribute('class', 'one-third column');
-            amountDiv.setAttribute('data-financial-location', records[i].Location);
-
+            var divRow = document.createElement('tr');
+            var amountDiv = document.createElement('td');
+            amountDiv.innerHTML = records[i].fields.Amount;
+            var locationDiv = document.createElement('td');
+            locationDiv.innerHTML = records[i].fields.Location;
+            var timeDiv = document.createElement('td');
+            timeDiv.innerHTML = records[i].fields["Transaction Date"];
+            var categoryDiv = document.createElement('td');
+            categoryDiv.innerHTML = records[i].fields.Category;
+            divRow.appendChild(timeDiv);
+            divRow.appendChild(amountDiv);
+            divRow.appendChild(locationDiv);
+            divRow.appendChild(categoryDiv);
+            pastTransactions.appendChild(divRow);
+            if(i === records.length -1){
+                var divRow = document.createElement('tr');
+                divRow.setAttribute('id', 'last-element');
+                var amountDiv = document.createElement('td');
+                amountDiv.innerHTML = records[i].fields.Amount;
+                var locationDiv = document.createElement('td');
+                locationDiv.innerHTML = records[i].fields.Location;
+                var timeDiv = document.createElement('td');
+                timeDiv.innerHTML = records[i].fields["Transaction Date"];
+                var categoryDiv = document.createElement('td');
+                categoryDiv.innerHTML = records[i].fields.Category;
+                divRow.appendChild(timeDiv);
+                divRow.appendChild(amountDiv);
+                divRow.appendChild(locationDiv);
+                divRow.appendChild(categoryDiv);
+                pastTransactions.appendChild(divRow);
+            }
         }
-    })
+    });
 
     //handle the adding of new transactions
 
@@ -83,6 +105,24 @@ $(document).ready(function(){
                 // localStore.transactions.push(response);
                 notie.alert(1, 'Success!', 1.5);
                 //now we want to append that to the transaction section
+                //pastTransactions is the parent element
+                var last = pastTransactions.lastChild;
+                last.parentNode.removeChild(last);
+                //now prepend a new tr
+                var divRow = document.createElement('tr');
+                var amountDiv = document.createElement('td');
+                amountDiv.innerHTML = amt;
+                var locationDiv = document.createElement('td');
+                locationDiv.innerHTML = locv;
+                var timeDiv = document.createElement('td');
+                timeDiv.innerHTML = transactionTime;
+                var categoryDiv = document.createElement('td');
+                categoryDiv.innerHTML = type;
+                divRow.appendChild(timeDiv);
+                divRow.appendChild(amountDiv);
+                divRow.appendChild(locationDiv);
+                divRow.appendChild(categoryDiv);
+                pastTransactions.insertBefore(divRow, pastTransactions.firstChild);
 
             });
             //now we want to push this to the server
