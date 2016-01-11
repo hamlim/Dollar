@@ -11,7 +11,8 @@ $(document).ready(function(){
       loc = document.getElementById('transactionLocation'),
       category = document.getElementById('transactionType'),
       submitBtn = document.getElementById('submit-btn'),
-      localStore = {};
+      localStore = {},
+      pastTransactions = document.getElementById('past-transactions');
     //handle loading in all current transactions
     var getSettings = {
         "async": true,
@@ -23,10 +24,49 @@ $(document).ready(function(){
         }
     };
     $.ajax(getSettings).done(function(resp){
+        console.log("resp: ");
         console.log(resp);
         var records = resp.records;
-
-    })
+        for(var i=0; i<records.length; i++){
+            var divRow = document.createElement('tr');
+            var amountDiv = document.createElement('td');
+            amountDiv.innerHTML = records[i].fields.Amount;
+            var locationDiv = document.createElement('td');
+            locationDiv.innerHTML = records[i].fields.Location;
+            var timeDiv = document.createElement('td');
+            //change time to date and hours
+            var converted = moment(records[i].fields["Transaction Date"]);
+            var readable = converted._d;
+            timeDiv.innerHTML = readable;
+            var categoryDiv = document.createElement('td');
+            categoryDiv.innerHTML = records[i].fields.Category;
+            divRow.appendChild(timeDiv);
+            divRow.appendChild(amountDiv);
+            divRow.appendChild(locationDiv);
+            divRow.appendChild(categoryDiv);
+            pastTransactions.appendChild(divRow);
+            if(i === records.length -1){
+                var divRow = document.createElement('tr');
+                divRow.setAttribute('id', 'last-element');
+                var amountDiv = document.createElement('td');
+                amountDiv.innerHTML = records[i].fields.Amount;
+                var locationDiv = document.createElement('td');
+                locationDiv.innerHTML = records[i].fields.Location;
+                var timeDiv = document.createElement('td');
+                //change time to date and hours
+                var converted = moment(records[i].fields["Transaction Date"]);
+                var readable = converted._d;
+                timeDiv.innerHTML = readable;
+                var categoryDiv = document.createElement('td');
+                categoryDiv.innerHTML = records[i].fields.Category;
+                divRow.appendChild(timeDiv);
+                divRow.appendChild(amountDiv);
+                divRow.appendChild(locationDiv);
+                divRow.appendChild(categoryDiv);
+                pastTransactions.appendChild(divRow);
+            }
+        }
+    });
 
     //handle the adding of new transactions
 
@@ -41,7 +81,9 @@ $(document).ready(function(){
             var month = mon.toString();
             var day = time.getDate().toString();
             var year = time.getFullYear().toString();
-            var transactionTime = year+"-"+month+"-"+day;
+            var hours = time.getHours().toString();
+            var minutes = time.getMinutes().toString();
+            var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
             var amt = amount.value, locv = loc.value, type = category.value;
             var data = {
                 "Amount": parseFloat(amt),
@@ -67,10 +109,35 @@ $(document).ready(function(){
             console.log(pckge);
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                amount.value = "";
+                loc.value = "";
+                category.value = "Other";
                 // we want to add the response to the rendered transactions
                 // localStore.transactions.push(response);
                 notie.alert(1, 'Success!', 1.5);
-                }
+                //now we want to append that to the transaction section
+                //pastTransactions is the parent element
+                var last = pastTransactions.lastChild;
+                last.parentNode.removeChild(last);
+                //now prepend a new tr
+                var divRow = document.createElement('tr');
+                var amountDiv = document.createElement('td');
+                amountDiv.innerHTML = amt;
+                var locationDiv = document.createElement('td');
+                locationDiv.innerHTML = locv;
+                var timeDiv = document.createElement('td');
+                //change time to date and hours
+                var converted = moment(transactionTime);
+                var readable = converted._d;
+                timeDiv.innerHTML = readable;
+                var categoryDiv = document.createElement('td');
+                categoryDiv.innerHTML = type;
+                divRow.appendChild(timeDiv);
+                divRow.appendChild(amountDiv);
+                divRow.appendChild(locationDiv);
+                divRow.appendChild(categoryDiv);
+                pastTransactions.insertBefore(divRow, pastTransactions.firstChild);
+
             });
             //now we want to push this to the server
 
