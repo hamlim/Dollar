@@ -11,7 +11,8 @@ $(document).ready(function(){
       loc = document.getElementById('transactionLocation'),
       category = document.getElementById('transactionType'),
       submitBtn = document.getElementById('submit-btn'),
-      localStore = {};
+      localStore = {},
+      pastTransactions = document.getElementById('past-transactions');
     //handle loading in all current transactions
     var getSettings = {
         "async": true,
@@ -25,7 +26,18 @@ $(document).ready(function(){
     $.ajax(getSettings).done(function(resp){
         console.log(resp);
         var records = resp.records;
+        for(var i=0; i<records.length; i++){
+            var divRow = document.createElement('div');
+            divRow.setAttribute('class', 'row');
+            divRow.setAttribute('id', i+'-parent');
+            var amountDiv = document.createElement('div');
+            amountDiv.setAttribute('class', 'one-third column');
+            amountDiv.setAttribute('data-financial-amount', records[i].Amount);
+            var locationDiv = document.createElement('div');
+            amountDiv.setAttribute('class', 'one-third column');
+            amountDiv.setAttribute('data-financial-location', records[i].Location);
 
+        }
     })
 
     //handle the adding of new transactions
@@ -70,6 +82,8 @@ $(document).ready(function(){
                 // we want to add the response to the rendered transactions
                 // localStore.transactions.push(response);
                 notie.alert(1, 'Success!', 1.5);
+                //now we want to append that to the transaction section
+
             });
             //now we want to push this to the server
 

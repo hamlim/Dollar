@@ -39,3 +39,6 @@ a.special-green:hover{
     background-color: #3B5F41;
     color: white;
 }
+.cell-parent div {
+    border: solid 1px #7FDBFF;
+}

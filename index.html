@@ -107,7 +107,7 @@
                         </fieldset>
                     </form>
 					<div class="row">
-						<button id="submit-btn" class="button button-tertiary">Submit</button>
+						<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
 					</div>
                 </div>
 			</section>
@@ -116,9 +116,45 @@
 				<div class="row">
 					<h1>Ten most recent transactions: </h1>
 				</div>
+				<table class="u-full-width">
+				  <thead>
+				    <tr>
+				      <th><span><i class="emoji">:clock4:</i> Time:</span></th>
+				      <th><span><i class="emoji">:dollar:</i> Amount:</span></th>
+				      <th><span><i class="emoji">:map:</i> Location:</span></th>
+				      <th><span><i class="emoji">:open_file_folder:</i> Category:</span></th>
+				    </tr>
+				  </thead>
+				  <tbody id="past-transactions">
+					  Loading...
+				    <!-- <tr>
+				      <td>Dave Gamache</td>
+				      <td>26</td>
+				      <td>Male</td>
+				      <td>San Francisco</td>
+				    </tr>
+				    <tr>
+				      <td>Dwayne Johnson</td>
+				      <td>42</td>
+				      <td>Male</td>
+				      <td>Hayward</td>
+				    </tr> -->
+				  </tbody>
+				</table>
+				<!-- <div class="row cell-parent">
+					<div class="one-third column">
+						<span><i class="emoji">:dollar:</i> Amount:</span>
+					</div>
+					<div class="one-third column">
+						<span><i class="emoji">:map:</i> Location:</span>
+					</div>
+					<div class="one-third column">
+						<span><i class="emoji">:open_file_folder:</i> Category:</span>
+					</div>
+				</div>
 				<div id="past-transactions">
 					Loading...
-				</div>
+				</div> -->
 			</section>
 
 			<footer class="footer">
