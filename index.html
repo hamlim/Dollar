@@ -22,6 +22,11 @@
 
 		<link rel="stylesheet" href="./css/custom.css">
 
+		<!-- Emoji One -->
+		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
+
+
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/smoothState.js/0.7.2/jquery.smoothState.min.js"></script>
 
@@ -30,20 +35,26 @@
 	</head>
 	<body>
 
-		<main class="wrapper" id="main">
+		<main class="" id="main">
 
-			<nav class="navigation">
-				<section class="container">
-					<a class="navigation-title underline" href="./index.html">
-						<i class="fa fa-money special-green"></i>
-						<h1 class="title special-green">Transaction Manager</h1>
-					</a>
-					<a class="navigation-title float-right" href="./analysis.html">
-						<i class="fa fa-line-chart special-green"></i>
-                        <h1 class="title special-green">Analysis</h1>
-					</a>
-				</section>
-			</nav>
+
+			<header class="navigation">
+				<nav class="container">
+					<section class="row">
+						<a href="./index.html">
+							<div class="one-half column text-left">
+								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
+								<!-- <h1></h1> -->
+							</div>
+						</a>
+						<a href="./analytics.html">
+							<div class="one-half column text-right">
+								<i class="emoji" id="analytics">:chart_with_upwards_trend:</i>
+							</div>
+						</a>
+					</section>
+				</nav>
+			</header>
 
 			<section class="container" id="input">
                 <h1>Enter New Transaction:</h1>
@@ -103,6 +114,16 @@
 		</main>
 
 		<script src="./js/notie.js"></script>
+		<script type="text/javascript">
+		     $(document).ready(function() {
+				 $(".emoji").each(function() {
+		            var original = $(this).html();
+		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
+		            var converted = emojione.toImage(original);
+		            $(this).html(converted);
+		        });
+		    });
+		</script>
 
 	</body>
 </html>

@@ -10,3 +10,20 @@ a.special-green:hover{
     padding: 4px;
     border-radius: 5px;
 }
+
+
+.navigation {
+    background-color: white;
+    height: 64px;
+
+}
+.emoji img {
+    height: 64px;
+    width: 64px;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}

@@ -70,7 +70,6 @@ $(document).ready(function(){
                 // we want to add the response to the rendered transactions
                 // localStore.transactions.push(response);
                 notie.alert(1, 'Success!', 1.5);
-                }
             });
             //now we want to push this to the server
 
