@@ -45,3 +45,7 @@ a.special-green:hover{
 .cell-parent div {
     border: solid 1px #7FDBFF;
 }
+
+.selected {
+    background-color: #3B5F41;
+}
