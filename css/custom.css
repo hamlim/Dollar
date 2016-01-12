@@ -54,3 +54,30 @@ a.special-green:hover{
 .selected i img {
     box-shadow: 0 5px 2px -2px gray;
 }
+
+.center-text {
+    text-align: center;
+}
+.footer-text {
+    color: white;
+    margin-top: 2rem !important;
+}
+.footer-text a{
+    color: black;
+    text-decoration: none;
+}
+.footer-text a:hover {
+    text-decoration: none;
+    color: #DDDDDD;
+}
+.footer {
+    background-color: #66A96B;
+}
+
+.faq {
+    font-size: 20px;
+}
+
+.faq li {
+    list-style: lower-alpha;
+}
