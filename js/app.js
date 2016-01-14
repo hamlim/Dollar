@@ -40,12 +40,14 @@ $(document).ready(function(){
             divRow.appendChild(amountDiv);
             divRow.appendChild(locationDiv);
             divRow.appendChild(categoryDiv);
+            divRow.setAttribute('class', 'expense-row');
             var uniqueID = records[i].id;
             divRow.setAttribute('data-expense-id', uniqueID);
             pastTransactions.appendChild(divRow);
             if(i === records.length -1){
                 var divRow = document.createElement('tr');
                 divRow.setAttribute('id', 'last-element');
+                divRow.setAttribute('class', 'expense-row');
                 var amountDiv = document.createElement('td');
                 amountDiv.innerHTML = records[i].fields.Amount;
                 var locationDiv = document.createElement('td');
@@ -124,6 +126,9 @@ $(document).ready(function(){
                 var divRow = document.createElement('tr');
                 var amountDiv = document.createElement('td');
                 amountDiv.innerHTML = amt;
+                divRow.setAttribute('class', 'expense-row');
+                var uniqueID = response.id;
+                divRow.setAttribute('data-expense-id', uniqueID);
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = locv;
                 var timeDiv = document.createElement('td');
@@ -146,7 +151,12 @@ $(document).ready(function(){
             alert("Make sure you fill in all the fields!");
         }
 
-    }
+    };
+
+    $('.expense-row').on('click', '', function() {
+        var uniqueRowID = this.getAttribute('data-expense-id');
+        console.log(uniqueRowID);
+    });
 
 
 });
