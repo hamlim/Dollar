@@ -1,3 +1,6 @@
 .expense-row:hover {
     cursor: pointer;
 }
+.currency {
+    color: #66A96B !important;
+}

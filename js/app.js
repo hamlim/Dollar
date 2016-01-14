@@ -6,7 +6,7 @@ $(document).ready(function(){
       loc = document.getElementById('transactionLocation'),
       category = document.getElementById('transactionType'),
       submitBtn = document.getElementById('submit-btn'),
-      localStore = {},
+      localStore = [],
       notes = document.getElementById('transactionNotes'),
       pastTransactions = document.getElementById('past-transactions');
     //handle loading in all current transactions
@@ -24,8 +24,12 @@ $(document).ready(function(){
         console.log(resp);
         var records = resp.records;
         for(var i=0; i<records.length; i++){
+            localStore.push(records[i]);
             var divRow = document.createElement('tr');
             var amountDiv = document.createElement('td');
+            var linkTD = document.createElement('td');
+            linkTD.innerHTML = "Click for info!";
+            linkTD.className = "expense-info";
             amountDiv.innerHTML = records[i].fields.Amount;
             var locationDiv = document.createElement('td');
             locationDiv.innerHTML = records[i].fields.Location;
@@ -36,6 +40,7 @@ $(document).ready(function(){
             timeDiv.innerHTML = readable;
             var categoryDiv = document.createElement('td');
             categoryDiv.innerHTML = records[i].fields.Category;
+            divRow.appendChild(linkTD);
             divRow.appendChild(timeDiv);
             divRow.appendChild(amountDiv);
             divRow.appendChild(locationDiv);
@@ -49,6 +54,9 @@ $(document).ready(function(){
                 divRow.setAttribute('id', 'last-element');
                 divRow.setAttribute('class', 'expense-row');
                 var amountDiv = document.createElement('td');
+                var linkTD = document.createElement('td');
+                linkTD.innerHTML = "Click for info!";
+                linkTD.className = "expense-info";
                 amountDiv.innerHTML = records[i].fields.Amount;
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = records[i].fields.Location;
@@ -61,6 +69,7 @@ $(document).ready(function(){
                 categoryDiv.innerHTML = records[i].fields.Category;
                 var uniqueID = records[i].id;
                 divRow.setAttribute('data-expense-id', uniqueID);
+                divRow.appendChild(linkTD);
                 divRow.appendChild(timeDiv);
                 divRow.appendChild(amountDiv);
                 divRow.appendChild(locationDiv);
@@ -68,6 +77,17 @@ $(document).ready(function(){
                 pastTransactions.appendChild(divRow);
             }
         }
+        $('.expense-info').on('click', '', function() {
+            var uniqueRowID = this.parentNode.getAttribute('data-expense-id');
+            console.log(uniqueRowID);
+            for(var k=0; k<localStore.length; k++){
+                if(localStore[k].id === uniqueRowID){
+                    vex.dialog.alert({
+                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+localStore[k].fields["Transaction Date"]+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                    });
+                }
+            }
+        });
     });
 
     //handle the adding of new transactions
@@ -112,6 +132,7 @@ $(document).ready(function(){
             console.log(pckge);
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                localStore.push(response);
                 amount.value = "";
                 loc.value = "";
                 category.value = "Other";
@@ -125,6 +146,9 @@ $(document).ready(function(){
                 //now prepend a new tr
                 var divRow = document.createElement('tr');
                 var amountDiv = document.createElement('td');
+                var linkTD = document.createElement('td');
+                linkTD.innerHTML = "Click for more info!";
+                linkTD.className = "expense-info";
                 amountDiv.innerHTML = amt;
                 divRow.setAttribute('class', 'expense-row');
                 var uniqueID = response.id;
@@ -138,11 +162,23 @@ $(document).ready(function(){
                 timeDiv.innerHTML = readable;
                 var categoryDiv = document.createElement('td');
                 categoryDiv.innerHTML = type;
+                divRow.appendChild(linkTD);
                 divRow.appendChild(timeDiv);
                 divRow.appendChild(amountDiv);
                 divRow.appendChild(locationDiv);
                 divRow.appendChild(categoryDiv);
                 pastTransactions.insertBefore(divRow, pastTransactions.firstChild);
+                $('.expense-info').on('click', '', function() {
+                    var uniqueRowID = this.parentNode.getAttribute('data-expense-id');
+                    console.log(uniqueRowID);
+                    for(var k=0; k<localStore.length; k++){
+                        if(localStore[k].id === uniqueRowID){
+                            vex.dialog.alert({
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+localStore[k].fields["Transaction Date"]+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                            });
+                        }
+                    }
+                });
 
             });
             //now we want to push this to the server
@@ -153,10 +189,7 @@ $(document).ready(function(){
 
     };
 
-    $('.expense-row').on('click', '', function() {
-        var uniqueRowID = this.getAttribute('data-expense-id');
-        console.log(uniqueRowID);
-    });
+
 
 
 });
