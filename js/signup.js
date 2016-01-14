@@ -41,7 +41,7 @@ $(document).ready(function(){
             }
 
             $.ajax(getSettings).done(function (response) {
-                console.log(response);
+                // console.log(response);
                 //now we want to go through all the users returned
                 var isInCurrentUsers = false;
                 for(var i=0; i<response.records.length; i++){
@@ -88,10 +88,10 @@ $(document).ready(function(){
                     }
 
                     $.ajax(postSettings).done(function (response) {
-                        console.log(response);
+                        // console.log(response);
                         //ok we want to alert the user that the account was not made if it wasn't
                         if(response.error){
-                            console.log(response.error);
+                            console.log(response);
                             notie.alert(3, "We're sorry but it seems that your account wasn't made :(. If you have seen this more than once, please <a href='mailto:hamlim@outlook.com'>Email</a> us!", 5);
                         } else {
                             //we want to save the current user object to local Storage and re-route to add.html

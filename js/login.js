@@ -13,7 +13,21 @@ $(document).ready(function(){
             notie.alert(3, "Please make sure to enter your username and password before clicking the login button!", 7);
 
         } else {
-            
+            //ok so the user put in something in both fields
+            //now we want to get the DB of users
+            var getSettings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users",
+                "method": "GET",
+                "headers": {
+                    "authorization": "Bearer keyIye3zskPSBMQ6Q"
+                }
+            }
+
+            $.ajax(getSettings).done(function (response) {
+                console.log(response);
+            });
         }
     });
 });
