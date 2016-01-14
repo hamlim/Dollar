@@ -30,7 +30,7 @@ $(document).ready(function(){
             var linkTD = document.createElement('td');
             linkTD.innerHTML = "Click for info!";
             linkTD.className = "expense-info";
-            amountDiv.innerHTML = records[i].fields.Amount;
+            amountDiv.innerHTML = "$"+records[i].fields.Amount;
             var locationDiv = document.createElement('td');
             locationDiv.innerHTML = records[i].fields.Location;
             var timeDiv = document.createElement('td');
@@ -57,7 +57,7 @@ $(document).ready(function(){
                 var linkTD = document.createElement('td');
                 linkTD.innerHTML = "Click for info!";
                 linkTD.className = "expense-info";
-                amountDiv.innerHTML = records[i].fields.Amount;
+                amountDiv.innerHTML = "$"+records[i].fields.Amount;
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = records[i].fields.Location;
                 var timeDiv = document.createElement('td');
@@ -85,7 +85,7 @@ $(document).ready(function(){
                     var converted = moment(localStore[k].fields["Transaction Date"]);
                     var readable = converted._d;
                     vex.dialog.alert({
-                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
                     });
                 }
             }
@@ -151,7 +151,7 @@ $(document).ready(function(){
                 var linkTD = document.createElement('td');
                 linkTD.innerHTML = "Click for more info!";
                 linkTD.className = "expense-info";
-                amountDiv.innerHTML = amt;
+                amountDiv.innerHTML = "$"+amt.toString();
                 divRow.setAttribute('class', 'expense-row');
                 var uniqueID = response.id;
                 divRow.setAttribute('data-expense-id', uniqueID);
@@ -178,7 +178,7 @@ $(document).ready(function(){
                             var converted = moment(localStore[k].fields["Transaction Date"]);
                             var readable = converted._d;
                             vex.dialog.alert({
-                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
                             });
                         }
                     }

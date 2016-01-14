@@ -60,7 +60,7 @@ $(document).ready(function(){
             var uniqueID = records[i].id;
             divRow.setAttribute('data-expense-id', uniqueID);
             var amountDiv = document.createElement('td');
-            amountDiv.innerHTML = records[i].fields.Amount;
+            amountDiv.innerHTML = "$"+records[i].fields.Amount;
             var locationDiv = document.createElement('td');
             locationDiv.innerHTML = records[i].fields.Location;
             var timeDiv = document.createElement('td');
@@ -129,7 +129,7 @@ $(document).ready(function(){
                     var converted = moment(localStore[k].fields["Transaction Date"]);
                     var readable = converted._d;
                     vex.dialog.alert({
-                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
                     });
                 }
             }
