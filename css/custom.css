@@ -37,6 +37,7 @@ a.special-green:hover{
 }
 .text-middle {
     /*background-color: #7FDBFF;*/
+    text-align: center;
 }
 .bottom-spacer {
     margin-bottom: 5%;
