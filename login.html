@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#66A96B">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Matt Hamlin">
+		<meta name="description" content="A simple transaction manager.">
+
+
+		<title>Dollar</title>
+
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+
+
+		<link rel="stylesheet" href="./css/skeleton.css">
+        <link rel="stylesheet" href="./css/landing.css">
+
+		<link rel="stylesheet" href="./css/custom.css">
+        <link rel="stylesheet" href="./css/login.css">
+
+		<!-- Emoji One -->
+		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
+
+
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+        <!-- Favicons
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/assets/favicons/manifest.json">
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#66a96b">
+        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#66a96b">
+
+
+
+        <!-- FONT
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
+
+    </head>
+    <body>
+
+        <!-- Primary Page Layout
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <header class="navigation special-green">
+            <nav class="container">
+                <section class="row">
+                    <div class="one column text-middle">
+                        <a href="./index.html">
+                            <i class="emoji">:dollar:</i>
+                        </a>
+                    </div>
+                    <div class="three columns offset-by-eight columns">
+                        <span>
+                        <a href="./login.html" class="selected">
+                            <i class="emoji" id="dollar-login-login_emoji">::closed_lock_with_key::</i>
+                        </a>
+                        <a href="./signup.html">
+                            <i class="emoji" id="dollar-login-signup_emoji">::bust_in_silhouette::</i>
+                        </a>
+                        </span>
+                    </div>
+                </section>
+            </nav>
+        </header>
+
+        <main id="dollar-login-container">
+            <section class="container">
+                <div class="">
+                    <form class="dollar-login-form">
+                        <fieldset>
+                            <div class="row">
+                                <div class="one-third offset-by-one-third column text-center">
+                                    <label for="dollar-login-email" ><i class="emoji small">:e-mail:</i> Email: </label>
+                                    <input type="email" id="dollar-login-email" placeholder="cash@dollar.$$">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="one-third offset-by-one-third column text-center">
+                                    <label for="dollar-login-password"><i class="emoji small">:key2:</i> Password:</label>
+                                    <input type="password" id="dolar-login-password" placeholder="c.r.e.a.m.">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="one-third offset-by-one-third column text-center">
+                                    <label for="dollar-login-remember"><input type="checkbox" id="dollar-login-remember"> Remember Me</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="one-third offset-by-one-third column text-center">
+                        <p>
+                            Don't have an account yet? <a href="./signup.html" class="link">Click Here!</a>
+                        </p>
+                    </div>
+                    <div class="one-third offset-by-one-third column text-center">
+                        <p>
+                            Forgot your password? <a href="mailto:hamlim@outlook.com?Subject=I%20Forgot%20My%20Password%20for%20Dollar!">Click Here!</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-full column text-center">
+                        <button class="button-tertiary" id="dollar-login-login_btn">Login!</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="container">
+                <div class="row">
+                    <div class="one-half column offset-by-three columns center-text">
+                        <h5 class="footer-text">Made with <i class="emoji small">:hearts:</i> and <i class="emoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt Hamlin</a>. </h5>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+
+
+
+        <!-- End Document
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+        <script type="text/javascript">
+		     $(document).ready(function() {
+				 $(".emoji").each(function() {
+		            var original = $(this).html();
+		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
+		            var converted = emojione.toImage(original);
+		            $(this).html(converted);
+		        });
+		    });
+		</script>
+    </body>
+</html>
