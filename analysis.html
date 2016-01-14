@@ -19,7 +19,7 @@
 
 
 		<link rel="stylesheet" href="./css/skeleton.css">
-
+		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
 		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/app.css">
 
@@ -75,13 +75,11 @@
 
 			<header class="navigation bottom-spacer special-green">
 				<nav class="container">
-					<section class="row">
-						<div class="one column text-middle">
+					<section class="row text-middle">
+						<div class="one-full column ">
 							<a href="./index.html">
 								<i class="emoji">:dollar:</i>
 							</a>
-						</div>
-						<div class="three columns offset-by-eight columns">
 							<span>
 							<a href="./add.html">
 								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
@@ -99,7 +97,7 @@
 				<div class="row">
 					<h1>Quick Numbers:</h1>
 				</div>
-				<div class="row">
+				<div class="row overflow-container">
 					<h3>Totals:</h3>
 					<table class="u-full-width">
 						<thead>
@@ -202,21 +200,23 @@
 				<div class="row">
 					<h1>All Transactions: </h1>
 				</div>
-				<table class="u-full-width">
-				  <thead>
-				    <tr>
-						<th>
-							<span><i class="emoji small">:information_source:</i> Info:</span>
-						</th>
-				      <th><span><i class="emoji small">:clock4:</i> Time:</span></th>
-				      <th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
-				      <th><span><i class="emoji small">:map:</i> Location:</span></th>
-				      <th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
-				    </tr>
-				  </thead>
-				  <tbody id="past-transactions">
-				  </tbody>
-				</table>
+				<div class="overflow-container">
+					<table class="u-full-width">
+					  <thead>
+					    <tr>
+							<th>
+								<span><i class="emoji small">:information_source:</i> Info:</span>
+							</th>
+					      <th><span><i class="emoji small">:clock4:</i> Time:</span></th>
+					      <th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
+					      <th><span><i class="emoji small">:map:</i> Location:</span></th>
+					      <th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
+					    </tr>
+					  </thead>
+					  <tbody id="past-transactions">
+					  </tbody>
+					</table>
+				</div>
 			</section>
 
 			<footer class="footer">
