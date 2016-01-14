@@ -82,8 +82,10 @@ $(document).ready(function(){
             console.log(uniqueRowID);
             for(var k=0; k<localStore.length; k++){
                 if(localStore[k].id === uniqueRowID){
+                    var converted = moment(localStore[k].fields["Transaction Date"]);
+                    var readable = converted._d;
                     vex.dialog.alert({
-                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+localStore[k].fields["Transaction Date"]+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
                     });
                 }
             }
@@ -173,8 +175,10 @@ $(document).ready(function(){
                     console.log(uniqueRowID);
                     for(var k=0; k<localStore.length; k++){
                         if(localStore[k].id === uniqueRowID){
+                            var converted = moment(localStore[k].fields["Transaction Date"]);
+                            var readable = converted._d;
                             vex.dialog.alert({
-                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+localStore[k].fields["Transaction Date"]+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
                             });
                         }
                     }
