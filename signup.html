@@ -11,7 +11,7 @@
 		<meta name="description" content="A simple transaction manager.">
 
 
-		<title>Login to Dollar</title>
+		<title>Signup to Dollar</title>
 
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -30,6 +30,8 @@
 
 
         <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+        <script src="./js/signup.js"></script>
 
 
         <!-- Favicons
@@ -75,11 +77,11 @@
                             <i class="emoji ">:dollar:</i>
                         </a>
                         <span>
-                        <a href="./login.html" class="selected">
-                            <i class="emoji " id="dollar-login-login_emoji">:closed_lock_with_key:</i>
+                        <a href="./login.html">
+                            <i class="emoji " id="dollar-signup-login_emoji">:closed_lock_with_key:</i>
                         </a>
-                        <a href="./signup.html">
-                            <i class="emoji " id="dollar-login-signup_emoji">:lock_with_ink_pen:</i>
+                        <a href="./signup.html" class="selected">
+                            <i class="emoji " id="dollar-signup-signup_emoji">:lock_with_ink_pen:</i>
                         </a>
                         </span>
                     </div>
@@ -87,26 +89,38 @@
             </nav>
         </header>
 
-        <main id="dollar-login-container">
+        <main id="dollar-signup-container">
             <section class="container">
                 <div class="">
-                    <form class="dollar-login-form">
+                    <form class="dollar-signup-form">
                         <fieldset>
                             <div class="row">
                                 <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-login-email" ><i class="emoji small">:e-mail:</i> Email: </label>
-                                    <input type="email" id="dollar-login-email" placeholder="cash@dollar.$$">
+                                    <label for="dollar-signup-fullname"><i class="emoji small">:key2:</i> Password:</label> <!-- TODO fullname -->
+                                    <input type="text" id="dolar-signup-fullname" placeholder="Full Name">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-login-password"><i class="emoji small">:key2:</i> Password:</label>
-                                    <input type="password" id="dolar-login-password" placeholder="c.r.e.a.m.">
+                                    <label for="dollar-signup-password"><i class="emoji small">:key2:</i> Password:</label> <!-- TODO username -->
+                                    <input type="password" id="dolar-signup-password" placeholder="c.r.e.a.m.">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-login-remember"><input type="checkbox" id="dollar-login-remember"> Remember Me</label>
+                                    <label for="dollar-signup-email" ><i class="emoji small">:e-mail:</i> Email: </label>
+                                    <input type="email" id="dollar-signup-email" placeholder="cash@dollar.$$">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="one-third offset-by-one-third column text-center">
+                                    <label for="dollar-signup-password"><i class="emoji small">:key2:</i> Password:</label>
+                                    <input type="password" id="dolar-signup-password" placeholder="c.r.e.a.m.">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="one-third offset-by-one-third column text-center">
+                                    <label for="dollar-signup-remember"><input type="checkbox" id="dollar-signup-remember"> Remember Me</label>
                                 </div>
                             </div>
                         </fieldset>
