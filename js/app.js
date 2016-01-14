@@ -7,6 +7,7 @@ $(document).ready(function(){
       category = document.getElementById('transactionType'),
       submitBtn = document.getElementById('submit-btn'),
       localStore = {},
+      notes = document.getElementById('transactionNotes'),
       pastTransactions = document.getElementById('past-transactions');
     //handle loading in all current transactions
     var getSettings = {
@@ -79,11 +80,12 @@ $(document).ready(function(){
             var hours = time.getHours().toString();
             var minutes = time.getMinutes().toString();
             var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
-            var amt = amount.value, locv = loc.value, type = category.value;
+            var amt = amount.value, locv = loc.value, type = category.value, note = notes.value;
             var data = {
                 "Amount": parseFloat(amt),
                 "Location": locv,
                 "Category": type,
+                "Notes": note,
                 "Transaction Date": transactionTime
             };
             var pckge = {
