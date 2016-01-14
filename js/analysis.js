@@ -20,6 +20,7 @@ $(document).ready(function(){
         utilitiesPCT = document.getElementById('utilitiesPCT'),
         transportationPCT = document.getElementById('transportationPCT'),
         foodPCT = document.getElementById('foodPCT'),
+        localStore = [],
         otherPCT = document.getElementById('otherPCT');
     var amounts = {
         "food": 0,
@@ -48,8 +49,16 @@ $(document).ready(function(){
         console.log(resp);
         var records = resp.records;
         for(var i=0; i<records.length; i++){
+            localStore.push(records[i]);
+            var linkTD = document.createElement('td');
+            linkTD.innerHTML = "Click for info!";
+            linkTD.className = "expense-info";
             //render all transactions
             var divRow = document.createElement('tr');
+            divRow.appendChild(linkTD);
+            divRow.setAttribute('class', 'expense-row');
+            var uniqueID = records[i].id;
+            divRow.setAttribute('data-expense-id', uniqueID);
             var amountDiv = document.createElement('td');
             amountDiv.innerHTML = records[i].fields.Amount;
             var locationDiv = document.createElement('td');
@@ -111,6 +120,20 @@ $(document).ready(function(){
             }
 
         };
+
+        $('.expense-info').on('click', '', function() {
+            var uniqueRowID = this.parentNode.getAttribute('data-expense-id');
+            console.log(uniqueRowID);
+            for(var k=0; k<localStore.length; k++){
+                if(localStore[k].id === uniqueRowID){
+                    var converted = moment(localStore[k].fields["Transaction Date"]);
+                    var readable = converted._d;
+                    vex.dialog.alert({
+                        message: '<ul><li>Amount: </li><ul><li class=\'currency\'>'+localStore[k].fields.Amount+'</li></ul><li>Location: </li><ul><li>'+localStore[k].fields.Location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                    });
+                }
+            }
+        });
 
         //now we want to render all of amounts
         console.log("Amounts: ");
