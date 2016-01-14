@@ -40,6 +40,8 @@ $(document).ready(function(){
             divRow.appendChild(amountDiv);
             divRow.appendChild(locationDiv);
             divRow.appendChild(categoryDiv);
+            var uniqueID = records[i].id;
+            divRow.setAttribute('data-expense-id', uniqueID);
             pastTransactions.appendChild(divRow);
             if(i === records.length -1){
                 var divRow = document.createElement('tr');
@@ -55,6 +57,8 @@ $(document).ready(function(){
                 timeDiv.innerHTML = readable;
                 var categoryDiv = document.createElement('td');
                 categoryDiv.innerHTML = records[i].fields.Category;
+                var uniqueID = records[i].id;
+                divRow.setAttribute('data-expense-id', uniqueID);
                 divRow.appendChild(timeDiv);
                 divRow.appendChild(amountDiv);
                 divRow.appendChild(locationDiv);
