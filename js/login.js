@@ -27,6 +27,39 @@ $(document).ready(function(){
 
             $.ajax(getSettings).done(function (response) {
                 console.log(response);
+                for(var i=0; i<response.records.length; i++){
+                    var user = response.records[i];
+                    if(user.fields.u_username === username && user.fields.u_password === password){
+                        //the username is correct
+
+                        //ok this is the correct user
+                        if(remember){
+                            var localUser = {
+                                "username": user.fields.u_username,
+                                "fullname": user.fields.u_fullname,
+                                "email": user.fields.u_email,
+                                "userID": user.fields.u_userID,
+                                "save": true
+                            };
+                            var localUserString = JSON.stringify(localUser);
+                            localStorage.setItem('user', localUserString);
+                            window.location.href = "./add.html";
+                        } else {
+                            var localUser = {
+                                "username": user.fields.u_username,
+                                "fullname": user.fields.u_fullname,
+                                "email": user.fields.u_email,
+                                "userID": user.fields.u_userID,
+                                "save": false
+                            }; //save will determine if we save the local storage or not
+                            var localUserString = JSON.stringify(localUser);
+                            localStorage.setItem('user', localUserString);
+                            window.location.href = "./add.html";
+                        }
+                    } else {
+                        notie.alert(3, "That username and password don't seem to exist, you can make an account <a href='./signup.html'>Here</a>.", 7);
+                    }
+                }
             });
         }
     });
