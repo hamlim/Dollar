@@ -43,7 +43,7 @@ $(document).ready(function(){
                             };
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./add.html";
+                            window.location.href = "./app.html";
                         } else {
                             var localUser = {
                                 "username": user.fields.u_username,
@@ -54,7 +54,7 @@ $(document).ready(function(){
                             }; //save will determine if we save the local storage or not
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./add.html";
+                            window.location.href = "./app.html";
                         }
                     } else {
                         notie.alert(3, "That username and password don't seem to exist, you can make an account <a href='./signup.html'>Here</a>.", 7);

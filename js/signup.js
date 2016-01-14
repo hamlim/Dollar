@@ -57,11 +57,11 @@ $(document).ready(function(){
                                 "email": user.fields.u_email,
                                 "userID": user.fields.u_userID
                             };
-                            //now we want to save that to local storage and also push the browser to ./add.html
+                            //now we want to save that to local storage and also push the browser to ./app.html
 
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./add.html";
+                            window.location.href = "./app.html";
                             //Above is commented only during testing
                         } else {
                             //we need to alert the user that this username is taken
@@ -94,18 +94,18 @@ $(document).ready(function(){
                             console.log(response);
                             notie.alert(3, "We're sorry but it seems that your account wasn't made :(. If you have seen this more than once, please <a href='mailto:hamlim@outlook.com'>Email</a> us!", 5);
                         } else {
-                            //we want to save the current user object to local Storage and re-route to add.html
+                            //we want to save the current user object to local Storage and re-route to app.html
                             var localUser = {
                                 "username": username,
                                 "fullname": fullname,
                                 "email": email,
                                 "userID": response.fields.u_userID
                             };
-                            //now we want to save that to local storage and also push the browser to ./add.html
+                            //now we want to save that to local storage and also push the browser to ./app.html
 
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./add.html";
+                            window.location.href = "./app.html";
                         }
                     });
                 }
