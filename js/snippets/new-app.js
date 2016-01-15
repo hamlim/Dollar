@@ -20,7 +20,7 @@ $(document).ready(function(){
         var getSettings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Dollars&sortField=d_time&sortDirection=desc",
+            "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Dollars?sortField=d_time&sortDirection=desc",
             "method": "GET",
             "headers": {
                 "authorization": "Bearer keyIye3zskPSBMQ6Q"
@@ -39,59 +39,121 @@ $(document).ready(function(){
             var userExpensesString = JSON.stringify(userExpenses);
             localStorage.setItem('userExpenses', userExpensesString);
             //ok so we have some transactions in the userExpenses array
-            for(var k=0; k<10; k++){
-                //now we want to write this data to the page
-                var divRow = document.createElement('tr');
-                var amountDiv = document.createElement('td');
-                var linkTD = document.createElement('td');
-                linkTD.innerHTML = "Click for info!";
-                linkTD.className = "expense-info";
-                amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                var locationDiv = document.createElement('td');
-                locationDiv.innerHTML = userExpenses[k].fields.d_location;
-                var timeDiv = document.createElement('td');
-                //change time to date and hours
-                var converted = moment(userExpenses[k].fields.d_time);
-                var readable = converted._d;
-                timeDiv.innerHTML = readable;
-                var categoryDiv = document.createElement('td');
-                categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                divRow.appendChild(linkTD);
-                divRow.appendChild(timeDiv);
-                divRow.appendChild(amountDiv);
-                divRow.appendChild(locationDiv);
-                divRow.appendChild(categoryDiv);
-                divRow.setAttribute('class', 'expense-row');
-                var uniqueID = userExpenses[k].id;
-                divRow.setAttribute('data-expense-id', uniqueID);
-                pastTransactions.appendChild(divRow);
-                //if it is the last element make a special case to change the class of the row (for easy removal)
-                if(k === userExpenses.length -1){
-                    var divRow = document.createElement('tr');
-                    divRow.setAttribute('id', 'last-element');
-                    divRow.setAttribute('class', 'expense-row');
-                    var amountDiv = document.createElement('td');
-                    var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Click for info!";
-                    linkTD.className = "expense-info";
-                    amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                    var locationDiv = document.createElement('td');
-                    locationDiv.innerHTML = userExpenses[k].fields.d_location;
-                    var timeDiv = document.createElement('td');
-                    //change time to date and hours
-                    var converted = moment(userExpenses[k].fields.d_time);
-                    var readable = converted._d;
-                    timeDiv.innerHTML = readable;
-                    var categoryDiv = document.createElement('td');
-                    categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                    var uniqueID = userExpenses[k].id;
-                    divRow.setAttribute('data-expense-id', uniqueID);
-                    divRow.appendChild(linkTD);
-                    divRow.appendChild(timeDiv);
-                    divRow.appendChild(amountDiv);
-                    divRow.appendChild(locationDiv);
-                    divRow.appendChild(categoryDiv);
-                    pastTransactions.appendChild(divRow);
+            if(userExpenses.length < 10){
+                console.log(userExpenses);
+                for(var k=0; k<userExpenses.length; k++){
+
+                    //if it is the last element make a special case to change the class of the row (for easy removal)
+                    if(k === userExpenses.length -1){
+                        var divRow = document.createElement('tr');
+                        divRow.setAttribute('id', 'last-element');
+                        divRow.setAttribute('class', 'expense-row');
+                        var amountDiv = document.createElement('td');
+                        var linkTD = document.createElement('td');
+                        linkTD.innerHTML = "Click for info!";
+                        linkTD.className = "expense-info";
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                        var locationDiv = document.createElement('td');
+                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                        var timeDiv = document.createElement('td');
+                        //change time to date and hours
+                        var converted = moment(userExpenses[k].fields.d_time);
+                        var readable = converted._d;
+                        timeDiv.innerHTML = readable;
+                        var categoryDiv = document.createElement('td');
+                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                        var uniqueID = userExpenses[k].id;
+                        divRow.setAttribute('data-expense-id', uniqueID);
+                        divRow.appendChild(linkTD);
+                        divRow.appendChild(timeDiv);
+                        divRow.appendChild(amountDiv);
+                        divRow.appendChild(locationDiv);
+                        divRow.appendChild(categoryDiv);
+                        pastTransactions.appendChild(divRow);
+                    } else {
+                        //now we want to write this data to the page
+                        var divRow = document.createElement('tr');
+                        var amountDiv = document.createElement('td');
+                        var linkTD = document.createElement('td');
+                        linkTD.innerHTML = "Click for info!";
+                        linkTD.className = "expense-info";
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                        var locationDiv = document.createElement('td');
+                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                        var timeDiv = document.createElement('td');
+                        //change time to date and hours
+                        var converted = moment(userExpenses[k].fields.d_time);
+                        var readable = converted._d;
+                        timeDiv.innerHTML = readable;
+                        var categoryDiv = document.createElement('td');
+                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                        divRow.appendChild(linkTD);
+                        divRow.appendChild(timeDiv);
+                        divRow.appendChild(amountDiv);
+                        divRow.appendChild(locationDiv);
+                        divRow.appendChild(categoryDiv);
+                        divRow.setAttribute('class', 'expense-row');
+                        var uniqueID = userExpenses[k].id;
+                        divRow.setAttribute('data-expense-id', uniqueID);
+                        pastTransactions.appendChild(divRow);
+                    }
+                }
+            } else {
+                for(var k=0; k<10; k++){
+                    //if it is the last element make a special case to change the class of the row (for easy removal)
+                    if(k === userExpenses.length -1){
+                        var divRow = document.createElement('tr');
+                        divRow.setAttribute('id', 'last-element');
+                        divRow.setAttribute('class', 'expense-row');
+                        var amountDiv = document.createElement('td');
+                        var linkTD = document.createElement('td');
+                        linkTD.innerHTML = "Click for info!";
+                        linkTD.className = "expense-info";
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                        var locationDiv = document.createElement('td');
+                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                        var timeDiv = document.createElement('td');
+                        //change time to date and hours
+                        var converted = moment(userExpenses[k].fields.d_time);
+                        var readable = converted._d;
+                        timeDiv.innerHTML = readable;
+                        var categoryDiv = document.createElement('td');
+                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                        var uniqueID = userExpenses[k].id;
+                        divRow.setAttribute('data-expense-id', uniqueID);
+                        divRow.appendChild(linkTD);
+                        divRow.appendChild(timeDiv);
+                        divRow.appendChild(amountDiv);
+                        divRow.appendChild(locationDiv);
+                        divRow.appendChild(categoryDiv);
+                        pastTransactions.appendChild(divRow);
+                    } else {
+                        //now we want to write this data to the page
+                        var divRow = document.createElement('tr');
+                        var amountDiv = document.createElement('td');
+                        var linkTD = document.createElement('td');
+                        linkTD.innerHTML = "Click for info!";
+                        linkTD.className = "expense-info";
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                        var locationDiv = document.createElement('td');
+                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                        var timeDiv = document.createElement('td');
+                        //change time to date and hours
+                        var converted = moment(userExpenses[k].fields.d_time);
+                        var readable = converted._d;
+                        timeDiv.innerHTML = readable;
+                        var categoryDiv = document.createElement('td');
+                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                        divRow.appendChild(linkTD);
+                        divRow.appendChild(timeDiv);
+                        divRow.appendChild(amountDiv);
+                        divRow.appendChild(locationDiv);
+                        divRow.appendChild(categoryDiv);
+                        divRow.setAttribute('class', 'expense-row');
+                        var uniqueID = userExpenses[k].id;
+                        divRow.setAttribute('data-expense-id', uniqueID);
+                        pastTransactions.appendChild(divRow);
+                    }
                 }
             }
             //when they click on the more info section, show a modal
@@ -202,7 +264,7 @@ $(document).ready(function(){
                                 var converted = moment(userExpenses[k].fields.d_time);
                                 var readable = converted._d;
                                 vex.dialog.alert({
-                                    message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+localStore[k].fields.Notes+'</li></ul></ul>'
+                                    message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+userExpenses[k].fields.d_notes+'</li></ul></ul>'
                                 });
                             }
                         }
@@ -212,7 +274,7 @@ $(document).ready(function(){
                 //now we want to push this to the server
 
             } else {
-                alert("Make sure you fill in all the fields!");
+                notie.alert(2,"Make sure you fill in all the fields!", 5);
             }
 
         };
