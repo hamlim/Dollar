@@ -266,15 +266,15 @@ $(document).ready(function(){
                 foodElem.innerHTML = "$" + amounts.food.toFixed(2);
                 otherElem.innerHTML = "$" + amounts.other.toFixed(2);
 
-                personalPCT.innerHTML = (amounts.personal/totalAMT).toFixed(2) + "%";
-                homePCT.innerHTML = (amounts.home/totalAMT).toFixed(2) + "%";
-                healthPCT.innerHTML = (amounts.health/totalAMT).toFixed(2) + "%";
-                giftsPCT.innerHTML = (amounts.gifts/totalAMT).toFixed(2) + "%";
-                travelPCT.innerHTML = (amounts.travel/totalAMT).toFixed(2) + "%";
-                transportationPCT.innerHTML = (amounts.transportation/totalAMT).toFixed(2) + "%";
-                utilitiesPCT.innerHTML = (amounts.utilities/totalAMT).toFixed(2) + "%";
-                foodPCT.innerHTML = (amounts.food/totalAMT).toFixed(2) + "%";
-                otherPCT.innerHTML = (amounts.other/totalAMT).toFixed(2) + "%";
+                personalPCT.innerHTML = ((amounts.personal/totalAMT)*100).toFixed(2) + "%";
+                homePCT.innerHTML = ((amounts.home/totalAMT)*100).toFixed(2) + "%";
+                healthPCT.innerHTML = ((amounts.health/totalAMT)*100).toFixed(2) + "%";
+                giftsPCT.innerHTML = ((amounts.gifts/totalAMT)*100).toFixed(2) + "%";
+                travelPCT.innerHTML = ((amounts.travel/totalAMT)*100).toFixed(2) + "%";
+                transportationPCT.innerHTML = (((amounts.transportation/totalAMT)*100).toFixed(2) + "%";
+                utilitiesPCT.innerHTML = ((amounts.utilities/totalAMT)*100).toFixed(2) + "%";
+                foodPCT.innerHTML = ((amounts.food/totalAMT)*100).toFixed(2) + "%";
+                otherPCT.innerHTML = ((amounts.other/totalAMT)*100).toFixed(2) + "%";
             });
         }
     }

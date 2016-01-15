@@ -206,12 +206,13 @@ $(document).ready(function(){
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "https://api.airtable.com/v0/app3KwIBwNt7e6HsE/Credit%20Card",
+                  "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Dollars",
                   "method": "POST",
                   "headers": {
                     "authorization": "Bearer keyIye3zskPSBMQ6Q",
                     "content-type": "application/json"
                   },
+                  "processData": false,
                   "data": spackage
                 }
                 console.log(pckge);
