@@ -238,7 +238,7 @@ $(document).ready(function(){
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
                     var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Click for more info!";
+                    linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
                     amountDiv.innerHTML = "$"+amt.toString();
                     divRow.setAttribute('class', 'expense-row');
