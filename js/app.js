@@ -77,8 +77,11 @@ $(document).ready(function(){
                     var linkTD = document.createElement('td');
                     linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
-                    amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                    var locationDiv = document.createElement('td');
+                    if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
+                    } else {
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
+                    }                    var locationDiv = document.createElement('td');
                     locationDiv.innerHTML = userExpenses[k].fields.d_location;
                     var timeDiv = document.createElement('td');
                     //change time to date and hours
@@ -109,8 +112,11 @@ $(document).ready(function(){
                         var linkTD = document.createElement('td');
                         linkTD.innerHTML = "Click for info!";
                         linkTD.className = "expense-info";
-                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                        var locationDiv = document.createElement('td');
+                        if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
+                        } else {
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
+                        }                        var locationDiv = document.createElement('td');
                         locationDiv.innerHTML = userExpenses[k].fields.d_location;
                         var timeDiv = document.createElement('td');
                         //change time to date and hours
@@ -134,7 +140,11 @@ $(document).ready(function(){
                         var linkTD = document.createElement('td');
                         linkTD.innerHTML = "Click for info!";
                         linkTD.className = "expense-info";
-                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                        if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
+                        } else {
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
+                        }
                         var locationDiv = document.createElement('td');
                         locationDiv.innerHTML = userExpenses[k].fields.d_location;
                         var timeDiv = document.createElement('td');
@@ -240,7 +250,11 @@ $(document).ready(function(){
                     var linkTD = document.createElement('td');
                     linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
-                    amountDiv.innerHTML = "$"+amt.toString();
+                    if(amt.toString().search(/\./) != -1){
+                        amountDiv.innerHTML = "$"+amt.toString();
+                    } else {
+                        amountDiv.innerHTML = "$"+amt.toString() + ".00";
+                    }
                     divRow.setAttribute('class', 'expense-row');
                     var uniqueID = response.id;
                     divRow.setAttribute('data-expense-id', uniqueID);
