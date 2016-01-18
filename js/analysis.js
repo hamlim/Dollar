@@ -56,7 +56,7 @@ $(document).ready(function(){
                 var timeDiv = document.createElement('td');
                 //change time to date and hours
                 var converted = moment(userExpenses[i].fields.d_time);
-                var readable = converted._d;
+                var readable = converted.format("Do-MMM-YYYY");
                 timeDiv.innerHTML = readable;
                 var categoryDiv = document.createElement('td');
                 categoryDiv.innerHTML = userExpenses[i].fields.d_category;
@@ -117,7 +117,7 @@ $(document).ready(function(){
                 for(var k=0; k<userExpenses.length; k++){
                     if(userExpenses[k].id === uniqueRowID){
                         var converted = moment(userExpenses[k].fields.d_time);
-                        var readable = converted._d;
+                        var readable = converted.format("Do-MMM-YYYY");
                         vex.dialog.alert({
                             message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+userExpenses[k].fields.d_notes+'</li></ul></ul>'
                         });
@@ -184,7 +184,7 @@ $(document).ready(function(){
                     var timeDiv = document.createElement('td');
                     //change time to date and hours
                     var converted = moment(userExpenses[i].fields.d_time);
-                    var readable = converted._d;
+                    var readable = converted.format("Do-MMM-YYYY");
                     timeDiv.innerHTML = readable;
                     var categoryDiv = document.createElement('td');
                     categoryDiv.innerHTML = userExpenses[i].fields.d_category;
@@ -245,7 +245,7 @@ $(document).ready(function(){
                     for(var k=0; k<userExpenses.length; k++){
                         if(userExpenses[k].id === uniqueRowID){
                             var converted = moment(userExpenses[k].fields.d_time);
-                            var readable = converted._d;
+                            var readable = converted.format("Do-MMM-YYYY");
                             vex.dialog.alert({
                                 message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+userExpenses[k].fields.d_notes+'</li></ul></ul>'
                             });
