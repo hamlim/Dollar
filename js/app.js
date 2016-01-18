@@ -42,35 +42,6 @@ $(document).ready(function(){
             if(userExpenses.length < 10){
                 console.log(userExpenses);
                 for(var k=0; k<userExpenses.length; k++){
-
-                    // //if it is the last element make a special case to change the class of the row (for easy removal)
-                    // if(k === userExpenses.length -1){
-                    //     var divRow = document.createElement('tr');
-                    //     divRow.setAttribute('id', 'last-element');
-                    //     divRow.setAttribute('class', 'expense-row');
-                    //     var amountDiv = document.createElement('td');
-                    //     var linkTD = document.createElement('td');
-                    //     linkTD.innerHTML = "Click for info!";
-                    //     linkTD.className = "expense-info";
-                    //     amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                    //     var locationDiv = document.createElement('td');
-                    //     locationDiv.innerHTML = userExpenses[k].fields.d_location;
-                    //     var timeDiv = document.createElement('td');
-                    //     //change time to date and hours
-                    //     var converted = moment(userExpenses[k].fields.d_time);
-                    //     var readable = converted.format("Do-MMM-YYYY");
-                    //     timeDiv.innerHTML = readable;
-                    //     var categoryDiv = document.createElement('td');
-                    //     categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                    //     var uniqueID = userExpenses[k].id;
-                    //     divRow.setAttribute('data-expense-id', uniqueID);
-                    //     divRow.appendChild(linkTD);
-                    //     divRow.appendChild(timeDiv);
-                    //     divRow.appendChild(amountDiv);
-                    //     divRow.appendChild(locationDiv);
-                    //     divRow.appendChild(categoryDiv);
-                    //     pastTransactions.appendChild(divRow);
-                    // } else {
                     //now we want to write this data to the page
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
@@ -99,7 +70,6 @@ $(document).ready(function(){
                     var uniqueID = userExpenses[k].id;
                     divRow.setAttribute('data-expense-id', uniqueID);
                     pastTransactions.appendChild(divRow);
-                    // }
                 }
             } else {
                 for(var k=0; k<10; k++){
