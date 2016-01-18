@@ -276,6 +276,7 @@ $(document).ready(function(){
                     "food": (amounts.health/totalAMT)*100,
                     "other": (amounts.health/totalAMT)*100,
                 }
+                console.log(calcs);
                 personalPCT.innerHTML = calcs.personal.toFixed(2) + "%";
                 homePCT.innerHTML = calcs.home.toFixed(2) + "%";
                 healthPCT.innerHTML = calcs.health.toFixed(2) + "%";
