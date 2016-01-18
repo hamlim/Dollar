@@ -143,12 +143,12 @@ $(document).ready(function(){
                 "personal": (amounts.personal/totalAMT)*100,
                 "home": (amounts.home/totalAMT)*100,
                 "health": (amounts.health/totalAMT)*100,
-                "gifts": (amounts.health/totalAMT)*100,
-                "travel": (amounts.health/totalAMT)*100,
-                "transportation": (amounts.health/totalAMT)*100,
-                "utilities": (amounts.health/totalAMT)*100,
-                "food": (amounts.health/totalAMT)*100,
-                "other": (amounts.health/totalAMT)*100,
+                "gifts": (amounts.gifts/totalAMT)*100,
+                "travel": (amounts.trave/totalAMT)*100,
+                "transportation": (amounts.transportation/totalAMT)*100,
+                "utilities": (amounts.utilities/totalAMT)*100,
+                "food": (amounts.food/totalAMT)*100,
+                "other": (amounts.other/totalAMT)*100,
             }
             console.log(calcs);
             personalPCT.innerHTML = calcs.personal.toFixed(2) + "%";
@@ -283,12 +283,12 @@ $(document).ready(function(){
                     "personal": (amounts.personal/totalAMT)*100,
                     "home": (amounts.home/totalAMT)*100,
                     "health": (amounts.health/totalAMT)*100,
-                    "gifts": (amounts.health/totalAMT)*100,
-                    "travel": (amounts.health/totalAMT)*100,
-                    "transportation": (amounts.health/totalAMT)*100,
-                    "utilities": (amounts.health/totalAMT)*100,
-                    "food": (amounts.health/totalAMT)*100,
-                    "other": (amounts.health/totalAMT)*100,
+                    "gifts": (amounts.gifts/totalAMT)*100,
+                    "travel": (amounts.trave/totalAMT)*100,
+                    "transportation": (amounts.transportation/totalAMT)*100,
+                    "utilities": (amounts.utlities/totalAMT)*100,
+                    "food": (amounts.food/totalAMT)*100,
+                    "other": (amounts.other/totalAMT)*100,
                 }
                 console.log(calcs);
                 personalPCT.innerHTML = calcs.personal.toFixed(2) + "%";
