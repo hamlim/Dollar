@@ -52,7 +52,8 @@ $(document).ready(function(){
                         amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
                     } else {
                         amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
-                    }                    var locationDiv = document.createElement('td');
+                    }
+                    var locationDiv = document.createElement('td');
                     locationDiv.innerHTML = userExpenses[k].fields.d_location;
                     var timeDiv = document.createElement('td');
                     //change time to date and hours
@@ -86,7 +87,8 @@ $(document).ready(function(){
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
                         } else {
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
-                        }                        var locationDiv = document.createElement('td');
+                        }
+                        var locationDiv = document.createElement('td');
                         locationDiv.innerHTML = userExpenses[k].fields.d_location;
                         var timeDiv = document.createElement('td');
                         //change time to date and hours
