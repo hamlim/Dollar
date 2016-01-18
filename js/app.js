@@ -230,8 +230,10 @@ $(document).ready(function(){
                     notie.alert(1, 'Success!', 1.5);
                     //now we want to append that to the transaction section
                     //pastTransactions is the parent element
-                    var last = pastTransactions.lastChild;
-                    last.parentNode.removeChild(last);
+                    if(userExpenses.length > 10){
+                        var last = pastTransactions.lastChild;
+                        last.parentNode.removeChild(last);
+                    }
                     //now prepend a new tr
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
