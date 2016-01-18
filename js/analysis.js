@@ -38,6 +38,7 @@ $(document).ready(function(){
         var totalAMT = 0;
         //handle loading in all current transactions
         if(localStorage.getItem('userExpenses') != ""){
+            console.log("localStorage");
             var userExpenses = JSON.parse(localStorage.getItem('userExpenses'));
             for(var i=0; i<userExpenses.length; i++){
                 var linkTD = document.createElement('td');
@@ -160,6 +161,7 @@ $(document).ready(function(){
             foodPCT.innerHTML = calcs.food.toFixed(2) + "%";
             otherPCT.innerHTML = calcs.other.toFixed(2) + "%";
         } else {
+            console.log("No localStorage");
             //handle loading in all current transactions
             var getSettings = {
                 "async": true,
