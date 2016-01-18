@@ -43,60 +43,60 @@ $(document).ready(function(){
                 console.log(userExpenses);
                 for(var k=0; k<userExpenses.length; k++){
 
-                    //if it is the last element make a special case to change the class of the row (for easy removal)
-                    if(k === userExpenses.length -1){
-                        var divRow = document.createElement('tr');
-                        divRow.setAttribute('id', 'last-element');
-                        divRow.setAttribute('class', 'expense-row');
-                        var amountDiv = document.createElement('td');
-                        var linkTD = document.createElement('td');
-                        linkTD.innerHTML = "Click for info!";
-                        linkTD.className = "expense-info";
-                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                        var locationDiv = document.createElement('td');
-                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
-                        var timeDiv = document.createElement('td');
-                        //change time to date and hours
-                        var converted = moment(userExpenses[k].fields.d_time);
-                        var readable = converted._d;
-                        timeDiv.innerHTML = readable;
-                        var categoryDiv = document.createElement('td');
-                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                        var uniqueID = userExpenses[k].id;
-                        divRow.setAttribute('data-expense-id', uniqueID);
-                        divRow.appendChild(linkTD);
-                        divRow.appendChild(timeDiv);
-                        divRow.appendChild(amountDiv);
-                        divRow.appendChild(locationDiv);
-                        divRow.appendChild(categoryDiv);
-                        pastTransactions.appendChild(divRow);
-                    } else {
-                        //now we want to write this data to the page
-                        var divRow = document.createElement('tr');
-                        var amountDiv = document.createElement('td');
-                        var linkTD = document.createElement('td');
-                        linkTD.innerHTML = "Click for info!";
-                        linkTD.className = "expense-info";
-                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
-                        var locationDiv = document.createElement('td');
-                        locationDiv.innerHTML = userExpenses[k].fields.d_location;
-                        var timeDiv = document.createElement('td');
-                        //change time to date and hours
-                        var converted = moment(userExpenses[k].fields.d_time);
-                        var readable = converted._d;
-                        timeDiv.innerHTML = readable;
-                        var categoryDiv = document.createElement('td');
-                        categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                        divRow.appendChild(linkTD);
-                        divRow.appendChild(timeDiv);
-                        divRow.appendChild(amountDiv);
-                        divRow.appendChild(locationDiv);
-                        divRow.appendChild(categoryDiv);
-                        divRow.setAttribute('class', 'expense-row');
-                        var uniqueID = userExpenses[k].id;
-                        divRow.setAttribute('data-expense-id', uniqueID);
-                        pastTransactions.appendChild(divRow);
-                    }
+                    // //if it is the last element make a special case to change the class of the row (for easy removal)
+                    // if(k === userExpenses.length -1){
+                    //     var divRow = document.createElement('tr');
+                    //     divRow.setAttribute('id', 'last-element');
+                    //     divRow.setAttribute('class', 'expense-row');
+                    //     var amountDiv = document.createElement('td');
+                    //     var linkTD = document.createElement('td');
+                    //     linkTD.innerHTML = "Click for info!";
+                    //     linkTD.className = "expense-info";
+                    //     amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                    //     var locationDiv = document.createElement('td');
+                    //     locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                    //     var timeDiv = document.createElement('td');
+                    //     //change time to date and hours
+                    //     var converted = moment(userExpenses[k].fields.d_time);
+                    //     var readable = converted.format("Do-MMM-YYYY");
+                    //     timeDiv.innerHTML = readable;
+                    //     var categoryDiv = document.createElement('td');
+                    //     categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                    //     var uniqueID = userExpenses[k].id;
+                    //     divRow.setAttribute('data-expense-id', uniqueID);
+                    //     divRow.appendChild(linkTD);
+                    //     divRow.appendChild(timeDiv);
+                    //     divRow.appendChild(amountDiv);
+                    //     divRow.appendChild(locationDiv);
+                    //     divRow.appendChild(categoryDiv);
+                    //     pastTransactions.appendChild(divRow);
+                    // } else {
+                    //now we want to write this data to the page
+                    var divRow = document.createElement('tr');
+                    var amountDiv = document.createElement('td');
+                    var linkTD = document.createElement('td');
+                    linkTD.innerHTML = "Click for info!";
+                    linkTD.className = "expense-info";
+                    amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount;
+                    var locationDiv = document.createElement('td');
+                    locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                    var timeDiv = document.createElement('td');
+                    //change time to date and hours
+                    var converted = moment(userExpenses[k].fields.d_time);
+                    var readable = converted.format("Do-MMM-YYYY");
+                    timeDiv.innerHTML = readable;
+                    var categoryDiv = document.createElement('td');
+                    categoryDiv.innerHTML = userExpenses[k].fields.d_category;
+                    divRow.appendChild(linkTD);
+                    divRow.appendChild(timeDiv);
+                    divRow.appendChild(amountDiv);
+                    divRow.appendChild(locationDiv);
+                    divRow.appendChild(categoryDiv);
+                    divRow.setAttribute('class', 'expense-row');
+                    var uniqueID = userExpenses[k].id;
+                    divRow.setAttribute('data-expense-id', uniqueID);
+                    pastTransactions.appendChild(divRow);
+                    // }
                 }
             } else {
                 for(var k=0; k<10; k++){
@@ -115,7 +115,7 @@ $(document).ready(function(){
                         var timeDiv = document.createElement('td');
                         //change time to date and hours
                         var converted = moment(userExpenses[k].fields.d_time);
-                        var readable = converted._d;
+                        var readable = converted.format("Do-MMM-YYYY");
                         timeDiv.innerHTML = readable;
                         var categoryDiv = document.createElement('td');
                         categoryDiv.innerHTML = userExpenses[k].fields.d_category;
@@ -140,7 +140,7 @@ $(document).ready(function(){
                         var timeDiv = document.createElement('td');
                         //change time to date and hours
                         var converted = moment(userExpenses[k].fields.d_time);
-                        var readable = converted._d;
+                        var readable = converted.format("Do-MMM-YYYY");
                         timeDiv.innerHTML = readable;
                         var categoryDiv = document.createElement('td');
                         categoryDiv.innerHTML = userExpenses[k].fields.d_category;
@@ -163,7 +163,7 @@ $(document).ready(function(){
                 for(var j=0; j<userExpenses.length; j++){
                     if(userExpenses[j].id === uniqueRowID){
                         var converted = moment(userExpenses[j].fields.d_time);
-                        var readable = converted._d;
+                        var readable = converted.format("Do-MMM-YYYY");
                         vex.dialog.alert({
                             message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[j].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[j].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+userExpenses[j].fields.d_notes+'</li></ul></ul>'
                         });
@@ -247,7 +247,7 @@ $(document).ready(function(){
                     var timeDiv = document.createElement('td');
                     //change time to date and hours
                     var converted = moment(transactionTime);
-                    var readable = converted._d;
+                    var readable = converted.format("Do-MMM-YYYY");
                     timeDiv.innerHTML = readable;
                     var categoryDiv = document.createElement('td');
                     categoryDiv.innerHTML = type;
@@ -263,7 +263,7 @@ $(document).ready(function(){
                         for(var k=0; k<userExpenses.length; k++){
                             if(userExpenses[k].id === uniqueRowID){
                                 var converted = moment(userExpenses[k].fields.d_time);
-                                var readable = converted._d;
+                                var readable = converted.format("Do-MMM-YYYY");
                                 vex.dialog.alert({
                                     message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li>'+userExpenses[k].fields.d_notes+'</li></ul></ul>'
                                 });
