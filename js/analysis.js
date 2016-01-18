@@ -138,15 +138,27 @@ $(document).ready(function(){
             foodElem.innerHTML = "$" + amounts.food.toFixed(2);
             otherElem.innerHTML = "$" + amounts.other.toFixed(2);
 
-            personalPCT.innerHTML = (amounts.personal/totalAMT).toFixed(2) + "%";
-            homePCT.innerHTML = (amounts.home/totalAMT).toFixed(2) + "%";
-            healthPCT.innerHTML = (amounts.health/totalAMT).toFixed(2) + "%";
-            giftsPCT.innerHTML = (amounts.gifts/totalAMT).toFixed(2) + "%";
-            travelPCT.innerHTML = (amounts.travel/totalAMT).toFixed(2) + "%";
-            transportationPCT.innerHTML = (amounts.transportation/totalAMT).toFixed(2) + "%";
-            utilitiesPCT.innerHTML = (amounts.utilities/totalAMT).toFixed(2) + "%";
-            foodPCT.innerHTML = (amounts.food/totalAMT).toFixed(2) + "%";
-            otherPCT.innerHTML = (amounts.other/totalAMT).toFixed(2) + "%";
+            var calcs = {
+                "personal": (amounts.personal/totalAMT)*100,
+                "home": (amounts.home/totalAMT)*100,
+                "health": (amounts.health/totalAMT)*100,
+                "gifts": (amounts.health/totalAMT)*100,
+                "travel": (amounts.health/totalAMT)*100,
+                "transportation": (amounts.health/totalAMT)*100,
+                "utilities": (amounts.health/totalAMT)*100,
+                "food": (amounts.health/totalAMT)*100,
+                "other": (amounts.health/totalAMT)*100,
+            }
+            console.log(calcs);
+            personalPCT.innerHTML = calcs.personal.toFixed(2) + "%";
+            homePCT.innerHTML = calcs.home.toFixed(2) + "%";
+            healthPCT.innerHTML = calcs.health.toFixed(2) + "%";
+            giftsPCT.innerHTML = calcs.gifts.toFixed(2) + "%";
+            travelPCT.innerHTML = calcs.travel.toFixed(2) + "%";
+            transportationPCT.innerHTML = calcs.transportation.toFixed(2) + "%";
+            utilitiesPCT.innerHTML = calcs.utilities.toFixed(2) + "%";
+            foodPCT.innerHTML = calcs.food.toFixed(2) + "%";
+            otherPCT.innerHTML = calcs.other.toFixed(2) + "%";
         } else {
             //handle loading in all current transactions
             var getSettings = {
