@@ -120,7 +120,7 @@ $(document).ready(function(){
                         var converted = moment(userExpenses[k].fields.d_time);
                         var readable = converted._d;
                         vex.dialog.alert({
-                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li class="code">'+marked(userExpenses[k].fields.d_notes)+'</li></ul></ul>'
+                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div></li></ul></ul>'
                         });
                     }
                 }
@@ -261,7 +261,7 @@ $(document).ready(function(){
                             var converted = moment(userExpenses[k].fields.d_time);
                             var readable = converted._d;
                             vex.dialog.alert({
-                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li class="code">'+marked(userExpenses[k].fields.d_notes)+'</li></ul></ul>'
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><ul><li><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div></li></ul></ul>'
                             });
                         }
                     }
