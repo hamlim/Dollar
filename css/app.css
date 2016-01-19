@@ -4,3 +4,8 @@
 .currency {
     color: #66A96B !important;
 }
+.code {
+    background-color: #DDDDDD;
+    color: black;
+    border-radius: 4px; 
+}
