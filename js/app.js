@@ -40,8 +40,67 @@ $(document).ready(function(){
             var userExpensesString = JSON.stringify(userExpenses);
             localStorage.setItem('userExpenses', userExpensesString);
             //ok so we have some transactions in the userExpenses array
+            var locations = [];
+            for(var j=0; j<userExpenses.length; j++){
+                locations.push(userExpenses[j].fields.d_location);
+            }
+            console.log(locations);
+            //for bloodhound
+            // var states = new Bloodhound({
+            //     datumTokenizer: Bloodhound.tokenizers.whitespace,
+            //     queryTokenizer: Bloodhound.tokenizers.whitespace,
+            //     local: locations
+            // });
+            //
+            // $('#bloodhound .typeahead').typeahead({
+            //     hint: true,
+            //     highlight: true,
+            //     minLength: 1
+            // },
+            // {
+            //     name: 'locations',
+            //     source: states
+            // });
+
+            //for basic typeahead
+            var substringMatcher = function(strs) {
+                return function findMatches(q, cb) {
+                    var matches, substringRegex;
+
+                    // an array that will be populated with substring matches
+                    matches = [];
+
+                    // regex used to determine if a string contains the substring `q`
+                    substrRegex = new RegExp(q, 'i');
+
+                    // iterate through the pool of strings and for any string that
+                    // contains the substring `q`, add it to the `matches` array
+                    $.each(strs, function(i, str) {
+                        if (substrRegex.test(str)) {
+                            matches.push(str);
+                        }
+                    });
+
+                    cb(matches);
+                };
+            };
+
+
+            $('#bloodhound .typeahead').typeahead({
+              hint: false,
+              highlight: false,
+              minLength: 1
+            },
+            {
+              name: 'locations',
+              source: substringMatcher(locations)
+            });
+            // $('#bloodhound *').attr('style', '');
+            // $('#bloodhound span pre').css({'display': "none"});
             if(userExpenses.length < 10){
                 console.log(userExpenses);
+                //typeahead
+
                 for(var k=0; k<userExpenses.length; k++){
                     //now we want to write this data to the page
                     var divRow = document.createElement('tr');
