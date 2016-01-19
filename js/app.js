@@ -15,6 +15,7 @@ $(document).ready(function(){
           submitBtn = document.getElementById('submit-btn'),
           userExpenses = [],
           notes = document.getElementById('transactionNotes'),
+          usertime = document.getElementById('transactionUserTime'),
           pastTransactions = document.getElementById('past-transactions');
         //we want to get all the transactions that match that userID
         var getSettings = {
@@ -163,15 +164,29 @@ $(document).ready(function(){
             if(amount.value != "" && loc.value != ""){
                 //ok everything has been updated
                 //we want to get the values from each input
-                var time = new Date();
-                //desired format: Month day-number, year
-                var mon = time.getMonth() + 1;
-                var month = mon.toString();
-                var day = time.getDate().toString();
-                var year = time.getFullYear().toString();
-                var hours = time.getHours().toString();
-                var minutes = time.getMinutes().toString();
-                var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
+                //transactionUserTime
+                if(usertime.value === ""){
+                    var time = new Date();
+                    //desired format: Month day-number, year
+                    var mon = time.getMonth() + 1;
+                    var month = mon.toString();
+                    var day = time.getDate().toString();
+                    var year = time.getFullYear().toString();
+                    var hours = time.getHours().toString();
+                    var minutes = time.getMinutes().toString();
+                    var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
+                } else {
+                    var transactionTime = usertime.value;
+                }
+                // var time = new Date();
+                // //desired format: Month day-number, year
+                // var mon = time.getMonth() + 1;
+                // var month = mon.toString();
+                // var day = time.getDate().toString();
+                // var year = time.getFullYear().toString();
+                // var hours = time.getHours().toString();
+                // var minutes = time.getMinutes().toString();
+                // var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 var amt = amount.value, locv = loc.value, type = category.value, note = notes.value;
                 var data = {
                     "d_amount": parseFloat(amt),
@@ -208,6 +223,7 @@ $(document).ready(function(){
                     loc.value = "";
                     category.value = "Other";
                     notes.value = "";
+                    usertime.value = "";
                     // we want to add the response to the rendered transactions
                     notie.alert(1, 'Success!', 1.5);
                     //now we want to append that to the transaction section
