@@ -68,6 +68,7 @@
 		<!--
 			Js for Analysis
 	 	-->
+		<script src="./js/chart/chart.js"></script>
 		<script src="./js/marked/marked.js"></script>
         <script src="./js/analysis.js"></script>
 
@@ -199,7 +200,16 @@
 				</div>
 
 			</section>
-
+			<section id="charts" class="container bottom-spacer">
+				<div class="row">
+					<h3>Chart Breakdown:</h3>
+				</div>
+				<div class="row">
+					<div class="u-max-full-width chart-holder">
+						<canvas id="pieMoneyChart" width="400" height="400"></canvas>
+					</div>
+				</div>
+			</section>
 			<section class="container bottom-spacer">
 				<div class="row">
 					<h1>All Transactions: </h1>

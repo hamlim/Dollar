@@ -160,6 +160,73 @@ $(document).ready(function(){
             utilitiesPCT.innerHTML = calcs.utilities.toFixed(2) + "%";
             foodPCT.innerHTML = calcs.food.toFixed(2) + "%";
             otherPCT.innerHTML = calcs.other.toFixed(2) + "%";
+
+            // Charts
+            //Pie Chart Money
+            var ctx = document.getElementById("pieMoneyChart").getContext("2d");
+            var data = [
+                {
+                    value: amounts.personal,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Personal"
+                },
+                {
+                    value: amounts.home,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Home"
+                },
+                {
+                    value: amounts.health,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Health"
+                },
+                {
+                    value: amounts.gifts,
+                    color: "#79A8A9",
+                    highlight: "#AACFD0",
+                    label: "Gifts"
+                },
+                {
+                    value: amounts.travel,
+                    color: "#C768FF",
+                    highlight: "#FFADED",
+                    label: "Travel"
+                },
+                {
+                    value: amounts.transportation,
+                    color: "#3A4750",
+                    highlight: "#303841",
+                    label: "Transportation"
+                },
+                {
+                    value: amounts.utilities,
+                    color: "#FF9999",
+                    highlight: "#FFC8C8",
+                    label: "Utilities"
+                },
+                {
+                    value: amounts.food,
+                    color: "#444036",
+                    highlight: "#686354",
+                    label: "Food"
+                },
+                {
+                    value: amounts.other,
+                    color: "#3B5F41",
+                    highlight: "#66A96B",
+                    label: "Other"
+                }
+            ];
+
+
+            var myDoughnutChart = new Chart(ctx).Doughnut(data,{
+                animateRotate: true
+            });
+
+
         } else {
             console.log("No localStorage");
             //handle loading in all current transactions
