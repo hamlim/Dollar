@@ -236,24 +236,12 @@ $(document).ready(function(){
                     var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 } else {
                     var dateSbmt = usertime.value;
-                    // var mon = dateSbmt.getMonth() + 1;
-                    // var month = mon.toString();
-                    // var day = dateSbmt.getDate().toString();
-                    // var year = dateSbmt.getFullYear().toString();
+                    //TODO: Fix date problem by appending hours and minutes / or / converting date object to same format above YYYY-MM-DD-HH-MM
                     var currenttime = new Date();
                     var hours = currenttime.getHours().toString();
                     var minutes = currenttime.getMinutes().toString();
                     var transactionTime = dateSbmt;
                 }
-                // var time = new Date();
-                // //desired format: Month day-number, year
-                // var mon = time.getMonth() + 1;
-                // var month = mon.toString();
-                // var day = time.getDate().toString();
-                // var year = time.getFullYear().toString();
-                // var hours = time.getHours().toString();
-                // var minutes = time.getMinutes().toString();
-                // var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 var amt = amount.value, locv = loc.value, type = category.value, note = notes.value;
                 var data = {
                     "d_amount": parseFloat(amt),
