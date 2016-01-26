@@ -243,7 +243,7 @@ $(document).ready(function(){
                     var currenttime = new Date();
                     var hours = currenttime.getHours().toString();
                     var minutes = currenttime.getMinutes().toString();
-                    var transactionTime = dateSbmt+"-"+hours+":"+minutes;
+                    var transactionTime = dateSbmt;
                 }
                 // var time = new Date();
                 // //desired format: Month day-number, year
