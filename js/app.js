@@ -235,7 +235,15 @@ $(document).ready(function(){
                     var minutes = time.getMinutes().toString();
                     var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 } else {
-                    var transactionTime = usertime.value;
+                    var dateSbmt = usertime.value;
+                    var mon = dateSbmt.getMonth() + 1;
+                    var month = mon.toString();
+                    var day = dateSbmt.getDate().toString();
+                    var year = dateSbmt.getFullYear().toString();
+                    var currenttime = new Date();
+                    var hours = currenttime.getHours().toString();
+                    var minutes = currenttime.getMinutes().toString();
+                    var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 }
                 // var time = new Date();
                 // //desired format: Month day-number, year
