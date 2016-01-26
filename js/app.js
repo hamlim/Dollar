@@ -106,7 +106,7 @@ $(document).ready(function(){
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
                     var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Click for info!";
+                    linkTD.innerHTML = "Info!";
                     linkTD.className = "expense-info";
                     if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                         amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
@@ -141,7 +141,7 @@ $(document).ready(function(){
                         divRow.setAttribute('class', 'expense-row');
                         var amountDiv = document.createElement('td');
                         var linkTD = document.createElement('td');
-                        linkTD.innerHTML = "Click for info!";
+                        linkTD.innerHTML = "Info!";
                         linkTD.className = "expense-info";
                         if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
@@ -170,7 +170,7 @@ $(document).ready(function(){
                         var divRow = document.createElement('tr');
                         var amountDiv = document.createElement('td');
                         var linkTD = document.createElement('td');
-                        linkTD.innerHTML = "Click for info!";
+                        linkTD.innerHTML = "Info!";
                         linkTD.className = "expense-info";
                         if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
