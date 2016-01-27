@@ -237,10 +237,12 @@ $(document).ready(function(){
                 } else {
                     var dateSbmt = usertime.value;
                     //TODO: Fix date problem by appending hours and minutes / or / converting date object to same format above YYYY-MM-DD-HH-MM
+                    //I have moment.js
+                    var userinputtime = moment(dateSbmt);
                     var currenttime = new Date();
                     var hours = currenttime.getHours().toString();
                     var minutes = currenttime.getMinutes().toString();
-                    var transactionTime = dateSbmt;
+                    var transactionTime = moment(dateSbmt).format("YYYY-MM-DDThh:mm");
                 }
                 var amt = amount.value, locv = loc.value, type = category.value, note = notes.value;
                 var data = {
