@@ -89,6 +89,9 @@
 							<a href="./analysis.html">
 								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
 							</a>
+							<a href="./account.html">
+								<i class="emoji navmoji" id="account">:gear:</i>
+							</a>
 							</span>
 						</div>
 					</section>
@@ -105,6 +108,20 @@
 							<div class="row">
 								<label class="one-half column" for="amountField">Expense Amount: </label>
 	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
+							</div>
+							<div class="row">
+								<label class="one-half column" for="tagField">Account Tag:</label>
+								<select class="one-half column" id="transactionTag">
+									<option id="optone">
+										Credit Card
+									</option>
+									<option id="opttwo">
+										Debit Card
+									</option>
+									<option id="optthree">
+										Savings
+									</option>
+								</select>
 							</div>
 							<div class="row" id="bloodhound">
 								<label class="one-half column" for="transactionLocation">Expense Location: </label>
@@ -174,6 +191,9 @@
 					      	<th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
 					      	<th><span><i class="emoji small">:map:</i> Location:</span></th>
 					      	<th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
+							<th>
+								<span><i class="emoji small">:hash:</i> Tag:</span>
+							</th>
 					    </tr>
 					  </thead>
 					  <tbody id="past-transactions">
@@ -186,7 +206,7 @@
 	            <section class="container">
 	                <div class="row">
 	                    <div class="one-half column offset-by-three columns center-text">
-	                        <h5 class="footer-text">Made with <i class="emoji small">:hearts:</i> and <i class="emoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5>
+	                        <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5>
 	                    </div>
 	                </div>
 	            </section>

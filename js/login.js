@@ -39,7 +39,8 @@ $(document).ready(function(){
                                 "fullname": user.fields.u_fullname,
                                 "email": user.fields.u_email,
                                 "userID": user.fields.u_userID,
-                                "save": true
+                                "save": true,
+                                "tags": user.fields.u_tags
                             };
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
@@ -50,7 +51,8 @@ $(document).ready(function(){
                                 "fullname": user.fields.u_fullname,
                                 "email": user.fields.u_email,
                                 "userID": user.fields.u_userID,
-                                "save": false
+                                "save": false,
+                                "tags": user.fields.u_tags
                             }; //save will determine if we save the local storage or not
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);

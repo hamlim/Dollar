@@ -42,6 +42,8 @@ $(document).ready(function(){
             var userExpenses = JSON.parse(localStorage.getItem('userExpenses'));
             for(var i=0; i<userExpenses.length; i++){
                 var linkTD = document.createElement('td');
+                var tagTD = document.createElement('td'); //TAGS
+                tagTD.innerHTML = userExpenses[i].fields.d_tag; //TAGS
                 linkTD.innerHTML = "Click for info!";
                 linkTD.className = "expense-info";
                 //render all transactions
@@ -65,6 +67,7 @@ $(document).ready(function(){
                 divRow.appendChild(amountDiv);
                 divRow.appendChild(locationDiv);
                 divRow.appendChild(categoryDiv);
+                divRow.appendChild(tagTD); //TAGS
                 pastTransactions.appendChild(divRow);
                 //analytics
                 //totals
@@ -120,7 +123,7 @@ $(document).ready(function(){
                         var converted = moment(userExpenses[k].fields.d_time);
                         var readable = converted._d;
                         vex.dialog.alert({
-                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[j].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                         });
                     }
                 }
@@ -252,6 +255,7 @@ $(document).ready(function(){
                     var linkTD = document.createElement('td');
                     linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
+                    var tagTD = document.createElement('td');
                     //render all transactions
                     var divRow = document.createElement('tr');
                     divRow.appendChild(linkTD);
@@ -269,10 +273,12 @@ $(document).ready(function(){
                     timeDiv.innerHTML = readable;
                     var categoryDiv = document.createElement('td');
                     categoryDiv.innerHTML = userExpenses[i].fields.d_category;
+                    tagTD.innerHTML = userExpenses[i].fields.d_tag;
                     divRow.appendChild(timeDiv);
                     divRow.appendChild(amountDiv);
                     divRow.appendChild(locationDiv);
                     divRow.appendChild(categoryDiv);
+                    divRow.appendChild(tagTD);
                     pastTransactions.appendChild(divRow);
                     //analytics
                     //totals
@@ -328,7 +334,7 @@ $(document).ready(function(){
                             var converted = moment(userExpenses[k].fields.d_time);
                             var readable = converted._d;
                             vex.dialog.alert({
-                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[j].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                             });
                         }
                     }
