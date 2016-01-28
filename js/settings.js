@@ -5,6 +5,7 @@ $(document).ready(function(){
     } else {
         //user object
         var user = JSON.parse(localStorage.getItem('user'));
+        var userKey = user.userKey;
         var username = user.username;
         //relavent elements
         var userGreeting = document.getElementById('username-heading');
@@ -23,7 +24,62 @@ $(document).ready(function(){
                     userGreeting.innerHTML = newUName;
                     user.username = newUName;
                     //now we need to update the server
-                    
+                    var data = {
+                        "u_username": newUName
+                    };
+                    var packageData = {
+                        "fields": data
+                    };
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
+                        "method": "PATCH",
+                        "headers": {
+                            "authorization": "Bearer keyIye3zskPSBMQ6Q",
+                            "content-type": "application/json"
+                        },
+                        "processData": false,
+                        "data": packageData
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        console.log(response);
+                        notie.alert(1, "Successfully changed your username!", 3);
+                    });
+                } else {
+                    //don't worry about changing
+                }
+            } else {
+                //they didn't enter anything so we don't want to change their username
+            }
+            if(newPass != ""){
+                if(newPass.length > 4){
+                    var data = {
+                        "u_password": newPass
+                    };
+                    var packageData = {
+                        "fields": data
+                    };
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
+                        "method": "PATCH",
+                        "headers": {
+                            "authorization": "Bearer keyIye3zskPSBMQ6Q",
+                            "content-type": "application/json"
+                        },
+                        "processData": false,
+                        "data": packageData
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        console.log(response);
+                        notie.alert(1, "Successfully changed your password!", 3);
+                    });
+                } else {
+                    notie.alert(3, "Your new password needs to be longer than 4 characters.", 5);
                 }
             }
         }
