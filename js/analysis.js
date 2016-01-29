@@ -44,7 +44,7 @@ $(document).ready(function(){
                 var linkTD = document.createElement('td');
                 var tagTD = document.createElement('td'); //TAGS
                 tagTD.innerHTML = userExpenses[i].fields.d_tag; //TAGS
-                linkTD.innerHTML = "Click for info!";
+                linkTD.innerHTML = "Info!";
                 linkTD.className = "expense-info";
                 //render all transactions
                 var divRow = document.createElement('tr');
@@ -253,7 +253,7 @@ $(document).ready(function(){
                 }
                 for(var i=0; i<userExpenses.length; i++){
                     var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Click for info!";
+                    linkTD.innerHTML = "Info!";
                     linkTD.className = "expense-info";
                     var tagTD = document.createElement('td');
                     //render all transactions
