@@ -91,3 +91,15 @@ a.special-green:hover{
         display: inline-block;
     }
 }
+
+.text-center {
+    text-align: center;
+}
+.business-price {
+    /*background-color: #66A96B;*/
+    border-radius: 30px;
+    padding-top: 15px;
+}
+.individual-price {
+    padding-top: 15px;
+}
