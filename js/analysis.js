@@ -1,5 +1,8 @@
 $(document).ready(function(){
     //dom is loaded
+    console.log("*--------------------------------------------*");
+    console.log("Begin analysis.js");
+    console.log("*--------------------------------------------*");
     if(localStorage.length = 0) {
         window.location.href = "./login.html";
     } else {
@@ -53,7 +56,16 @@ $(document).ready(function(){
                 var uniqueID = userExpenses[i].id;
                 divRow.setAttribute('data-expense-id', uniqueID);
                 var amountDiv = document.createElement('td');
-                amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
+                if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
+                    amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString();
+                } else {
+                    if(userExpenses[i].fields.d_amount.toString().split('.').length === 2){
+                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".0";
+                    } else {
+                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".00";
+                    }
+                }
+                // amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = userExpenses[i].fields.d_location;
                 var timeDiv = document.createElement('td');
@@ -263,7 +275,15 @@ $(document).ready(function(){
                     var uniqueID = userExpenses[i].id;
                     divRow.setAttribute('data-expense-id', uniqueID);
                     var amountDiv = document.createElement('td');
-                    amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
+                    if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
+                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString();
+                    } else {
+                        if(userExpenses[i].fields.d_amount.toString().split('.').length === 2){
+                            amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".0";
+                        } else {
+                            amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".00";
+                        }
+                    }
                     var locationDiv = document.createElement('td');
                     locationDiv.innerHTML = userExpenses[i].fields.d_location;
                     var timeDiv = document.createElement('td');
@@ -376,4 +396,9 @@ $(document).ready(function(){
             });
         }
     }
+
+    console.log("*--------------------------------------------*");
+    console.log("End analysis.js");
+    console.log("*--------------------------------------------*");
+    console.log("- - - - - - - - - - - - - - - - - - - - - - - ");
 })

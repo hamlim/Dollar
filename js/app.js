@@ -1,5 +1,8 @@
 $(document).ready(function(){
     //ok we are on page load of app.html
+    console.log("*--------------------------------------------*");
+    console.log("Begin app.js");
+    console.log("*--------------------------------------------*");
     if(localStorage.length = 0){
         //redirect to login
         window.Location.href = "./login.html";
@@ -119,10 +122,14 @@ $(document).ready(function(){
                     var linkTD = document.createElement('td');
                     linkTD.innerHTML = "Info";
                     linkTD.className = "expense-info";
-                    if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
+                    if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
                         amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
                     } else {
-                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
+                        if(userExpenses[k].fields.d_amount.toString().split('.').length === 2){
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".0";
+                        } else {
+                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
+                        }
                     }
                     tagTD.innerHTML = userExpenses[k].fields.d_tag; //TAGS
                     var locationDiv = document.createElement('td');
@@ -365,4 +372,9 @@ $(document).ready(function(){
 
         };
     }
+
+    console.log("*--------------------------------------------*");
+    console.log("End app.js");
+    console.log("*--------------------------------------------*");
+    console.log("- - - - - - - - - - - - - - - - - - - - - - - ");
 });

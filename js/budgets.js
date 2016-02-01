@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    console.log("*--------------------------------------------*");
+    console.log("Begin budgets.js");
+    console.log("*--------------------------------------------*");
     if(localStorage.length === 0){
         window.location.href = "./login.html";
     } else {
@@ -161,5 +164,10 @@ $(document).ready(function(){
         //end function getBudget(userID, dbname)
         getBudget(user.userID, db_name);
     }
+
+    console.log("*--------------------------------------------*");
+    console.log("End budgets.js");
+    console.log("*--------------------------------------------*");
+    console.log("- - - - - - - - - - - - - - - - - - - - - - - ");
 
 });
