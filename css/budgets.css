@@ -1,0 +1,21 @@
+.flex-parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.flex-item {
+    /*display: inline-flex;*/
+    /*min-width: 11em;*/
+    /*margin-right: 15px;
+    margin-left: 15px;*/
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.header-cell {
+    border-bottom: solid black 3px;
+    width: 100%;
+}
