@@ -104,16 +104,14 @@ $(document).ready(function(){
                                 "other": currentBudget.fields.other
                             };
                             //relevant Variables
-                            var currentRow = document.createElement('tr');
-                            var currTableCellPersonal = document.createElement('td');
-                            var currTableCellTravel = document.createElement('td');
-                            var currTableCellHome = document.createElement('td');
-                            var currTableCellHealth = document.createElement('td');
-                            var currTableCellTransportation = document.createElement('td');
-                            var currTableCellGifts = document.createElement('td');
-                            var currTableCellUtilities = document.createElement('td');
-                            var currTableCellFood = document.createElement('td');
-                            var currTableCellOther = document.createElement('td');
+                            //need to get all the categories and all the body cells for each category
+                            var personal_BV = document.getElementById('personal-b-v');
+                            var personal_SV = document.getElementById('personal-s-v');
+                            var personal_PV = document.getElementById('personal-p-v');
+
+                            var travel_BV = document.getElementById('travel-b-v');
+                            var travel_SV = document.getElementById('travel-b-v');
+                            var travel_PV = document.getElementById('travel-b-v');
                             //this we want to populate with the current totals for the month
                             //all values are in userExpenses
                             var totalsForCurrentMonth = {
