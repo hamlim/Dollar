@@ -20,6 +20,7 @@
 
 		<link rel="stylesheet" href="./css/skeleton.css">
 		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
+        <link rel="stylesheet" href="./css/hint.css">
 		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/app.css">
         <link rel="stylesheet" href="./css/budgets.css">
@@ -109,6 +110,20 @@
 					<h3>Budget for <b id="month-name"></b>:</h3>
 				</div>
                 <div class="flex-parent">
+                    <div class="flex-item">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:heavy_dollar_sign:</i> Value:</span>
+                        </div>
+                        <div class="body-cell">
+                            <b>Budgeted:</b>
+                        </div>
+                        <div class="body-cell">
+                            <b>Spent:</b>
+                        </div>
+                        <div class="body-cell">
+                            <b>Percentage Spent: <span class=" hint--top hint--info" data-hint="Amount spent out of amount budgeted for."></span><i class="fa fa-info-circle"></i></b>
+                        </div>
+                    </div>
                     <div class="flex-item">
                         <div class="header-cell">
                             <span><i class="emoji small">:bust_in_silhouette:</i> Personal:</span>
@@ -265,7 +280,7 @@
 
                         </div>
                         <div class="body-cell">
-                            
+
                         </div>
                     </div>
                     <div class="flex-item">
