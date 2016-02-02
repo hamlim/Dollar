@@ -110,8 +110,36 @@ $(document).ready(function(){
                             var personal_PV = document.getElementById('personal-p-v');
 
                             var travel_BV = document.getElementById('travel-b-v');
-                            var travel_SV = document.getElementById('travel-b-v');
-                            var travel_PV = document.getElementById('travel-b-v');
+                            var travel_SV = document.getElementById('travel-s-v');
+                            var travel_PV = document.getElementById('travel-p-v');
+
+                            var home_BV = document.getElementById('home-b-v');
+                            var home_SV = document.getElementById('home-s-v');
+                            var home_PV = document.getElementById('home-p-v');
+
+                            var health_BV = document.getElementById('health-b-v');
+                            var health_SV = document.getElementById('health-s-v');
+                            var health_PV = document.getElementById('health-p-v');
+
+                            var transportation_BV = document.getElementById('transportation-b-v');
+                            var transportation_SV = document.getElementById('transportation-s-v');
+                            var transportation_PV = document.getElementById('transportation-p-v');
+
+                            var gifts_BV = document.getElementById('gifts-b-v');
+                            var gifts_SV = document.getElementById('gifts-s-v');
+                            var gifts_PV = document.getElementById('gifts-p-v');
+
+                            var utilities_BV = document.getElementById('utilities-b-v');
+                            var utilities_SV = document.getElementById('utilities-s-v');
+                            var utilities_PV = document.getElementById('utilities-p-v');
+
+                            var food_BV = document.getElementById('food-b-v');
+                            var food_SV = document.getElementById('food-s-v');
+                            var food_PV = document.getElementById('food-p-v');
+
+                            var other_BV = document.getElementById('other-b-v');
+                            var other_SV = document.getElementById('other-s-v');
+                            var other_PV = document.getElementById('other-p-v');
                             //this we want to populate with the current totals for the month
                             //all values are in userExpenses
                             var totalsForCurrentMonth = {
