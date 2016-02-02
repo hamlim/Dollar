@@ -143,15 +143,51 @@ $(document).ready(function(){
                             //this we want to populate with the current totals for the month
                             //all values are in userExpenses
                             var totalsForCurrentMonth = {
-                                "personal": 0,
-                                "travel": 0,
-                                "home": 0,
-                                "health": 0,
-                                "transportation": 0,
-                                "gifts": 0,
-                                "utilities": 0,
-                                "food": 0,
-                                "other": 0
+                                "personal": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "travel": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "home": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "health": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "transportation": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "gifts": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "utilities": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "food": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                },
+                                "other": {
+                                    "budget": 0,
+                                    "spent": 0,
+                                    "percentage": 0
+                                }
                             };
                             var expenses = JSON.parse(localStorage.getItem('userExpenses'));
                             for(var j = 0; j<expenses.length; j++){
