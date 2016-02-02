@@ -12,45 +12,58 @@ $(document).ready(function(){
         //we first want to get the month that the person is checking the website
         var dateobj = new Date;
         var month = dateobj.getMonth();
+        var monthName = document.getElementById('month-name');
         var db_name = "";
         if(month === 0){
             //its january, so get the janauray budgets
             //https://api.airtable.com/v0/applYClUOdBXhRzGf/m_jan_budget
             db_name = "m_jan_budget";
+            monthName.innerHTML = "January";
         } else if (month === 1){
             //its February
             //https://api.airtable.com/v0/applYClUOdBXhRzGf/m_feb_budget
             db_name = "m_feb_budget";
+            monthName.innerHTML = "February";
         } else if (month === 2){
             // March
             db_name = "m_mar_budget";
+            monthName.innerHTML = "March";
         } else if (month === 3){
             //April
             db_name = "m_apr_budget";
+            monthName.innerHTML = "April";
         } else if (month === 4){
             //may
             db_name = "m_may_budget";
+            monthName.innerHTML = "May";
         } else if (month === 5){
             //june
             db_name = "m_jun_budget";
+            monthName.innerHTML = "June";
         } else if (month === 6){
             //july
             db_name = "m_jul_budget";
+            monthName.innerHTML = "July";
         } else if (month === 7){
             //August
             db_name = "m_aug_budget";
+            monthName.innerHTML = "August";
         } else if (month === 8){
             //September
             db_name = "m_sep_budget";
+            monthName.innerHTML = "September";
         } else if (month === 9){
             //October
             db_name = "m_oct_budget";
+            monthName.innerHTML = "October";
         } else if (month === 10){
             //November
             db_name = "m_nov_budget";
+            monthName.innerHTML = "November";
         } else if (month === 11){
             //December
             db_name = "m_dec_budget";
+            monthName.innerHTML = "December";
         } else {
             //error
             db_name = "error";
