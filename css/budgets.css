@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: row;
     align-items: stretch;
-    flex-wrap: nowrap;
+    flex-wrap:
 }
 
 .flex-item {
@@ -11,11 +11,15 @@
     /*min-width: 11em;*/
     /*margin-right: 15px;
     margin-left: 15px;*/
-    padding-left: 5px;
-    padding-right: 5px;
+    /*padding-left: 5px;
+    padding-right: 5px;*/
 }
 
 .header-cell {
     border-bottom: solid black 3px;
     width: 100%;
+}
+
+.body-cell {
+    border: 1px #DDDDDD solid;
 }
