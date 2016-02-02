@@ -142,7 +142,7 @@ $(document).ready(function(){
                             var other_PV = document.getElementById('other-p-v');
                             //this we want to populate with the current totals for the month
                             //all values are in userExpenses
-                            var totalsForCurrentMonth = {
+                            var currentState = {
                                 "personal": {
                                     "budget": 0,
                                     "spent": 0,
@@ -197,39 +197,28 @@ $(document).ready(function(){
                                 if(moment(expense.d_time).month() === month){
                                     //we are in the right month, now we want to add the value to the totalsForCurrentMonth obj
                                     if(expense.d_category === "personal"){
-                                        totalsForCurrentMonth.personal += expense.d_amount;
+                                        totalsForCurrentMonth.personal.spent += expense.d_amount;
                                     } else if (expense.d_category === "travel"){
-                                        totalsForCurrentMonth.travel += expense.d_amount;
+                                        totalsForCurrentMonth.travel.spent += expense.d_amount;
                                     } else if (expense.d_category === "home"){
-                                        totalsForCurrentMonth.home += expense.d_amount;
+                                        totalsForCurrentMonth.home.spent += expense.d_amount;
                                     } else if (expense.d_category === "health"){
-                                        totalsForCurrentMonth.health += expense.d_amount;
+                                        totalsForCurrentMonth.health.spent += expense.d_amount;
                                     } else if (expense.d_category === "transportation"){
-                                        totalsForCurrentMonth.transportation += expense.d_amount;
+                                        totalsForCurrentMonth.transportation.spent += expense.d_amount;
                                     } else if (expense.d_category === "gifts"){
-                                        totalsForCurrentMonth.gifts += expense.d_amount;
+                                        totalsForCurrentMonth.gifts.spent += expense.d_amount;
                                     } else if (expense.d_category === "utilities"){
-                                        totalsForCurrentMonth.utilities += expense.d_amount;
-                                    } else if (expense.d_category === "food"){
-                                        totalsForCurrentMonth.food += expense.d_amount;
-                                    } else if (expense.d_category === "other"){
-                                        totalsForCurrentMonth.other += expense.d_amount;
+                                        totalsForCurrentMonth.utilities.spent += expense.d_amount;
+                                    } else if (expense.d_category.spent === "food"){
+                                        totalsForCurrentMonth.food.spent += expense.d_amount;
+                                    } else if (expense.d_category.spent === "other"){
+                                        totalsForCurrentMonth.other.spent += expense.d_amount;
                                     }
                                 }
                             }
                             console.log(totalsForCurrentMonth);
-
-                            var budgetRow = document.createElement('tr');
-                            var tableCellPersonal = document.createElement('td');
-                            var tableCellTravel = document.createElement('td');
-                            var tableCellHome = document.createElement('td');
-                            var tableCellHealth = document.createElement('td');
-                            var tableCellTransportation = document.createElement('td');
-                            var tableCellGifts = document.createElement('td');
-                            var tableCellUtilities = document.createElement('td');
-                            var tableCellFood = document.createElement('td');
-                            var tableCellOther = document.createElement('td');
-                            tableCellPersonal.innerHTML = currentBudgetValues.personal;
+                            //currentBudgetValues
                         }
                     }
                 });
