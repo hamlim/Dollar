@@ -5,6 +5,10 @@
     align-items: stretch;
     flex-wrap:
 }
+/*
+    Maybe on large displays do rows, and on small do columns
+
+*/
 
 .flex-item {
     /*display: inline-flex;*/
