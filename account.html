@@ -12,7 +12,7 @@
 		<meta name="application-name" content="Dollar">
 
 
-		<title>Dollar App</title>
+		<title>Dollar App Settings</title>
 
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -67,10 +67,9 @@
 		<!--
 			Js for App
 	 	-->
-		<script src="./js/moment.js"></script>
-		<script src="./js/typeahead/typeahead.js"></script>
-		<script src="./js/marked/marked.js"></script>
-        <script src="./js/app.js"></script>
+		<!-- <script src="./js/moment.js"></script> -->
+		<!-- <script src="./js/marked/marked.js"></script> -->
+        <script src="./js/settings.js"></script>
 
 	</head>
 	<body>
@@ -83,16 +82,13 @@
 								<i class="emoji navmoji">:dollar:</i>
 							</a>
 							<span>
-							<a href="./app.html" class="selected">
+							<a href="./app.html">
 								<i class="emoji navmoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
 							</a>
 							<a href="./analysis.html">
 								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
 							</a>
-							<a href="./budgets.html">
-                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
-                            </a>
-							<a href="./account.html">
+							<a href="./account.html" class="selected">
 								<i class="emoji navmoji" id="account">:gear:</i>
 							</a>
 							</span>
@@ -101,108 +97,64 @@
 				</nav>
 			</header>
 
-			<section class="container bottom-spacer" id="input">
+			<section class="container bottom-spacer" id="Settings">
 				<div class="row">
-					<h1>Enter a New Expense:</h1>
+					<h1 id="username-heading"></h1>
+                    <h3>Here is where you can change some account settings!</h3>
 				</div>
-                <div id="form" class="">
+                <hr/>
+                <div class="row">
+                    <h5>General Settings:</h5>
                     <form>
                         <fieldset>
-							<div class="row">
-								<label class="one-half column" for="amountField">Expense Amount: </label>
-	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="tagField">Account Tag:</label>
-								<select class="one-half column" id="transactionTag">
-									<option id="optone">
-										Credit Card
-									</option>
-									<option id="opttwo">
-										Debit Card
-									</option>
-									<option id="optthree">
-										Savings
-									</option>
-								</select>
-							</div>
-							<div class="row" id="bloodhound">
-								<label class="one-half column" for="transactionLocation">Expense Location: </label>
-	                            <input class="typeahead one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionType">Type of Expense: </label>
-								<select class="one-half column" id="transactionType" required>
-									<option>
-										Other
-									</option>
-									<option selected>
-										Personal
-									</option>
-									<option>
-										Food
-									</option>
-									<option>
-										Health
-									</option>
-									<option>
-										Home
-									</option>
-									<option>
-										Gifts
-									</option>
-									<option>
-										Transportation
-									</option>
-									<option>
-										Utilities
-									</option>
-									<option>
-										Travel
-									</option>
-								</select>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionNotes">Expense Notes: (optional)</label>
-								<textarea class="one-half column" placeholder="A quick stop to the grocery store for ... (supports markdown!)" id="transactionNotes"></textarea>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionUserTime">Expense Date: (optional)</label>
-								<input type="date" class="one-half column" id="transactionUserTime">
-							</div>
+                            <div class="row">
+                                <label for="password-reset" class="one-half column">Change Password: </label>
+                                <input type="password" class="one-half column" id="password-reset">
+                            </div>
+                            <div class="row">
+                                <label for="username-reset" class="one-half column">Change Username: </label>
+                                <input type="text" class="one-half column" id="username-reset">
+                            </div>
+                            <div class="row">
+
+                            </div>
                         </fieldset>
                     </form>
-					<div class="row">
-						<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
+                    <div class="row">
+						<button id="account-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
 					</div>
                 </div>
-			</section>
+                <hr/>
+                <div class="row">
+                    <h5>Application Settings: </h5>
+                    <form>
+                        <fieldset>
+                            <div class="row">
+                                <h6>Tags: </h6>
+                                <p>
+                                    Tags are easy ways to differentiate purchases under different bank accounts or cards.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <label for="tag-option-one" class="one-half column">Tag One:</label>
+                                <input type="text" class="one-half column" id="tag-option-one">
+                            </div>
+                            <div class="row">
+                                <label for="tag-option-two" class="one-half column">Tag Two:</label>
+                                <input type="text" class="one-half column" id="tag-option-two">
+                            </div>
+                            <div class="row">
+                                <label for="tag-option-three" class="one-half column">Tag Three:</label>
+                                <input type="text" class="one-half column" id="tag-option-three">
+                            </div>
 
-			<section class="container bottom-spacer">
-				<div class="row">
-					<h1>Ten most recent transactions: </h1>
-				</div>
-				<div class="overflow-container">
+                        </fieldset>
+                    </form>
+                    <div class="row">
+						<button id="app-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
+					</div>
+                </div>
 
-					<table class="u-full-width">
-					  <thead>
-					    <tr>
-							<th>
-								<span><i class="emoji small">:information_source:</i> Info:</span>
-							</th>
-					      	<th><span><i class="emoji small">:clock4:</i> Time:</span></th>
-					      	<th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
-					      	<th><span><i class="emoji small">:map:</i> Location:</span></th>
-					      	<th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
-							<th>
-								<span><i class="emoji small">:hash:</i> Tag:</span>
-							</th>
-					    </tr>
-					  </thead>
-					  <tbody id="past-transactions">
-					  </tbody>
-					</table>
-				</div>
 			</section>
 
 			<footer class="footer">

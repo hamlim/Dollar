@@ -55,6 +55,16 @@
   border-bottom: 1px solid #ddd;
 }
 
+/* pricing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.pricing {
+    /*background-image: linear-gradient(-90deg, #66A995, #8CA966);*/
+    /*background-image: linear-gradient(-90deg, #6691A9, #A99A66);*/
+    background-image: linear-gradient(-90deg, #66A995, #2DC84A);
+    background-size: cover;
+    color: #fff;
+}
+
 /* Categories
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories {
@@ -62,7 +72,7 @@
   background-size: cover;
   color: #fff;
 }
-.categories .section-description { 
+.categories .section-description {
   margin-bottom: 4rem;
 }
 

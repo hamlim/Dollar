@@ -82,3 +82,24 @@ a.special-green:hover{
 .faq li {
     list-style: lower-alpha;
 }
+
+@media screen and (max-width: 500px){
+    .emoji {
+        display: none;
+    }
+    .navmoji {
+        display: inline-block;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.business-price {
+    /*background-color: #66A96B;*/
+    border-radius: 30px;
+    padding-top: 15px;
+}
+.individual-price {
+    padding-top: 15px;
+}
