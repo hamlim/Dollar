@@ -3,7 +3,13 @@
     justify-content: center;
     flex-direction: row;
     align-items: stretch;
-    flex-wrap:
+}
+
+@media screen and (max-width: 600px){
+    .flex-parent {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 /*
     Maybe on large displays do rows, and on small do columns
