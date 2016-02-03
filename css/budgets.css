@@ -10,6 +10,12 @@
         flex-direction: column;
         flex-wrap: wrap;
     }
+    .body-cell:before {
+        content: attr(data-month);
+    }
+    .months {
+        display: none;
+    }
 }
 /*
     Maybe on large displays do rows, and on small do columns
@@ -28,6 +34,7 @@
 .header-cell {
     border-bottom: solid black 3px;
     width: 100%;
+    text-align: center;
 }
 
 .body-cell {
