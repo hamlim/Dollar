@@ -245,6 +245,33 @@ $(document).ready(function(){
                             console.log(currentState);
 
                             //personal, travel, home, health, transportation, gifts, utilities, food other
+                            personal_BV.innerHTML = "$" + (currentState.personal.budget).toString();
+                            personal_SV.innerHTML = "$" + (currentState.personal.spent).toString();
+                            personal_PV.innerHTML = (currentState.personal.percentage.toFixed(2) * 100).toString() + "%";
+                            travel_BV.innerHTML = "$" + (currentState.travel.budget).toString();
+                            travel_SV.innerHTML = "$" + (currentState.travel.spent).toString();
+                            travel_PV.innerHTML = (currentState.travel.percentage.toFixed(2) * 100).toString() + "%";
+                            home_BV.innerHTML = "$" + (currentState.home.budget).toString();
+                            home_SV.innerHTML = "$" + (currentState.home.spent).toString();
+                            home_PV.innerHTML = (currentState.home.percentage.toFixed(2) * 100).toString() + "%";
+                            health_BV.innerHTML = "$" + (currentState.health.budget).toString();
+                            health_SV.innerHTML = "$" + (currentState.health.spent).toString();
+                            health_PV.innerHTML = (currentState.health.percentage.toFixed(2) * 100).toString() + "%";
+                            transportation_BV.innerHTML = "$" + (currentState.transportation.budget).toString();
+                            transportation_SV.innerHTML = "$" + (currentState.transportation.spent).toString();
+                            transportation_PV.innerHTML = (currentState.transportation.percentage.toFixed(2) * 100).toString() + "%";
+                            gifts_BV.innerHTML = "$" + (currentState.gifts.budget).toString();
+                            gifts_SV.innerHTML = "$" + (currentState.gifts.spent).toString();
+                            gifts_PV.innerHTML = (currentState.gifts.percentage.toFixed(2) * 100).toString() + "%";
+                            utilities_BV.innerHTML = "$" + (currentState.utilities.budget).toString();
+                            utilities_SV.innerHTML = "$" + (currentState.utilities.spent).toString();
+                            utilities_PV.innerHTML = (currentState.utilities.percentage.toFixed(2) * 100).toString() + "%";
+                            food_BV.innerHTML = "$" + (currentState.food.budget).toString();
+                            food_SV.innerHTML = "$" + (currentState.food.spent).toString();
+                            food_PV.innerHTML = (currentState.food.percentage.toFixed(2) * 100).toString() + "%";
+                            other_BV.innerHTML = "$" + (currentState.other.budget).toString();
+                            other_SV.innerHTML = "$" + (currentState.other.spent).toString();
+                            other_PV.innerHTML = (currentState.other.percentage.toFixed(2) * 100).toString() + "%";
                             
                         }
                     }
