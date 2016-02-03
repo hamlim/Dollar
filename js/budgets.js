@@ -232,17 +232,20 @@ $(document).ready(function(){
                             //now we want to calc the percentages
 
                             console.log("Percentages: ");
-                            currentState.personal.percentage = (currentState.personal.spent.toFixed(3) / currentState.personal.budget.toFixed(3));
-                            currentState.home.percentage = (currentState.home.spent.toFixed(3) / currentState.home.budget.toFixed(3));
-                            currentState.health.percentage = (currentState.health.spent.toFixed(3) / currentState.health.budget.toFixed(3));
-                            currentState.travel.percentage = (currentState.travel.spent.toFixed(3) / currentState.travel.budget.toFixed(3));
-                            currentState.transportation.percentage = (currentState.transportation.spent.toFixed(3) / currentState.transportation.budget.toFixed(3));
-                            currentState.food.percentage = (currentState.food.spent.toFixed(3) / currentState.food.budget.toFixed(3));
-                            currentState.other.percentage = (currentState.other.spent.toFixed(3) / currentState.other.budget.toFixed(3));
-                            currentState.utilities.percentage = (currentState.utilities.spent.toFixed(3) / currentState.utilities.budget.toFixed(3));
-                            currentState.gifts.percentage = (currentState.gifts.spent.toFixed(3) / currentState.gifts.budget.toFixed(3));
+                            currentState.personal.percentage = (currentState.personal.spent.toFixed(2) / currentState.personal.budget.toFixed(2));
+                            currentState.home.percentage = (currentState.home.spent.toFixed(2) / currentState.home.budget.toFixed(2));
+                            currentState.health.percentage = (currentState.health.spent.toFixed(2) / currentState.health.budget.toFixed(2));
+                            currentState.travel.percentage = (currentState.travel.spent.toFixed(2) / currentState.travel.budget.toFixed(2));
+                            currentState.transportation.percentage = (currentState.transportation.spent.toFixed(2) / currentState.transportation.budget.toFixed(2));
+                            currentState.food.percentage = (currentState.food.spent.toFixed(2) / currentState.food.budget.toFixed(2));
+                            currentState.other.percentage = (currentState.other.spent.toFixed(2) / currentState.other.budget.toFixed(2));
+                            currentState.utilities.percentage = (currentState.utilities.spent.toFixed(2) / currentState.utilities.budget.toFixed(2));
+                            currentState.gifts.percentage = (currentState.gifts.spent.toFixed(2) / currentState.gifts.budget.toFixed(2));
                             console.log("currentState: ");
                             console.log(currentState);
+
+                            //personal, travel, home, health, transportation, gifts, utilities, food other
+                            
                         }
                     }
                 });
