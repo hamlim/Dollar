@@ -193,32 +193,56 @@ $(document).ready(function(){
                             for(var j = 0; j<expenses.length; j++){
                                 //if it is the current month, get the value and add it to a totals obj
                                 var expense = expenses[j].fields;
-                                console.log(expense.d_time);
                                 if(moment(expense.d_time).month() === month){
+                                    console.log("here?");
                                     //we are in the right month, now we want to add the value to the totalsForCurrentMonth obj
-                                    if(expense.d_category === "personal"){
-                                        totalsForCurrentMonth.personal.spent += expense.d_amount;
-                                    } else if (expense.d_category === "travel"){
-                                        totalsForCurrentMonth.travel.spent += expense.d_amount;
-                                    } else if (expense.d_category === "home"){
-                                        totalsForCurrentMonth.home.spent += expense.d_amount;
-                                    } else if (expense.d_category === "health"){
-                                        totalsForCurrentMonth.health.spent += expense.d_amount;
-                                    } else if (expense.d_category === "transportation"){
-                                        totalsForCurrentMonth.transportation.spent += expense.d_amount;
-                                    } else if (expense.d_category === "gifts"){
-                                        totalsForCurrentMonth.gifts.spent += expense.d_amount;
-                                    } else if (expense.d_category === "utilities"){
-                                        totalsForCurrentMonth.utilities.spent += expense.d_amount;
-                                    } else if (expense.d_category.spent === "food"){
-                                        totalsForCurrentMonth.food.spent += expense.d_amount;
-                                    } else if (expense.d_category.spent === "other"){
-                                        totalsForCurrentMonth.other.spent += expense.d_amount;
+                                    if(expense.d_category === "Personal"){
+                                        currentState.personal.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Travel"){
+                                        currentState.travel.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Home"){
+                                        currentState.home.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Health"){
+                                        currentState.health.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Transportation"){
+                                        currentState.transportation.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Gifts"){
+                                        currentState.gifts.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Utilities"){
+                                        currentState.utilities.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Food"){
+                                        currentState.food.spent += expense.d_amount;
+                                    } else if (expense.d_category === "Other"){
+                                        currentState.other.spent += expense.d_amount;
                                     }
+                                    console.log(currentState);
                                 }
                             }
-                            console.log(totalsForCurrentMonth);
+                            console.log(currentState);
                             //currentBudgetValues
+                            currentState.personal.budget = currentBudgetValues.personal;
+                            currentState.home.budget = currentBudgetValues.home;
+                            currentState.health.budget = currentBudgetValues.health;
+                            currentState.travel.budget = currentBudgetValues.travel;
+                            currentState.transportation.budget = currentBudgetValues.transportation;
+                            currentState.food.budget = currentBudgetValues.food;
+                            currentState.other.budget = currentBudgetValues.other;
+                            currentState.utilities.budget = currentBudgetValues.utilities;
+                            currentState.gifts.budget = currentBudgetValues.gifts;
+                            //now we want to calc the percentages
+
+                            console.log("Percentages: ");
+                            currentState.personal.percentage = (currentState.personal.spent.toFixed(3) / currentState.personal.budget.toFixed(3));
+                            currentState.home.percentage = (currentState.home.spent.toFixed(3) / currentState.home.budget.toFixed(3));
+                            currentState.health.percentage = (currentState.health.spent.toFixed(3) / currentState.health.budget.toFixed(3));
+                            currentState.travel.percentage = (currentState.travel.spent.toFixed(3) / currentState.travel.budget.toFixed(3));
+                            currentState.transportation.percentage = (currentState.transportation.spent.toFixed(3) / currentState.transportation.budget.toFixed(3));
+                            currentState.food.percentage = (currentState.food.spent.toFixed(3) / currentState.food.budget.toFixed(3));
+                            currentState.other.percentage = (currentState.other.spent.toFixed(3) / currentState.other.budget.toFixed(3));
+                            currentState.utilities.percentage = (currentState.utilities.spent.toFixed(3) / currentState.utilities.budget.toFixed(3));
+                            currentState.gifts.percentage = (currentState.gifts.spent.toFixed(3) / currentState.gifts.budget.toFixed(3));
+                            console.log("currentState: ");
+                            console.log(currentState);
                         }
                     }
                 });
