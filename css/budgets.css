@@ -28,3 +28,13 @@
     border: 1px #DDDDDD solid;
     text-align: center;
 }
+
+.good {
+    background-color: #2ECC40;
+}
+.warn {
+    background-color: #FF851B;
+}
+.danger {
+    background-color: #FF4136;
+}

@@ -215,10 +215,10 @@ $(document).ready(function(){
                                     } else if (expense.d_category === "Other"){
                                         currentState.other.spent += expense.d_amount;
                                     }
-                                    console.log(currentState);
+                                    // console.log(currentState);
                                 }
                             }
-                            console.log(currentState);
+                            // console.log(currentState);
                             //currentBudgetValues
                             currentState.personal.budget = currentBudgetValues.personal;
                             currentState.home.budget = currentBudgetValues.home;
@@ -231,7 +231,7 @@ $(document).ready(function(){
                             currentState.gifts.budget = currentBudgetValues.gifts;
                             //now we want to calc the percentages
 
-                            console.log("Percentages: ");
+                            // console.log("Percentages: ");
                             currentState.personal.percentage = (currentState.personal.spent.toFixed(2) / currentState.personal.budget.toFixed(2));
                             currentState.home.percentage = (currentState.home.spent.toFixed(2) / currentState.home.budget.toFixed(2));
                             currentState.health.percentage = (currentState.health.spent.toFixed(2) / currentState.health.budget.toFixed(2));
@@ -241,8 +241,8 @@ $(document).ready(function(){
                             currentState.other.percentage = (currentState.other.spent.toFixed(2) / currentState.other.budget.toFixed(2));
                             currentState.utilities.percentage = (currentState.utilities.spent.toFixed(2) / currentState.utilities.budget.toFixed(2));
                             currentState.gifts.percentage = (currentState.gifts.spent.toFixed(2) / currentState.gifts.budget.toFixed(2));
-                            console.log("currentState: ");
-                            console.log(currentState);
+                            // console.log("currentState: ");
+                            // console.log(currentState);
 
                             //personal, travel, home, health, transportation, gifts, utilities, food other
                             personal_BV.innerHTML = "$" + (currentState.personal.budget).toString();
@@ -272,7 +272,79 @@ $(document).ready(function(){
                             other_BV.innerHTML = "$" + (currentState.other.budget).toString();
                             other_SV.innerHTML = "$" + (currentState.other.spent).toString();
                             other_PV.innerHTML = (currentState.other.percentage.toFixed(2) * 100).toString() + "%";
-                            
+
+                            //change cell color if bad percentage
+                            if((currentState.personal.percentage.toFixed(2) * 100) <= 30 ){
+                                personal_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.personal.percentage.toFixed(2) * 100) <= 70 && (currentState.personal.percentage.toFixed(2) * 100) >= 30){
+                                personal_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                personal_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.other.percentage.toFixed(2) * 100) <= 30 ){
+                                other_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.other.percentage.toFixed(2) * 100) <= 70 && (currentState.other.percentage.toFixed(2) * 100) >= 30){
+                                other_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                other_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.travel.percentage.toFixed(2) * 100) <= 30 ){
+                                travel_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.travel.percentage.toFixed(2) * 100) <= 70 && (currentState.travel.percentage.toFixed(2) * 100) >= 30){
+                                travel_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                travel_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.home.percentage.toFixed(2) * 100) <= 30 ){
+                                home_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.home.percentage.toFixed(2) * 100) <= 70 && (currentState.home.percentage.toFixed(2) * 100) >= 30){
+                                home_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                home_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.health.percentage.toFixed(2) * 100) <= 30 ){
+                                health_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.health.percentage.toFixed(2) * 100) <= 70 && (currentState.health.percentage.toFixed(2) * 100) >= 30){
+                                health_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                health_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.transportation.percentage.toFixed(2) * 100) <= 30 ){
+                                transportation_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.transportation.percentage.toFixed(2) * 100) <= 70 && (currentState.transportation.percentage.toFixed(2) * 100) >= 30){
+                                transportation_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                transportation_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.gifts.percentage.toFixed(2) * 100) <= 30 ){
+                                gifts_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.gifts.percentage.toFixed(2) * 100) <= 70 && (currentState.gifts.percentage.toFixed(2) * 100) >= 30){
+                                gifts_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                gifts_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.utilities.percentage.toFixed(2) * 100) <= 30 ){
+                                utilities_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.utilities.percentage.toFixed(2) * 100) <= 70 && (currentState.utilities.percentage.toFixed(2) * 100) >= 30){
+                                utilities_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                utilities_PV.setAttribute('class', 'body-cell danger');
+                            }
+
+                            if((currentState.food.percentage.toFixed(2) * 100) <= 30 ){
+                                food_PV.setAttribute('class', 'body-cell good');
+                            } else if ((currentState.food.percentage.toFixed(2) * 100) <= 70 && (currentState.food.percentage.toFixed(2) * 100) >= 30){
+                                food_PV.setAttribute('class', 'body-cell warn');
+                            } else {
+                                food_PV.setAttribute('class', 'body-cell danger');
+                            }
                         }
                     }
                 });
