@@ -104,6 +104,9 @@
   .hero-heading {
     font-size: 2.4rem;
   }
+  .hero-heading-small {
+      font-size: 2rem;
+  }
 }
 
 /* Bigger than 750 */
@@ -113,6 +116,9 @@
   }
   .hero-heading {
     font-size: 2.6rem;
+  }
+  .hero-heading-small{
+      font-size: 2.2rem;
   }
   .section {
     padding: 14rem 0 15rem;
@@ -149,6 +155,9 @@
   }
   .hero-heading {
     font-size: 3.0rem;
+  }
+  .hero-heading-small {
+      font-size: 2.8rem;
   }
   .phone {
     top: -16rem;
