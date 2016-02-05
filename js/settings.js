@@ -174,5 +174,31 @@ $(document).ready(function(){
                 }
             }
         }
+
+        //handle budgets
+        var budgetBTN = document.getElementById('budget-btn');
+        // get all input elements from the Tables
+        var foodElem = document.getElementById('food');
+        var otherElem = document.getElementById('other');
+        var utilitiesElem = document.getElementById('utilities');
+        var travelElem = document.getElementById('travel');
+        var transportationElem = document.getElementById('transportation');
+        var homeElem = document.getElementById('home');
+        var healthElem = document.getElementById('health');
+        var personalElem = document.getElementById('personal');
+        var giftsElem = document.getElementById('gifts');
+        budgetBTN.onclick = function () {
+            //Verify that we have the vals
+            var food = foodElem.value;
+            var other = otherElem.value;
+            var transportation = transportationElem.value;
+            var personal = personalElem.value;
+            var gifts = giftsElem.value;
+            var travel = travelElem.value;
+            var home = homeElem.value;
+            var health = healthElem.value;
+            var travel = travelElem.value;
+            
+        }
     }
 })
