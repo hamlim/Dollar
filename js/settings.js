@@ -12,6 +12,10 @@ $(document).ready(function(){
         var userGreeting = document.getElementById('username-heading');
         userGreeting.innerHTML = "Hello "+username+"!";
         //account settings elements
+        //--------------------------------------------------------------
+        //                   Password and Username
+        //                  #PASS
+        //--------------------------------------------------------------
         var passReset = document.getElementById('password-reset'),
         usernameReset = document.getElementById('username-reset'),
         accountSbmt = document.getElementById('account-btn');
@@ -84,12 +88,29 @@ $(document).ready(function(){
                 }
             }
         }
+        //--------------------------------------------------------------
+        //                        TAGS
+        //                       #TAGS
+        //--------------------------------------------------------------
         //handle settings
         //relevent elements
         var appSbmt = document.getElementById('app-btn'),
         tagOptionOne = document.getElementById('tag-option-one'),
         tagOptionTwo = document.getElementById('tag-option-two'),
         tagOptionThree = document.getElementById('tag-option-three');
+        //set the values to either the user's tags or to nothing if tags doesn't exist
+        if(user.tags != ""){
+            tagOptionOne.setAttribute('placeholder', 'Credit Card');
+            tagOptionTwo.setAttribute('placeholder', 'Debit Card');
+            tagOptionThree.setAttribute('placeholder', 'Cash');
+            tagOptionOne.value = user.tags.split(", ")[0];
+            tagOptionTwo.value = user.tags.split(", ")[1];
+            tagOptionThree.value = user.tags.split(", ")[2];
+        } else {
+            tagOptionOne.setAttribute('placeholder', 'Credit Card');
+            tagOptionTwo.setAttribute('placeholder', 'Debit Card');
+            tagOptionThree.setAttribute('placeholder', 'Cash');
+        }
         appSbmt.onclick = function(){
             var tagone = tagOptionOne.value;
             var tagtwo = tagOptionTwo.value;
@@ -175,6 +196,10 @@ $(document).ready(function(){
                 }
             }
         }
+        //--------------------------------------------------------------
+        //                        Budgets
+        //                       #Budgets
+        //--------------------------------------------------------------
         var budgets = JSON.parse(localStorage.getItem('budgets'));
         if(budgets != null){
             //we need to get the Budgets
@@ -247,7 +272,7 @@ $(document).ready(function(){
             var home = homeElem.value;
             var health = healthElem.value;
             var travel = travelElem.value;
-            //TODO
+
         }
     }
 })
