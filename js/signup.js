@@ -110,7 +110,41 @@ $(document).ready(function(){
 
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./app.html";
+
+                            //we also want to push a quick version of the budget before routing to app
+                            var buds = {
+                                "mb_userIDFK": localUser.userID,
+                                "mb_home": 0,
+                                "mb_food": 0,
+                                "mb_other": 0,
+                                "mb_gifts": 0,
+                                "mb_health": 0,
+                                "mb_travel": 0,
+                                "mb_personal": 0,
+                                "mb_utilities": 0,
+                                "mb_transportation": 0
+                            }
+                            var sendbud = {
+                                "fields": buds
+                            }
+                            var budPushSettings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets",
+                                "method": "POST",
+                                "headers": {
+                                    "authorization": "Bearer keyIye3zskPSBMQ6Q",
+                                    "content-type": "application/json"
+                                },
+                                "data": sendbud
+                            }
+                            $.ajax(budPushSettings).done(function (budresp){
+                                console.log(budresp);
+                                //save to localStorage
+                                localStorage.setItem('budgets', JSON.stringify(budresp));
+                                //redirect to app
+                                window.location.href = "./app.html";
+                            });
                         }
                     });
                 }
