@@ -21,7 +21,8 @@ $(document).ready(function(){
                 "u_username": username,
                 "u_fullname": fullname,
                 "u_password": password,
-                "u_email": email
+                "u_email": email,
+                "u_tags": "Credit Card, Debit Card, Cash"
             };
             var packageObj = {
                 "fields": userObj
@@ -55,7 +56,9 @@ $(document).ready(function(){
                                 "username": user.fields.u_username,
                                 "fullname": user.fields.u_fullname,
                                 "email": user.fields.u_email,
-                                "userID": user.fields.u_userID
+                                "userID": user.fields.u_userID,
+                                "tags": user.fields.u_tags,
+                                "userKey": user.id
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 
@@ -99,7 +102,9 @@ $(document).ready(function(){
                                 "username": username,
                                 "fullname": fullname,
                                 "email": email,
-                                "userID": response.fields.u_userID
+                                "userID": response.fields.u_userID,
+                                "tags": response.fields.u_tags,
+                                "userKey": response.id
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 
