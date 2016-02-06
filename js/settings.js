@@ -7,6 +7,7 @@ $(document).ready(function(){
         var user = JSON.parse(localStorage.getItem('user'));
         var userKey = user.userKey;
         var username = user.username;
+        var userid = user.userID;
         //relavent elements
         var userGreeting = document.getElementById('username-heading');
         userGreeting.innerHTML = "Hello "+username+"!";
@@ -174,7 +175,55 @@ $(document).ready(function(){
                 }
             }
         }
+        var budgets = JSON.parse(localStorage.getItem('budgets'));
+        if(budgets != null){
+            //we need to get the Budgets
+            document.getElementById('food').value = budgets.fields.mb_food;
+            document.getElementById('other').value = budgets.fields.mb_other;
+            document.getElementById('utilities').value = budgets.fields.mb_utilities;
+            document.getElementById('travel').value = budgets.fields.mb_travel;
+            document.getElementById('transportation').value = budgets.fields.mb_transportation;
+            document.getElementById('home').value = budgets.fields.mb_home;
+            document.getElementById('health').value = budgets.fields.mb_health;
+            document.getElementById('personal').value = budgets.fields.mb_personal;
+            document.getElementById('gifts').value = budgets.fields.mb_gifts;
+        } else {
+            //we need to go get the budgets again
+            var getBudgetSettings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets",
+                "method": "GET",
+                "headers": {
+                    "authorization": "Bearer keyIye3zskPSBMQ6Q"
+                }
+            }
+            $.ajax(getBudgetSettings).done(function(resp){
+                console.log(resp);
+                for(var w = 0; w<resp.records.length; w++){
+                    if(resp.records[w].fields.mb_userIDFK === userid){
+                        if(resp.records[w].fields.mb_monthKey  === 0){
+                            var bud = resp.records[w];
+                            localStorage.setItem('budgets', JSON.stringify(resp.records[w]));
+                            document.getElementById('food').value = bud.fields.mb_food;
+                            document.getElementById('other').value = bud.fields.mb_other;
+                            document.getElementById('utilities').value = bud.fields.mb_utilities;
+                            document.getElementById('travel').value = bud.fields.mb_travel;
+                            document.getElementById('transportation').value = bud.fields.mb_transportation;
+                            document.getElementById('home').value = bud.fields.mb_home;
+                            document.getElementById('health').value = bud.fields.mb_health;
+                            document.getElementById('personal').value = bud.fields.mb_personal;
+                            document.getElementById('gifts').value = bud.fields.mb_gifts;
+                        }
+                    }
+                }
 
+                if(localStorage.getItem('budgets') === null){
+                    //user has no Budget yet, set all vals to 0
+                    //its already set to 0 in the html
+                }
+            });
+        }
         //handle budgets
         var budgetBTN = document.getElementById('budget-btn');
         // get all input elements from the Tables
@@ -194,11 +243,11 @@ $(document).ready(function(){
             var transportation = transportationElem.value;
             var personal = personalElem.value;
             var gifts = giftsElem.value;
-            var travel = travelElem.value;
+            var utilities = utilitiesElem.value;
             var home = homeElem.value;
             var health = healthElem.value;
             var travel = travelElem.value;
-            
+            //TODO
         }
     }
 })

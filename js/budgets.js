@@ -90,7 +90,8 @@ $(document).ready(function(){
                     var allBudgets = {};
                     for(var i=0; i<response.records.length; i++){
                         if(response.records[i].fields.mb_userIDFK === userid){
-                            console.log("Hello?");
+                            // console.log("Hello?");
+                            localStorage.setItem('budgets', JSON.stringify(response.records[i]));
                             currentBudget = response.records[i];
                             //all Budgets
                             //now we want to load in all the other elements
