@@ -11,12 +11,12 @@
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .body-cell:before {
+    /*.body-cell:before {
         content: attr(data-month);
     }
     .months {
         display: none;
-    }
+    }*/
 }
 /*
     Maybe on large displays do rows, and on small do columns
@@ -43,7 +43,14 @@
     text-align: center;
     min-width: 10em;
 }
-
+.force-width-3x {
+    min-width: 30em;
+}
+.months {
+    min-height: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .good {
     background-color: #2ECC40;
 }

@@ -24,6 +24,7 @@
 		<link rel="stylesheet" href="./css/app.css">
         <link rel="stylesheet" href="./css/budgets.css">
         <link rel="stylesheet" href="./css/hint.css">
+		<link rel="stylesheet" href="./css/progress.css">
 
 		<!-- Emoji One -->
 		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
@@ -71,6 +72,7 @@
 			Js for Budgets
 	 	-->
 		<script src="./js/chart/Chart.js"></script>
+		<script src="./js/progress.js"></script>
 		<script src="./js/budgets.js"></script>
 
 	</head>
@@ -257,54 +259,93 @@
                     </div>
                 </div>
 				<div class="row">
-					<h3>All Budgets:</h3>
+					<h3>Monthly Budget Progress for <b id="month-name-prog"></b></h3>
 				</div>
-                <div class="flex-parent u-full-width">
+                <div class="flex-parent">
                     <div class="flex-item">
-                        <div class="months header-cell">
-                            <span><i class="emoji small">:calendar_spiral:</i> Month:</span>
-                        </div>
-
-                        <div class="months body-cell">
-                            <b>January:</b>
+                        <div class=" header-cell">
+                            <span>Category:</span>
                         </div>
                         <div class="months body-cell">
-                            <b>February:</b>
+                            <b><i class="emoji small">:bust_in_silhouette:</i> Personal:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>March:</b>
+                            <b><i class="emoji small">:airplane:</i> Travel:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>April:</b>
+                            <b><i class="emoji small">:house:</i> Home:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>May:</b>
+                            <b><i class="emoji small">:pill:</i> Health:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>June:</b>
+                            <b><i class="emoji small">:red_car:</i> Transportation:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>July:</b>
+                            <b><i class="emoji small">:gift:</i> Gifts:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>August:</b>
+                            <b><i class="emoji small">:tools:</i> Utilities:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>September:</b>
+                            <b><i class="emoji small">:pizza:</i> Food:</b>
                         </div>
                         <div class="months body-cell">
-                            <b>October:</b>
+                            <b><i class="emoji small">:poop:</i> Other:</b>
                         </div>
-                        <div class="months body-cell">
-                            <b>November:</b>
-                        </div>
-                        <div class="months body-cell">
-                            <b>December:</b>
-                        </div>
-
                     </div>
+					<div class="flex-item force-width-3x">
+						<div class="header-cell u-max-full-width">
+							Progress to Budget: <span class="hint--info hint--top" data-hint="A filled progress bar means you have met your budget for the month!"><i class="fa fa-info-circle"></i></span>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="personal-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="travel-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="home-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="health-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="transportation-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="gifts-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="utilities-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="food-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+						<div class="body-cell u-max-full-width">
+							<div class="progress-wrap progress" id="other-progress" data-progress-percent="0">
+  								<div class="progress-bar progress"></div>
+							</div>
+						</div>
+					</div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:bust_in_silhouette:</i> Personal:</span>
                         </div>
                         <div class="body-cell" data-month="January: " id="0-personal">
@@ -342,10 +383,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-personal">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:airplane:</i> Travel:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-travel">
@@ -383,10 +424,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-travel">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:house:</i> Home:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-home">
@@ -424,10 +465,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-home">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:pill:</i> Health:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-health">
@@ -465,10 +506,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-health">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:red_car:</i> Transportation:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-transportation">
@@ -506,10 +547,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-transportation">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:gift:</i> Gifts:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-gifts">
@@ -547,10 +588,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-gifts">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:tools:</i> Utilities:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-utilities">
@@ -588,10 +629,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-utilities">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:pizza:</i> Food:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-food">
@@ -629,10 +670,10 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-food">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex-item">
-                        <div class="header-cell">
+                        <!-- <div class="header-cell">
                             <span><i class="emoji small">:poop:</i> Other:</span>
                         </div>
 						<div class="body-cell" data-month="January: " id="0-other">
@@ -670,7 +711,7 @@
                         </div>
                         <div class="body-cell" data-month="December: " id="11-other">
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 			</section>
