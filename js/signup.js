@@ -88,7 +88,7 @@ $(document).ready(function(){
                             "content-type": "application/json"
                         },
                         "data": stringUser
-                    }
+                    };
 
                     $.ajax(postSettings).done(function (response) {
                         // console.log(response);
@@ -123,10 +123,12 @@ $(document).ready(function(){
                                 "mb_personal": 0,
                                 "mb_utilities": 0,
                                 "mb_transportation": 0
-                            }
+                            };
+
                             var sendbud = {
                                 "fields": buds
-                            }
+                            };
+
                             var budPushSettings = {
                                 "async": true,
                                 "crossDomain": true,
@@ -137,7 +139,8 @@ $(document).ready(function(){
                                     "content-type": "application/json"
                                 },
                                 "data": sendbud
-                            }
+                            };
+
                             $.ajax(budPushSettings).done(function (budresp){
                                 console.log(budresp);
                                 //save to localStorage

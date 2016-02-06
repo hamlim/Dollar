@@ -227,19 +227,17 @@ $(document).ready(function(){
                 console.log(resp);
                 for(var w = 0; w<resp.records.length; w++){
                     if(resp.records[w].fields.mb_userIDFK === userid){
-                        if(resp.records[w].fields.mb_monthKey  === 0){
-                            var bud = resp.records[w];
-                            localStorage.setItem('budgets', JSON.stringify(resp.records[w]));
-                            document.getElementById('food').value = bud.fields.mb_food;
-                            document.getElementById('other').value = bud.fields.mb_other;
-                            document.getElementById('utilities').value = bud.fields.mb_utilities;
-                            document.getElementById('travel').value = bud.fields.mb_travel;
-                            document.getElementById('transportation').value = bud.fields.mb_transportation;
-                            document.getElementById('home').value = bud.fields.mb_home;
-                            document.getElementById('health').value = bud.fields.mb_health;
-                            document.getElementById('personal').value = bud.fields.mb_personal;
-                            document.getElementById('gifts').value = bud.fields.mb_gifts;
-                        }
+                        var bud = resp.records[w];
+                        localStorage.setItem('budgets', JSON.stringify(resp.records[w]));
+                        document.getElementById('food').value = bud.fields.mb_food;
+                        document.getElementById('other').value = bud.fields.mb_other;
+                        document.getElementById('utilities').value = bud.fields.mb_utilities;
+                        document.getElementById('travel').value = bud.fields.mb_travel;
+                        document.getElementById('transportation').value = bud.fields.mb_transportation;
+                        document.getElementById('home').value = bud.fields.mb_home;
+                        document.getElementById('health').value = bud.fields.mb_health;
+                        document.getElementById('personal').value = bud.fields.mb_personal;
+                        document.getElementById('gifts').value = bud.fields.mb_gifts;
                     }
                 }
 
@@ -272,6 +270,37 @@ $(document).ready(function(){
             var home = homeElem.value;
             var health = healthElem.value;
             var travel = travelElem.value;
+
+            var oldBud = JSON.parse(localStorage.getItem('budgets'));
+            var budgetUpdate = {
+                "mb_userIDFK": userid,
+                "mb_food": food,
+                "mb_home": home,
+                "mb_health": health,
+                "mb_gifts": gifts,
+                "mb_travel": travel,
+                "mb_transportation": transportation,
+                "mb_personal": personal,
+                "mb_utilities": utilities,
+                "mb_other": other
+            };
+            
+            var budSend = {
+                "fields": budgetUpdate
+            };
+
+            var patchSettings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets/rec19mD0KyNXNR2kJ",
+                "method": "PATCH",
+                "headers": {
+                    "authorization": "Bearer keyIye3zskPSBMQ6Q",
+                    "content-type": "application/json"
+                },
+                  "processData": false,
+                  "data": budSend
+            };
 
         }
     }
