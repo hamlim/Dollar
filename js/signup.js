@@ -58,7 +58,8 @@ $(document).ready(function(){
                                 "email": user.fields.u_email,
                                 "userID": user.fields.u_userID,
                                 "tags": user.fields.u_tags,
-                                "userKey": user.id
+                                "userKey": user.id,
+                                "pass": user.fields.u_password
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 
@@ -104,7 +105,8 @@ $(document).ready(function(){
                                 "email": email,
                                 "userID": response.fields.u_userID,
                                 "tags": response.fields.u_tags,
-                                "userKey": response.id
+                                "userKey": response.id,
+                                "pass": response.fields.u_password
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 

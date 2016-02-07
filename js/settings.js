@@ -30,7 +30,11 @@ $(document).ready(function(){
                     user.username = newUName;
                     //now we need to update the server
                     var data = {
-                        "u_username": newUName
+                        "u_username": newUName,
+                        "u_tags": user.tags,
+                        "u_password": user.pass,
+                        "u_fullname": user.fullname,
+                        "u_email": user.email
                     };
                     var packageData = {
                         "fields": data
@@ -39,7 +43,7 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PATCH",
+                        "method": "PUT",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
@@ -60,7 +64,12 @@ $(document).ready(function(){
             }
             if(newPass != ""){
                 if(newPass.length > 4){
+                    //{"username":"Matt","fullname":"Matt Hamlin","email":"hamlim@outlook.com","userID":1,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"recKz4DGTSLBlD666"}
                     var data = {
+                        "u_tags": user.tags,
+                        "u_username": user.username,
+                        "u_fullname": user.fullname,
+                        "u_email": user.email,
                         "u_password": newPass
                     };
                     var packageData = {
@@ -70,7 +79,7 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PATCH",
+                        "method": "PUT",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
@@ -129,7 +138,7 @@ $(document).ready(function(){
                             "async": true,
                             "crossDomain": true,
                             "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                            "method": "PATCH",
+                            "method": "PUT",
                             "headers": {
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
@@ -154,7 +163,7 @@ $(document).ready(function(){
                             "async": true,
                             "crossDomain": true,
                             "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                            "method": "PATCH",
+                            "method": "PUT",
                             "headers": {
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
@@ -180,7 +189,7 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PATCH",
+                        "method": "PUT",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
@@ -284,7 +293,7 @@ $(document).ready(function(){
                 "mb_utilities": utilities,
                 "mb_other": other
             };
-            
+
             var budSend = {
                 "fields": budgetUpdate
             };
@@ -292,15 +301,25 @@ $(document).ready(function(){
             var patchSettings = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets/rec19mD0KyNXNR2kJ",
-                "method": "PATCH",
+                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets/"+oldBud.id,
+                "method": "PUT",
                 "headers": {
-                    "authorization": "Bearer keyIye3zskPSBMQ6Q",
-                    "content-type": "application/json"
+                    "Authorization": "Bearer keyIye3zskPSBMQ6Q",
+                    "Content-type": "application/json"
                 },
                   "processData": false,
                   "data": budSend
             };
+            console.log(patchSettings);
+            $.ajax(patchSettings).done(function(patchresp){
+                console.log(patchresp);
+                localStorage.setItem('budgets', patchresp);
+                notie.alert(1, "Successfully updated you budget values!", 5);
+
+            }).fail(function(errormsg){
+                console.log(errormsg);
+                notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
+            });
 
         }
     }
