@@ -108,19 +108,19 @@ $(document).ready(function(){
                             //all Budgets
                             //now we want to load in all the other elements
 
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-food').html("$" + response.records[i].fields.mb_food);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-other').html("$" + response.records[i].fields.mb_other);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-utilities').html("$" + response.records[i].fields.mb_utilities);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-gifts').html("$" + response.records[i].fields.mb_gifts);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-transportation').html("$" + response.records[i].fields.mb_transportation);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-travel').html("$" + response.records[i].fields.mb_travel);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-home').html("$" + response.records[i].fields.mb_home);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-health').html("$" + response.records[i].fields.mb_health);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-personal').html("$" + response.records[i].fields.mb_personal);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-food').html("$" + response.records[i].fields.mb_food);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-other').html("$" + response.records[i].fields.mb_other);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-utilities').html("$" + response.records[i].fields.mb_utilities);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-gifts').html("$" + response.records[i].fields.mb_gifts);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-transportation').html("$" + response.records[i].fields.mb_transportation);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-travel').html("$" + response.records[i].fields.mb_travel);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-home').html("$" + response.records[i].fields.mb_home);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-health').html("$" + response.records[i].fields.mb_health);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-personal').html("$" + response.records[i].fields.mb_personal);
                             //end all budgets
 
 
-                            if(currentBudget.fields.mb_monthKey === month){
+                            // if(currentBudget.fields.mb_monthKey === month){
                                 var currentBudgetElement = document.getElementById('current-month-budget-values');
                                 var currentBudgetValues = {
                                     "personal": currentBudget.fields.mb_personal,
@@ -393,7 +393,7 @@ $(document).ready(function(){
                                 } else {
                                     food_PV.setAttribute('class', 'body-cell danger');
                                 }
-                            }
+                            //}
                         }
                     }
 
