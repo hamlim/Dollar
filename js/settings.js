@@ -20,20 +20,11 @@ $(document).ready(function(){
         usernameReset = document.getElementById('username-reset'),
         accountSbmt = document.getElementById('account-btn');
         accountSbmt.onclick = function(){
-            console.log("Right at onclick");
-            console.log("Username input value: ");
-            console.log(usernameReset.value);
-            console.log(typeof usernameReset.value);
-            console.log("Password input value: ");
-            console.log(passReset.value);
-            console.log(typeof passReset.value);
             var newPassword = passReset.value;
             var newUsername = usernameReset.value;
             if(newUsername != ""){
-                console.log("Username change");
                 //we know newUName is new
                 if(newUsername != username ){
-                    console.log("Username does not equal old username");
                     //we want to updat the local and the server versions of the user
                     userGreeting.innerHTML = newUsername;
                     user.username = newUsername;
@@ -57,7 +48,7 @@ $(document).ready(function(){
                     }
 
                     $.ajax(settings).done(function (response) {
-                        console.log(response);
+                        // console.log(response);
                         // now we need to set these vales to the localstorage data
                         // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
                         var localCopy = {
@@ -83,9 +74,7 @@ $(document).ready(function(){
                 //they didn't enter anything so we don't want to change their username
             }
             if(newPassword != ""){
-                console.log("Changing Password");
                 if(newPassword.length > 4){
-                    console.log("password is longer than 4 characters");
                     var data = {
                         "u_password": newPassword
                     };
@@ -105,7 +94,7 @@ $(document).ready(function(){
                     }
 
                     $.ajax(settings).done(function (response) {
-                        console.log(response);
+                        // console.log(response);
                         // we need to update the local user
                         // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
                         var localCopy = {
@@ -175,12 +164,24 @@ $(document).ready(function(){
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
                             },
-                            "processData": false,
-                            "data": packageData
+                            "data": JSON.stringify(packageData)
                         }
 
                         $.ajax(settings).done(function (response) {
-                            console.log(response);
+                            // console.log(response);
+                            // now we need to set these vales to the localstorage data
+                            // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
+                            var localCopy = {
+                                "username": response.fields.u_username,
+                                "fullname": response.fields.u_fullname,
+                                "email": response.fields.u_email,
+                                "userID": response.fields.u_userID,
+                                "save": true,
+                                "tags": response.fields.u_tags,
+                                "userKey": response.id,
+                                "pass": response.fields.u_password
+                            };
+                            localStorage.setItem('user', JSON.stringify(localCopy));
                             notie.alert(1, "Successfully updated your Tags!", 3);
                         }).fail(function(errormsg){
                             console.log(errormsg);
@@ -203,12 +204,24 @@ $(document).ready(function(){
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
                             },
-                            "processData": false,
-                            "data": packageData
+                            "data": JSON.stringify(packageData)
                         }
 
                         $.ajax(settings).done(function (response) {
-                            console.log(response);
+                            // console.log(response);
+                            // now we need to set these vales to the localstorage data
+                            // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
+                            var localCopy = {
+                                "username": response.fields.u_username,
+                                "fullname": response.fields.u_fullname,
+                                "email": response.fields.u_email,
+                                "userID": response.fields.u_userID,
+                                "save": true,
+                                "tags": response.fields.u_tags,
+                                "userKey": response.id,
+                                "pass": response.fields.u_password
+                            };
+                            localStorage.setItem('user', JSON.stringify(localCopy));
                             notie.alert(1, "Successfully updated your Tags!", 3);
                         }).fail(function(errormsg){
                             console.log(errormsg);
@@ -232,12 +245,24 @@ $(document).ready(function(){
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
                         },
-                        "processData": false,
-                        "data": packageData
+                        "data": JSON.stringify(packageData)
                     }
 
                     $.ajax(settings).done(function (response) {
-                        console.log(response);
+                        // console.log(response);
+                        // now we need to set these vales to the localstorage data
+                        // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
+                        var localCopy = {
+                            "username": response.fields.u_username,
+                            "fullname": response.fields.u_fullname,
+                            "email": response.fields.u_email,
+                            "userID": response.fields.u_userID,
+                            "save": true,
+                            "tags": response.fields.u_tags,
+                            "userKey": response.id,
+                            "pass": response.fields.u_password
+                        };
+                        localStorage.setItem('user', JSON.stringify(localCopy));
                         notie.alert(1, "Successfully updated your Tags!", 3);
                     }).fail(function(errormsg){
                         console.log(errormsg);
@@ -274,7 +299,7 @@ $(document).ready(function(){
                 }
             }
             $.ajax(getBudgetSettings).done(function(resp){
-                console.log(resp);
+                // console.log(resp);
                 for(var w = 0; w<resp.records.length; w++){
                     if(resp.records[w].fields.mb_userIDFK === userid){
                         var bud = resp.records[w];
@@ -338,7 +363,6 @@ $(document).ready(function(){
             var budSend = {
                 "fields": budgetUpdate
             };
-            console.log(budSend);
             var patchSettings = {
                 "async": true,
                 "crossDomain": true,
@@ -348,15 +372,12 @@ $(document).ready(function(){
                     "Authorization": "Bearer keyIye3zskPSBMQ6Q",
                     "Content-type": "application/json"
                 },
-                  "processData": true,
-                  "data": budSend
+                  "data": JSON.stringify(budSend)
             };
-            console.log(patchSettings);
             $.ajax(patchSettings).done(function(patchresp){
-                console.log(patchresp);
-                localStorage.setItem('budgets', patchresp);
+                // console.log(patchresp);
+                localStorage.setItem('budgets', JSON.stringify(patchresp));
                 notie.alert(1, "Successfully updated you budget values!", 5);
-
             }).fail(function(errormsg){
                 console.log(errormsg);
                 notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
