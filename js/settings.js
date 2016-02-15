@@ -20,21 +20,26 @@ $(document).ready(function(){
         usernameReset = document.getElementById('username-reset'),
         accountSbmt = document.getElementById('account-btn');
         accountSbmt.onclick = function(){
-            var newPass = passReset.value;
-            var newUName = usernameReset.value;
-            if(newUName.value != ""){
+            console.log("Right at onclick");
+            console.log("Username input value: ");
+            console.log(usernameReset.value);
+            console.log(typeof usernameReset.value);
+            console.log("Password input value: ");
+            console.log(passReset.value);
+            console.log(typeof passReset.value);
+            var newPassword = passReset.value;
+            var newUsername = usernameReset.value;
+            if(newUsername != ""){
+                console.log("Username change");
                 //we know newUName is new
-                if(newUName != username ){
+                if(newUsername != username ){
+                    console.log("Username does not equal old username");
                     //we want to updat the local and the server versions of the user
-                    userGreeting.innerHTML = newUName;
-                    user.username = newUName;
+                    userGreeting.innerHTML = newUsername;
+                    user.username = newUsername;
                     //now we need to update the server
                     var data = {
-                        "u_username": newUName,
-                        "u_tags": user.tags,
-                        "u_password": user.pass,
-                        "u_fullname": user.fullname,
-                        "u_email": user.email
+                        "u_username": newUsername,
                     };
                     var packageData = {
                         "fields": data
@@ -43,18 +48,33 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PUT",
+                        "method": "PATCH",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
                         },
-                        "processData": false,
-                        "data": packageData
+                        "data": JSON.stringify(packageData)
                     }
 
                     $.ajax(settings).done(function (response) {
                         console.log(response);
+                        // now we need to set these vales to the localstorage data
+                        // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
+                        var localCopy = {
+                            "username": response.fields.u_username,
+                            "fullname": response.fields.u_fullname,
+                            "email": response.fields.u_email,
+                            "userID": response.fields.u_userID,
+                            "save": true,
+                            "tags": response.fields.u_tags,
+                            "userKey": response.id,
+                            "pass": response.fields.u_password
+                        };
+                        localStorage.setItem('user', JSON.stringify(localCopy));
                         notie.alert(1, "Successfully changed your username!", 3);
+                    }).fail(function(errormsg){
+                        console.log(errormsg);
+                        notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
                     });
                 } else {
                     //don't worry about changing
@@ -62,15 +82,12 @@ $(document).ready(function(){
             } else {
                 //they didn't enter anything so we don't want to change their username
             }
-            if(newPass != ""){
-                if(newPass.length > 4){
-                    //{"username":"Matt","fullname":"Matt Hamlin","email":"hamlim@outlook.com","userID":1,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"recKz4DGTSLBlD666"}
+            if(newPassword != ""){
+                console.log("Changing Password");
+                if(newPassword.length > 4){
+                    console.log("password is longer than 4 characters");
                     var data = {
-                        "u_tags": user.tags,
-                        "u_username": user.username,
-                        "u_fullname": user.fullname,
-                        "u_email": user.email,
-                        "u_password": newPass
+                        "u_password": newPassword
                     };
                     var packageData = {
                         "fields": data
@@ -79,18 +96,33 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PUT",
+                        "method": "PATCH",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
                         },
-                        "processData": false,
-                        "data": packageData
+                        "data": JSON.stringify(packageData)
                     }
 
                     $.ajax(settings).done(function (response) {
                         console.log(response);
+                        // we need to update the local user
+                        // {"username":"uname","fullname":"Full Name","email":"email","userID":#,"save":true,"tags":"Credit Card, Debit Card, Savings Account","userKey":"something","pass":"something"}
+                        var localCopy = {
+                            "username": response.fields.u_username,
+                            "fullname": response.fields.u_fullname,
+                            "email": response.fields.u_email,
+                            "userID": response.fields.u_userID,
+                            "save": true,
+                            "tags": response.fields.u_tags,
+                            "userKey": response.id,
+                            "pass": response.fields.u_password
+                        };
+                        localStorage.setItem('user', JSON.stringify(localCopy));
                         notie.alert(1, "Successfully changed your password!", 3);
+                    }).fail(function(errormsg){
+                        console.log(errormsg);
+                        notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
                     });
                 } else {
                     notie.alert(3, "Your new password needs to be longer than 4 characters.", 5);
@@ -138,7 +170,7 @@ $(document).ready(function(){
                             "async": true,
                             "crossDomain": true,
                             "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                            "method": "PUT",
+                            "method": "PATCH",
                             "headers": {
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
@@ -150,9 +182,12 @@ $(document).ready(function(){
                         $.ajax(settings).done(function (response) {
                             console.log(response);
                             notie.alert(1, "Successfully updated your Tags!", 3);
+                        }).fail(function(errormsg){
+                            console.log(errormsg);
+                            notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
                         });
                     } else {
-                        var tagstring = tagone+", "+tagtwo+", N/A";
+                        var tagstring = tagone+", "+tagtwo+", Cash";
                         var data = {
                             "u_tags": tagstring
                         };
@@ -163,7 +198,7 @@ $(document).ready(function(){
                             "async": true,
                             "crossDomain": true,
                             "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                            "method": "PUT",
+                            "method": "PATCH",
                             "headers": {
                                 "authorization": "Bearer keyIye3zskPSBMQ6Q",
                                 "content-type": "application/json"
@@ -175,10 +210,13 @@ $(document).ready(function(){
                         $.ajax(settings).done(function (response) {
                             console.log(response);
                             notie.alert(1, "Successfully updated your Tags!", 3);
+                        }).fail(function(errormsg){
+                            console.log(errormsg);
+                            notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
                         });
                     }
                 } else {
-                    var tagstring = tagone + ", N/A, N/A";
+                    var tagstring = tagone + ", Other, Other";
                     var data = {
                         "u_tags": tagstring
                     };
@@ -189,7 +227,7 @@ $(document).ready(function(){
                         "async": true,
                         "crossDomain": true,
                         "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/Users/"+userKey,
-                        "method": "PUT",
+                        "method": "PATCH",
                         "headers": {
                             "authorization": "Bearer keyIye3zskPSBMQ6Q",
                             "content-type": "application/json"
@@ -201,6 +239,9 @@ $(document).ready(function(){
                     $.ajax(settings).done(function (response) {
                         console.log(response);
                         notie.alert(1, "Successfully updated your Tags!", 3);
+                    }).fail(function(errormsg){
+                        console.log(errormsg);
+                        notie.alert(3, "The update failed, please try again, if it doesn't work please contact us!", 10);
                     });
                 }
             }
@@ -258,7 +299,7 @@ $(document).ready(function(){
         }
         //handle budgets
         var budgetBTN = document.getElementById('budget-btn');
-        // get all input elements from the Tables
+        // get all inPATCH elements from the Tables
         var foodElem = document.getElementById('food');
         var otherElem = document.getElementById('other');
         var utilitiesElem = document.getElementById('utilities');
@@ -283,31 +324,31 @@ $(document).ready(function(){
             var oldBud = JSON.parse(localStorage.getItem('budgets'));
             var budgetUpdate = {
                 "mb_userIDFK": userid,
-                "mb_food": food,
-                "mb_home": home,
-                "mb_health": health,
-                "mb_gifts": gifts,
-                "mb_travel": travel,
-                "mb_transportation": transportation,
-                "mb_personal": personal,
-                "mb_utilities": utilities,
-                "mb_other": other
+                "mb_food": parseInt(food),
+                "mb_home": parseInt(home),
+                "mb_health": parseInt(health),
+                "mb_gifts": parseInt(gifts),
+                "mb_travel": parseInt(travel),
+                "mb_transportation": parseInt(transportation),
+                "mb_personal": parseInt(personal),
+                "mb_utilities": parseInt(utilities),
+                "mb_other": parseInt(other)
             };
 
             var budSend = {
                 "fields": budgetUpdate
             };
-
+            console.log(budSend);
             var patchSettings = {
                 "async": true,
                 "crossDomain": true,
                 "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets/"+oldBud.id,
-                "method": "PUT",
+                "method": "PATCH",
                 "headers": {
                     "Authorization": "Bearer keyIye3zskPSBMQ6Q",
                     "Content-type": "application/json"
                 },
-                  "processData": false,
+                  "processData": true,
                   "data": budSend
             };
             console.log(patchSettings);
