@@ -13,57 +13,69 @@ $(document).ready(function(){
         var dateobj = new Date;
         var month = dateobj.getMonth();
         var monthName = document.getElementById('month-name');
+        var monthNameProg = document.getElementById('month-name-prog');
         var db_name = "";
         if(month === 0){
             //its january, so get the janauray budgets
             //https://api.airtable.com/v0/applYClUOdBXhRzGf/m_jan_budget
             // db_name = "m_jan_budget";
             monthName.innerHTML = "January";
+            monthNameProg.innerHTML = "January";
         } else if (month === 1){
             //its February
-            //https://api.airtable.com/v0/applYClUOdBXhRzGf/m_feb_budget
             // db_name = "m_feb_budget";
             monthName.innerHTML = "February";
+            monthNameProg.innerHTML = "February";
         } else if (month === 2){
             // March
             // db_name = "m_mar_budget";
             monthName.innerHTML = "March";
+            monthNameProg.innerHTML = "March";
         } else if (month === 3){
             //April
             // db_name = "m_apr_budget";
             monthName.innerHTML = "April";
+            monthNameProg.innerHTML = "April";
         } else if (month === 4){
             //may
             // db_name = "m_may_budget";
             monthName.innerHTML = "May";
+            monthNameProg.innerHTML = "May";
         } else if (month === 5){
             //june
             // db_name = "m_jun_budget";
             monthName.innerHTML = "June";
+            monthNameProg.innerHTML = "June";
         } else if (month === 6){
             //july
             // db_name = "m_jul_budget";
             monthName.innerHTML = "July";
+            monthNameProg.innerHTML = "July";
         } else if (month === 7){
             //August
             // db_name = "m_aug_budget";
             monthName.innerHTML = "August";
+            monthNameProg.innerHTML = "August";
         } else if (month === 8){
             //September
             // db_name = "m_sep_budget";
             monthName.innerHTML = "September";
+            monthNameProg.innerHTML = "September";
         } else if (month === 9){
             //October
             // db_name = "m_oct_budget";
             monthName.innerHTML = "October";
+            monthNameProg.innerHTML = "October";
         } else if (month === 10){
             //November
             // db_name = "m_nov_budget";
             monthName.innerHTML = "November";
+            monthNameProg.innerHTML = "November";
         } else if (month === 11){
             //December
             // db_name = "m_dec_budget";
             monthName.innerHTML = "December";
+            monthNameProg.innerHTML = "December";
         } else {
             //error
             db_name = "error";
@@ -90,23 +102,25 @@ $(document).ready(function(){
                     var allBudgets = {};
                     for(var i=0; i<response.records.length; i++){
                         if(response.records[i].fields.mb_userIDFK === userid){
-                            console.log("Hello?");
+                            // console.log("Hello?");
+                            localStorage.setItem('budgets', JSON.stringify(response.records[i]));
                             currentBudget = response.records[i];
                             //all Budgets
                             //now we want to load in all the other elements
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-food').html("$" + response.records[i].fields.mb_food);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-other').html("$" + response.records[i].fields.mb_other);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-utilities').html("$" + response.records[i].fields.mb_utilities);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-gifts').html("$" + response.records[i].fields.mb_gifts);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-transportation').html("$" + response.records[i].fields.mb_transportation);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-travel').html("$" + response.records[i].fields.mb_travel);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-home').html("$" + response.records[i].fields.mb_home);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-health').html("$" + response.records[i].fields.mb_health);
-                            $('#'+response.records[i].fields.mb_monthKey.toString()+'-personal').html("$" + response.records[i].fields.mb_personal);
+
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-food').html("$" + response.records[i].fields.mb_food);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-other').html("$" + response.records[i].fields.mb_other);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-utilities').html("$" + response.records[i].fields.mb_utilities);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-gifts').html("$" + response.records[i].fields.mb_gifts);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-transportation').html("$" + response.records[i].fields.mb_transportation);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-travel').html("$" + response.records[i].fields.mb_travel);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-home').html("$" + response.records[i].fields.mb_home);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-health').html("$" + response.records[i].fields.mb_health);
+                            // $('#'+response.records[i].fields.mb_monthKey.toString()+'-personal').html("$" + response.records[i].fields.mb_personal);
                             //end all budgets
 
 
-                            if(currentBudget.fields.mb_monthKey === month){
+                            // if(currentBudget.fields.mb_monthKey === month){
                                 var currentBudgetElement = document.getElementById('current-month-budget-values');
                                 var currentBudgetValues = {
                                     "personal": currentBudget.fields.mb_personal,
@@ -257,8 +271,26 @@ $(document).ready(function(){
                                 currentState.other.percentage = (currentState.other.spent.toFixed(2) / currentState.other.budget.toFixed(2));
                                 currentState.utilities.percentage = (currentState.utilities.spent.toFixed(2) / currentState.utilities.budget.toFixed(2));
                                 currentState.gifts.percentage = (currentState.gifts.spent.toFixed(2) / currentState.gifts.budget.toFixed(2));
-                                // console.log("currentState: ");
-                                // console.log(currentState);
+
+                                //set progress bars to the right percentage
+                                document.getElementById('food-progress').setAttribute('data-progress-percent', (currentState.food.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('other-progress').setAttribute('data-progress-percent', (currentState.other.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('home-progress').setAttribute('data-progress-percent', (currentState.home.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('health-progress').setAttribute('data-progress-percent', (currentState.health.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('travel-progress').setAttribute('data-progress-percent', (currentState.travel.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('transportation-progress').setAttribute('data-progress-percent', (currentState.transportation.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('personal-progress').setAttribute('data-progress-percent', (currentState.personal.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('utilities-progress').setAttribute('data-progress-percent', (currentState.utilities.percentage * 100).toFixed(0));
+                                moveProgressBar();
+                                document.getElementById('gifts-progress').setAttribute('data-progress-percent', (currentState.gifts.percentage * 100).toFixed(0));
+                                moveProgressBar();
 
                                 //personal, travel, home, health, transportation, gifts, utilities, food other
                                 personal_BV.innerHTML = "$" + (currentState.personal.budget).toString();
@@ -361,7 +393,7 @@ $(document).ready(function(){
                                 } else {
                                     food_PV.setAttribute('class', 'body-cell danger');
                                 }
-                            }
+                            //}
                         }
                     }
 

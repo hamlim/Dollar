@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
 		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/app.css">
+		<link rel="stylesheet" href="./css/budgets.css">
 
 		<!-- Emoji One -->
 		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
@@ -70,6 +71,7 @@
 		<!-- <script src="./js/moment.js"></script> -->
 		<!-- <script src="./js/marked/marked.js"></script> -->
         <script src="./js/settings.js"></script>
+		<script src="./js/logout.js"></script>
 
 	</head>
 	<body>
@@ -88,6 +90,9 @@
 							<a href="./analysis.html">
 								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
 							</a>
+							<a href="./budgets.html">
+                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
+                            </a>
 							<a href="./account.html" class="selected">
 								<i class="emoji navmoji" id="account">:gear:</i>
 							</a>
@@ -155,13 +160,104 @@
 					</div>
                 </div>
 
+				<div class="row">
+                    <div class="one-full column">
+                        <hr/>
+                    </div>
+                </div>
+				<div class="row">
+					<h3>Edit All Budgets:</h3>
+				</div>
+				<div class="row">
+					<p>
+						The following values will be applied to all months, we currently don't support different budget values for different months.
+					</p>
+				</div>
+                <div class="flex-holder">
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:bust_in_silhouette:</i> Personal:</span>
+                        </div>
+                        <div class="body-cell">
+							<input value="0" type="number" min="0"  id="personal">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:airplane:</i> Travel:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="travel">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:house:</i> Home:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="home">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:pill:</i> Health:</span>
+                        </div>
+						<div class="body-cell">
+							 <input value="0" type="number" min="0" id="health">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:red_car:</i> Transportation:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="transportation">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:gift:</i> Gifts:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="gifts">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:tools:</i> Utilities:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" value="0" type="number" min="0" id="utilities">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:pizza:</i> Food:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="food">
+                        </div>
+                    </div>
+                    <div class="flex-unit">
+                        <div class="header-cell">
+                            <span><i class="emoji small">:poop:</i> Other:</span>
+                        </div>
+						<div class="body-cell">
+							<input value="0" type="number" min="0" id="other">
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<button id="budget-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
+				</div>
 			</section>
 
 			<footer class="footer">
 	            <section class="container">
 	                <div class="row">
 	                    <div class="one-half column offset-by-three columns center-text">
-	                        <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5>
+	                        <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
+							<button class="btn" onclick="logoutHandler()" id="logout-btn">Logout <i class="emoji navmoji small">:wave:</i></button>
 	                    </div>
 	                </div>
 	            </section>
