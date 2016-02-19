@@ -106,3 +106,8 @@ a.special-green:hover{
 #logout-btn {
     margin-top: 10px;
 }
+
+.table-fix {
+    max-width: .9vw;
+    margin: 0 auto;
+}
