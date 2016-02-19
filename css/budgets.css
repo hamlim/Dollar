@@ -16,6 +16,36 @@
 	align-items: stretch;
 }
 
+.flex-holder {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 30px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.flex-unit {
+    text-align: center;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.body-cell input {
+    /*width: 5em;*/
+    width: 100%;
+    text-align: center;
+    margin: 0 0;
+    outline: none;
+    border: none;
+}
+.body-cell input:focus {
+    outline: none;
+    border: none;
+    border: solid 2px #66A96B;
+}
+
 .flex-pod {
     display: flex;
     justify-content: center;
@@ -49,6 +79,12 @@
     }
     .flex-item {
         min-width: 7em;
+    }
+    .flex-holder {
+        flex-direction: column;
+    }
+    .flex-unit + .flex-unit {
+        margin-top: 15px;
     }
 }
 /*
