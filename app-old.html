@@ -71,7 +71,6 @@
 		<script src="./js/typeahead/typeahead.js"></script>
 		<script src="./js/marked/marked.js"></script>
         <script src="./js/app.js"></script>
-		<script src="./js/logout.js"></script>
 
 	</head>
 	<body>
@@ -81,20 +80,14 @@
 					<section class="row">
 						<div class="one-full column text-middle">
 							<a href="./index.html">
-								<i class="emoji navmoji">:dollar:</i>
+								<i class="emoji">:dollar:</i>
 							</a>
 							<span>
 							<a href="./app.html" class="selected">
-								<i class="emoji navmoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
+								<i class="emoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
 							</a>
 							<a href="./analysis.html">
-								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
-							</a>
-							<a href="./budgets.html">
-                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
-                            </a>
-							<a href="./account.html">
-								<i class="emoji navmoji" id="account">:gear:</i>
+								<i class="emoji" id="analysis">:chart_with_upwards_trend:</i>
 							</a>
 							</span>
 						</div>
@@ -112,20 +105,6 @@
 							<div class="row">
 								<label class="one-half column" for="amountField">Expense Amount: </label>
 	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="tagField">Account Tag:</label>
-								<select class="one-half column" id="transactionTag">
-									<option id="optone">
-										Credit Card
-									</option>
-									<option id="opttwo">
-										Debit Card
-									</option>
-									<option id="optthree">
-										Savings
-									</option>
-								</select>
 							</div>
 							<div class="row" id="bloodhound">
 								<label class="one-half column" for="transactionLocation">Expense Location: </label>
@@ -165,7 +144,7 @@
 							</div>
 							<div class="row">
 								<label class="one-half column" for="transactionNotes">Expense Notes: (optional)</label>
-								<textarea class="one-half column" placeholder="A quick stop to the grocery store for ... (supports markdown!)" id="transactionNotes"></textarea>
+								<textarea class="one-half column" placeholder="A quick stop to the grocery store for ... (suports markdown!)" id="transactionNotes"></textarea>
 							</div>
 							<div class="row">
 								<label class="one-half column" for="transactionUserTime">Expense Date: (optional)</label>
@@ -195,9 +174,6 @@
 					      	<th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
 					      	<th><span><i class="emoji small">:map:</i> Location:</span></th>
 					      	<th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
-							<th>
-								<span><i class="emoji small">:hash:</i> Tag:</span>
-							</th>
 					    </tr>
 					  </thead>
 					  <tbody id="past-transactions">
@@ -210,8 +186,7 @@
 	            <section class="container">
 	                <div class="row">
 	                    <div class="one-half column offset-by-three columns center-text">
-	                        <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
-							<button class="btn" onclick="logoutHandler()" id="logout-btn">Logout <i class="emoji navmoji small">:wave:</i></button>
+	                        <h5 class="footer-text">Made with <i class="emoji small">:hearts:</i> and <i class="emoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt Hamlin</a>. </h5>
 	                    </div>
 	                </div>
 	            </section>
