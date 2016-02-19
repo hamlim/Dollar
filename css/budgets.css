@@ -1,0 +1,62 @@
+.flex-parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 600px){
+    .flex-parent {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    /*.body-cell:before {
+        content: attr(data-month);
+    }
+    .months {
+        display: none;
+    }*/
+}
+/*
+    Maybe on large displays do rows, and on small do columns
+
+*/
+
+.flex-item {
+    /*display: inline-flex;*/
+    /*min-width: 11em;*/
+    /*margin-right: 15px;
+    margin-left: 15px;*/
+    /*padding-left: 5px;
+    padding-right: 5px;*/
+}
+
+.header-cell {
+    border-bottom: solid black 3px;
+    width: 100%;
+    text-align: center;
+}
+
+.body-cell {
+    border: 1px #DDDDDD solid;
+    text-align: center;
+    min-width: 10em;
+}
+.force-width-3x {
+    min-width: 30em;
+}
+.months {
+    min-height: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.good {
+    background-color: #2ECC40;
+}
+.warn {
+    background-color: #FF851B;
+}
+.danger {
+    background-color: #FF4136;
+}

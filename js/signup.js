@@ -21,7 +21,8 @@ $(document).ready(function(){
                 "u_username": username,
                 "u_fullname": fullname,
                 "u_password": password,
-                "u_email": email
+                "u_email": email,
+                "u_tags": "Credit Card, Debit Card, Cash"
             };
             var packageObj = {
                 "fields": userObj
@@ -55,7 +56,10 @@ $(document).ready(function(){
                                 "username": user.fields.u_username,
                                 "fullname": user.fields.u_fullname,
                                 "email": user.fields.u_email,
-                                "userID": user.fields.u_userID
+                                "userID": user.fields.u_userID,
+                                "tags": user.fields.u_tags,
+                                "userKey": user.id,
+                                "pass": user.fields.u_password
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 
@@ -85,7 +89,7 @@ $(document).ready(function(){
                             "content-type": "application/json"
                         },
                         "data": stringUser
-                    }
+                    };
 
                     $.ajax(postSettings).done(function (response) {
                         // console.log(response);
@@ -99,13 +103,53 @@ $(document).ready(function(){
                                 "username": username,
                                 "fullname": fullname,
                                 "email": email,
-                                "userID": response.fields.u_userID
+                                "userID": response.fields.u_userID,
+                                "tags": response.fields.u_tags,
+                                "userKey": response.id,
+                                "pass": response.fields.u_password
                             };
                             //now we want to save that to local storage and also push the browser to ./app.html
 
                             var localUserString = JSON.stringify(localUser);
                             localStorage.setItem('user', localUserString);
-                            window.location.href = "./app.html";
+
+                            //we also want to push a quick version of the budget before routing to app
+                            var buds = {
+                                "mb_userIDFK": localUser.userID,
+                                "mb_home": 0,
+                                "mb_food": 0,
+                                "mb_other": 0,
+                                "mb_gifts": 0,
+                                "mb_health": 0,
+                                "mb_travel": 0,
+                                "mb_personal": 0,
+                                "mb_utilities": 0,
+                                "mb_transportation": 0
+                            };
+
+                            var sendbud = {
+                                "fields": buds
+                            };
+
+                            var budPushSettings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": "https://api.airtable.com/v0/applYClUOdBXhRzGf/MonthlyBudgets",
+                                "method": "POST",
+                                "headers": {
+                                    "authorization": "Bearer keyIye3zskPSBMQ6Q",
+                                    "content-type": "application/json"
+                                },
+                                "data": sendbud
+                            };
+
+                            $.ajax(budPushSettings).done(function (budresp){
+                                console.log(budresp);
+                                //save to localStorage
+                                localStorage.setItem('budgets', JSON.stringify(budresp));
+                                //redirect to app
+                                window.location.href = "./app.html";
+                            });
                         }
                     });
                 }
