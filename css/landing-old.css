@@ -55,16 +55,6 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* pricing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.pricing {
-    /*background-image: linear-gradient(-90deg, #66A995, #8CA966);*/
-    /*background-image: linear-gradient(-90deg, #6691A9, #A99A66);*/
-    background-image: linear-gradient(-90deg, #66A995, #2DC84A);
-    background-size: cover;
-    color: #fff;
-}
-
 /* Categories
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories {
@@ -72,7 +62,7 @@
   background-size: cover;
   color: #fff;
 }
-.categories .section-description {
+.categories .section-description { 
   margin-bottom: 4rem;
 }
 
@@ -104,9 +94,6 @@
   .hero-heading {
     font-size: 2.4rem;
   }
-  .hero-heading-small {
-      font-size: 2rem;
-  }
 }
 
 /* Bigger than 750 */
@@ -116,9 +103,6 @@
   }
   .hero-heading {
     font-size: 2.6rem;
-  }
-  .hero-heading-small{
-      font-size: 2.2rem;
   }
   .section {
     padding: 14rem 0 15rem;
@@ -155,9 +139,6 @@
   }
   .hero-heading {
     font-size: 3.0rem;
-  }
-  .hero-heading-small {
-      font-size: 2.8rem;
   }
   .phone {
     top: -16rem;

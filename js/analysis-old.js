@@ -1,8 +1,5 @@
 $(document).ready(function(){
     //dom is loaded
-    console.log("*--------------------------------------------*");
-    console.log("Begin analysis.js");
-    console.log("*--------------------------------------------*");
     if(localStorage.length = 0) {
         window.location.href = "./login.html";
     } else {
@@ -45,9 +42,7 @@ $(document).ready(function(){
             var userExpenses = JSON.parse(localStorage.getItem('userExpenses'));
             for(var i=0; i<userExpenses.length; i++){
                 var linkTD = document.createElement('td');
-                var tagTD = document.createElement('td'); //TAGS
-                tagTD.innerHTML = userExpenses[i].fields.d_tag; //TAGS
-                linkTD.innerHTML = "Info!";
+                linkTD.innerHTML = "Click for info!";
                 linkTD.className = "expense-info";
                 //render all transactions
                 var divRow = document.createElement('tr');
@@ -56,16 +51,7 @@ $(document).ready(function(){
                 var uniqueID = userExpenses[i].id;
                 divRow.setAttribute('data-expense-id', uniqueID);
                 var amountDiv = document.createElement('td');
-                if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
-                    amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString();
-                } else {
-                    if(userExpenses[i].fields.d_amount.toString().split('.').length === 2){
-                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".0";
-                    } else {
-                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".00";
-                    }
-                }
-                // amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
+                amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
                 var locationDiv = document.createElement('td');
                 locationDiv.innerHTML = userExpenses[i].fields.d_location;
                 var timeDiv = document.createElement('td');
@@ -79,7 +65,6 @@ $(document).ready(function(){
                 divRow.appendChild(amountDiv);
                 divRow.appendChild(locationDiv);
                 divRow.appendChild(categoryDiv);
-                divRow.appendChild(tagTD); //TAGS
                 pastTransactions.appendChild(divRow);
                 //analytics
                 //totals
@@ -135,7 +120,7 @@ $(document).ready(function(){
                         var converted = moment(userExpenses[k].fields.d_time);
                         var readable = converted._d;
                         vex.dialog.alert({
-                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[k].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                         });
                     }
                 }
@@ -265,9 +250,8 @@ $(document).ready(function(){
                 }
                 for(var i=0; i<userExpenses.length; i++){
                     var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Info!";
+                    linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
-                    var tagTD = document.createElement('td');
                     //render all transactions
                     var divRow = document.createElement('tr');
                     divRow.appendChild(linkTD);
@@ -275,15 +259,7 @@ $(document).ready(function(){
                     var uniqueID = userExpenses[i].id;
                     divRow.setAttribute('data-expense-id', uniqueID);
                     var amountDiv = document.createElement('td');
-                    if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
-                        amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString();
-                    } else {
-                        if(userExpenses[i].fields.d_amount.toString().split('.').length === 2){
-                            amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".0";
-                        } else {
-                            amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount.toString() + ".00";
-                        }
-                    }
+                    amountDiv.innerHTML = "$"+userExpenses[i].fields.d_amount;
                     var locationDiv = document.createElement('td');
                     locationDiv.innerHTML = userExpenses[i].fields.d_location;
                     var timeDiv = document.createElement('td');
@@ -293,12 +269,10 @@ $(document).ready(function(){
                     timeDiv.innerHTML = readable;
                     var categoryDiv = document.createElement('td');
                     categoryDiv.innerHTML = userExpenses[i].fields.d_category;
-                    tagTD.innerHTML = userExpenses[i].fields.d_tag;
                     divRow.appendChild(timeDiv);
                     divRow.appendChild(amountDiv);
                     divRow.appendChild(locationDiv);
                     divRow.appendChild(categoryDiv);
-                    divRow.appendChild(tagTD);
                     pastTransactions.appendChild(divRow);
                     //analytics
                     //totals
@@ -354,7 +328,7 @@ $(document).ready(function(){
                             var converted = moment(userExpenses[k].fields.d_time);
                             var readable = converted._d;
                             vex.dialog.alert({
-                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[k].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                                message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                             });
                         }
                     }
@@ -396,9 +370,4 @@ $(document).ready(function(){
             });
         }
     }
-
-    console.log("*--------------------------------------------*");
-    console.log("End analysis.js");
-    console.log("*--------------------------------------------*");
-    console.log("- - - - - - - - - - - - - - - - - - - - - - - ");
 })
