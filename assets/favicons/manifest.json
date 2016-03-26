@@ -44,7 +44,7 @@
 			"density": 4
 		}
 	],
-	"start_url": "http://goexploring.today/Dollar/app.html",
+	"start_url": "https://www.goexploring.today/Dollar/app.html",
 	"background_color": "#66a96b",
 	"theme_color": "#66a96b",
 	"display": "standalone",
