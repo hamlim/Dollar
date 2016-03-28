@@ -3,7 +3,7 @@ $(document).ready(function(){
     console.log("*--------------------------------------------*");
     console.log("Begin app.js");
     console.log("*--------------------------------------------*");
-    if(localStorage.length = 0){
+    if(localStorage.length === 0){
         //redirect to login
         window.Location.href = "./login.html";
     } else {
