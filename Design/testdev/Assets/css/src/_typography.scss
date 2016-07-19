@@ -1,0 +1,27 @@
+// "_typography.scss"
+
+html {
+	font-size: 24px;
+	font-family: "Helvetica Neue", serif;
+}
+h1 {
+	font-size: calc((112.5% + 0.25vw) * 2.3);	
+}
+h2 {
+	font-size: calc((112.5% + 0.25vw) * 1.7);
+}
+h3 {
+	font-size: calc((112.5% + 0.25vw) * 1.3);
+}
+h4 {
+	font-size: calc((112.5% + 0.25vw) * 0.9);
+}
+h5 {
+	font-size: calc((112.5% + 0.25vw) * 0.7);
+}
+h6 {
+	font-size: calc((112.5% + 0.25vw) * 0.5);
+}
+small {
+	font-size: calc((112.5% + 0.25vw) * 0.4);
+}
