@@ -1,0 +1,222 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Mobile first queries */
+/* Larger than mobile */
+/* Larger than phablet */
+/* Larger than tablet */
+/* Larger than desktop */
+/* Larger than Desktop HD */
+.grid {
+  display: flex;
+}
+.grid-row {
+  flex-direction: row;
+}
+.grid-column {
+  flex-direction: column;
+}
+.grid-row-reverse {
+  flex-direction: row-reverse;
+}
+.grid-column-reverse {
+  flex-direction: column-reverse;
+}
+.grid-wrap {
+  flex-wrap: wrap;
+}
+.grid-nowrap {
+  flex-wrap: nowrap;
+}
+.grid-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.grid-justify-start {
+  justify-content: flex-start;
+}
+.grid-justify-end {
+  justify-content: flex-end;
+}
+.grid-justify-center {
+  justify-content: center;
+}
+.grid-justify-between {
+  justify-content: space-between;
+}
+.grid-justify-around {
+  justify-content: space-around;
+}
+.grid-align-items-start {
+  align-items: flex-start;
+}
+.grid-align-items-end {
+  align-items: flex-end;
+}
+.grid-align-items-center {
+  align-items: center;
+}
+.grid-align-items-stretch {
+  align-items: stretch;
+}
+.grid-align-items-baseline {
+  align-items: baseline;
+}
+.grid-align-content-start {
+  align-content: flex-start;
+}
+.grid-align-content-end {
+  align-content: flex-end;
+}
+.grid-align-content-center {
+  align-content: center;
+}
+.grid-align-content-stretch {
+  align-content: stretch;
+}
+.grid-align-content-between {
+  align-content: space-between;
+}
+.grid-align-content-around {
+  align-content: space-around;
+}
+
+.item-align-start {
+  align-self: flex-start;
+}
+.item-align-end {
+  align-self: flex-end;
+}
+.item-align-center {
+  align-self: center;
+}
+.item-align-baseline {
+  align-self: baseline;
+}
+.item-align-stretch {
+  align-self: stretch;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Helvetica Neue", serif;
+}
+@media (min-width: 16.667em) {
+  html {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 22.197em) {
+  html {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+@media (min-width: 31.25em) {
+  html {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+}
+@media (min-width: 41.667em) {
+  html {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+}
+@media (min-width: 50em) {
+  html {
+    font-size: 26px;
+    line-height: 2;
+  }
+}
+
+h1 {
+  font-size: calc((112.5% + 0.25vw) * 2.3);
+}
+
+h2 {
+  font-size: calc((112.5% + 0.25vw) * 1.7);
+}
+
+h3 {
+  font-size: calc((112.5% + 0.25vw) * 1.3);
+}
+
+h4 {
+  font-size: calc((112.5% + 0.25vw) * 0.9);
+}
+
+h5 {
+  font-size: calc((112.5% + 0.25vw) * 0.7);
+}
+
+h6 {
+  font-size: calc((112.5% + 0.25vw) * 0.5);
+}
+
+small {
+  font-size: calc((112.5% + 0.25vw) * 0.4);
+}
+
+h1, h2, h3, h4, h5, h6, small, p, ul, ol {
+  margin: 0 0.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */

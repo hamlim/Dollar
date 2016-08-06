@@ -1,0 +1,107 @@
+// This is a small little scss snippet of a flexbox-based grid layout
+//  , notice there are no limits to the number of columns, or any defaults in terms of column sizes.
+
+
+.grid {
+	display: flex;
+	&-row {
+		flex-direction: row;
+	}
+	&-column {
+		flex-direction: column;
+	}
+	&-row-reverse {
+		flex-direction: row-reverse;
+	}
+	&-column-reverse {
+		flex-direction: column-reverse;
+	}
+	&-wrap {
+		flex-wrap: wrap;
+	}
+	&-nowrap {
+		flex-wrap: nowrap;
+	}
+	&-wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+	&-justify-start {
+		justify-content: flex-start;
+	}
+	&-justify-end {
+		justify-content: flex-end;
+	}
+	&-justify-center {
+		justify-content: center;
+	}
+	&-justify-between {
+		justify-content: space-between;
+	}
+	&-justify-around {
+		justify-content: space-around;
+	}
+	&-align-items-start {
+		align-items: flex-start;
+	}
+	&-align-items-end {
+		align-items: flex-end;
+	}
+	&-align-items-center {
+		align-items: center;
+	}
+	&-align-items-stretch {
+		align-items: stretch;
+	}
+	&-align-items-baseline {
+		align-items: baseline;
+	}
+	&-align-content-start {
+		align-content: flex-start;
+	}
+	&-align-content-end {
+		align-content: flex-end;
+	}
+	&-align-content-center {
+		align-content: center;
+	}
+	&-align-content-stretch {
+		align-content: stretch;
+	}
+	&-align-content-between {
+		align-content: space-between;
+	}
+	&-align-content-around {
+		align-content: space-around;
+	}
+}
+
+@mixin order($order) {
+	order: $order;
+}
+@mixin flexGrow($proportion) {
+	flex-grow: $proportion;
+}
+@mixin flexShrink($proportion) {
+	flex-shrink: $proportion;
+}
+@mixin flexBasis($width) {
+	// This technically supports people using keywords like content or auto, however it should be known that many browsers aren't cully spec compliant with the flex-basis property, see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
+	flex-basis: $width;
+}
+.item {
+	&-align-start {
+		align-self: flex-start;
+	}
+	&-align-end {
+		align-self: flex-end;
+	}
+	&-align-center {
+		align-self: center;
+	}
+	&-align-baseline {
+		align-self: baseline;
+	}
+	&-align-stretch {
+		align-self: stretch;
+	}
+}

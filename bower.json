@@ -1,0 +1,23 @@
+{
+  "name": "Dollar",
+  "homepage": "https://github.com/hamlim/Dollar",
+  "authors": [
+    "Matt Hamlin <hamlim@outlook.com>"
+  ],
+  "description": "A simple financial manager",
+  "main": "index.html",
+  "keywords": [
+    "Finance",
+    "tracking",
+    "Dolalr"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
