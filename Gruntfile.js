@@ -18,14 +18,27 @@ module.exports = function(grunt) {
                 files: ['assets/css/src/*.scss'],
                 tasks: ['sass'],
             }
+        },
+        es6transpiler: {
+            dist: {
+                files: {
+                    'assets/js/prod/MVC/controllers/home.js': 'assets/js/src/home/controller.js',
+                    'assets/js/prod/MVC/controllers/settings.js': 'assets/js/src/settings/controller.js',
+                    'assets/js/prod/MVC/controllers/budgets.js': 'assets/js/src/budgets/controller.js',
+                    'assets/js/prod/MVC/controllers/analysis.js': 'assets/js/src/analysis/controller.js',
+                    'assets/js/prod/MVC/controllers/login.js': 'assets/js/src/login/controller.js',
+                    'assets/js/prod/MVC/controllers/signup.js': 'assets/js/src/signup/controller.js'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-es6-transpiler');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['sass', 'es6transpiler']);
     grunt.registerTask('watch', ['watch']);
 
 };
