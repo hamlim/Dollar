@@ -241,6 +241,10 @@ header {
   outline: 1px dotted transparent !important;
 }
 
+html {
+  background-color: #ffffff;
+}
+
 .center {
   margin: 0 auto;
 }
