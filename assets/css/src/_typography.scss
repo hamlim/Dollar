@@ -14,9 +14,25 @@
 	$line-5: 2;
 
 	html {
+		@font-face {
+		    font-family: 'Affogato-Medium';
+		    src: url('webfont/Affogato-Medium.eot');
+		    src: url('webfont/Affogato-Medium.eot?#iefix') format('embedded-opentype'),
+		    	 url('webfont/Affogato-Medium.woff') format('woff'),
+		         url('webfont/Affogato-Medium.woff2') format('woff2'),
+		         url('webfont/Affogato-Medium.ttf')  format('truetype');
+		}
+		@font-face {
+		    font-family: 'Affogato-Regular';
+		    src: url('webfont/Affogato-Regular.eot');
+		    src: url('webfont/Affogato-Regular.eot?#iefix') format('embedded-opentype'),
+		    	 url('webfont/Affogato-Regular.woff') format('woff'),
+		         url('webfont/Affogato-Regular.woff2') format('woff2'),
+		         url('webfont/Affogato-Regular.ttf')  format('truetype');
+		}
 		font-size: $base;
 		line-height: $line-base;
-		font-family: "Helvetica Neue", serif;
+		font-family: "Affogato-Regular", "Helvetica Neue", serif;
 		@include phone {
 			font-size: $font-1;
 			line-height: $line-1;
@@ -61,5 +77,8 @@
 	}
 	h1, h2, h3, h4, h5, h6, small, p, ul, ol {
 		margin: 0 0.5rem;
+	}
+	header {
+		font-family: "Affogato-Medium"
 	}
 }

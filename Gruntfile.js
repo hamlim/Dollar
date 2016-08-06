@@ -15,8 +15,8 @@ module.exports = function(grunt) {
         },
         watch: {
             src: {
-                files: ['Assets/css/src/*.scss'],
-                tasks: ['default'],
+                files: ['assets/css/src/*.scss'],
+                tasks: ['sass'],
             }
         }
     });
@@ -26,4 +26,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['sass']);
+    grunt.registerTask('watch', ['watch']);
+
 };

@@ -154,7 +154,21 @@ table {
 html {
   font-size: 16px;
   line-height: 1;
-  font-family: "Helvetica Neue", serif;
+  font-family: "Affogato-Regular", "Helvetica Neue", serif;
+}
+@font-face {
+  html {
+    font-family: 'Affogato-Medium';
+    src: url("webfont/Affogato-Medium.eot");
+    src: url("webfont/Affogato-Medium.eot?#iefix") format("embedded-opentype"), url("webfont/Affogato-Medium.woff") format("woff"), url("webfont/Affogato-Medium.woff2") format("woff2"), url("webfont/Affogato-Medium.ttf") format("truetype");
+  }
+}
+@font-face {
+  html {
+    font-family: 'Affogato-Regular';
+    src: url("webfont/Affogato-Regular.eot");
+    src: url("webfont/Affogato-Regular.eot?#iefix") format("embedded-opentype"), url("webfont/Affogato-Regular.woff") format("woff"), url("webfont/Affogato-Regular.woff2") format("woff2"), url("webfont/Affogato-Regular.ttf") format("truetype");
+  }
 }
 @media (min-width: 16.667em) {
   html {
@@ -217,6 +231,87 @@ small {
 
 h1, h2, h3, h4, h5, h6, small, p, ul, ol {
   margin: 0 0.5rem;
+}
+
+header {
+  font-family: "Affogato-Medium";
+}
+
+*:focus {
+  outline: 1px dotted transparent !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+@media (min-width: 16.667em) {
+  .center {
+    width: 100vw;
+  }
+}
+@media (min-width: 22.197em) {
+  .center {
+    width: 90vw;
+  }
+}
+@media (min-width: 31.25em) {
+  .center {
+    width: 80vw;
+  }
+}
+@media (min-width: 41.667em) {
+  .center {
+    width: 60vw;
+  }
+}
+@media (min-width: 50em) {
+  .center {
+    width: 50vw;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+a:active,
+a :focus {
+  outline-width: 0;
+}
+a:hover {
+  border-bottom: solid 4px #FDE3A7;
+}
+a.active-link {
+  border-bottom: solid 4px #66A96B;
+}
+a.active-link:hover {
+  border-bottom: solid 4px #19B5FE;
+}
+
+.header {
+  color: #000000;
+  width: 100vw;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+
+.headernav-links > li {
+  display: inline-block;
+}
+@media (min-width: 16.667em) {
+  .headernav-links > li:not(:last-child) {
+    padding-right: 0.5em;
+  }
+}
+@media (min-width: 31.25em) {
+  .headernav-links > li:not(:last-child) {
+    padding-right: 1em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,10 +3,86 @@
 @import 'grid';
 @import 'typography';
 @import 'colors';
-
+@import 'constants';
 
 // Include the required mixins
 @include typography();
 @include FlatUIColors();
 
 // Generic Styles
+
+// Trumps
+
+*:focus {
+    outline: 1px dotted rgba(0,0,0,0) !important;
+}
+
+// Utility classes
+.center {
+	@include phone {
+		width: 100vw;
+	}
+	@include phablet {
+		width: 90vw;
+	}
+	@include tablet {
+		width: 80vw;
+	}
+	@include desktop {
+		width: 60vw;
+	}
+	@include xl {
+		width: 50vw;
+	}
+	margin: 0 auto;
+}
+.no-margin {
+	margin: 0;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+
+	&:active,
+	:focus {
+		outline-width: 0;
+	}
+
+	&:hover {
+		border-bottom: solid 4px $alt;
+	}
+	
+	&.active-link {
+		border-bottom: solid 4px $green;
+
+		&:hover {
+			border-bottom: solid 4px $blue;
+		}
+	}
+
+}
+
+// Header
+
+.header {
+	color: $black;
+	width: 100vw;
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+}
+.headernav {
+
+	&-links > li {
+		display: inline-block;
+	}
+	&-links > li:not(:last-child) {
+		@include phone {
+			padding-right: 0.5em;
+		}
+		@include tablet {
+			padding-right: 1em;
+		}
+	}
+}
