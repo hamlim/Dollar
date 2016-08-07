@@ -1,6 +1,13 @@
 // Components.jsx
 
 let HeaderLoggedIn = React.createClass({
+	logoutUser: function(e){
+		e.preventDefault();
+		setDollarState({
+			'loggedIn': false
+		});
+		window.location.href = './login.html';
+	},
 	render: function() {
 		return (
 			<nav className='headernav center' role='navigation'>
@@ -9,18 +16,31 @@ let HeaderLoggedIn = React.createClass({
 					<li><a href='./analysis.html' className='headernav-link'>Analysis</a></li>
 					<li><a href='./budgets.html' className='headernav-link'>Budgets</a></li>
 					<li><a href='./settings.html' className='headernav-link'>Settings</a></li>
+					<li><a href='#' onClick={this.logoutUser} className='headernav-link'>Logout</a></li>
 				</ul>
 			</nav>
 		)
 	}
 });
-let HeaderNotLoggedIn = React.createClass({
+let HeaderNotLoggedInlogin = React.createClass({
+	render: function() {
+		return (
+			<nav className='headernav center' role='navigation'>
+				<ul className='headernav-links'>
+					<li><a href='./login.html' className='headernav-link active-link'>Login</a></li>
+					<li><a href='./signup.html' className='headernav-link'>Signup</a></li>
+				</ul>
+			</nav>
+		)
+	}
+});
+let HeaderNotLoggedInsignup = React.createClass({
 	render: function() {
 		return (
 			<nav className='headernav center' role='navigation'>
 				<ul className='headernav-links'>
 					<li><a href='./login.html' className='headernav-link'>Login</a></li>
-					<li><a href='./signup.html' className='headernav-link'>Signup</a></li>
+					<li><a href='./signup.html' className='headernav-link active-link'>Signup</a></li>
 				</ul>
 			</nav>
 		)
@@ -28,10 +48,35 @@ let HeaderNotLoggedIn = React.createClass({
 });
 
 let headerMount = document.getElementsByClassName('js-headerMount')[0];
-// Testing
-localStorage.setItem('loggedIn', JSON.stringify(true));
-if(JSON.parse(localStorage.getItem('loggedIn')) === true ) {
-	ReactDOM.render(<HeaderLoggedIn />, headerMount);
+let location = window.location.pathname;
+if(location === '/index.html') {
+	if(localStorage.dollar) {
+		if(state.loggedIn === true ) {
+			ReactDOM.render(<HeaderLoggedIn />, headerMount);
+		} else {
+			window.location.href = '/login.html';
+		}
+	} else {
+		window.location.href = '/signup.html';
+	}
+} else if(location === '/login.html') {
+	if(localStorage.dollar){
+		ReactDOM.render(<HeaderNotLoggedInlogin />, headerMount);
+	} else {
+		window.location.href = '/signup.html';
+	}
 } else {
-	ReactDOM.render(<HeaderNotLoggedIn />, headerMount)
+	ReactDOM.render(<HeaderNotLoggedInsignup />, headerMount);
 }
+
+
+// Home Components
+let appMount = document.getElementsByClassName('js-appMount')[0];
+
+
+
+// Login Components
+let loginMount = document.getElementsByClassName('js-loginMount')[0];
+
+// Signup Components
+let signupMount = document.getElementsByClassName('js-signupMount')[0];

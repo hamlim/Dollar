@@ -44,6 +44,15 @@ html {
 	margin: 0;
 }
 
+.fr {
+	float: right;
+}
+.cf:after {
+	content: " ";
+	clear: both;
+	display: table;
+}
+
 a {
 	color: currentColor;
 	text-decoration: none;

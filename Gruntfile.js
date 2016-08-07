@@ -27,7 +27,8 @@ module.exports = function(grunt) {
                     'assets/js/prod/MVC/controllers/budgets.js': 'assets/js/src/budgets/controller.js',
                     'assets/js/prod/MVC/controllers/analysis.js': 'assets/js/src/analysis/controller.js',
                     'assets/js/prod/MVC/controllers/login.js': 'assets/js/src/login/controller.js',
-                    'assets/js/prod/MVC/controllers/signup.js': 'assets/js/src/signup/controller.js'
+                    'assets/js/prod/MVC/controllers/signup.js': 'assets/js/src/signup/controller.js',
+                    'assets/js/prod/helpers/state.js': 'assets/js/src/helpers/state.js'
                 }
             }
         }
