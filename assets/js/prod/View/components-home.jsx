@@ -73,6 +73,7 @@ if(location === '/index.html') {
 
 // Home Components
 let appMount = document.getElementsByClassName('js-appMount')[0];
+// We have 1 core component to render
 
 
 
