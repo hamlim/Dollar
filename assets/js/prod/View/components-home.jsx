@@ -13,6 +13,7 @@ let HeaderLoggedIn = React.createClass({
 			<nav className='headernav center' role='navigation'>
 				<ul className='headernav-links no-margin'>
 					<li><a href='./index.html' className='headernav-link active-link'>Home</a></li>
+					<li><a href='./records.html' className='headernav-link'>Records</a></li>
 					<li><a href='./analysis.html' className='headernav-link'>Analysis</a></li>
 					<li><a href='./budgets.html' className='headernav-link'>Budgets</a></li>
 					<li><a href='./settings.html' className='headernav-link'>Settings</a></li>

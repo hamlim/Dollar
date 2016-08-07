@@ -13,9 +13,9 @@ let HeaderLoggedIn = React.createClass({
 			<nav className='headernav center' role='navigation'>
 				<ul className='headernav-links no-margin'>
 					<li><a href='./index.html' className='headernav-link'>Home</a></li>
-					<li><a href='./records.html' className='headernav-link'>Records</a></li>
+					<li><a href='./records.html' className='headernav-link active-link'>Records</a></li>
 					<li><a href='./analysis.html' className='headernav-link'>Analysis</a></li>
-					<li><a href='./budgets.html' className='headernav-link active-link'>Budgets</a></li>
+					<li><a href='./budgets.html' className='headernav-link'>Budgets</a></li>
 					<li><a href='./settings.html' className='headernav-link'>Settings</a></li>
 					<li><a href='#' onClick={this.logoutUser} className='headernav-link'>Logout</a></li>
 				</ul>
@@ -38,7 +38,7 @@ let HeaderNotLoggedIn = React.createClass({
 
 let headerMount = document.getElementsByClassName('js-headerMount')[0];
 let location = window.location.pathname;
-if(location === '/budgets.html') {
+if(location === '/records.html') {
 	if(localStorage.dollar) {
 		if(state.loggedIn === true ) {
 			ReactDOM.render(<HeaderLoggedIn />, headerMount);
@@ -49,6 +49,6 @@ if(location === '/budgets.html') {
 		window.location.href = '/signup.html';
 	}
 } 
-// Budgets Components
+// Records Components
 let appMount = document.getElementsByClassName('js-appMount')[0];
 
