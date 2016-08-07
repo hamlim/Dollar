@@ -151,51 +151,122 @@ table {
   align-self: stretch;
 }
 
-html {
+.btn {
+  -webkit-appearance: none;
+  padding: 0.25em 0.5em;
+  outline-width: 0;
+  border-radius: 10px;
+  border: solid 4px currentColor;
+}
+.btn-large {
+  padding: 0.5em 1em;
+}
+.btn-fill {
+  margin-left: 0.375em;
+  width: calc(100% - 0.75em);
+}
+.btn-greenGhost {
+  color: #66A96B;
+  background-color: white;
+  transition: color 500ms;
+  transition: background-color 500ms;
+}
+.btn-greenGhost:active {
+  transition: color 500ms;
+  color: #19B5FE;
+}
+.btn-greenGhost:hover {
+  transition: background-color 250ms;
+  background-color: #FDE3A7;
+}
+.btn-block {
+  display: block;
+}
+.btn-pill {
+  display: inline;
+  border-radius: 0;
+}
+.btn-pill-c {
+  margin-left: 0;
+  margin-right: 0;
+}
+.btn-pill-r {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.btn-pill-l {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 4px;
+  border: 0;
+  display: block;
+  background-color: #F2F1EF;
+  padding: 0.25em;
+  margin: 0.5em;
+}
+input:active,
+input :focus {
+  box-shadow: 0 0 3px 2px #26A65B;
+}
+input:invalid {
+  box-shadow: 0 0 3px 2px #EF4836;
+}
+input:valid {
+  box-shadow: 0 0 3px 2px #26A65B;
+}
+input:not(:empty) {
+  box-shadow: 0 0 3px 2px #26A65B;
+}
+
+html, * {
   font-size: 16px;
   line-height: 1;
   font-family: "Affogato-Regular", "Helvetica Neue", serif;
 }
 @font-face {
-  html {
+  html, * {
     font-family: 'Affogato-Medium';
     src: url("webfont/Affogato-Medium.eot");
     src: url("webfont/Affogato-Medium.eot?#iefix") format("embedded-opentype"), url("webfont/Affogato-Medium.woff") format("woff"), url("webfont/Affogato-Medium.woff2") format("woff2"), url("webfont/Affogato-Medium.ttf") format("truetype");
   }
 }
 @font-face {
-  html {
+  html, * {
     font-family: 'Affogato-Regular';
     src: url("webfont/Affogato-Regular.eot");
     src: url("webfont/Affogato-Regular.eot?#iefix") format("embedded-opentype"), url("webfont/Affogato-Regular.woff") format("woff"), url("webfont/Affogato-Regular.woff2") format("woff2"), url("webfont/Affogato-Regular.ttf") format("truetype");
   }
 }
 @media (min-width: 16.667em) {
-  html {
+  html, * {
     font-size: 18px;
     line-height: 1.2;
   }
 }
 @media (min-width: 22.197em) {
-  html {
+  html, * {
     font-size: 20px;
     line-height: 1.4;
   }
 }
 @media (min-width: 31.25em) {
-  html {
+  html, * {
     font-size: 22px;
     line-height: 1.6;
   }
 }
 @media (min-width: 41.667em) {
-  html {
+  html, * {
     font-size: 24px;
     line-height: 1.8;
   }
 }
 @media (min-width: 50em) {
-  html {
+  html, * {
     font-size: 26px;
     line-height: 2;
   }
@@ -233,7 +304,7 @@ h1, h2, h3, h4, h5, h6, small, p, ul, ol {
   margin: 0 0.5rem;
 }
 
-header {
+header, h1, h2, h3, h4, h5, h6 {
   font-family: "Affogato-Medium";
 }
 
@@ -278,14 +349,16 @@ html {
   margin: 0;
 }
 
-.fr {
-  float: right;
+.tal-center {
+  text-align: center;
 }
 
-.cf:after {
-  content: " ";
-  clear: both;
-  display: table;
+.centerall {
+  min-height: calc(100vh - 2em);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -311,7 +384,6 @@ a.active-link:hover {
   width: 100vw;
   height: 2em;
   line-height: 2em;
-  text-align: center;
 }
 
 .headernav-links > li {

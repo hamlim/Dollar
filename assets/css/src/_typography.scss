@@ -13,7 +13,7 @@
 	$line-4: 1.8;
 	$line-5: 2;
 
-	html {
+	html, * {
 		@font-face {
 		    font-family: 'Affogato-Medium';
 		    src: url('webfont/Affogato-Medium.eot');
@@ -78,7 +78,7 @@
 	h1, h2, h3, h4, h5, h6, small, p, ul, ol {
 		margin: 0 0.5rem;
 	}
-	header {
+	header, h1, h2, h3, h4, h5, h6 {
 		font-family: "Affogato-Medium"
 	}
 }

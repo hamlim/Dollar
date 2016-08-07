@@ -26,7 +26,7 @@ let HeaderLoggedIn = React.createClass({
 let HeaderNotLoggedInlogin = React.createClass({
 	render: function() {
 		return (
-			<nav className='headernav center' role='navigation'>
+			<nav className='headernav center tal-center' role='navigation'>
 				<ul className='headernav-links'>
 					<li><a href='./login.html' className='headernav-link active-link'>Login</a></li>
 					<li><a href='./signup.html' className='headernav-link'>Signup</a></li>
@@ -38,7 +38,7 @@ let HeaderNotLoggedInlogin = React.createClass({
 let HeaderNotLoggedInsignup = React.createClass({
 	render: function() {
 		return (
-			<nav className='headernav center' role='navigation'>
+			<nav className='headernav center tal-center' role='navigation'>
 				<ul className='headernav-links'>
 					<li><a href='./login.html' className='headernav-link'>Login</a></li>
 					<li><a href='./signup.html' className='headernav-link active-link'>Signup</a></li>
@@ -82,3 +82,46 @@ let loginMount = document.getElementsByClassName('js-loginMount')[0];
 
 // Signup Components
 let signupMount = document.getElementsByClassName('js-signupMount')[0];
+
+let SignupForm = React.createClass({
+	submitForm: function(e) {
+		e.preventDefault();
+		console.log('Hello World!');
+		// We want to send the data to our data handler and have that do the communication with the server
+		let phoneElement = this.refs.phonenumber;
+		let passElement = this.refs.password;
+		if(phoneElement.value != '' && passElement.value != ''){
+			let result = signup({
+				'phonenumber': phoneElement.value,
+				'password': passElement.value
+			});
+			if(result === true){
+				window.location.href = '/index.html';
+			} else {
+				phoneElement.className += ' input-error';
+				passElement.className += ' input-error';
+			}
+		} else {
+			phoneElement.className += ' input-error';
+			passElement.className += ' input-error';
+		}
+	},
+	render: function() {
+		return (
+			<section className='signup tal-center'>
+				<section className='signupheader'>
+					<h4>Signup for Dollar</h4>
+				</section>
+				<section className='signupform'>
+					<form className=''>
+						<input className='signupform-input i-phonenumber' ref='phonenumber' type='tel' required placeholder='Phone Number'/>
+						<input className='signupform-input i-password' ref='password' type='password' required placeholder='Password' />
+						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-greenGhost']} btnName='Signup' />
+					</form>
+				</section>
+			</section>
+		)
+	}
+});
+
+ReactDOM.render(<SignupForm />, signupMount);
