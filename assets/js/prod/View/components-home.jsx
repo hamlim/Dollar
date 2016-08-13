@@ -88,6 +88,7 @@ let LoginForm = React.createClass({
 			scope: 'name,email,phone',
 		}).then(function(response) {
 	          console.log('approved as:', response);
+	          login(response);
 	      })
 	      .fail(function(err) {
 	          console.log('err', err);
@@ -103,7 +104,7 @@ let LoginForm = React.createClass({
 				</section>
 				<section className='loginform'>
 					<form className=''>
-						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-greenGhost']} btnName='Login' />
+						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-ghost']} btnName='Login' />
 					</form>
 				</section>
 			</section>
@@ -130,10 +131,12 @@ let SignupForm = React.createClass({
 	      })
 	      .fail(function(err) {
 	          console.log('err', err);
-
+	          window.functions.renderAlert({
+	          	msg: "Unable to signup! Try again below.",
+	          	type: "danger"
+	          });
 	      });
 		e.preventDefault();
-		console.log('Hello World!');
 	},
 	render: function() {
 		return (
@@ -143,7 +146,7 @@ let SignupForm = React.createClass({
 				</section>
 				<section className='signupform'>
 					<form className=''>
-						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-greenGhost']} btnName='Signup' />
+						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-ghost']} btnName='Signup' />
 					</form>
 				</section>
 			</section>

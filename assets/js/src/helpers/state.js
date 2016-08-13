@@ -12,7 +12,7 @@ function initState(state) {
 		state.store = {};
 	}
 }
-initState();
+initState(state);
 
 // @function setDollarState(object)
 // @params obj, state

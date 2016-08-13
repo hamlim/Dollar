@@ -1,8 +1,11 @@
 // _constants.scss
 
 // Brand colors
-$green: #66A96B;
-$white: #ffffff;
-$alt: #FDE3A7;
-$blue: #19B5FE;
-$black: #000000;
+$primary: #02E560;
+$secondary: #21A6FF;
+$tertiary: #F4D03F;
+$error: #EF4836;
+$black: #111111;
+$white: #FBFCFC;
+
+$linear-background: linear-gradient(135deg, $white 0%, lighten($secondary, 40%) 100%);

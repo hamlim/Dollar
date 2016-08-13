@@ -6,25 +6,24 @@
 	border-radius: 10px;
 	border: solid 4px currentColor;
 	&-large {
-		padding: 0.25em 1em;
+		padding: 0.125em 1em;
 	}
 	&-fill {
 		margin-left: 0.375em;
 		width: calc(100% - 0.75em);
 	}
-	&-greenGhost {
-		color: #66A96B;
-		background-color: white;
-		transition: color 500ms;
-		transition: background-color 500ms;
+	&-ghost {
+		color: $primary;
+		background-color: lighten($secondary, 40%);
+		transition: all 500ms;
 		
 		&:active {
-			transition: color 500ms;
-			color: #19B5FE;
+			transition: all 500ms;
+			color: $secondary;
 		}
 		&:hover {
-			transition: background-color 250ms;
-			background-color: #FDE3A7;
+			transition: all 250ms;
+			background-color: $white;
 		}
 	}
 	&-block {
@@ -45,5 +44,27 @@
 			border-top-left-radius: 4px;
 			border-bottom-left-radius: 4px;
 		}
+	}
+}
+
+.alert {
+	margin-top: 2em;
+	padding: .5em 1em;
+	border-radius: 10px;
+	text-align: center;
+	&-danger {
+		color: $error;
+		background-color: lighten($error, 20%);
+		border: solid 4px $error;
+	}
+	&-warn {
+		color: $tertiary;
+		background-color: lighten($tertiary, 20%);
+		border: solid 4px $tertiary;
+	}
+	&-info {
+		color: $secondary;
+		background-color: lighten($secondary, 20%);
+		border: solid 4px $secondary;
 	}
 }

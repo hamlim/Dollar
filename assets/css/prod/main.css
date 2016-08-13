@@ -159,25 +159,24 @@ table {
   border: solid 4px currentColor;
 }
 .btn-large {
-  padding: 0.25em 1em;
+  padding: 0.125em 1em;
 }
 .btn-fill {
   margin-left: 0.375em;
   width: calc(100% - 0.75em);
 }
-.btn-greenGhost {
-  color: #66A96B;
-  background-color: white;
-  transition: color 500ms;
-  transition: background-color 500ms;
+.btn-ghost {
+  color: #02E560;
+  background-color: #edf8ff;
+  transition: all 500ms;
 }
-.btn-greenGhost:active {
-  transition: color 500ms;
-  color: #19B5FE;
+.btn-ghost:active {
+  transition: all 500ms;
+  color: #21A6FF;
 }
-.btn-greenGhost:hover {
-  transition: background-color 250ms;
-  background-color: #FDE3A7;
+.btn-ghost:hover {
+  transition: all 250ms;
+  background-color: #FBFCFC;
 }
 .btn-block {
   display: block;
@@ -199,27 +198,49 @@ table {
   border-bottom-left-radius: 4px;
 }
 
+.alert {
+  margin-top: 2em;
+  padding: .5em 1em;
+  border-radius: 10px;
+  text-align: center;
+}
+.alert-danger {
+  color: #EF4836;
+  background-color: #f79e94;
+  border: solid 4px #EF4836;
+}
+.alert-warn {
+  color: #F4D03F;
+  background-color: #fae89f;
+  border: solid 4px #F4D03F;
+}
+.alert-info {
+  color: #21A6FF;
+  background-color: #87cfff;
+  border: solid 4px #21A6FF;
+}
+
 input {
   -webkit-appearance: none;
   border-radius: 4px;
   border: 0;
   display: block;
-  background-color: #F2F1EF;
+  background-color: #aaaaaa;
   padding: 0.25em;
   margin: 0.5em;
 }
 input:active,
 input :focus {
-  box-shadow: 0 0 3px 2px #26A65B;
+  box-shadow: 0 0 3px 2px #02E560;
 }
 input:invalid {
-  box-shadow: 0 0 3px 2px #EF4836;
+  box-shadow: 0 0 3px 2px #fac9c4;
 }
 input:valid {
-  box-shadow: 0 0 3px 2px #26A65B;
+  box-shadow: 0 0 3px 2px #02E560;
 }
 input:not(:empty) {
-  box-shadow: 0 0 3px 2px #26A65B;
+  box-shadow: 0 0 3px 2px #02E560;
 }
 
 html, * {
@@ -313,7 +334,7 @@ header, h1, h2, h3, h4, h5, h6 {
 }
 
 html {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #FBFCFC 0%, #edf8ff 100%);
 }
 
 .center {
@@ -370,17 +391,17 @@ a :focus {
   outline-width: 0;
 }
 a:hover {
-  border-bottom: solid 4px #FDE3A7;
+  border-bottom: solid 4px #F4D03F;
 }
 a.active-link {
-  border-bottom: solid 4px #66A96B;
+  border-bottom: solid 4px #02E560;
 }
 a.active-link:hover {
-  border-bottom: solid 4px #19B5FE;
+  border-bottom: solid 4px #21A6FF;
 }
 
 .header {
-  color: #000000;
+  color: #111111;
   width: 100vw;
   height: 2em;
   line-height: 2em;

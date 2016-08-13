@@ -18,7 +18,7 @@
     outline: 1px dotted rgba(0,0,0,0) !important;
 }
 html {
-	background-color: $white;
+	background: $linear-background;
 }
 
 // Utility classes
@@ -66,14 +66,14 @@ a {
 	}
 
 	&:hover {
-		border-bottom: solid 4px $alt;
+		border-bottom: solid 4px $tertiary;
 	}
 	
 	&.active-link {
-		border-bottom: solid 4px $green;
+		border-bottom: solid 4px $primary;
 
 		&:hover {
-			border-bottom: solid 4px $blue;
+			border-bottom: solid 4px $secondary;
 		}
 	}
 
