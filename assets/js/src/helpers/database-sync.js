@@ -1,7 +1,8 @@
 // Database-sync.js
 
 const API_CONSTANTS = {
-	users_endpoint: '', // @TODO
+	authorization: 'Bearer keyIye3zskPSBMQ6Q',
+	users_endpoint: 'https://api.airtable.com/v0/appuFTGsGkQe83DZn/Users',
 	budgets_endpoint: '', // @TODO
 	transactions_endpoint: '', // @TODO
 	api_key: '' // @TODO
@@ -20,6 +21,7 @@ function checkUser(userData) {
 	if (window.fetch) {
 		// we will use fetch
 		let Headers = new Headers();
+		Headers.append('authorization', API_CONSTANTS.authorization);
 		let init = {
 			method: 'GET',
 			headers: Headers,
