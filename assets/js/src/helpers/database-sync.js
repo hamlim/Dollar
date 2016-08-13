@@ -9,36 +9,39 @@ const API_CONSTANTS = {
 
 // A simple abstract xhr function, basically $.ajax but customized and a lot simpler
 function simpleXHR(options) {
-
+	fetch(options.endpoint, {
+		method: options.method,
+		headers: options.headers,
+		mode: 'cors'
+	}).then(function(response){
+		return response.json();
+	}).then(function(data) {
+		console.log(data);
+		return data;
+	}).catch(function(error) {
+		console.log(error);
+		return false;
+	});
 }
 
-
-// Func: checkUser (userdata) -> if the user is in the db return true
-function checkUser(userData) {
-	let fetch; // @TODO Delete on compiled files
-	let res;
-	if (window.fetch) {
-		// we will use fetch
-		let Headers = new Headers();
-		Headers.append('authorization', API_CONSTANTS.authorization);
-		let init = {
-			method: 'GET',
-			headers: Headers,
-			mode: 'cors',
-			cache: 'default'
-		};
-		fetch(API_CONSTANTS.users_endpoint, init)
-			.then(function(response) {
-				if(res.ok) {
-					res.json().then(function(data) {
-						console.log(data);
-					});
-				} else {
-
-				}
-			});
-	} else {
-		// xhr I guess
-		simpleXHR()
-	}
+function addNewUser(userObj){
+	let sendPkg = {
+		'fields': {
+			'phone_number': userObj.phone.phone_number,
+			'firstname': userObj.name.first_name,
+			'lastname': userObj.name.last_name,
+			'verfied': userObj.phone.verfied.toString(),
+			'email_address': userObj.email.email
+		}
+	};
+	let result = simpleXHR({
+		endpoint: 'https://api.airtable.com/v0/appuFTGsGkQe83DZn/Users',
+		method: 'POST',
+		headers: new Headers({
+			'authorization': 'Bearer keyIye3zskPSBMQ6Q',
+			'Content-Type': 'application/json'
+		}),
+		package: sendPkg
+	});
+	return result;
 }

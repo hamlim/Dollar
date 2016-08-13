@@ -58,14 +58,10 @@ if(location === '/index.html') {
 			window.location.href = '/login.html';
 		}
 	} else {
-		window.location.href = '/signup.html';
+		window.location.href = '/login.html';
 	}
 } else if(location === '/login.html') {
-	if(localStorage.dollar){
-		ReactDOM.render(<HeaderNotLoggedInlogin />, headerMount);
-	} else {
-		window.location.href = '/signup.html';
-	}
+	ReactDOM.render(<HeaderNotLoggedInlogin />, headerMount);
 } else {
 	ReactDOM.render(<HeaderNotLoggedInsignup />, headerMount);
 }
