@@ -3,9 +3,8 @@
 var API_CONSTANTS = {
 	authorization: 'Bearer keyIye3zskPSBMQ6Q',
 	users_endpoint: 'https://api.airtable.com/v0/appuFTGsGkQe83DZn/Users',
-	budgets_endpoint: '', // @TODO
-	transactions_endpoint: '', // @TODO
-	api_key: '' // @TODO
+	budgets_endpoint: 'https://api.airtable.com/v0/appuFTGsGkQe83DZn/Budgets',
+	transactions_endpoint: 'https://api.airtable.com/v0/appuFTGsGkQe83DZn/Transactions'
 };
 
 // A simple abstract xhr function, basically $.ajax but customized and a lot simpler
