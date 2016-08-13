@@ -29,7 +29,8 @@ module.exports = function(grunt) {
                     'assets/js/prod/MVC/controllers/login.js': 'assets/js/src/login/controller.js',
                     'assets/js/prod/MVC/controllers/signup.js': 'assets/js/src/signup/controller.js',
                     'assets/js/prod/MVC/controllers/records.js': 'assets/js/src/records/controller.js',
-                    'assets/js/prod/helpers/state.js': 'assets/js/src/helpers/state.js'
+                    'assets/js/prod/helpers/state.js': 'assets/js/src/helpers/state.js',
+                    'assets/js/prod/helpers/database-sync.js': 'assets/js/src/helpers/database-sync.js'
                 }
             }
         }

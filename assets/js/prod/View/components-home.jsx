@@ -80,31 +80,60 @@ let appMount = document.getElementsByClassName('js-appMount')[0];
 // Login Components
 let loginMount = document.getElementsByClassName('js-loginMount')[0];
 
+
+let LoginForm = React.createClass({
+	submitForm: function(e) {
+		Copper.login({
+			application_id: '57A90D32325E89E2CB0D44F28E3405DAE7E4E1D3',
+			scope: 'name,email,phone',
+		}).then(function(response) {
+	          console.log('approved as:', response);
+	      })
+	      .fail(function(err) {
+	          console.log('err', err);
+	      });
+		e.preventDefault();
+		console.log('Hello World!');
+	},
+	render: function() {
+		return (
+			<section className='signup tal-center'>
+				<section className='loginheader'>
+					<h4>Login to Dollar</h4>
+				</section>
+				<section className='loginform'>
+					<form className=''>
+						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-greenGhost']} btnName='Login' />
+					</form>
+				</section>
+			</section>
+		)
+	}
+});
+
+if(location === '/login.html') {
+	ReactDOM.render(<LoginForm />, loginMount);
+}
+
 // Signup Components
 let signupMount = document.getElementsByClassName('js-signupMount')[0];
 
 let SignupForm = React.createClass({
 	submitForm: function(e) {
+		Copper.login({
+			application_id: '57A90D32325E89E2CB0D44F28E3405DAE7E4E1D3',
+			scope: 'name,email,phone',
+		}).then(function(response) {
+	          console.log('approved as:', response);
+	          //response.user is the userdata
+	          signup(response);
+	      })
+	      .fail(function(err) {
+	          console.log('err', err);
+
+	      });
 		e.preventDefault();
 		console.log('Hello World!');
-		// We want to send the data to our data handler and have that do the communication with the server
-		let phoneElement = this.refs.phonenumber;
-		let passElement = this.refs.password;
-		if(phoneElement.value != '' && passElement.value != ''){
-			let result = signup({
-				'phonenumber': phoneElement.value,
-				'password': passElement.value
-			});
-			if(result === true){
-				window.location.href = '/index.html';
-			} else {
-				phoneElement.className += ' input-error';
-				passElement.className += ' input-error';
-			}
-		} else {
-			phoneElement.className += ' input-error';
-			passElement.className += ' input-error';
-		}
 	},
 	render: function() {
 		return (
@@ -114,8 +143,6 @@ let SignupForm = React.createClass({
 				</section>
 				<section className='signupform'>
 					<form className=''>
-						<input className='signupform-input i-phonenumber' ref='phonenumber' type='tel' required placeholder='Phone Number'/>
-						<input className='signupform-input i-password' ref='password' type='password' required placeholder='Password' />
 						<Button onClickHandler={this.submitForm} classList={['btn-block', 'btn-large', 'btn-fill', 'btn-greenGhost']} btnName='Signup' />
 					</form>
 				</section>
@@ -124,4 +151,6 @@ let SignupForm = React.createClass({
 	}
 });
 
-ReactDOM.render(<SignupForm />, signupMount);
+if(location === '/signup.html') {
+	ReactDOM.render(<SignupForm />, signupMount);
+}
