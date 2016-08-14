@@ -27,7 +27,6 @@ module.exports = function(grunt) {
                     'assets/js/prod/MVC/controllers/budgets.js': 'assets/js/src/budgets/controller.js',
                     'assets/js/prod/MVC/controllers/analysis.js': 'assets/js/src/analysis/controller.js',
                     'assets/js/prod/MVC/controllers/login.js': 'assets/js/src/login/controller.js',
-                    'assets/js/prod/MVC/controllers/signup.js': 'assets/js/src/signup/controller.js',
                     'assets/js/prod/MVC/controllers/records.js': 'assets/js/src/records/controller.js',
                     'assets/js/prod/helpers/state.js': 'assets/js/src/helpers/state.js',
                     'assets/js/prod/helpers/database-sync.js': 'assets/js/src/helpers/database-sync.js'
@@ -42,6 +41,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['sass', 'es6transpiler']);
+    grunt.registerTask('css', ['sass']);
     grunt.registerTask('watch', ['watch']);
 
 };

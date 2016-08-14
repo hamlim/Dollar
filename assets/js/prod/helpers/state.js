@@ -1,10 +1,10 @@
 // State
-var state = {};
+let state = {};
 function initState(state) {
 	if(localStorage.getItem('dollar')) {
 		// state already exists
-		var dollar = JSON.parse(localStorage.getItem('dollar'));
-		for (var prop in dollar) {
+		let dollar = JSON.parse(localStorage.getItem('dollar'));
+		for (let prop in dollar) {
 			state[prop] = dollar[prop];
 		}
 	} else {
@@ -21,13 +21,15 @@ initState(state);
 
 function setDollarState(obj, state) {
 	if(obj.type === "store") {
-		for (var prop in obj.store) {
-			state.store.prop = obj.store[prop];
+		for (let prop in obj.store) {
+			state.store.prop = obj.store.prop;
+		}
+	} else if(obj.type === "user") {
+		for (let prop in obj.user) {
+			state.user.prop = obj.user.prop;
 		}
 	} else {
-		for (var prop$0 in obj.user) {
-			state.user.prop = obj.user[prop$0];
-		}
+		state.loggedin = obj.loggedin;
 	}
 	localStorage.setItem('dollar', JSON.stringify(state));
 }

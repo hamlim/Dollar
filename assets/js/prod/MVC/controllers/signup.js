@@ -2,7 +2,13 @@
 
 function signup(object) {
 	// Lets pass this object to a function in helpers to submit this to the server
-	var user = object.user;
-	
-	
+	let user = object.user;
+	let result = addNewUser(user);
+	console.log(result);
+	let updatepkg = {
+		type: "user",
+		user: user
+	};
+	setDollarState(updatepkg, state);
+	window.location.href = '/index.html';
 }

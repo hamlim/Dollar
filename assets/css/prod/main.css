@@ -352,17 +352,17 @@ html {
 }
 @media (min-width: 31.25em) {
   .center {
-    width: 80vw;
+    width: 85vw;
   }
 }
 @media (min-width: 41.667em) {
   .center {
-    width: 60vw;
+    width: 70vw;
   }
 }
 @media (min-width: 50em) {
   .center {
-    width: 50vw;
+    width: 60vw;
   }
 }
 
@@ -412,12 +412,12 @@ a.active-link:hover {
 }
 @media (min-width: 16.667em) {
   .headernav-links > li:not(:last-child) {
-    padding-right: 0.5em;
+    padding-right: 0.25em;
   }
 }
 @media (min-width: 31.25em) {
   .headernav-links > li:not(:last-child) {
-    padding-right: 1em;
+    padding-right: 0.5em;
   }
 }
 

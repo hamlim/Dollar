@@ -2,14 +2,15 @@
 
 // Collect the elements we need
 
-// State
-var state = {};
+function login(object) {
+	let user = object.user;
+	// result will be a promise
+	checkUser(user);
+	// let updatepkg = {
+	// 	type: "user",
+	// 	user: user
+	// };
+	// setDollarState(updatepkg, state);
+	// window.location.href = '/index.html';
 
-if(localStorage.getItem('dollar')){
-	state = JSON.parse(localStorage.getItem('dollar'));
-	// Not logged in but they have been here before therefore we don't want to redirect to signup
-
-} else {
-	// no dollar data saved therefore we want to redirect to signup.html
-	window.location.href = 'signup.html';
 }

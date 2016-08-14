@@ -31,13 +31,13 @@ html {
 		width: 90vw;
 	}
 	@include tablet {
-		width: 80vw;
+		width: 85vw;
 	}
 	@include desktop {
-		width: 60vw;
+		width: 70vw;
 	}
 	@include xl {
-		width: 50vw;
+		width: 60vw;
 	}
 	margin: 0 auto;
 }
@@ -94,10 +94,10 @@ a {
 	}
 	&-links > li:not(:last-child) {
 		@include phone {
-			padding-right: 0.5em;
+			padding-right: 0.25em;
 		}
 		@include tablet {
-			padding-right: 1em;
+			padding-right: 0.5em;
 		}
 	}
 }
