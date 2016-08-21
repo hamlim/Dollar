@@ -13,17 +13,14 @@
     overflow-x: scroll;
 }
 
-
-/* Mobile first queries */
+/*
 #bloodhound span input {
     width: 100% !important;
 }
-/* Larger than mobile */
 @media (min-width: 400px) {
 
 }
 
-/* Larger than phablet */
 @media (min-width: 550px) {
     #bloodhound span input {
         width: 48%;
@@ -31,23 +28,20 @@
     }
 }
 
-/* Larger than tablet */
 @media (min-width: 750px) {
     .typeahead {
         margin-left: 14% !important;
     }
 }
 
-/* Larger than desktop */
 @media (min-width: 1000px) {
 
 }
 
-/* Larger than Desktop HD */
 @media (min-width: 1200px) {
 
 }
-
+*/
 
 /*
     Typeahead CSS
