@@ -1,91 +1,72 @@
 <!doctype html>
 <html lang="en">
 	<head>
-
-		<script type="text/javascript">
-		    var host = "www.goexploring.today";
-		    if ((host == window.location.host) && (window.location.protocol != "https:"))
-		        window.location.protocol = "https";
-		</script>
-
-		<meta charset="utf-8">
-		<meta name="robots" content="index, follow">
-		<meta name="theme-color" content="#66A96B">
-		<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Matt Hamlin">
-		<meta name="description" content="A simple transaction manager.">
-
-
-		<title>Dollar Analysis</title>
-
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-
-
-		<link rel="stylesheet" href="./css/skeleton.css">
-		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
-		<link rel="stylesheet" href="./css/custom.css">
-		<link rel="stylesheet" href="./css/app.css">
-
-		<!-- Emoji One -->
-		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
-
-
-        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-		<script src="./js/moment.js"></script>
-
-		<!-- Favicons
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/assets/favicons/manifest.json">
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#66a96b">
-        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#66a96b">
-
-
-		<!--
-			Vex Library for (nice looking) modals
-	 	-->
-		<script src="./js/vex/vex.combined.min.js"></script>
-		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
-		<link rel="stylesheet" href="./css/vex/vex.css" />
-		<link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
-
-		<!--
-			Js for Analysis
-	 	-->
-		<script src="./js/chart/Chart.js"></script>
-		<script src="./js/marked/marked.js"></script>
-        <script src="./js/analysis.js"></script>
-		<script src="./js/logout.js"></script>
-
+			<script type="text/javascript">
+				var host = "www.goexploring.today";
+				if ((host == window.location.host) && (window.location.protocol != "https:"))
+						window.location.protocol = "https";
+			</script>
+			<meta charset="utf-8">
+			<meta name="robots" content="index, follow">
+			<meta name="theme-color" content="#66A96B">
+			<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="author" content="Matt Hamlin">
+			<meta name="description" content="A simple transaction manager.">
+			<title>Dollar Analysis</title>
+			<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+			<link rel="stylesheet" href="./css/skeleton.css">
+			<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
+			<link rel="stylesheet" href="./css/custom.css">
+			<link rel="stylesheet" href="./css/app.css">
+			<!-- Emoji One -->
+			<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+			<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
+			<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script src="./js/moment.js"></script>
+			<!-- Favicons
+			–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+			<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+			<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+			<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+			<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+			<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+			<link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+			<link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
+			<link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+			<link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+			<link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+			<link rel="manifest" href="/assets/favicons/manifest.json">
+			<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
+			<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+			<meta name="msapplication-TileColor" content="#66a96b">
+			<meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+			<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+			<meta name="theme-color" content="#66a96b">
+			<!--
+					Vex Library for (nice looking) modals
+			-->
+			<script src="./js/vex/vex.combined.min.js"></script>
+			<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
+			<link rel="stylesheet" href="./css/vex/vex.css" />
+			<link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
+			<!--
+					Js for Analysis
+			-->
+			<script src="./js/chart/Chart.js"></script>
+			<script src="./js/marked/marked.js"></script>
+			<script src="./js/analysis.js"></script>
+			<script src="./js/logout.js"></script>
 	</head>
 	<body>
-
 		<main class="" id="main">
-
-
 			<header class="navigation bottom-spacer special-green">
 				<nav class="container">
 					<section class="row">
