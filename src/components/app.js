@@ -2,18 +2,6 @@ import {React, Component} from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
-import firebase from 'firebase';
-
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyDnSKe50zbXEfP3DLv8-P6FmsAGopraDMw",
-  authDomain: "dollar-2d915.firebaseapp.com",
-  databaseURL: "https://dollar-2d915.firebaseio.com",
-  storageBucket: "dollar-2d915.appspot.com",
-  messagingSenderId: "293896072103"
-};
-firebase.initializeApp(config);
-
 
 
 export default class App extends Component {
@@ -52,6 +40,14 @@ export default class App extends Component {
   componentDidMount() {
     fetch()
   }
+  render() {
+    return (
+      <article className="App">
+        <Header />
 
+        <Footer />
+      </article>
+    )
+  }
 
 }
