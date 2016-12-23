@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './src/components/header/header';
+import Footer from './src/components/footer/footer';
 import {render} from 'react-dom';
 
 require('./src/styles.css');
@@ -14,3 +15,5 @@ if (document.body.getAttribute('data-page') === "app") {
 } else if (document.body.getAttribute('data-page') === "settings") {
   render(<Header activeLinkClass="is-settings" />, document.getElementById('headerMount'));
 }
+
+render(<Footer />, document.getElementById('footerMount'));

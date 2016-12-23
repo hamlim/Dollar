@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 5rem;
   font-size: 3rem;
   background-color: var(--primary);

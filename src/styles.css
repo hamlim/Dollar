@@ -50,3 +50,6 @@ html {
   line-height: var(--line-height);
 }
 
+.app-wrapper {
+  min-height: calc(100vh - 10rem);
+}

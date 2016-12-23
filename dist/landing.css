@@ -1,4 +1,13 @@
-._1xI-6ADfpAvdnAyCtoWV1S {
+._3bTNKD5oJZoV4gzxw0dlu6 {
+  all: unset;
+  color: inherit;
+  text-decoration: underline;
+}
+
+._3bTNKD5oJZoV4gzxw0dlu6:focus,
+._3bTNKD5oJZoV4gzxw0dlu6:active {
+  text-decoration: none;
+}._1xI-6ADfpAvdnAyCtoWV1S {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,7 +21,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
   height: 80px;
   height: 5rem;
   font-size: 48px;
@@ -36,6 +44,29 @@
 }
 ._2GCW_wZ7NuIAgt0wNWnlKJ:focus {
   outline: 1px solid var(--secondary);
+}._1PsCjVK2kQyAcKblfwa4DW {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--primary);
+  height: 80px;
+  height: 5rem;
+  font-size: 48px;
+  font-size: 3rem;
+}
+
+._1VqZP2JMmy71Go9393UyI0 {
+  margin: 0;
 }:root {
   /* Colors */
   --primary: #00FF7F;
@@ -85,5 +116,7 @@ html {
   line-height: 1.8;
 }
 
-
+._38kWHCR-CUtdS9URJF9KJL {
+  min-height: calc(100vh - 10rem);
+}
 /*# sourceMappingURL=landing.css.map*/

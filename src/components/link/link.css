@@ -1,0 +1,10 @@
+.Link {
+  all: unset;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.Link:focus,
+.Link:active {
+  text-decoration: none;
+}
