@@ -1,6 +1,8 @@
 import React from 'react';
-import Header from './src/components/header';
+import Header from './src/components/header/header';
 import {render} from 'react-dom';
+
+require('./src/styles.css');
 
 
 if (document.body.getAttribute('data-page') === "app") {

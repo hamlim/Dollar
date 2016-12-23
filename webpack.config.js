@@ -39,7 +39,7 @@ module.exports = {
 			},
 			{
         test:   /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?modules!postcss-loader")
       }
 		]
 	},

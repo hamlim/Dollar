@@ -1,0 +1,52 @@
+:root {
+  /* Colors */
+  --primary: #00FF7F;
+  --primary-muted: #98FB98;
+  --secondary: #FA8072;
+  --secondary-muted: #FFA07A;
+  --tertiary: #4169E1;
+  --tertiary-muted: #6495ED;
+
+  --white: ghostwhite;
+  --black: #111111;
+
+  /* Spacing */
+  --space-one: .25rem;
+  --space-two: .5rem;
+  --space-three: .75rem;
+  --space-four: 1rem;
+
+  /* Font size */
+  --font-size: calc(1vmax + 1vmin - .5vh);
+  --line-height: 1.8;
+}
+
+@custom-media --xs-viewport (min-width: 16.667rem);
+@custom-media --s-viewport (min-width: 22.197rem);
+@custom-media --m-viewport (min-width: 31.250rem);
+@custom-media --xm-viewport (min-width: 35rem); /* Set for width of main  */
+@custom-media --l-viewport (min-width: 41.667rem);
+@custom-media --xl-viewport (min-width: 50.00rem);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: -apple-system,
+               BlinkMacSystemFont,
+               "Segoe UI",
+               Roboto,
+               Oxygen-Sans,
+               Ubuntu,
+               Cantarell,
+               "Helvetica Neue",
+               sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
