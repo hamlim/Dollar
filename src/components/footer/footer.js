@@ -2,14 +2,12 @@ import React from 'react';
 
 import Styles from './footer.css';
 
-const Footer = (props) => {
-  let now = new Date();
-  let currentYear = now.getFullYear();
+const Footer = (onClickAddHandler, ...props) => {
   return (
     <footer className={Styles.Footer}>
-      <p className={Styles.FooterText}>
-        &copy; {currentYear} - <a href="https://matthamlin.me" className={Styles.FooterTextLink}>Matt Hamlin</a> - 👋🏻
-      </p>
+      <button className={Styles.FooterAddBtn} type="button" onClick={onClickAddHandler}>
+        🆕
+      </button>
     </footer>
   )
 };

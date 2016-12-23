@@ -63,51 +63,15 @@
         <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
         <meta name="theme-color" content="#66a96b">
 
-
-		<!--
-			Vex Library for (nice looking) modals
-	 	-->
-		<script src="./js/vex/vex.combined.min.js"></script>
-		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
-		<link rel="stylesheet" href="./css/vex/vex.css" />
-		<link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
-
-		<!--
-			Js for App
-	 	-->
-		<!-- <script src="./js/moment.js"></script> -->
-		<!-- <script src="./js/marked/marked.js"></script> -->
         <script src="./js/settings.js"></script>
 		<script src="./js/logout.js"></script>
 
+		<link rel="stylesheet" href="./dist/landing.css" />
+
 	</head>
-	<body>
+	<body data-page="settings">
 		<main class="" id="main">
-			<header class="navigation bottom-spacer special-green">
-				<nav class="container">
-					<section class="row">
-						<div class="one-full column text-middle">
-							<a href="./index.html">
-								<i class="emoji navmoji">:dollar:</i>
-							</a>
-							<span>
-							<a href="./app.html">
-								<i class="emoji navmoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
-							</a>
-							<a href="./analysis.html">
-								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
-							</a>
-							<a href="./budgets.html">
-                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
-                            </a>
-							<a href="./account.html" class="selected">
-								<i class="emoji navmoji" id="account">:gear:</i>
-							</a>
-							</span>
-						</div>
-					</section>
-				</nav>
-			</header>
+			<div id="headerMount"></div>
 
 			<section class="container bottom-spacer" id="Settings">
 				<div class="row">
@@ -259,40 +223,10 @@
 				</div>
 			</section>
 
-			<footer class="footer">
-	            <section class="container">
-	                <div class="row">
-	                    <div class="one-half column offset-by-three columns center-text">
-	                        <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="//matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
-							<button class="btn" onclick="logoutHandler()" id="logout-btn">Logout <i class="emoji navmoji small">:wave:</i></button>
-	                    </div>
-	                </div>
-	            </section>
-	        </footer>
+			<div id="footerMount"></div>
 		</main>
 
-		<script src="./js/notie.js"></script>
-		<script type="text/javascript">
-		     $(document).ready(function() {
-				 $(".emoji").each(function() {
-		            var original = $(this).html();
-		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
-		            var converted = emojione.toImage(original);
-		            $(this).html(converted);
-		        });
-		    });
-		</script>
-
-		<!-- Google Analytics -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-72677063-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
+		<script src="./dist/common.js"></script>
+		<script src="./dist/landing.js"></script>
 	</body>
 </html>

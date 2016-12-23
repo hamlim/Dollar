@@ -8,6 +8,12 @@
   font-size: 3rem;
 }
 
-.FooterText {
-  margin: 0;
+.FooterAddBtn {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  font-size: inherit;
+  cursor: pointer;
 }

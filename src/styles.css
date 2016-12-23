@@ -50,6 +50,11 @@ html {
   line-height: var(--line-height);
 }
 
-.app-wrapper {
-  min-height: calc(100vh - 10rem);
+:global(.app-wrapper) {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+:global(.app-section) {
+  flex-grow: 1;
 }
