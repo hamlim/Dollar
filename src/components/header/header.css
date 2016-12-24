@@ -15,7 +15,9 @@
 }
 
 .HeaderNavLink {
+  all: unset;
   text-decoration: none;
+  display: inline;
 }
 .HeaderNavLink:focus {
   outline: 1px solid var(--secondary);

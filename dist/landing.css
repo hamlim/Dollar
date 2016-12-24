@@ -31,7 +31,9 @@
 }
 
 ._2GCW_wZ7NuIAgt0wNWnlKJ {
+  all: unset;
   text-decoration: none;
+  display: inline;
 }
 ._2GCW_wZ7NuIAgt0wNWnlKJ:focus {
   outline: 1px solid var(--secondary);
