@@ -20,3 +20,8 @@
 .HeaderNavLink:focus {
   outline: 1px solid var(--secondary);
 }
+
+.HeaderNavLinkActive {
+  composes: HeaderNavLink;
+  border-bottom: solid 2px var(--tertiary);
+}

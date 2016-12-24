@@ -23,13 +23,13 @@ webpackJsonp([0,1],[
 	__webpack_require__(186);
 	
 	if (document.body.getAttribute('data-page') === "app") {
-	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLinkClass: 'is-app' }), document.getElementById('headerMount'));
+	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLink: 'app' }), document.getElementById('headerMount'));
 	} else if (document.body.getAttribute('data-page') === "analysis") {
-	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLinkClass: 'is-analysis' }), document.getElementById('headerMount'));
+	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLink: 'analysis' }), document.getElementById('headerMount'));
 	} else if (document.body.getAttribute('data-page') === "budgets") {
-	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLinkClass: 'is-budgets' }), document.getElementById('headerMount'));
+	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLink: 'budgets' }), document.getElementById('headerMount'));
 	} else if (document.body.getAttribute('data-page') === "settings") {
-	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLinkClass: 'is-settings' }), document.getElementById('headerMount'));
+	  (0, _reactDom.render)(_react2.default.createElement(_header2.default, { activeLink: 'settings' }), document.getElementById('headerMount'));
 	}
 	
 	(0, _reactDom.render)(_react2.default.createElement(_footer2.default, null), document.getElementById('footerMount'));
@@ -4107,10 +4107,84 @@ webpackJsonp([0,1],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Header = function Header(props) {
-	  return _react2.default.createElement(
-	    'header',
-	    { className: _header2.default.Header },
-	    _react2.default.createElement(
+	  var links = void 0;
+	  if (props.activeLink === "app") {
+	    links = _react2.default.createElement(
+	      'nav',
+	      { className: _header2.default.HeaderNav },
+	      _react2.default.createElement(
+	        'a',
+	        { href: './app', className: _header2.default.HeaderNavLinkActive, title: 'App' },
+	        '\uD83D\uDCB5'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './analysis', className: _header2.default.HeaderNavLink, title: 'Analysis' },
+	        '\uD83D\uDCC8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './budgets', className: _header2.default.HeaderNavLink, title: 'Budgets' },
+	        '\uD83D\uDCB8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './account', className: _header2.default.HeaderNavLink, title: 'Settings' },
+	        '\u2699\uFE0F'
+	      )
+	    );
+	  } else if (props.activeLink === "analysis") {
+	    links = _react2.default.createElement(
+	      'nav',
+	      { className: _header2.default.HeaderNav },
+	      _react2.default.createElement(
+	        'a',
+	        { href: './app', className: _header2.default.HeaderNavLink, title: 'App' },
+	        '\uD83D\uDCB5'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './analysis', className: _header2.default.HeaderNavLinkActive, title: 'Analysis' },
+	        '\uD83D\uDCC8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './budgets', className: _header2.default.HeaderNavLink, title: 'Budgets' },
+	        '\uD83D\uDCB8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './account', className: _header2.default.HeaderNavLink, title: 'Settings' },
+	        '\u2699\uFE0F'
+	      )
+	    );
+	  } else if (props.activeLink === "budgets") {
+	    links = _react2.default.createElement(
+	      'nav',
+	      { className: _header2.default.HeaderNav },
+	      _react2.default.createElement(
+	        'a',
+	        { href: './app', className: _header2.default.HeaderNavLink, title: 'App' },
+	        '\uD83D\uDCB5'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './analysis', className: _header2.default.HeaderNavLink, title: 'Analysis' },
+	        '\uD83D\uDCC8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './budgets', className: _header2.default.HeaderNavLinkActive, title: 'Budgets' },
+	        '\uD83D\uDCB8'
+	      ),
+	      _react2.default.createElement(
+	        'a',
+	        { href: './account', className: _header2.default.HeaderNavLink, title: 'Settings' },
+	        '\u2699\uFE0F'
+	      )
+	    );
+	  } else {
+	    links = _react2.default.createElement(
 	      'nav',
 	      { className: _header2.default.HeaderNav },
 	      _react2.default.createElement(
@@ -4130,10 +4204,15 @@ webpackJsonp([0,1],[
 	      ),
 	      _react2.default.createElement(
 	        'a',
-	        { href: './account', className: _header2.default.HeaderNavLink, title: 'Settings' },
+	        { href: './account', className: _header2.default.HeaderNavLinkActive, title: 'Settings' },
 	        '\u2699\uFE0F'
 	      )
-	    )
+	    );
+	  };
+	  return _react2.default.createElement(
+	    'header',
+	    { className: _header2.default.Header },
+	    links
 	  );
 	};
 	// import Link from '../link/link';
@@ -4145,7 +4224,7 @@ webpackJsonp([0,1],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"Header":"_1xI-6ADfpAvdnAyCtoWV1S","HeaderNav":"_1LXMOcpQCDZp0P_Jor9HRH","HeaderNavLink":"_2GCW_wZ7NuIAgt0wNWnlKJ"};
+	module.exports = {"Header":"_1xI-6ADfpAvdnAyCtoWV1S","HeaderNav":"_1LXMOcpQCDZp0P_Jor9HRH","HeaderNavLink":"_2GCW_wZ7NuIAgt0wNWnlKJ","HeaderNavLinkActive":"xaaIjyE3XIZfg-IHIlZAm _2GCW_wZ7NuIAgt0wNWnlKJ"};
 
 /***/ },
 /* 34 */,
