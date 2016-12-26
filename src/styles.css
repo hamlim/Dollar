@@ -54,9 +54,12 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 :global(.app-section) {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
+  max-width: 35rem;
+  margin: 0 auto;
 }
