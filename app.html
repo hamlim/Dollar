@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+
 		<meta charset="utf-8">
 		<meta name="robots" content="index, follow">
 		<meta name="theme-color" content="#66A96B">
@@ -14,55 +15,36 @@
 
 		<title>Dollar App</title>
 
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-
 
 		<link rel="stylesheet" href="./css/skeleton.css">
 		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
 		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/app.css">
 
-		<!-- Emoji One -->
-		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
-
-
-        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
 		<!-- Favicons
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/assets/favicons/manifest.json">
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#66a96b">
-        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#66a96b">
-
-
-		<!--
-			Vex Library for (nice looking) modals
-	 	-->
-		<script src="./js/vex/vex.combined.min.js"></script>
-		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
-		<link rel="stylesheet" href="./css/vex/vex.css" />
-		<link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/assets/favicons/manifest.json">
+		<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
+		<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#66a96b">
+		<meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#00FF7F">
 
 		<!--
 			Js for App
@@ -73,173 +55,120 @@
         <script src="./js/app.js"></script>
 		<script src="./js/logout.js"></script>
 
+		<link rel="stylesheet" href="./dist/landing.css" />
+
 	</head>
-	<body>
-		<main class="" id="main">
-			<header class="navigation bottom-spacer special-green">
-				<nav class="container">
-					<section class="row">
-						<div class="one-full column text-middle">
-							<a href="./index.html">
-								<i class="emoji navmoji">:dollar:</i>
-							</a>
-							<span>
-							<a href="./app.html" class="selected">
-								<i class="emoji navmoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
-							</a>
-							<a href="./analysis.html">
-								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
-							</a>
-							<a href="./budgets.html">
-                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
-                            </a>
-							<a href="./account.html">
-								<i class="emoji navmoji" id="account">:gear:</i>
-							</a>
-							</span>
-						</div>
-					</section>
-				</nav>
-			</header>
-
-			<section class="container bottom-spacer" id="input">
-				<div class="row">
-					<h1>Enter a New Expense:</h1>
-				</div>
-                <div id="form" class="">
-                    <form>
-                        <fieldset>
-							<div class="row">
-								<label class="one-half column" for="amountField">Expense Amount: </label>
-	                            <input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="tagField">Account Tag:</label>
-								<select class="one-half column" id="transactionTag">
-									<option id="optone">
-										Credit Card
-									</option>
-									<option id="opttwo">
-										Debit Card
-									</option>
-									<option id="optthree">
-										Savings
-									</option>
-								</select>
-							</div>
-							<div class="row" id="bloodhound">
-								<label class="one-half column" for="transactionLocation">Expense Location: </label>
-	                            <input class="typeahead one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionType">Type of Expense: </label>
-								<select class="one-half column" id="transactionType" required>
-									<option>
-										Other
-									</option>
-									<option selected>
-										Personal
-									</option>
-									<option>
-										Food
-									</option>
-									<option>
-										Health
-									</option>
-									<option>
-										Home
-									</option>
-									<option>
-										Gifts
-									</option>
-									<option>
-										Transportation
-									</option>
-									<option>
-										Utilities
-									</option>
-									<option>
-										Travel
-									</option>
-								</select>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionNotes">Expense Notes: (optional)</label>
-								<textarea class="one-half column" placeholder="A quick stop to the grocery store for ... (supports markdown!)" id="transactionNotes"></textarea>
-							</div>
-							<div class="row">
-								<label class="one-half column" for="transactionUserTime">Expense Date: (optional)</label>
-								<input type="date" class="one-half column" id="transactionUserTime">
-							</div>
-                        </fieldset>
-                    </form>
+	<body data-page="app">
+		<main class="app-wrapper" id="main">
+			<div id="headerMount"></div>
+			<article class="app-section">
+				<section class="container bottom-spacer" id="input">
 					<div class="row">
-						<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
+						<h1>Enter a New Expense:</h1>
 					</div>
-                </div>
-			</section>
+					<div id="form" class="">
+						<form>
+							<fieldset>
+								<div class="row">
+									<label class="one-half column" for="amountField">Expense Amount: </label>
+									<input class="one-half column" type="number" step="any" placeholder="$1.23" min="0" id="transactionAmount" required>
+								</div>
+								<div class="row">
+									<label class="one-half column" for="tagField">Account Tag:</label>
+									<select class="one-half column" id="transactionTag">
+										<option id="optone">
+											Credit Card
+										</option>
+										<option id="opttwo">
+											Debit Card
+										</option>
+										<option id="optthree">
+											Savings
+										</option>
+									</select>
+								</div>
+								<div class="row" id="bloodhound">
+									<label class="one-half column" for="transactionLocation">Expense Location: </label>
+									<input class="typeahead one-half column" type="text" placeholder="Some Place" id="transactionLocation" required>
+								</div>
+								<div class="row">
+									<label class="one-half column" for="transactionType">Type of Expense: </label>
+									<select class="one-half column" id="transactionType" required>
+										<option>
+											Other
+										</option>
+										<option selected>
+											Personal
+										</option>
+										<option>
+											Food
+										</option>
+										<option>
+											Health
+										</option>
+										<option>
+											Home
+										</option>
+										<option>
+											Gifts
+										</option>
+										<option>
+											Transportation
+										</option>
+										<option>
+											Utilities
+										</option>
+										<option>
+											Travel
+										</option>
+									</select>
+								</div>
+								<div class="row">
+									<label class="one-half column" for="transactionNotes">Expense Notes: (optional)</label>
+									<textarea class="one-half column" placeholder="A quick stop to the grocery store for ... (supports markdown!)" id="transactionNotes"></textarea>
+								</div>
+								<div class="row">
+									<label class="one-half column" for="transactionUserTime">Expense Date: (optional)</label>
+									<input type="date" class="one-half column" id="transactionUserTime">
+								</div>
+							</fieldset>
+						</form>
+						<div class="row">
+							<button id="submit-btn" class="one-full column button button-tertiary">Submit</button>
+						</div>
+					</div>
+				</section>
 
-			<section class="container bottom-spacer">
-				<div class="row">
-					<h1>Ten most recent transactions: </h1>
-				</div>
-				<div class="overflow-container">
+				<section class="container bottom-spacer">
+					<div class="row">
+						<h1>Ten most recent transactions: </h1>
+					</div>
+					<div class="overflow-container">
 
-					<table class="u-full-width">
-					  <thead>
-					    <tr>
-							<th>
-								<span><i class="emoji small">:information_source:</i> Info:</span>
-							</th>
-					      	<th><span><i class="emoji small">:clock4:</i> Time:</span></th>
-					      	<th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
-					      	<th><span><i class="emoji small">:map:</i> Location:</span></th>
-					      	<th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
-							<th>
-								<span><i class="emoji small">:hash:</i> Tag:</span>
-							</th>
-					    </tr>
-					  </thead>
-					  <tbody id="past-transactions">
-					  </tbody>
-					</table>
-				</div>
-			</section>
-
-			<footer class="footer">
-	            <section class="container">
-	                <div class="row">
-	                    <div class="one-half column offset-by-three columns center-text">
-	                        <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
-							<button class="btn" onclick="logoutHandler()" id="logout-btn">Logout <i class="emoji navmoji small">:wave:</i></button>
-	                    </div>
-	                </div>
-	            </section>
-	        </footer>
+						<table class="u-full-width">
+						<thead>
+							<tr>
+								<th>
+									<span><i class="emoji small">:information_source:</i> Info:</span>
+								</th>
+								<th><span><i class="emoji small">:clock4:</i> Time:</span></th>
+								<th><span><i class="emoji small">:dollar:</i> Amount:</span></th>
+								<th><span><i class="emoji small">:map:</i> Location:</span></th>
+								<th><span><i class="emoji small">:open_file_folder:</i> Category:</span></th>
+								<th>
+									<span><i class="emoji small">:hash:</i> Tag:</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="past-transactions">
+						</tbody>
+						</table>
+					</div>
+				</section>
+			</article>
+			<div id="footerMount"></div>
 		</main>
-
-		<script src="./js/notie.js"></script>
-		<script type="text/javascript">
-		     $(document).ready(function() {
-				 $(".emoji").each(function() {
-		            var original = $(this).html();
-		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
-		            var converted = emojione.toImage(original);
-		            $(this).html(converted);
-		        });
-		    });
-		</script>
-
-		<!-- Google Analytics -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-72677063-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
+		<script src="./dist/common.js"></script>
+		<script src="./dist/landing.js"></script>
 	</body>
 </html>

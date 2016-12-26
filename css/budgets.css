@@ -9,7 +9,7 @@
 }
 
 .flex-item {
-    min-width: 5em;
+    min-width: 7em;
 	text-align: center;
 	flex-grow: 1;
 	/*flex-shrink: 1;*/
@@ -105,7 +105,7 @@
     border: solid 1px #DDD;
 }
 .first {
-    min-width: 10em;
+    min-width: 7em;
 }
 
 .months {

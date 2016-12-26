@@ -3,7 +3,7 @@ $(document).ready(function(){
     console.log("*--------------------------------------------*");
     console.log("Begin analysis.js");
     console.log("*--------------------------------------------*");
-    if(localStorage.length = 0) {
+    if(localStorage.length === 0) {
         window.location.href = "./login.html";
     } else {
         //variables

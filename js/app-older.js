@@ -1,16 +1,12 @@
 $(document).ready(function(){
     //ok we are on page load of app.html
-    console.log("*--------------------------------------------*");
-    console.log("Begin app.js");
-    console.log("*--------------------------------------------*");
-    if(localStorage.length === 0){
+    if(localStorage.length = 0){
         //redirect to login
         window.Location.href = "./login.html";
     } else {
         //we want to get the last ten expenses for the current user
         var user = JSON.parse(localStorage.getItem('user'));
         var userID = user.userID;
-
         //TODO: Insert check if userExpenses is already in localStorage (then skip the ajax)
         //getting elements by ID
         var amount = document.getElementById('transactionAmount'),
@@ -20,16 +16,8 @@ $(document).ready(function(){
           userExpenses = [],
           notes = document.getElementById('transactionNotes'),
           usertime = document.getElementById('transactionUserTime'),
-          tagelement = document.getElementById('transactionTag'),
-          tagoptionone = document.getElementById('optone'),
-          tagoptiontwo = document.getElementById('opttwo'),
-          tagoptionthree = document.getElementById('optthree'),
           pastTransactions = document.getElementById('past-transactions');
         //we want to get all the transactions that match that userID
-        var tags = user.tags.split(', ');
-        tagoptionone.innerHTML = tags[0];
-        tagoptiontwo.innerHTML = tags[1];
-        tagoptionthree.innerHTML = tags[2];
         var getSettings = {
             "async": true,
             "crossDomain": true,
@@ -109,7 +97,6 @@ $(document).ready(function(){
             });
             // $('#bloodhound *').attr('style', '');
             // $('#bloodhound span pre').css({'display': "none"});
-
             if(userExpenses.length < 10){
                 console.log(userExpenses);
                 //typeahead
@@ -118,20 +105,14 @@ $(document).ready(function(){
                     //now we want to write this data to the page
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
-                    var tagTD = document.createElement('td'); //TAGS
                     var linkTD = document.createElement('td');
-                    linkTD.innerHTML = "Info";
+                    linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
-                    if(userExpenses[i].fields.d_amount.toString().search(/\./) != -1){
+                    if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                         amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
                     } else {
-                        if(userExpenses[k].fields.d_amount.toString().split('.').length === 2){
-                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".0";
-                        } else {
-                            amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
-                        }
+                        amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString() + ".00";
                     }
-                    tagTD.innerHTML = userExpenses[k].fields.d_tag; //TAGS
                     var locationDiv = document.createElement('td');
                     locationDiv.innerHTML = userExpenses[k].fields.d_location;
                     var timeDiv = document.createElement('td');
@@ -146,7 +127,6 @@ $(document).ready(function(){
                     divRow.appendChild(amountDiv);
                     divRow.appendChild(locationDiv);
                     divRow.appendChild(categoryDiv);
-                    divRow.appendChild(tagTD); //TAGS
                     divRow.setAttribute('class', 'expense-row');
                     var uniqueID = userExpenses[k].id;
                     divRow.setAttribute('data-expense-id', uniqueID);
@@ -161,8 +141,7 @@ $(document).ready(function(){
                         divRow.setAttribute('class', 'expense-row');
                         var amountDiv = document.createElement('td');
                         var linkTD = document.createElement('td');
-                        var tagTD = document.createElement('td'); //TAGS
-                        linkTD.innerHTML = "Info";
+                        linkTD.innerHTML = "Click for info!";
                         linkTD.className = "expense-info";
                         if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
@@ -172,7 +151,6 @@ $(document).ready(function(){
                         var locationDiv = document.createElement('td');
                         locationDiv.innerHTML = userExpenses[k].fields.d_location;
                         var timeDiv = document.createElement('td');
-                        tagTD.innerHTML = userExpenses[k].fields.d_tag; //TAGS
                         //change time to date and hours
                         var converted = moment(userExpenses[k].fields.d_time);
                         var readable = converted.format("Do-MMM-YYYY");
@@ -186,17 +164,13 @@ $(document).ready(function(){
                         divRow.appendChild(amountDiv);
                         divRow.appendChild(locationDiv);
                         divRow.appendChild(categoryDiv);
-                        divRow.appendChild(tagTD); //TAGS
                         pastTransactions.appendChild(divRow);
                     } else {
                         //now we want to write this data to the page
-                        var divRow = document.createElement('tr'); //Table Row
-                        var amountDiv = document.createElement('td'); //AMOUNT
-                        var linkTD = document.createElement('td'); //LINK
-                        var tagTD = document.createElement('td'); //TAGS
-                        var timeDiv = document.createElement('td'); //TIME
-                        var categoryDiv = document.createElement('td'); //CATEGORY
-                        linkTD.innerHTML = "Info";
+                        var divRow = document.createElement('tr');
+                        var amountDiv = document.createElement('td');
+                        var linkTD = document.createElement('td');
+                        linkTD.innerHTML = "Click for info!";
                         linkTD.className = "expense-info";
                         if(userExpenses[k].fields.d_amount.toString().search(/\./) != -1){
                             amountDiv.innerHTML = "$"+userExpenses[k].fields.d_amount.toString();
@@ -205,18 +179,18 @@ $(document).ready(function(){
                         }
                         var locationDiv = document.createElement('td');
                         locationDiv.innerHTML = userExpenses[k].fields.d_location;
+                        var timeDiv = document.createElement('td');
                         //change time to date and hours
                         var converted = moment(userExpenses[k].fields.d_time);
                         var readable = converted.format("Do-MMM-YYYY");
                         timeDiv.innerHTML = readable;
+                        var categoryDiv = document.createElement('td');
                         categoryDiv.innerHTML = userExpenses[k].fields.d_category;
-                        tagTD.innerHTML = userExpenses[k].fields.d_tag; //TAGS
                         divRow.appendChild(linkTD);
                         divRow.appendChild(timeDiv);
                         divRow.appendChild(amountDiv);
                         divRow.appendChild(locationDiv);
                         divRow.appendChild(categoryDiv);
-                        divRow.appendChild(tagTD); //TAGS
                         divRow.setAttribute('class', 'expense-row');
                         var uniqueID = userExpenses[k].id;
                         divRow.setAttribute('data-expense-id', uniqueID);
@@ -233,7 +207,7 @@ $(document).ready(function(){
                         var converted = moment(userExpenses[j].fields.d_time);
                         var readable = converted._d;
                         vex.dialog.alert({
-                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[j].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[j].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[j].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[j].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                            message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[j].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[j].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!--<ul><li>--><div class="code">'+marked(userExpenses[j].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                         });
                     }
                 }
@@ -261,24 +235,25 @@ $(document).ready(function(){
                     var minutes = time.getMinutes().toString();
                     var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
                 } else {
-                    var dateSbmt = usertime.value;
-                    //TODO: Fix date problem by appending hours and minutes / or / converting date object to same format above YYYY-MM-DD-HH-MM
-                    //I have moment.js
-                    var userinputtime = moment(dateSbmt);
-                    var currenttime = new Date();
-                    var hours = currenttime.getHours().toString();
-                    var minutes = currenttime.getMinutes().toString();
-                    var transactionTime = moment(dateSbmt).format("YYYY-MM-DDThh:mm");
+                    var transactionTime = usertime.value;
                 }
-                var amt = amount.value, locv = loc.value, type = category.value, note = notes.value, tag = tagelement.value;
+                // var time = new Date();
+                // //desired format: Month day-number, year
+                // var mon = time.getMonth() + 1;
+                // var month = mon.toString();
+                // var day = time.getDate().toString();
+                // var year = time.getFullYear().toString();
+                // var hours = time.getHours().toString();
+                // var minutes = time.getMinutes().toString();
+                // var transactionTime = year+"-"+month+"-"+day+"-"+hours+":"+minutes;
+                var amt = amount.value, locv = loc.value, type = category.value, note = notes.value;
                 var data = {
                     "d_amount": parseFloat(amt),
                     "d_location": locv,
                     "d_category": type,
                     "d_notes": note,
                     "d_time": transactionTime,
-                    "d_userIDFK": userID,
-                    "d_tag": tag
+                    "d_userIDFK": userID
                 };
                 var pckge = {
                     "fields": data
@@ -308,7 +283,6 @@ $(document).ready(function(){
                     category.value = "Other";
                     notes.value = "";
                     usertime.value = "";
-                    tagelement.value = "";
                     // we want to add the response to the rendered transactions
                     notie.alert(1, 'Success!', 1.5);
                     //now we want to append that to the transaction section
@@ -321,8 +295,7 @@ $(document).ready(function(){
                     var divRow = document.createElement('tr');
                     var amountDiv = document.createElement('td');
                     var linkTD = document.createElement('td');
-                    var tagTD = document.createElement('td'); //TAGS
-                    linkTD.innerHTML = "Info";
+                    linkTD.innerHTML = "Click for info!";
                     linkTD.className = "expense-info";
                     if(amt.toString().search(/\./) != -1){
                         amountDiv.innerHTML = "$"+amt.toString();
@@ -340,14 +313,12 @@ $(document).ready(function(){
                     var readable = converted.format("Do-MMM-YYYY");
                     timeDiv.innerHTML = readable;
                     var categoryDiv = document.createElement('td');
-                    tagTD.innerHTML = tag;
                     categoryDiv.innerHTML = type;
                     divRow.appendChild(linkTD);
                     divRow.appendChild(timeDiv);
                     divRow.appendChild(amountDiv);
                     divRow.appendChild(locationDiv);
                     divRow.appendChild(categoryDiv);
-                    divRow.appendChild(tagTD); //TAGS
                     pastTransactions.insertBefore(divRow, pastTransactions.firstChild);
                     $('.expense-info').on('click', '', function() {
                         var uniqueRowID = this.parentNode.getAttribute('data-expense-id');
@@ -357,7 +328,7 @@ $(document).ready(function(){
                                 var converted = moment(userExpenses[k].fields.d_time);
                                 var readable = converted._d;
                                 vex.dialog.alert({
-                                    message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Tag: </li><ul><li>'+userExpenses[k].fields.d_tag+'</ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!-- <ul><li> --><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
+                                    message: '<ul><li>Amount: </li><ul><li class=\'currency\'>$'+userExpenses[k].fields.d_amount+'</li></ul><li>Location: </li><ul><li>'+userExpenses[k].fields.d_location+'</li></ul><li>Time: </li><ul><li>'+readable+'</li></ul><li>Notes: </li><!-- <ul><li> --><div class="code">'+marked(userExpenses[k].fields.d_notes)+'</div><!--</li></ul>--></ul>'
                                 });
                             }
                         }
@@ -372,9 +343,4 @@ $(document).ready(function(){
 
         };
     }
-
-    console.log("*--------------------------------------------*");
-    console.log("End app.js");
-    console.log("*--------------------------------------------*");
-    console.log("- - - - - - - - - - - - - - - - - - - - - - - ");
 });
