@@ -12,16 +12,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80px;
-  height: 5rem;
-  font-size: 48px;
-  font-size: 3rem;
+  height: 64px;
+  height: 4rem;
+  font-size: 40px;
+  font-size: 2.5rem;
   background-color: var(--primary);
 }
 
 ._1LXMOcpQCDZp0P_Jor9HRH {
-  width: 560px;
-  width: 35rem;
+  max-width: 560px;
+  max-width: 35rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,12 +36,38 @@
   display: inline;
 }
 ._2GCW_wZ7NuIAgt0wNWnlKJ:focus {
-  outline: 1px solid var(--secondary);
+  border-bottom: solid 2px var(--secondary);
 }
 
 .xaaIjyE3XIZfg-IHIlZAm {
   border-bottom: solid 2px var(--tertiary);
-}._1PsCjVK2kQyAcKblfwa4DW {
+}
+._3bTNKD5oJZoV4gzxw0dlu6 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--primary);
+  border-bottom: solid 2px;
+}
+
+._10PKnYqUyOW3S0hf8S48bl {
+  color: var(--secondary);
+  border-bottom: solid 2px;
+}
+
+._3bTNKD5oJZoV4gzxw0dlu6:focus,
+._3bTNKD5oJZoV4gzxw0dlu6:hover {
+  color: var(--primary-muted);
+  border-bottom: solid 2px;
+}
+
+._10PKnYqUyOW3S0hf8S48bl:focus,
+._10PKnYqUyOW3S0hf8S48bl:hover {
+  color: var(--tertiary);
+  border-bottom: solid 2px;
+}
+._1PsCjVK2kQyAcKblfwa4DW {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,8 +130,11 @@
   --space-four: 1rem;
 
   /* Font size */
-  --font-size: calc(1vmax + 1vmin - .5vh);
+  --font-size: 18px;
   --line-height: 1.8;
+
+  --width: 560px;
+  --width: 35rem;
 } /* Set for width of main  */
 
 * {
@@ -126,7 +155,7 @@ html {
                sans-serif;
   background-color: ghostwhite;
   color: #111111;
-  font-size: calc(1vmax + 1vmin - .5vh);
+  font-size: 18px;
   line-height: 1.8;
 }
 
@@ -149,8 +178,20 @@ html {
       flex-shrink: 0;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
-  max-width: 560px;
-  max-width: 35rem;
-  margin: 0 auto;
+  margin-bottom: 96px;
+  margin-bottom: 6rem;
 }
+
+
+:globa(input) {
+  all: unset;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: rgb(223, 223, 230);
+}
+
 /*# sourceMappingURL=landing.css.map*/

@@ -3,13 +3,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 5rem;
-  font-size: 3rem;
+  height: 4rem;
+  font-size: 2.5rem;
   background-color: var(--primary);
 }
 
 .HeaderNav {
-  width: 35rem;
+  max-width: var(--width, 35rem);
   display: flex;
   justify-content: space-between;
 }
@@ -20,7 +20,7 @@
   display: inline;
 }
 .HeaderNavLink:focus {
-  outline: 1px solid var(--secondary);
+  border-bottom: solid 2px var(--secondary);
 }
 
 .HeaderNavLinkActive {

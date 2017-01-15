@@ -1,44 +1,45 @@
 import React from 'react';
-// import Link from '../link/link';
 
 import Styles from './header.css';
+
+import Link from '../link/link';
 
 const Header = (props) => {
   let links;
   if (props.activeLink === "app") {
     links = (
       <nav className={Styles.HeaderNav}>
-        <a href="./app" className={Styles.HeaderNavLinkActive} title="App">💵</a>
-        <a href="./analysis" className={Styles.HeaderNavLink} title="Analysis">📈</a>
-        <a href="./budgets" className={Styles.HeaderNavLink} title="Budgets">💸</a>
-        <a href="./account" className={Styles.HeaderNavLink} title="Settings">⚙️</a>
+        <Link to="./app" isPrimary title="Home">💵</Link>
+        <Link to="./analysis" title="Analysis">📈</Link>
+        <Link to="./budgets" title="Budgets">💸</Link>
+        <Link to="./account" title="Account Settings">⚙️</Link>
       </nav>
     );
   } else if (props.activeLink === "analysis") {
     links = (
       <nav className={Styles.HeaderNav}>
-        <a href="./app" className={Styles.HeaderNavLink} title="App">💵</a>
-        <a href="./analysis" className={Styles.HeaderNavLinkActive} title="Analysis">📈</a>
-        <a href="./budgets" className={Styles.HeaderNavLink} title="Budgets">💸</a>
-        <a href="./account" className={Styles.HeaderNavLink} title="Settings">⚙️</a>
+        <Link to="./app" title="Home">💵</Link>
+        <Link to="./analysis" isPrimary title="Analysis">📈</Link>
+        <Link to="./budgets" title="Budgets">💸</Link>
+        <Link to="./account" title="Account Settings">⚙️</Link>
       </nav>
     )
   } else if (props.activeLink === "budgets") {
     links = (
       <nav className={Styles.HeaderNav}>
-        <a href="./app" className={Styles.HeaderNavLink} title="App">💵</a>
-        <a href="./analysis" className={Styles.HeaderNavLink} title="Analysis">📈</a>
-        <a href="./budgets" className={Styles.HeaderNavLinkActive} title="Budgets">💸</a>
-        <a href="./account" className={Styles.HeaderNavLink} title="Settings">⚙️</a>
+        <Link to="./app" title="Home">💵</Link>
+        <Link to="./analysis" title="Analysis">📈</Link>
+        <Link to="./budgets" isPrimary title="Budgets">💸</Link>
+        <Link to="./account" title="Account Settings">⚙️</Link>
       </nav>
     )
   } else {
     links = (
       <nav className={Styles.HeaderNav}>
-        <a href="./app" className={Styles.HeaderNavLink} title="App">💵</a>
-        <a href="./analysis" className={Styles.HeaderNavLink} title="Analysis">📈</a>
-        <a href="./budgets" className={Styles.HeaderNavLink} title="Budgets">💸</a>
-        <a href="./account" className={Styles.HeaderNavLinkActive} title="Settings">⚙️</a>
+        <Link to="./app" title="Home">💵</Link>
+        <Link to="./analysis" title="Analysis">📈</Link>
+        <Link to="./budgets" title="Budgets">💸</Link>
+        <Link to="./account" isPrimary title="Account Settings">⚙️</Link>
       </nav>
     )
   };

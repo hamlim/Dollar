@@ -17,8 +17,10 @@
   --space-four: 1rem;
 
   /* Font size */
-  --font-size: calc(1vmax + 1vmin - .5vh);
+  --font-size: 18px;
   --line-height: 1.8;
+
+  --width: 35rem;
 }
 
 @custom-media --xs-viewport (min-width: 16.667rem);
@@ -60,6 +62,13 @@ html {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
-  max-width: 35rem;
-  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+
+:globa(input) {
+  all: unset;
+  appearance: none;
+  display: inline-flex;
+  background-color: color(var(--white) shade(10%));
 }

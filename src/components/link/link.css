@@ -1,0 +1,23 @@
+.Link {
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--primary);
+  border-bottom: solid 2px;
+}
+
+.LinkPrimary {
+  color: var(--secondary);
+  border-bottom: solid 2px;
+}
+
+.Link:focus,
+.Link:hover {
+  color: var(--primary-muted);
+  border-bottom: solid 2px;
+}
+
+.LinkPrimary:focus,
+.LinkPrimary:hover {
+  color: var(--tertiary);
+  border-bottom: solid 2px;
+}
