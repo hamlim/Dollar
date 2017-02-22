@@ -1,0 +1,33 @@
+:root {
+  --a: #00FF7F;
+  --b: #FA8072;
+  --c: #4169E1;
+  --d: #FFD34E;
+
+  --primary: var(--a);
+  --primary-muted: color(#00FF7F lightness(+ 15%));
+  --secondary: var(--b);
+  --secondary-muted: color(#FA8072 lightness(+ 15%));
+  --tertiary: var(--c);
+  --tertiary-muted: color(#4169E1 lightness(+ 15%));
+  --quartenary: var(--d);
+  --quartenary-muted: color(#FFD34E lightness(+15%));
+
+  --spacing: 5px;
+  --radius: 4px;
+
+  --font-size: 20px;
+
+  --font-family: -apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  Roboto,
+                  Oxygen-Sans,
+                  Ubuntu,
+                  Cantarell,
+                  "Helvetica Neue",
+                  sans-serif;
+  
+  --width: 45rem;
+  --width-small: 35rem;
+}
