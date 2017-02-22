@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--primary-muted);
+}
+.nav {
+  color: var(--quartenary-muted);
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.activeLink {
+  composes: link;
+  color: var(--secondary-muted);
+  border-bottom: solid var(--thickness);
+}
