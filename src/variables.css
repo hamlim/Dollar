@@ -1,0 +1,26 @@
+:root {
+  /* Colors */
+  --primary: #00FF7F;
+  --primary-muted: #98FB98;
+  --secondary: #FA8072;
+  --secondary-muted: #FFA07A;
+  --tertiary: #4169E1;
+  --tertiary-muted: #6495ED;
+
+  --white: ghostwhite;
+  --black: #111111;
+
+  /* Spacing */
+  --space-one: .25rem;
+  --space-two: .5rem;
+  --space-three: .75rem;
+  --space-four: 1rem;
+
+  /* Font size */
+  --font-size: calc(1vmax + 1vmin - .5vh);
+  --line-height: 1.8;
+}
+
+/*
+  Test comment
+*/

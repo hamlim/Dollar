@@ -16,7 +16,6 @@ class App extends Component {
       settings: {}
     }
   }
-
   render() {
     return (
       <div className="App">
@@ -28,19 +27,19 @@ class App extends Component {
   }
 };
 
-
-
-render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="analysis" component={Analysis} />
-      <Route path="budgets" component={Budgets} />
-      <Route path="Settings" component={Settings} />
-    </Route>
-  </Router>,
-  document.getElementById('mount');
-)
-
+//
+//
+// render(
+//   <Router history={browserHistory}>
+//     <Route path="/" component={App}>
+//       <Route path="analysis" component={Analysis} />
+//       <Route path="budgets" component={Budgets} />
+//       <Route path="Settings" component={Settings} />
+//     </Route>
+//   </Router>,
+//   document.getElementById('mount')
+// );
+//
 
 if (document.body.getAttribute('data-page') === "app") {
   render(<Header activeLink="app" />, document.getElementById('headerMount'));

@@ -1,3 +1,5 @@
+@import '../../variables.css';
+
 .Footer {
   display: flex;
   flex-direction: row;
