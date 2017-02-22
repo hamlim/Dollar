@@ -8,14 +8,14 @@ const Link = ({to, children, isActive}) => (
 
 import styles from './header.css';
 
-const Header = (page) => (
+const Header = ({page}) => (
   <header className={styles.header}>
     <nav className={styles.nav}>
-      <Link to="/" {...page == "home" && isActive}><h1 className={styles.title}>Dollar 💵</h1></Link>
-      <Link to="/new" {...page == "new" && isActive}>New Transaction</Link>
-      <Link to="/budgets" {...page == "budgets" && isActive}>Budgets</Link>
-      <Link to="/analysis" {...page == "analysis" && isActive}>Analysis</Link>
-      <Link to="/transactions" {...page == "transactions" && isActive}>Past Transactions</Link>
+      <Link to="/" {...page == "home" && {isActive: true}}><h1 className={styles.title}>Dollar 💵</h1></Link>
+      <Link to="/new" {...page == "new" && {isActive: true}}>New Transaction</Link>
+      <Link to="/budgets" {...page == "budgets" && {isActive: true}}>Budgets</Link>
+      <Link to="/analysis" {...page == "analysis" && {isActive: true}}>Analysis</Link>
+      <Link to="/transactions" {...page == "transactions" && {isActive: true}}>Past Transactions</Link>
     </nav>
   </header>
 );

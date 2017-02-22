@@ -12360,7 +12360,8 @@ var Link = function Link(_ref) {
   );
 };
 
-var Header = function Header(page) {
+var Header = function Header(_ref2) {
+  var page = _ref2.page;
   return _react2.default.createElement(
     'header',
     { className: _header2.default.header },
@@ -12369,7 +12370,7 @@ var Header = function Header(page) {
       { className: _header2.default.nav },
       _react2.default.createElement(
         Link,
-        _extends({ to: '/' }, page == "home" && isActive),
+        _extends({ to: '/' }, page == "home" && { isActive: true }),
         _react2.default.createElement(
           'h1',
           { className: _header2.default.title },
@@ -12378,22 +12379,22 @@ var Header = function Header(page) {
       ),
       _react2.default.createElement(
         Link,
-        _extends({ to: '/new' }, page == "new" && isActive),
+        _extends({ to: '/new' }, page == "new" && { isActive: true }),
         'New Transaction'
       ),
       _react2.default.createElement(
         Link,
-        _extends({ to: '/budgets' }, page == "budgets" && isActive),
+        _extends({ to: '/budgets' }, page == "budgets" && { isActive: true }),
         'Budgets'
       ),
       _react2.default.createElement(
         Link,
-        _extends({ to: '/analysis' }, page == "analysis" && isActive),
+        _extends({ to: '/analysis' }, page == "analysis" && { isActive: true }),
         'Analysis'
       ),
       _react2.default.createElement(
         Link,
-        _extends({ to: '/transactions' }, page == "transactions" && isActive),
+        _extends({ to: '/transactions' }, page == "transactions" && { isActive: true }),
         'Past Transactions'
       )
     )
@@ -27070,8 +27071,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -27080,14 +27079,13 @@ var _reactRouter = __webpack_require__(222);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Anchor = function Anchor(to, className, children) {
-  for (var _len = arguments.length, props = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-    props[_key - 3] = arguments[_key];
-  }
-
+var Anchor = function Anchor(_ref) {
+  var to = _ref.to,
+      className = _ref.className,
+      children = _ref.children;
   return _react2.default.createElement(
     _reactRouter.Link,
-    _extends({ to: to, className: className }, props),
+    { to: to, className: className },
     children
   );
 };
@@ -27103,7 +27101,7 @@ exports = module.exports = __webpack_require__(71)();
 
 
 // module
-exports.push([module.i, ".header__header--1-4Ly{background-color:var(--primary-muted)}.header__nav--1OjbK{color:var(--quartenary-muted);height:3rem;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header__link--1txiG{text-decoration:none;color:inherit;display:inline-block;padding:0 1em}.header__activeLink--3JyvT{color:var(--secondary-muted);border-bottom:solid var(--thickness)}", ""]);
+exports.push([module.i, ".header__header--1-4Ly{background-color:var(--quartenary-muted)}.header__nav--1OjbK{color:var(--secondary);height:6rem;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}@media screen and (min-width:40rem){.header__nav--1OjbK{height:3rem}}.header__link--1txiG{text-decoration:none;color:inherit;display:inline-block;padding:0 5em;height:3rem;line-height:3rem}.header__activeLink--3JyvT{color:var(--tertiary-muted);border-bottom:solid var(--thickness)}", ""]);
 
 // exports
 exports.locals = {

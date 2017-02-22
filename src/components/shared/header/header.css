@@ -1,23 +1,29 @@
 .header {
-  background-color: var(--primary-muted);
+  background-color: var(--quartenary-muted);
 }
 .nav {
-  color: var(--quartenary-muted);
-  height: 3rem;
+  color: var(--secondary);
+  height: 6rem;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 40rem) {
+    height: 3rem;
+  }
 }
 .link {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  padding: 0 1em;
+  padding: 0 5em;
+  height: 3rem;
+  line-height: 3rem;
 }
 
 .activeLink {
   composes: link;
-  color: var(--secondary-muted);
+  color: var(--tertiary-muted);
   border-bottom: solid var(--thickness);
 }
