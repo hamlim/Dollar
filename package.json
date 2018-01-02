@@ -9,7 +9,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "postcss-color-function": "^2.0.1",
-    "postcss-cssnext": "^2.9.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^1.2.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
