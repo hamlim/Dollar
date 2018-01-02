@@ -1,8 +1,2 @@
-import React from 'react';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-
-
-
-export Header;
-export Footer;
+export { default as Header } from './components/header/header'
+export { default as Footer } from './components/footer/footer'
