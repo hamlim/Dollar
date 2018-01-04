@@ -20,13 +20,19 @@
     "react-dom": "^16.2.0",
     "react-emotion": "^8.0.12",
     "style-loader": "^0.13.1",
-    "styled-system": "^1.1.1",
-    "webpack": "^1.14.0"
+    "styled-system": "^1.1.1"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "make-ds": "node ./node_modules/@matthamlin/ds/dist/cli.js ../../../../design-system/fonts.js ../../../../design-system/colors.js ../../../../design-system/numbers.js design-system/ds.json"
+    "make-ds": "node ./node_modules/@matthamlin/ds/dist/cli.js ../../../../design-system/fonts.js ../../../../design-system/colors.js ../../../../design-system/numbers.js design-system/ds.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.3",
+    "@storybook/addon-links": "^3.3.3",
+    "@storybook/react": "^3.3.3"
   }
 }

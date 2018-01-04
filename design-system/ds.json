@@ -1,11 +1,17 @@
 {
   "colors": {
-    "base": "","white": "#fff","primary": "","secondary": "","tertiary": ""
+    "base": "","white": "#fff","primary": "","secondary": "","tertiary": "","accent": ""
   },
   "fonts": {
-    ,
+    "base": {
+      "size": "1rem","color": ""
+    },"headline": {
+      "size": "3.2rem","color": ""
+    },"link": {
+      "size": "1rem","color": ""
+    }
   },
   "numbers": {
-    ,
-  },
+    "base": "1rem","small": ".8rem","medium": "1.2rem","large": "1.8rem","extraLarge": "3.2rem","maxWidth": "60rem"
+  }
 }

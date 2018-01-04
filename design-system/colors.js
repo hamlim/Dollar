@@ -3,5 +3,6 @@ module.exports = {
   white: '#fff',
   primary: '',
   secondary: '',
-  tertiary: ''
+  tertiary: '',
+  accent: ''
 }
