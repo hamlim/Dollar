@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-import styled from 'react-emotion'
+import React from 'react'
 import Box from '../components/box.js'
 
 import Header from '../components/header.js';

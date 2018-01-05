@@ -32,9 +32,13 @@ const NavItem = styled('li')`
   }
 `
 
-export default ({ currentPage }) => (
+export default () => (
   <Header>
-    <Title>Dollar</Title>
+    <Title>
+      <Link to="/">
+        <a href="/">Dollar</a>
+      </Link>
+    </Title>
     <Nav>
       <ul>
         <NavItem>
