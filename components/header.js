@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import ds from '../design-system/ds.json'
 
-import Link from 'next/link'
+import Link from './link'
 
 const Header = styled('header')`
   height: 5rem;
@@ -11,6 +11,7 @@ const Header = styled('header')`
   align-items: center;
   max-width: ${ds.numbers.maxWidth};
   background-color: ${ds.colors.accent};
+  margin: 0 auto;
 `
 
 const Nav = styled('nav')`
@@ -22,6 +23,7 @@ const Nav = styled('nav')`
 const Title = styled('h1')`
   font-size: ${ds.fonts.headline.size};
   color: ${ds.fonts.headline.color};
+  text-decoration: none;
 `
 
 const NavItem = styled('li')`
@@ -35,21 +37,15 @@ const NavItem = styled('li')`
 export default () => (
   <Header>
     <Title>
-      <Link to="/">
-        <a href="/">Dollar</a>
-      </Link>
+      <Link href="/">Dollar</Link>
     </Title>
     <Nav>
       <ul>
         <NavItem>
-          <Link to="/app">
-            <a href="/app">💵</a>
-          </Link>
+          <Link href="/app">💵</Link>
         </NavItem>
         <NavItem>
-          <Link to="/analysis">
-            <a href="/analysis">📈</a>
-          </Link>
+          <Link href="/analysis">📈</Link>
         </NavItem>
       </ul>
     </Nav>
