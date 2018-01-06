@@ -1,6 +1,6 @@
 {
   "colors": {
-    "base": "","white": "#fff","primary": "","secondary": "","tertiary": "","accent": ""
+    "base": "","white": "#fff","primary": "mediumseagreen","secondary": "","tertiary": "","accent": ""
   },
   "fonts": {
     "base": {
@@ -8,7 +8,7 @@
     },"headline": {
       "size": "3.2rem","color": ""
     },"link": {
-      "size": "1rem","color": ""
+      "size": "1rem","color": "mediumseagreen"
     }
   },
   "numbers": {

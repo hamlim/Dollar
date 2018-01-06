@@ -17,17 +17,17 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@matthamlin/ds-cli@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@matthamlin/ds-cli/-/ds-cli-1.2.2.tgz#73db53ebd31d37bbdb9f49ae7f3c73f8d29ca44a"
+"@matthamlin/ds-cli@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@matthamlin/ds-cli/-/ds-cli-1.4.0.tgz#d677f812ae2e956195a024d55309f3ee266fec08"
   dependencies:
-    "@matthamlin/ds" "^1.2.0"
+    "@matthamlin/ds" "^1.3.0"
     babel-cli "^6.26.0"
     babel-preset-env "^1.6.1"
 
-"@matthamlin/ds@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@matthamlin/ds/-/ds-1.2.0.tgz#4e727c8fd667a1674b939610671c70ded0c4edfb"
+"@matthamlin/ds@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@matthamlin/ds/-/ds-1.3.0.tgz#2ea19eabc2d722608ed0e0e220eb42ca326caa53"
   dependencies:
     babel-cli "^6.26.0"
     babel-preset-env "^1.6.1"
