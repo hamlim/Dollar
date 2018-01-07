@@ -1,17 +1,32 @@
 {
   "colors": {
-    "base": "","white": "#fff","primary": "mediumseagreen","secondary": "","tertiary": "","accent": ""
+    "base": "",
+    "white": "#fff",
+    "primary": "mediumseagreen",
+    "secondary": "",
+    "tertiary": "",
+    "accent": ""
   },
   "fonts": {
     "base": {
-      "size": "1rem","color": ""
-    },"headline": {
-      "size": "3.2rem","color": ""
-    },"link": {
-      "size": "1rem","color": "mediumseagreen"
+      "size": "1rem",
+      "color": ""
+    },
+    "headline": {
+      "size": "3.2rem",
+      "color": ""
+    },
+    "link": {
+      "size": "1rem",
+      "color": "mediumseagreen"
     }
   },
   "numbers": {
-    "base": "1rem","small": ".8rem","medium": "1.2rem","large": "1.8rem","extraLarge": "3.2rem","maxWidth": "60rem"
+    "base": "1rem",
+    "small": ".8rem",
+    "medium": "1.2rem",
+    "large": "1.8rem",
+    "extraLarge": "3.2rem",
+    "maxWidth": "60rem"
   }
 }
