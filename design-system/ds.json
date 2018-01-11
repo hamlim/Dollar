@@ -1,24 +1,36 @@
 {
   "colors": {
-    "base": "",
-    "white": "#fff",
-    "primary": "mediumseagreen",
-    "secondary": "",
-    "tertiary": "",
-    "accent": ""
+    "base": "#3b3639",
+    "white": "#f9f9f9",
+    "primary": "#5ac79c",
+    "secondary": "#FA8072",
+    "tertiary": "#72a8fa",
+    "accent": "#8072fa"
   },
   "fonts": {
     "base": {
       "size": "1rem",
-      "color": ""
+      "color": "#3b3639"
     },
     "headline": {
       "size": "3.2rem",
-      "color": ""
+      "color": "#3b3639"
     },
     "link": {
       "size": "1rem",
-      "color": "mediumseagreen"
+      "color": "#5ac79c"
+    },
+    "sizes": {
+      "0": "1rem",
+      "1": "1.618rem",
+      "2": "3.236rem",
+      "3": "4.854rem",
+      "4": "6.472rem",
+      "5": "8.09rem",
+      "6": "9.708rem",
+      "7": "11.326rem",
+      "8": "12.944rem",
+      "9": "14.562000000000001rem"
     }
   },
   "numbers": {
@@ -29,5 +41,13 @@
     "extraLarge": "3.2rem",
     "maxWidth": "60rem",
     "minWidth": "30rem"
+  },
+  "breakpoints": {
+    "small": "20rem",
+    "medium": "40rem",
+    "large": "50rem",
+    "xLarge": "64rem",
+    "xxLarge": "75rem",
+    "xxxLarge": "100rem"
   }
 }

@@ -1,8 +1,8 @@
 module.exports = {
-  base: '',
-  white: '#fff',
-  primary: 'mediumseagreen',
-  secondary: '',
-  tertiary: '',
-  accent: ''
+  base: '#3b3639',
+  white: '#f9f9f9',
+  primary: '#5ac79c',
+  secondary: '#FA8072',
+  tertiary: '#72a8fa',
+  accent: '#8072fa'
 }

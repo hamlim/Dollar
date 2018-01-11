@@ -1,0 +1,10 @@
+{
+  "ds": {
+    "numbers": "design-system/numbers.js",
+    "fonts": "design-system/fonts.js",
+    "modularScale": "design-system/modular-scale.js",
+    "colors": "design-system/colors.js",
+    "breakpoints": "design-system/breakpoints.js",
+    "output": "design-system/ds.json"
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
 import ds from '../design-system/ds.json'
-
 import Link from './link'
 
 const Header = styled('header')`
@@ -10,7 +9,7 @@ const Header = styled('header')`
   justify-content: space-between;
   align-items: center;
   max-width: ${ds.numbers.maxWidth};
-  background-color: ${ds.colors.accent};
+  background-color: ${ds.colors.white};
   margin: 0 auto;
 `
 

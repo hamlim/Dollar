@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { extractCritical } from 'emotion-server'
+import ds from '../design-system/ds.json';
 
 const reset = `
   *,
@@ -13,6 +14,7 @@ const reset = `
     box-sizing: border-box;
     font-size: 18px;
     font-family: Avenir,sans-serif;
+    background-color: ${ds.colors.white};
   }
 `
 
