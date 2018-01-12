@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { extractCritical } from 'emotion-server'
-import ds from '../design-system/ds.json';
+import ds from '../design-system/ds.json'
 
 const reset = `
   *,
