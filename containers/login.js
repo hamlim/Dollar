@@ -1,51 +1,67 @@
 import React from 'react'
-import firebase from 'firebase'
-import firebaseConfig from '../secrets/firebase.js'
 import syncState from '../app/syncstate.js'
 import Router from 'next/router'
+import Subscriber from './subscriber'
+import firebase from 'firebase'
 
-const STATUS = {
+export const STATUS = {
   starting: 'begining-auth',
   success: 'authorized',
   failure: 'auth-failed',
   default: '',
 }
 
-class Login extends React.Component {
-  state = {
-    status: STATUS.default,
+const reducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'STARTING':
+      return {
+        ...state,
+        authStatus: STATUS.starting,
+      }
+    case 'SUCCESS':
+      return {
+        ...state,
+        authStatus: STATUS.success,
+        user: action.payload,
+      }
+    case 'FAILURE':
+      return {
+        ...state,
+        authStatus: STATUS.failure,
+        authError: action.payload,
+      }
+    default:
+      return state
   }
+}
 
-  componentDidMount() {
-    window.firebase_instance = firebase.initializeApp(firebaseConfig)
-    this.provider = new firebase.auth.TwitterAuthProvider()
-  }
+const provider = new firebase.auth.TwitterAuthProvider()
+
+class Login extends React.Component {
+  updater = this.props.createUpdater(reducer)
 
   handleSignIn = () => {
+    console.log(this.props)
     // do auth
-    this.setState({ status: STATUS.starting })
+    this.updater({ type: 'STARTING' })
     firebase
       .auth()
-      .signInWithPopup(this.provider)
+      .signInWithPopup(provider)
       .then(result => {
         const user = result.user
         console.log({ user })
-        this.setState(
-          {
-            status: STATUS.success,
-            user,
-          },
-          () => {
-            syncState({ userName: this.state.user.displayName })
-            Router.push('/app')
-          },
-        )
+        this.updater({
+          type: 'SUCCESS',
+          payload: user,
+        })
+        syncState({ userName: this.props.state.user.displayName })
+        Router.push('/app')
       })
       .catch(error => {
-        const { code, message, email, credential } = error
-        this.setState({
-          status: STATUS.failure,
-          message,
+        const { message } = error
+        this.updater({
+          type: 'FAILURE',
+          payload: message,
         })
       })
   }
@@ -53,11 +69,14 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleSignIn}>Sign In</button>
-        {this.state.status}
+        <button onClick={this.handleSignIn}>Login to Dollar</button>
       </div>
     )
   }
 }
 
-export default Login
+export default class extends React.Component {
+  render() {
+    return <Subscriber render={({ app }) => <Login {...app} />} />
+  }
+}

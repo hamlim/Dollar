@@ -9,23 +9,10 @@ import { reducer } from '../app/app_reducer.js'
 import actionCreators from '../app/app_actions.js'
 import { handleFormSubmit } from '../app/app_thunks.js'
 import { Form, Title, Label, Button, Error } from '../components/app'
-import firebase from 'firebase'
-
-class Logger extends React.Component {
-  componentDidMount = this.props.didMount
-  render() {
-    return null
-  }
-}
 
 export default () => (
   <main>
     <Header />
-    <Logger
-      didMount={() => {
-        console.log(window.firebase_instance)
-      }}
-    />
     <Provider
       initialState={getInitialState(globalState)}
       reducer={reducer}
