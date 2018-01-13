@@ -1,6 +1,6 @@
 const date = new Date()
 
-const today = `${date.getYear()}-${date.getMonth()}-${date.getDate()}`
+const today = date.toISOString().split('T')[0]
 
 export default {
   tags: ['Credit Card', 'Debit Card', 'Savings'],

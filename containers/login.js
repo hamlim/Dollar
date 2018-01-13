@@ -17,7 +17,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    firebase.initializeApp(firebaseConfig)
+    window.firebase_instance = firebase.initializeApp(firebaseConfig)
     this.provider = new firebase.auth.TwitterAuthProvider()
   }
 
