@@ -1,298 +1,336 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
+  <head>
+    <script type="text/javascript">
+      var host = 'www.goexploring.today'
+      if (host == window.location.host && window.location.protocol != 'https:')
+        window.location.protocol = 'https'
+    </script>
 
-		<script type="text/javascript">
-		    var host = "www.goexploring.today";
-		    if ((host == window.location.host) && (window.location.protocol != "https:"))
-		        window.location.protocol = "https";
-		</script>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#66A96B" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#66A96B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Matt Hamlin" />
+    <meta name="description" content="A simple transaction manager." />
+    <meta name="application-name" content="Dollar" />
 
-		<meta charset="utf-8">
-		<meta name="robots" content="index, follow">
-		<meta name="theme-color" content="#66A96B">
-		<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Matt Hamlin">
-		<meta name="description" content="A simple transaction manager.">
-		<meta name="application-name" content="Dollar">
+    <title>Dollar App Settings</title>
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"
+    />
 
-		<title>Dollar App Settings</title>
+    <link rel="stylesheet" href="./css/skeleton.css" />
+    <link rel="stylesheet" href="./css/fluidity/fluidity.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/budgets.css" />
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <!-- Emoji One -->
+    <script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css" />
 
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-		<link rel="stylesheet" href="./css/skeleton.css">
-		<link rel="stylesheet" href="./css/fluidity/fluidity.min.css">
-		<link rel="stylesheet" href="./css/custom.css">
-		<link rel="stylesheet" href="./css/app.css">
-		<link rel="stylesheet" href="./css/budgets.css">
-
-		<!-- Emoji One -->
-		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
-
-
-        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-		<!-- Favicons
+    <!-- Favicons
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/assets/favicons/manifest.json">
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#66a96b">
-        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#66a96b">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/favicons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/favicons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon-180x180.png"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194" />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicons/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/assets/favicons/manifest.json" />
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b" />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#66a96b" />
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#66a96b" />
 
-
-		<!--
+    <!--
 			Vex Library for (nice looking) modals
 	 	-->
-		<script src="./js/vex/vex.combined.min.js"></script>
-		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
-		<link rel="stylesheet" href="./css/vex/vex.css" />
-		<link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
+    <script src="./js/vex/vex.combined.min.js"></script>
+    <script>
+      vex.defaultOptions.className = 'vex-theme-wireframe'
+    </script>
+    <link rel="stylesheet" href="./css/vex/vex.css" />
+    <link rel="stylesheet" href="./css/vex/vex-theme-wireframe.css" />
 
-		<!--
+    <!--
 			Js for App
 	 	-->
-		<!-- <script src="./js/moment.js"></script> -->
-		<!-- <script src="./js/marked/marked.js"></script> -->
-        <script src="./js/settings.js"></script>
-		<script src="./js/logout.js"></script>
+    <!-- <script src="./js/moment.js"></script> -->
+    <!-- <script src="./js/marked/marked.js"></script> -->
+    <script src="./js/settings.js"></script>
+    <script src="./js/logout.js"></script>
+  </head>
+  <body>
+    <main class="" id="main">
+      <header class="navigation bottom-spacer special-green">
+        <nav class="container">
+          <section class="row">
+            <div class="one-full column text-middle">
+              <a href="./index.html"> <i class="emoji navmoji">:dollar:</i> </a>
+              <span>
+                <a href="./app.html">
+                  <i class="emoji navmoji" id="cash">:money_with_wings:</i>
+                  <!-- EMOJI -->
+                </a>
+                <a href="./analysis.html">
+                  <i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
+                </a>
+                <a href="./budgets.html">
+                  <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
+                </a>
+                <a href="./account.html" class="selected">
+                  <i class="emoji navmoji" id="account">:gear:</i>
+                </a>
+              </span>
+            </div>
+          </section>
+        </nav>
+      </header>
 
-	</head>
-	<body>
-		<main class="" id="main">
-			<header class="navigation bottom-spacer special-green">
-				<nav class="container">
-					<section class="row">
-						<div class="one-full column text-middle">
-							<a href="./index.html">
-								<i class="emoji navmoji">:dollar:</i>
-							</a>
-							<span>
-							<a href="./app.html">
-								<i class="emoji navmoji" id="cash">:money_with_wings:</i> <!-- EMOJI -->
-							</a>
-							<a href="./analysis.html">
-								<i class="emoji navmoji" id="analysis">:chart_with_upwards_trend:</i>
-							</a>
-							<a href="./budgets.html">
-                                <i class="emoji navmoji" id="budget">:ballot_box_with_check:</i>
-                            </a>
-							<a href="./account.html" class="selected">
-								<i class="emoji navmoji" id="account">:gear:</i>
-							</a>
-							</span>
-						</div>
-					</section>
-				</nav>
-			</header>
+      <section class="container bottom-spacer" id="Settings">
+        <div class="row">
+          <h1 id="username-heading"></h1>
+          <h3>Here is where you can change some account settings!</h3>
+        </div>
+        <hr />
+        <div class="row">
+          <h5>General Settings:</h5>
+          <form>
+            <fieldset>
+              <div class="row">
+                <label for="password-reset" class="one-half column">Change Password: </label>
+                <input type="password" class="one-half column" id="password-reset" />
+              </div>
+              <div class="row">
+                <label for="username-reset" class="one-half column">Change Username: </label>
+                <input type="text" class="one-half column" id="username-reset" />
+              </div>
+              <div class="row"></div>
+            </fieldset>
+          </form>
+          <div class="row">
+            <button
+              id="account-btn"
+              class="one-full column button button-tertiary"
+              style="text-align: center;"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <h5>Application Settings:</h5>
+          <form>
+            <fieldset>
+              <div class="row">
+                <h6>Tags:</h6>
+                <p>
+                  Tags are easy ways to differentiate purchases under different bank accounts or
+                  cards.
+                </p>
+              </div>
+              <div class="row">
+                <label for="tag-option-one" class="one-half column">Tag One:</label>
+                <input type="text" class="one-half column" id="tag-option-one" />
+              </div>
+              <div class="row">
+                <label for="tag-option-two" class="one-half column">Tag Two:</label>
+                <input type="text" class="one-half column" id="tag-option-two" />
+              </div>
+              <div class="row">
+                <label for="tag-option-three" class="one-half column">Tag Three:</label>
+                <input type="text" class="one-half column" id="tag-option-three" />
+              </div>
+            </fieldset>
+          </form>
+          <div class="row">
+            <button
+              id="app-btn"
+              class="one-full column button button-tertiary"
+              style="text-align: center;"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
 
-			<section class="container bottom-spacer" id="Settings">
-				<div class="row">
-					<h1 id="username-heading"></h1>
-                    <h3>Here is where you can change some account settings!</h3>
-				</div>
-                <hr/>
-                <div class="row">
-                    <h5>General Settings:</h5>
-                    <form>
-                        <fieldset>
-                            <div class="row">
-                                <label for="password-reset" class="one-half column">Change Password: </label>
-                                <input type="password" class="one-half column" id="password-reset">
-                            </div>
-                            <div class="row">
-                                <label for="username-reset" class="one-half column">Change Username: </label>
-                                <input type="text" class="one-half column" id="username-reset">
-                            </div>
-                            <div class="row">
+        <div class="row">
+          <div class="one-full column"><hr /></div>
+        </div>
+        <div class="row"><h3>Edit All Budgets:</h3></div>
+        <div class="row">
+          <p>
+            The following values will be applied to all months, we currently don't support different
+            budget values for different months.
+          </p>
+        </div>
+        <div class="flex-holder">
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:bust_in_silhouette:</i> Personal:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="personal" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:airplane:</i> Travel:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="travel" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:house:</i> Home:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="home" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:pill:</i> Health:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="health" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:red_car:</i> Transportation:</span>
+            </div>
+            <div class="body-cell">
+              <input value="0" type="number" min="0" id="transportation" />
+            </div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:gift:</i> Gifts:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="gifts" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:tools:</i> Utilities:</span>
+            </div>
+            <div class="body-cell">
+              <input value="0" value="0" type="number" min="0" id="utilities" />
+            </div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:pizza:</i> Food:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="food" /></div>
+          </div>
+          <div class="flex-unit">
+            <div class="header-cell">
+              <span><i class="emoji small">:poop:</i> Other:</span>
+            </div>
+            <div class="body-cell"><input value="0" type="number" min="0" id="other" /></div>
+          </div>
+        </div>
+        <div class="row">
+          <button
+            id="budget-btn"
+            class="one-full column button button-tertiary"
+            style="text-align: center;"
+          >
+            Submit
+          </button>
+        </div>
+      </section>
 
-                            </div>
-                        </fieldset>
-                    </form>
-                    <div class="row">
-						<button id="account-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
-					</div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <h5>Application Settings: </h5>
-                    <form>
-                        <fieldset>
-                            <div class="row">
-                                <h6>Tags: </h6>
-                                <p>
-                                    Tags are easy ways to differentiate purchases under different bank accounts or cards.
-                                </p>
-                            </div>
-                            <div class="row">
-                                <label for="tag-option-one" class="one-half column">Tag One:</label>
-                                <input type="text" class="one-half column" id="tag-option-one">
-                            </div>
-                            <div class="row">
-                                <label for="tag-option-two" class="one-half column">Tag Two:</label>
-                                <input type="text" class="one-half column" id="tag-option-two">
-                            </div>
-                            <div class="row">
-                                <label for="tag-option-three" class="one-half column">Tag Three:</label>
-                                <input type="text" class="one-half column" id="tag-option-three">
-                            </div>
+      <footer class="footer">
+        <section class="container">
+          <div class="row">
+            <div class="one-half column offset-by-three columns center-text">
+              <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="//matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
+              <button class="btn" onclick="logoutHandler()" id="logout-btn">
+                Logout <i class="emoji navmoji small">:wave:</i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </main>
 
-                        </fieldset>
-                    </form>
-                    <div class="row">
-						<button id="app-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
-					</div>
-                </div>
+    <script src="./js/notie.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.emoji').each(function() {
+          var original = $(this).html()
+          // use .shortnameToImage if only converting shortnames (for slightly better performance)
+          var converted = emojione.toImage(original)
+          $(this).html(converted)
+        })
+      })
+    </script>
 
-				<div class="row">
-                    <div class="one-full column">
-                        <hr/>
-                    </div>
-                </div>
-				<div class="row">
-					<h3>Edit All Budgets:</h3>
-				</div>
-				<div class="row">
-					<p>
-						The following values will be applied to all months, we currently don't support different budget values for different months.
-					</p>
-				</div>
-                <div class="flex-holder">
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:bust_in_silhouette:</i> Personal:</span>
-                        </div>
-                        <div class="body-cell">
-							<input value="0" type="number" min="0"  id="personal">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:airplane:</i> Travel:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="travel">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:house:</i> Home:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="home">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:pill:</i> Health:</span>
-                        </div>
-						<div class="body-cell">
-							 <input value="0" type="number" min="0" id="health">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:red_car:</i> Transportation:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="transportation">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:gift:</i> Gifts:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="gifts">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:tools:</i> Utilities:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" value="0" type="number" min="0" id="utilities">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:pizza:</i> Food:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="food">
-                        </div>
-                    </div>
-                    <div class="flex-unit">
-                        <div class="header-cell">
-                            <span><i class="emoji small">:poop:</i> Other:</span>
-                        </div>
-						<div class="body-cell">
-							<input value="0" type="number" min="0" id="other">
-                        </div>
-                    </div>
-                </div>
-				<div class="row">
-					<button id="budget-btn" class="one-full column button button-tertiary" style="text-align: center;">Submit</button>
-				</div>
-			</section>
+    <!-- Google Analytics -->
+    <script>
+      ;(function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r
+        ;(i[r] =
+          i[r] ||
+          function() {
+            ;(i[r].q = i[r].q || []).push(arguments)
+          }),
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
 
-			<footer class="footer">
-	            <section class="container">
-	                <div class="row">
-	                    <div class="one-half column offset-by-three columns center-text">
-	                        <!-- <h5 class="footer-text">Made with <i class="emoji navmoji small">:hearts:</i> and <i class="emoji navmoji small">:smiley_cat:</i> by <a target="blank" href="//matthamlin.me" title="Matt Hamlin">Matt</a>. </h5> -->
-							<button class="btn" onclick="logoutHandler()" id="logout-btn">Logout <i class="emoji navmoji small">:wave:</i></button>
-	                    </div>
-	                </div>
-	            </section>
-	        </footer>
-		</main>
-
-		<script src="./js/notie.js"></script>
-		<script type="text/javascript">
-		     $(document).ready(function() {
-				 $(".emoji").each(function() {
-		            var original = $(this).html();
-		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
-		            var converted = emojione.toImage(original);
-		            $(this).html(converted);
-		        });
-		    });
-		</script>
-
-		<!-- Google Analytics -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-72677063-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-	</body>
+      ga('create', 'UA-72677063-1', 'auto')
+      ga('send', 'pageview')
+    </script>
+  </body>
 </html>

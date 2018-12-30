@@ -1,191 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script type="text/javascript">
-		    var host = "www.goexploring.today";
-		    if ((host == window.location.host) && (window.location.protocol != "https:"))
-		        window.location.protocol = "https";
-		</script>
+  <head>
+    <script type="text/javascript">
+      var host = 'www.goexploring.today'
+      if (host == window.location.host && window.location.protocol != 'https:')
+        window.location.protocol = 'https'
+    </script>
 
-        <meta charset="utf-8">
-		<meta name="robots" content="index, follow">
-		<meta name="theme-color" content="#66A96B">
-		<meta name="apple-mobile-web-app-status-bar-style" content="#66A96B">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Matt Hamlin">
-		<meta name="description" content="A simple transaction manager.">
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#66A96B" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#66A96B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Matt Hamlin" />
+    <meta name="description" content="A simple transaction manager." />
 
+    <title>Signup to Dollar</title>
 
-		<title>Signup to Dollar</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"
+    />
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css" />
+    <link rel="stylesheet" href="./css/landing.css" />
 
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="./css/login.css" />
 
-		<link rel="stylesheet" href="./css/skeleton.css">
-        <link rel="stylesheet" href="./css/landing.css">
+    <!-- Emoji One -->
+    <script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css" />
 
-		<link rel="stylesheet" href="./css/custom.css">
-        <link rel="stylesheet" href="./css/login.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-		<!-- Emoji One -->
-		<script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css"/>
+    <script src="./js/signup.js"></script>
 
-
-        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-        <script src="./js/signup.js"></script>
-
-
-        <!-- Favicons
+    <!-- Favicons
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/assets/favicons/manifest.json">
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b">
-        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#66a96b">
-        <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
-        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#66a96b">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/favicons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/favicons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon-180x180.png"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194" />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicons/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/assets/favicons/manifest.json" />
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#66a96b" />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#66a96b" />
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#66a96b" />
 
-
-
-        <!-- FONT
+    <!-- FONT
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
-
-    </head>
-    <body>
-
-        <!-- Primary Page Layout
+    <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
+  </head>
+  <body>
+    <!-- Primary Page Layout
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <header class="navigation special-green">
-            <nav class="container">
-                <section class="row">
-                    <div class="one-full-column text-center">
-                        <a href="./index.html">
-                            <i class="emoji navmoji">:dollar:</i>
-                        </a>
-                        <span>
-                        <a href="./login.html">
-                            <i class="emoji navmoji" id="dollar-signup-login_emoji">:closed_lock_with_key:</i>
-                        </a>
-                        <a href="./signup.html" class="selected">
-                            <i class="emoji navmoji" id="dollar-signup-signup_emoji">:lock_with_ink_pen:</i>
-                        </a>
-                        </span>
-                    </div>
-                </section>
-            </nav>
-        </header>
+    <header class="navigation special-green">
+      <nav class="container">
+        <section class="row">
+          <div class="one-full-column text-center">
+            <a href="./index.html"> <i class="emoji navmoji">:dollar:</i> </a>
+            <span>
+              <a href="./login.html">
+                <i class="emoji navmoji" id="dollar-signup-login_emoji">:closed_lock_with_key:</i>
+              </a>
+              <a href="./signup.html" class="selected">
+                <i class="emoji navmoji" id="dollar-signup-signup_emoji">:lock_with_ink_pen:</i>
+              </a>
+            </span>
+          </div>
+        </section>
+      </nav>
+    </header>
 
-        <main class="dollar-main-container">
-            <section class="container">
-                <div class="row">
-                    <div class="one-half column offset-by-three columns text-center">
-                        <h1>Signup to <i class="emoji">:dollar:</i></h1>
-                    </div>
+    <main class="dollar-main-container">
+      <section class="container">
+        <div class="row">
+          <div class="one-half column offset-by-three columns text-center">
+            <h1>Signup to <i class="emoji">:dollar:</i></h1>
+          </div>
+        </div>
+        <div class="">
+          <form class="dollar-signup-form">
+            <fieldset>
+              <div class="row">
+                <div class="one-third offset-by-one-third column text-center">
+                  <label for="dollar-signup-fullname"
+                    ><i class="emoji small">:name_badge:</i> Full Name:</label
+                  >
+                  <!-- TODO fullname -->
+                  <input type="text" id="dollar-signup-fullname" placeholder="Full Name" />
                 </div>
-                <div class="">
-                    <form class="dollar-signup-form">
-                        <fieldset>
-                            <div class="row">
-                                <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-signup-fullname"><i class="emoji small">:name_badge:</i> Full Name:</label> <!-- TODO fullname -->
-                                    <input type="text" id="dollar-signup-fullname" placeholder="Full Name">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-signup-username"><i class="emoji small">:grinning:</i> Username:</label> <!-- TODO username -->
-                                    <input type="text" id="dollar-signup-username" placeholder="Username">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-signup-email" ><i class="emoji small">:e-mail:</i> Email: </label>
-                                    <input type="email" id="dollar-signup-email" placeholder="cash@dollar.$$">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="one-third offset-by-one-third column text-center">
-                                    <label for="dollar-signup-password"><i class="emoji small">:key2:</i> Password:</label>
-                                    <input type="password" id="dollar-signup-password" placeholder="c.r.e.a.m.">
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+              </div>
+              <div class="row">
+                <div class="one-third offset-by-one-third column text-center">
+                  <label for="dollar-signup-username"
+                    ><i class="emoji small">:grinning:</i> Username:</label
+                  >
+                  <!-- TODO username -->
+                  <input type="text" id="dollar-signup-username" placeholder="Username" />
                 </div>
-                <div class="row">
-                    <div class="one-third offset-by-one-third column text-center">
-                        <p>
-                            Already have an account? <a href="./login.html" class="link">Click Here!</a>
-                        </p>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="one-third offset-by-one-third column text-center">
+                  <label for="dollar-signup-email"
+                    ><i class="emoji small">:e-mail:</i> Email:
+                  </label>
+                  <input type="email" id="dollar-signup-email" placeholder="cash@dollar.$$" />
                 </div>
-                <div class="row">
-                    <div class="one-full column text-center">
-                        <button class="button-tertiary" id="dollar-signup-signup_btn">Signup!</button>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="one-third offset-by-one-third column text-center">
+                  <label for="dollar-signup-password"
+                    ><i class="emoji small">:key2:</i> Password:</label
+                  >
+                  <input type="password" id="dollar-signup-password" placeholder="c.r.e.a.m." />
                 </div>
-            </section>
-        </main>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="row">
+          <div class="one-third offset-by-one-third column text-center">
+            <p>Already have an account? <a href="./login.html" class="link">Click Here!</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="one-full column text-center">
+            <button class="button-tertiary" id="dollar-signup-signup_btn">Signup!</button>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <footer class="footer">
-            <section class="container">
-                <div class="row">
-                    <div class="one-half column offset-by-three columns center-text">
-                        <h5 class="footer-text">Made with <i class="emoji small">:hearts:</i> and <i class="emoji small">:smiley_cat:</i> by <a target="blank" href="//matthamlin.me" title="Matt Hamlin">Matt</a>. </h5>
-                    </div>
-                </div>
-            </section>
-        </footer>
+    <footer class="footer">
+      <section class="container">
+        <div class="row">
+          <div class="one-half column offset-by-three columns center-text">
+            <h5 class="footer-text">
+              Made with <i class="emoji small">:hearts:</i> and
+              <i class="emoji small">:smiley_cat:</i> by
+              <a target="blank" href="//matthamlin.me" title="Matt Hamlin">Matt</a>.
+            </h5>
+          </div>
+        </div>
+      </section>
+    </footer>
 
-
-
-
-        <!-- End Document
+    <!-- End Document
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-        <script type="text/javascript">
-		     $(document).ready(function() {
-				 $(".emoji").each(function() {
-		            var original = $(this).html();
-		            // use .shortnameToImage if only converting shortnames (for slightly better performance)
-		            var converted = emojione.toImage(original);
-		            $(this).html(converted);
-		        });
-		    });
-		</script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.emoji').each(function() {
+          var original = $(this).html()
+          // use .shortnameToImage if only converting shortnames (for slightly better performance)
+          var converted = emojione.toImage(original)
+          $(this).html(converted)
+        })
+      })
+    </script>
 
-        <script src="./js/notie.js"></script>
+    <script src="./js/notie.js"></script>
 
-        <!-- Google Analytics -->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Google Analytics -->
+    <script>
+      ;(function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r
+        ;(i[r] =
+          i[r] ||
+          function() {
+            ;(i[r].q = i[r].q || []).push(arguments)
+          }),
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
 
-		  ga('create', 'UA-72677063-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-    </body>
+      ga('create', 'UA-72677063-1', 'auto')
+      ga('send', 'pageview')
+    </script>
+  </body>
 </html>
