@@ -1,5 +1,7 @@
-import React, { useState } from 'https://unpkg.com/@matthamlin/danger-react-suspense/dev/react.js'
-import ReactDOM from 'https://unpkg.com/@matthamlin/danger-react-suspense/dev/react-dom.js'
+import React, {
+  useState,
+} from 'https://mh-unumd.glitch.me/@matthamlin/danger-react-suspense/dev/react.js?exports=named'
+import 'https://unpkg.com/@matthamlin/danger-react-suspense/dev/react-dom.js'
 
 function App() {
   const [state, set] = useState(true)
