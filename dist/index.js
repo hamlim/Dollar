@@ -6,9 +6,8 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-import React, { useState } from 'https://mh-unumd.glitch.me/@matthamlin/danger-react-suspense/dev/react.js?exports=named';
-import 'https://unpkg.com/@matthamlin/danger-react-suspense/dev/react-dom.js';
-window.React = React;
+import React, { useState } from './vendor/react.js';
+import ReactDOM from './vendor/react-dom.js';
 
 function App() {
   var _useState = useState(true),
@@ -23,4 +22,4 @@ function App() {
   }, "Toggled: ", state.toString());
 }
 
-window.ReactDOM.render(React.createElement(App, null), document.querySelector('.root'));
+ReactDOM.render(React.createElement(App, null), document.querySelector('.root'));
