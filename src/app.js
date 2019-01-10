@@ -93,8 +93,8 @@ function App() {
                 className="one-half column"
                 id="transactionType"
                 value={state.type}
-                onChange={evt => {
-                  setState({ type: evt.target.value })
+                onChange={event => {
+                  setState({ type: event.target.value })
                 }}
                 required
               >

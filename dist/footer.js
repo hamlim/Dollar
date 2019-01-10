@@ -13,20 +13,38 @@ function logoutHandler() {
   window.location.href = './login.html';
 }
 
-function Footer() {
+function Footer(_ref) {
+  var page = _ref.page;
   return React.createElement("section", {
     className: "container"
   }, React.createElement("div", {
     className: "row"
   }, React.createElement("div", {
     className: "one-half column offset-by-three columns center-text"
-  }, React.createElement("button", {
+  }, page === 'app' || page === 'analysis' || page === 'budgets' ? React.createElement("h5", {
+    className: "footer-text"
+  }, "Made with", ' ', React.createElement("span", {
+    className: "emoji small",
+    "aria-label": "heart"
+  }, ":hearts:"), ' ', "and", React.createElement("span", {
+    className: "emoji small",
+    "aria-label": "joy"
+  }, ":smiley_cat:"), ' ', "by", React.createElement("a", {
+    target: "blank",
+    href: "//matthamlin.me",
+    title: "Matt Hamlin"
+  }, "Matt"), ".") : React.createElement("button", {
     className: "btn",
     onClick: logoutHandler,
     id: "logout-btn"
-  }, "Logout ", React.createElement("i", {
-    className: "emoji navmoji small"
+  }, "Logout", ' ', React.createElement("span", {
+    className: "emoji navmoji small",
+    "aria-hidden": true
   }, ":wave:")))));
 }
 
-ReactDOM.render(React.createElement(Footer, null), document.querySelector('.footer'));
+var footer = document.querySelector('.footer');
+var page = typeof footer.getAttribute('data-footer') === 'string' ? footer.getAttribute('data-footer') : 'ERR';
+ReactDOM.render(React.createElement(Footer, {
+  page: page
+}), document.querySelector('.footer'));

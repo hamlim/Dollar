@@ -13,18 +13,46 @@ function logoutHandler() {
   window.location.href = './login.html'
 }
 
-function Footer() {
+function Footer({ page }) {
   return (
     <section className="container">
       <div className="row">
         <div className="one-half column offset-by-three columns center-text">
-          <button className="btn" onClick={logoutHandler} id="logout-btn">
-            Logout <i className="emoji navmoji small">:wave:</i>
-          </button>
+          {page === 'app' || page === 'analysis' || page === 'budgets' ? (
+            <h5 className="footer-text">
+              Made with{' '}
+              <span className="emoji small" aria-label="heart">
+                :hearts:
+              </span>{' '}
+              and
+              <span className="emoji small" aria-label="joy">
+                :smiley_cat:
+              </span>{' '}
+              by
+              <a target="blank" href="//matthamlin.me" title="Matt Hamlin">
+                Matt
+              </a>
+              .
+            </h5>
+          ) : (
+            <button className="btn" onClick={logoutHandler} id="logout-btn">
+              Logout{' '}
+              <span className="emoji navmoji small" aria-hidden>
+                :wave:
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </section>
   )
 }
 
-ReactDOM.render(<Footer />, document.querySelector('.footer'))
+const footer = document.querySelector('.footer')
+
+let page =
+  typeof footer.getAttribute('data-footer') === 'string'
+    ? footer.getAttribute('data-footer')
+    : 'ERR'
+
+ReactDOM.render(<Footer page={page} />, document.querySelector('.footer'))

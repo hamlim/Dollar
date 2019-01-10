@@ -112,9 +112,9 @@ function App() {
     className: "one-half column",
     id: "transactionType",
     value: state.type,
-    onChange: function onChange(evt) {
+    onChange: function onChange(event) {
       setState({
-        type: evt.target.value
+        type: event.target.value
       });
     },
     required: true

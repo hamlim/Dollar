@@ -1,113 +1,107 @@
-
-a.special-green:hover{
-    color: #3B5F41;
+a.special-green:hover {
+  color: #3b5f41;
 }
 
 .underline {
-    border: 2px #66A96B solid;
-    padding: 4px;
-    border-radius: 5px;
+  border: 2px #66a96b solid;
+  padding: 4px;
+  border-radius: 5px;
 }
-
 
 .navigation {
-    background-color: white;
-    height: 64px;
-    /*box-shadow: 10px 10px 5px #DDDDDD;*/
+  background-color: white;
+  height: 64px;
 }
 .special-green {
-    background-color: #66A96B;
+  background-color: #66a96b;
 }
 .special-green-color {
-    color: #66A96B;
+  color: #66a96b;
 }
 .emoji img {
-    height: 64px;
-    width: 64px;
+  height: 64px;
+  width: 64px;
 }
 .emoji.small img {
-    height: 29px !important;
-    width: 29px !important;
+  height: 29px !important;
+  width: 29px !important;
 }
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 .text-middle {
-    /*background-color: #7FDBFF;*/
-    text-align: center;
+  text-align: center;
 }
 .bottom-spacer {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 .button-tertiary {
-    background-color: #66A96B;
-    color: white;
+  background-color: #66a96b;
+  color: white;
 }
 .button-tertiary:hover {
-    background-color: #3B5F41;
-    color: white;
+  background-color: #3b5f41;
+  color: white;
 }
 
-
 .selected i img {
-    box-shadow: 0 5px 2px -2px gray;
+  box-shadow: 0 5px 2px -2px gray;
 }
 
 .center-text {
-    text-align: center;
+  text-align: center;
 }
 .footer-text {
-    color: white;
-    margin-top: 2rem !important;
+  color: white;
+  margin-top: 2rem !important;
 }
-.footer-text a{
-    color: black;
-    text-decoration: none;
+.footer-text a {
+  color: black;
+  text-decoration: none;
 }
 .footer-text a:hover {
-    text-decoration: none;
-    color: #DDDDDD;
+  text-decoration: none;
+  color: #dddddd;
 }
 .footer {
-    background-color: #66A96B;
+  background-color: #66a96b;
 }
 
 .faq {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .faq li {
-    list-style: lower-alpha;
+  list-style: lower-alpha;
 }
 
-@media screen and (max-width: 500px){
-    .emoji {
-        display: none;
-    }
-    .navmoji {
-        display: inline-block;
-    }
+@media screen and (max-width: 500px) {
+  .emoji {
+    display: none;
+  }
+  .navmoji {
+    display: inline-block;
+  }
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 .business-price {
-    /*background-color: #66A96B;*/
-    border-radius: 30px;
-    padding-top: 15px;
+  border-radius: 30px;
+  padding-top: 15px;
 }
 .individual-price {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 #logout-btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .table-fix {
-    max-width: .9vw;
-    margin: 0 auto;
+  max-width: 0.9vw;
+  margin: 0 auto;
 }
