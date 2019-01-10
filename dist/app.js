@@ -29,7 +29,7 @@ function useOriginalState(initialState) {
 function formatDate() {
   var date = new Date(); // yyyy-MM-dd
 
-  return "".concat(date.getFullYear(), "-").concat(date.getMonth(), "-").concat(date.getDate());
+  return "".concat(date.getFullYear(), "-").concat(date.getMonth() + 1, "-").concat(date.getDate());
 }
 
 function App() {
@@ -76,7 +76,7 @@ function App() {
   }, "Account Tag:"), React.createElement("select", {
     className: "one-half column",
     value: state.tag,
-    onChange: function onChange(evt) {
+    onChange: function onChange(event) {
       setState({
         tag: event.target.value
       });

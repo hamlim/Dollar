@@ -229,12 +229,11 @@
     <script src="./js/marked/marked.js"></script>
     <script src="./js/analysis.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() {
-        $('.emoji').each(function() {
-          var original = $(this).html()
-          // use .shortnameToImage if only converting shortnames (for slightly better performance)
-          var converted = emojione.toImage(original)
-          $(this).html(converted)
+      document.addEventListener('DOMContentLoaded', () => {
+        ;[...document.querySelectorAll('.emoji')].forEach(element => {
+          const original = element.textContent
+          const converted = emojione.toImage(original)
+          element.innerHTML = converted
         })
       })
     </script>

@@ -11,7 +11,7 @@ function formatDate() {
   let date = new Date()
 
   // yyyy-MM-dd
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
 }
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
               <select
                 className="one-half column"
                 value={state.tag}
-                onChange={evt => {
+                onChange={event => {
                   setState({ tag: event.target.value })
                 }}
                 id="transactionTag"
