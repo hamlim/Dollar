@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   //ok on button click
   $('#dollar-signup-signup_btn').click(function() {
     //now we do some form validation

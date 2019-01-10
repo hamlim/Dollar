@@ -13,7 +13,7 @@ function safeLocalStorageAccess() {
   })
 }
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   //ok we are on page load of app.html
   console.log('*--------------------------------------------*')
   console.log('Begin app.js')

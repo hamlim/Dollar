@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   //ok we want to get the button press
   $('#dollar-login-login_btn').click(function() {
     var usernameElem = document.getElementById('dollar-login-username'),

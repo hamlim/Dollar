@@ -21,7 +21,14 @@ function Footer(_ref) {
     className: "row"
   }, React.createElement("div", {
     className: "one-half column offset-by-three columns center-text"
-  }, page === 'app' || page === 'analysis' || page === 'budgets' ? React.createElement("h5", {
+  }, page === 'app' || page === 'analysis' || page === 'budgets' || page === 'account' ? React.createElement("button", {
+    className: "btn",
+    onClick: logoutHandler,
+    id: "logout-btn"
+  }, "Logout", ' ', React.createElement("span", {
+    className: "emoji navmoji small",
+    "aria-hidden": true
+  }, ":wave:")) : React.createElement("h5", {
     className: "footer-text"
   }, "Made with", ' ', React.createElement("span", {
     className: "emoji small",
@@ -33,14 +40,7 @@ function Footer(_ref) {
     target: "blank",
     href: "//matthamlin.me",
     title: "Matt Hamlin"
-  }, "Matt"), ".") : React.createElement("button", {
-    className: "btn",
-    onClick: logoutHandler,
-    id: "logout-btn"
-  }, "Logout", ' ', React.createElement("span", {
-    className: "emoji navmoji small",
-    "aria-hidden": true
-  }, ":wave:")))));
+  }, "Matt"), "."))));
 }
 
 var footer = document.querySelector('.footer');

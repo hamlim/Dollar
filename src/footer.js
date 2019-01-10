@@ -18,7 +18,14 @@ function Footer({ page }) {
     <section className="container">
       <div className="row">
         <div className="one-half column offset-by-three columns center-text">
-          {page === 'app' || page === 'analysis' || page === 'budgets' ? (
+          {page === 'app' || page === 'analysis' || page === 'budgets' || page === 'account' ? (
+            <button className="btn" onClick={logoutHandler} id="logout-btn">
+              Logout{' '}
+              <span className="emoji navmoji small" aria-hidden>
+                :wave:
+              </span>
+            </button>
+          ) : (
             <h5 className="footer-text">
               Made with{' '}
               <span className="emoji small" aria-label="heart">
@@ -34,13 +41,6 @@ function Footer({ page }) {
               </a>
               .
             </h5>
-          ) : (
-            <button className="btn" onClick={logoutHandler} id="logout-btn">
-              Logout{' '}
-              <span className="emoji navmoji small" aria-hidden>
-                :wave:
-              </span>
-            </button>
           )}
         </div>
       </div>

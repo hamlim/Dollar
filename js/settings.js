@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   //pull in user from localStorage
   if (localStorage.length === 0) {
     window.location.href = './login.html'

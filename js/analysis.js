@@ -1,4 +1,4 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
   //dom is loaded
   console.log('*--------------------------------------------*')
   console.log('Begin analysis.js')
