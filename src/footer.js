@@ -50,9 +50,13 @@ function Footer({ page }) {
 
 const footer = document.querySelector('.footer')
 
-let page =
-  typeof footer.getAttribute('data-footer') === 'string'
-    ? footer.getAttribute('data-footer')
-    : 'ERR'
+if (footer) {
+  let page =
+    typeof footer.getAttribute('data-footer') === 'string'
+      ? footer.getAttribute('data-footer')
+      : 'ERR'
 
-ReactDOM.render(<Footer page={page} />, document.querySelector('.footer'))
+  ReactDOM.render(<Footer pageType={page} />, footer)
+}
+
+export default Footer

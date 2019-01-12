@@ -92,90 +92,9 @@
     <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png" />
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml" />
     <meta name="theme-color" content="#66a96b" />
-
-    <!-- FONT
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
   </head>
   <body>
-    <!-- Primary Page Layout
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <header class="navigation special-green">
-      <nav class="container">
-        <section class="row">
-          <div class="one-full-column text-center">
-            <a href="./index.html"> <i class="emoji navmoji">:dollar:</i> </a>
-            <span>
-              <a href="./login.html" class="selected">
-                <i class="emoji navmoji" id="dollar-login-login_emoji">:closed_lock_with_key:</i>
-              </a>
-              <a href="./signup.html">
-                <i class="emoji navmoji" id="dollar-login-signup_emoji">:lock_with_ink_pen:</i>
-              </a>
-            </span>
-          </div>
-        </section>
-      </nav>
-    </header>
-
-    <main class="dollar-main-container">
-      <section class="container">
-        <div class="row">
-          <div class="one-half column offset-by-three columns text-center">
-            <h1>Login to <i class="emoji">:dollar:</i></h1>
-          </div>
-        </div>
-        <div class="">
-          <form class="dollar-login-form">
-            <fieldset>
-              <div class="row">
-                <div class="one-third offset-by-one-third column text-center">
-                  <label for="dollar-login-username"
-                    ><i class="emoji small">:grinning:</i> Username:
-                  </label>
-                  <input type="text" id="dollar-login-username" placeholder="Username" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="one-third offset-by-one-third column text-center">
-                  <label for="dollar-login-password"
-                    ><i class="emoji small">:key2:</i> Password:</label
-                  >
-                  <input type="password" id="dollar-login-password" placeholder="c.r.e.a.m." />
-                </div>
-              </div>
-              <div class="row">
-                <div class="one-third offset-by-one-third column text-center">
-                  <label for="dollar-login-remember"
-                    ><input type="checkbox" id="dollar-login-remember" /> Remember Me</label
-                  >
-                </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-        <div class="row">
-          <div class="one-third offset-by-one-third column text-center">
-            <p>Don't have an account yet? <a href="./signup.html" class="link">Click Here!</a></p>
-          </div>
-          <div class="one-third offset-by-one-third column text-center">
-            <p>
-              Forgot your password?
-              <a href="mailto:hamlim@outlook.com?Subject=I%20Forgot%20My%20Password%20for%20Dollar!"
-                >Click Here!</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="one-full column text-center">
-            <button class="button-tertiary" id="dollar-login-login_btn">Login!</button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer" data-footer="login"></footer>
+    <div class="js-login-page-mount"></div>
 
     <!-- End Document
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -212,6 +131,6 @@
       ga('send', 'pageview')
     </script>
 
-    <script src="./dist/footer.js" type="module"></script>
+    <script src="./dist/pages/login.js" type="module"></script>
   </body>
 </html>

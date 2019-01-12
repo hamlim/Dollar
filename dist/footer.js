@@ -44,7 +44,12 @@ function Footer(_ref) {
 }
 
 var footer = document.querySelector('.footer');
-var page = typeof footer.getAttribute('data-footer') === 'string' ? footer.getAttribute('data-footer') : 'ERR';
-ReactDOM.render(React.createElement(Footer, {
-  page: page
-}), document.querySelector('.footer'));
+
+if (footer) {
+  var page = typeof footer.getAttribute('data-footer') === 'string' ? footer.getAttribute('data-footer') : 'ERR';
+  ReactDOM.render(React.createElement(Footer, {
+    pageType: page
+  }), footer);
+}
+
+export default Footer;
