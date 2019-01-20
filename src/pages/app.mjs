@@ -1,30 +1,88 @@
-import React, { useState } from '../vendor/react.js'
-import ReactDOM from '../vendor/react-dom.js'
-import Header from '../header.js'
-import Footer from '../footer.js'
-
-function useOriginalState(initialState) {
-  const [state, set] = useState(initialState)
-
-  return [state, s => set(prevState => ({ ...prevState, ...s }))]
-}
+import React, { useReducer, useCallback } from '../vendor/react.mjs'
+import ReactDOM from '../vendor/react-dom.mjs'
+import Header from '../header.mjs'
+import Footer from '../footer.mjs'
 
 function formatDate() {
   let date = new Date()
 
   // yyyy-MM-dd
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+  return `${date.getFullYear()}-${
+    date.getMonth() === 0
+      ? '01'
+      : date.getMonth().toString().length === 1
+      ? `0${date.getMonth()}`
+      : date.getMonth()
+  }-${date.getDate()}`
+}
+
+const UPDATE_AMOUNT = 'UPDATE_AMOUNT'
+const UPDATE_TAG = 'UPDATE_TAG'
+const UPDATE_LOCATION = 'UPDATE_LOCATION'
+const UPDATE_TYPE = 'UPDATE_TYPE'
+const UPDATES_NOTES = 'UPDATES_NOTES'
+const UPDATE_DATE = 'UPDATE_DATE'
+
+function appFormReducer(
+  state = { amount: '', tag: '', location: '', type: '', notes: '', date: formatDate() },
+  action,
+) {
+  switch (action.type) {
+    case UPDATE_AMOUNT: {
+      return {
+        ...state,
+        amount: action.payload,
+      }
+    }
+    case UPDATE_TAG: {
+      return {
+        ...state,
+        tag: action.payload,
+      }
+    }
+    case UPDATE_LOCATION: {
+      return {
+        ...state,
+        location: action.payload,
+      }
+    }
+    case UPDATE_TYPE: {
+      return {
+        ...state,
+        type: action.payload,
+      }
+    }
+    case UPDATES_NOTES: {
+      return {
+        ...state,
+        notes: action.payload,
+      }
+    }
+    case UPDATE_DATE: {
+      return {
+        ...state,
+        date: action.payload,
+      }
+    }
+    default:
+      return state
+  }
+}
+
+function makeAction(type, dispatch) {
+  return function(payload) {
+    return { type, payload }
+  }
 }
 
 function AppForm() {
-  const [state, setState] = useOriginalState({
-    amount: '',
-    tag: '',
-    location: '',
-    type: '',
-    notes: '',
-    date: formatDate(),
-  })
+  const [state, dispatch] = useReducer(appFormReducer, undefined, { type: '@@INIT' })
+
+  const amountUpdater = makeAction(UPDATE_AMOUNT)
+  const tagUpdater = makeAction(UPDATE_TAG)
+  const typeUpdater = makeAction(UPDATE_TYPE)
+  const dateUpdater = makeAction(UPDATE_DATE)
+  const noteUpdater = makeAction(UPDATES_NOTES)
 
   return (
     <React.Fragment>
@@ -48,7 +106,7 @@ function AppForm() {
                 required
                 value={state.amount}
                 onChange={event => {
-                  setState({ amount: event.target.value })
+                  dispatch(amountUpdater(event.target.value))
                 }}
               />
             </div>
@@ -60,7 +118,7 @@ function AppForm() {
                 className="one-half column"
                 value={state.tag}
                 onChange={event => {
-                  setState({ tag: event.target.value })
+                  dispatch(tagUpdater(event.target.value))
                 }}
                 id="transactionTag"
               >
@@ -96,7 +154,7 @@ function AppForm() {
                 id="transactionType"
                 value={state.type}
                 onChange={event => {
-                  setState({ type: event.target.value })
+                  dispatch(typeUpdater(event.target.value))
                 }}
                 required
               >
@@ -121,7 +179,7 @@ function AppForm() {
                 id="transactionNotes"
                 value={state.note}
                 onChange={event => {
-                  setState({ note: event.target.value })
+                  dispatch(noteUpdater(event.target.value))
                 }}
               />
             </div>
@@ -135,7 +193,7 @@ function AppForm() {
                 id="transactionUserTime"
                 value={state.date}
                 onChange={event => {
-                  setState({ date: event.target.value })
+                  dispatch(dateUpdater(event.target.value))
                 }}
               />
             </div>
@@ -213,4 +271,4 @@ function App() {
   )
 }
 
-ReactDOM.render(<App />, document.querySelector('.js-application-page-mount'))
+export default App

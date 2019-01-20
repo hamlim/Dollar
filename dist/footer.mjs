@@ -1,5 +1,5 @@
-import React from './vendor/react.js';
-import ReactDOM from './vendor/react-dom.js';
+import React from './vendor/react.mjs';
+import ReactDOM from './vendor/react-dom.mjs';
 
 function logoutHandler() {
   //we want to clear all local storage

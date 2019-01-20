@@ -1,9 +1,10 @@
-import React, { useState } from '../vendor/react.js'
-import ReactDOM from '../vendor/react-dom.js'
-import Header from '../header.js'
-import Footer from '../footer.js'
+import React, { useState } from '../vendor/react.mjs'
+import ReactDOM from '../vendor/react-dom.mjs'
+import Header from '../header.mjs'
+import Footer from '../footer.mjs'
+import { Route } from '../vendor/reroute.mjs'
 
-function LoginForm() {
+function LoginForm({ setLoggedIn }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   return (
@@ -86,23 +87,34 @@ function LoginForm() {
       </div>
       <div className="row">
         <div className="one-full column text-center">
-          <button className="button-tertiary" id="dollar-login-login_btn">
-            Login!
-          </button>
+          <Route>
+            {({ navigate }) => (
+              <button
+                className="button-tertiary"
+                id="dollar-login-login_btn"
+                onClick={() => {
+                  setLoggedIn(true)
+                  navigate('/')
+                }}
+              >
+                Login!
+              </button>
+            )}
+          </Route>
         </div>
       </div>
     </section>
   )
 }
 
-function Login() {
+function Login({ setLoggedIn }) {
   return (
     <React.Fragment>
       <header className="navigation special-green">
         <Header pageType="login" />
       </header>
       <main className="dollar-main-container">
-        <LoginForm />
+        <LoginForm setLoggedIn={setLoggedIn} />
       </main>
       <footer className="footer">
         <Footer pageType="login" />
@@ -111,4 +123,4 @@ function Login() {
   )
 }
 
-ReactDOM.render(<Login />, document.querySelector('.js-login-page-mount'))
+export default Login

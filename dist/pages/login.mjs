@@ -6,12 +6,15 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-import React, { useState } from '../vendor/react.js';
-import ReactDOM from '../vendor/react-dom.js';
-import Header from '../header.js';
-import Footer from '../footer.js';
+import React, { useState } from '../vendor/react.mjs';
+import ReactDOM from '../vendor/react-dom.mjs';
+import Header from '../header.mjs';
+import Footer from '../footer.mjs';
+import { Route } from '../vendor/reroute.mjs';
 
-function LoginForm() {
+function LoginForm(_ref) {
+  var setLoggedIn = _ref.setLoggedIn;
+
   var _useState = useState(''),
       _useState2 = _slicedToArray(_useState, 2),
       username = _useState2[0],
@@ -92,24 +95,34 @@ function LoginForm() {
     className: "row"
   }, React.createElement("div", {
     className: "one-full column text-center"
-  }, React.createElement("button", {
-    className: "button-tertiary",
-    id: "dollar-login-login_btn"
-  }, "Login!"))));
+  }, React.createElement(Route, null, function (_ref2) {
+    var navigate = _ref2.navigate;
+    return React.createElement("button", {
+      className: "button-tertiary",
+      id: "dollar-login-login_btn",
+      onClick: function onClick() {
+        setLoggedIn(true);
+        navigate('/');
+      }
+    }, "Login!");
+  }))));
 }
 
-function Login() {
+function Login(_ref3) {
+  var setLoggedIn = _ref3.setLoggedIn;
   return React.createElement(React.Fragment, null, React.createElement("header", {
     className: "navigation special-green"
   }, React.createElement(Header, {
     pageType: "login"
   })), React.createElement("main", {
     className: "dollar-main-container"
-  }, React.createElement(LoginForm, null)), React.createElement("footer", {
+  }, React.createElement(LoginForm, {
+    setLoggedIn: setLoggedIn
+  })), React.createElement("footer", {
     className: "footer"
   }, React.createElement(Footer, {
     pageType: "login"
   })));
 }
 
-ReactDOM.render(React.createElement(Login, null), document.querySelector('.js-login-page-mount'));
+export default Login;

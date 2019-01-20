@@ -1,7 +1,3 @@
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -10,43 +6,109 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-import React, { useState } from '../vendor/react.js';
-import ReactDOM from '../vendor/react-dom.js';
-import Header from '../header.js';
-import Footer from '../footer.js';
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-function useOriginalState(initialState) {
-  var _useState = useState(initialState),
-      _useState2 = _slicedToArray(_useState, 2),
-      state = _useState2[0],
-      set = _useState2[1];
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-  return [state, function (s) {
-    return set(function (prevState) {
-      return _objectSpread({}, prevState, s);
-    });
-  }];
-}
+import React, { useReducer, useCallback } from '../vendor/react.mjs';
+import ReactDOM from '../vendor/react-dom.mjs';
+import Header from '../header.mjs';
+import Footer from '../footer.mjs';
 
 function formatDate() {
   var date = new Date(); // yyyy-MM-dd
 
-  return "".concat(date.getFullYear(), "-").concat(date.getMonth(), "-").concat(date.getDate());
+  return "".concat(date.getFullYear(), "-").concat(date.getMonth() === 0 ? '01' : date.getMonth().toString().length === 1 ? "0".concat(date.getMonth()) : date.getMonth(), "-").concat(date.getDate());
 }
 
-function AppForm() {
-  var _useOriginalState = useOriginalState({
+var UPDATE_AMOUNT = 'UPDATE_AMOUNT';
+var UPDATE_TAG = 'UPDATE_TAG';
+var UPDATE_LOCATION = 'UPDATE_LOCATION';
+var UPDATE_TYPE = 'UPDATE_TYPE';
+var UPDATES_NOTES = 'UPDATES_NOTES';
+var UPDATE_DATE = 'UPDATE_DATE';
+
+function appFormReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
     amount: '',
     tag: '',
     location: '',
     type: '',
     notes: '',
     date: formatDate()
-  }),
-      _useOriginalState2 = _slicedToArray(_useOriginalState, 2),
-      state = _useOriginalState2[0],
-      setState = _useOriginalState2[1];
+  };
+  var action = arguments.length > 1 ? arguments[1] : undefined;
 
+  switch (action.type) {
+    case UPDATE_AMOUNT:
+      {
+        return _objectSpread({}, state, {
+          amount: action.payload
+        });
+      }
+
+    case UPDATE_TAG:
+      {
+        return _objectSpread({}, state, {
+          tag: action.payload
+        });
+      }
+
+    case UPDATE_LOCATION:
+      {
+        return _objectSpread({}, state, {
+          location: action.payload
+        });
+      }
+
+    case UPDATE_TYPE:
+      {
+        return _objectSpread({}, state, {
+          type: action.payload
+        });
+      }
+
+    case UPDATES_NOTES:
+      {
+        return _objectSpread({}, state, {
+          notes: action.payload
+        });
+      }
+
+    case UPDATE_DATE:
+      {
+        return _objectSpread({}, state, {
+          date: action.payload
+        });
+      }
+
+    default:
+      return state;
+  }
+}
+
+function makeAction(type, dispatch) {
+  return function (payload) {
+    return {
+      type: type,
+      payload: payload
+    };
+  };
+}
+
+function AppForm() {
+  var _useReducer = useReducer(appFormReducer, undefined, {
+    type: '@@INIT'
+  }),
+      _useReducer2 = _slicedToArray(_useReducer, 2),
+      state = _useReducer2[0],
+      dispatch = _useReducer2[1];
+
+  var amountUpdater = makeAction(UPDATE_AMOUNT);
+  var tagUpdater = makeAction(UPDATE_TAG);
+  var typeUpdater = makeAction(UPDATE_TYPE);
+  var dateUpdater = makeAction(UPDATE_DATE);
+  var noteUpdater = makeAction(UPDATES_NOTES);
   return React.createElement(React.Fragment, null, React.createElement("div", {
     className: "row"
   }, React.createElement("h1", null, "Enter a New Expense:")), React.createElement("div", {
@@ -66,9 +128,7 @@ function AppForm() {
     required: true,
     value: state.amount,
     onChange: function onChange(event) {
-      setState({
-        amount: event.target.value
-      });
+      dispatch(amountUpdater(event.target.value));
     }
   })), React.createElement("div", {
     className: "row"
@@ -79,9 +139,7 @@ function AppForm() {
     className: "one-half column",
     value: state.tag,
     onChange: function onChange(event) {
-      setState({
-        tag: event.target.value
-      });
+      dispatch(tagUpdater(event.target.value));
     },
     id: "transactionTag"
   }, React.createElement("option", {
@@ -115,9 +173,7 @@ function AppForm() {
     id: "transactionType",
     value: state.type,
     onChange: function onChange(event) {
-      setState({
-        type: event.target.value
-      });
+      dispatch(typeUpdater(event.target.value));
     },
     required: true
   }, React.createElement("option", {
@@ -149,9 +205,7 @@ function AppForm() {
     id: "transactionNotes",
     value: state.note,
     onChange: function onChange(event) {
-      setState({
-        note: event.target.value
-      });
+      dispatch(noteUpdater(event.target.value));
     }
   })), React.createElement("div", {
     className: "row"
@@ -164,9 +218,7 @@ function AppForm() {
     id: "transactionUserTime",
     value: state.date,
     onChange: function onChange(event) {
-      setState({
-        date: event.target.value
-      });
+      dispatch(dateUpdater(event.target.value));
     }
   })))), React.createElement("div", {
     className: "row"
@@ -213,4 +265,4 @@ function App() {
   })));
 }
 
-ReactDOM.render(React.createElement(App, null), document.querySelector('.js-application-page-mount'));
+export default App;

@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script type="text/javascript">
-      var host = 'www.goexploring.today'
-      if (host == window.location.host && window.location.protocol != 'https:')
-        window.location.protocol = 'https'
-    </script>
-
     <meta charset="utf-8" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#66A96B" />
@@ -20,14 +14,6 @@
 
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"
     />
 
@@ -37,10 +23,7 @@
     <link rel="stylesheet" href="./css/custom.css" />
 
     <!-- Emoji One -->
-    <script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css" />
-
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- Favicons
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -93,177 +76,15 @@
 
     <!-- FONT
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
   </head>
   <body>
-    <!-- Primary Page Layout
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <header class="navigation special-green">
-      <nav class="container">
-        <section class="row">
-          <div class="one-full column text-middle">
-            <a href="./index.html" class="selected"> <i class="emoji navmoji">:dollar:</i> </a>
-          </div>
-        </section>
-      </nav>
-    </header>
-
-    <div class="section hero">
-      <div class="container">
-        <div class="row">
-          <div class="one-half column">
-            <h1><i class="emoji">:dollar:</i> Dollar</h1>
-            <h2 class="hero-heading">Your digital checkbook</h2>
-            <!-- <h4 class="hero-heading-smaller">Stop using clunky spreadsheets to manage your finances.</h4> -->
-            <a class="button button-primary" href="#launching-soon"
-              >Try <i class="emoji small">:dollar:</i></a
-            >
-          </div>
-          <div class="one-half column phones">
-            <img class="phone" src="images/iphone-dollar.png" />
-            <img class="phone" src="images/iphone-dollar.png" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section values">
-      <div class="container">
-        <div class="row">
-          <div class="three columns value">
-            <h2 class="value-multiplier"><i class="emoji navmoji">:moneybag:</i></h2>
-            <h5 class="value-heading">Track Expenses</h5>
-            <p class="value-description">Quickly track your expenses from anywhere.</p>
-          </div>
-          <div class="three columns value">
-            <h2 class="value-multiplier"><i class="emoji navmoji">:bar_chart:</i></h2>
-            <h5 class="value-heading">Indepth Analysis</h5>
-            <p class="value-description">Get extensive analysis on your expenditures.</p>
-          </div>
-          <div class="three columns value">
-            <h2 class="value-multiplier"><i class="emoji navmoji">:notepad_spiral:</i></h2>
-            <h5 class="value-heading">Notes</h5>
-            <p class="value-description">Jot short little notes for each transaction.</p>
-          </div>
-          <div class="three columns value">
-            <h2 class="value-multiplier"><i class="emoji navmoji">:100:</i></h2>
-            <h5 class="value-heading">And More!</h5>
-            <p class="value-description">There are tons of more features coming!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="section get-help">
-            <div class="container">
-                <h3 class="section-heading">Learn More about <i class="emoji small">:dollar:</i>:</h3>
-                <p class="section-description">Check out some of the frequently asked questions.</p>
-                <a class="button button-primary" href="#faq">View FAQ</a>
-            </div>
-        </div> -->
-
-    <div class="section pricing">
-      <div class="container">
-        <h3 class="section-heading">Pricing</h3>
-        <div class="row">
-          <div class="one-half column text-center individual-price">
-            <h4 class="">Individual:</h4>
-            <h5>$1 / Year</h5>
-          </div>
-          <div class="one-half column text-center business-price">
-            <h4 class="">Business:</h4>
-            <h5>$5 / Year per User</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section categories" id="launching-soon">
-      <div class="container">
-        <h3 class="section-heading">Launching Soon!</h3>
-        <h5 class="section-description">
-          <i class="emoji small">:dollar:</i> is launching soon, be sure to check back soon or
-          follow us on twitter: <a href="https://twitter.com/usedollar">@usedollar</a>
-        </h5>
-        <form class="form" action="http://formspree.io/hamlim@outlook.com" method="post">
-          <div class="row">
-            <label class="one-half column"><h5>Signup to get notified when we launch!</h5></label>
-            <input
-              style="color: black;"
-              class="one-half column"
-              type="text"
-              name="_replyto"
-              placeholder="Your email"
-            />
-            <input type="hidden" name="_subject" value="Interest in Dollar" />
-            <input
-              type="hidden"
-              name="_next"
-              value="http://goexploring.today/Dollar/thanks.html#success"
-            />
-          </div>
-          <div class="row"><input class="button-primary" type="submit" value="Submit" /></div>
-        </form>
-      </div>
-    </div>
-
-    <!-- <div class="section faq" id="faq">
-            <div class="container">
-                <h3 class="section-heading">FAQ:</h3>
-                <p class="section-description">Some (In)Frequently Asked Questions.</p>
-                <div class="row text-left">
-                    <ul>
-                        <li>
-                            <b>What is <i class="emoji small">:dollar:</i> (dollar)?</b>
-                        </li>
-                        <ul>
-                            <li><em><i class="emoji small">:dollar:</i> (dollar) is a simple expense manager, allowing you to track your expenditures and offering some analytics on your expenses. It follows the checkbook method where
-                            you buy something and then after the purchase manually enter the purchase in a checkbook.</em></li>
-                        </ul>
-                        <li>
-                            <b>Should I be concerned about using this service?</b>
-                        </li>
-                        <ul>
-                            <li>
-                                <em>Not at all, <i class="emoji small">:dollar:</i> (dollar) doesn't have any access to your bank accounts, nor does it store any private information regarding your purchases. Only price, category, location, and notes are stored. All of which you decide what text to store.</em>
-                            </li>
-                        </ul>
-                        <li>
-                            <b>Why should I use this service over things like spreadsheets or Mint?</b>
-                        </li>
-                        <ul>
-                            <li>
-                                <em><i class="emoji small">:dollar:</i> (dollar) is quickly accessible from any device that has an internet connection. Unlike other alternatives, <i class="emoji small">:dollar:</i> (dollar) is barebones and simple to use for anyone!</em>
-                            </li>
-                        </ul>
-                        <li>
-                            <b>Why did you make this?</b>
-                        </li>
-                        <ul>
-                            <em>I used to track my expenses on a Google Sheet, however I realized I was wasting time on adding items to this sheet (especially on mobile) so I decided to make an alternative that is easy to use!</em>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-
-    <footer class="footer">
-      <section class="container">
-        <div class="row">
-          <div class="one-half column offset-by-three columns center-text">
-            <h5 class="footer-text">
-              Made with <i class="emoji small">:hearts:</i> and
-              <i class="emoji small">:smiley_cat:</i> by
-              <a target="blank" href="http://matthamlin.me" title="Matt Hamlin">Matt</a>.
-            </h5>
-          </div>
-        </div>
-      </section>
-    </footer>
+    <div id="react-app-mount"></div>
 
     <!-- End Document
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+    <script type="module" src="./dist/pages/index.mjs"></script>
+    <script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', () => {
         ;[...document.querySelectorAll('.emoji')].forEach(element => {

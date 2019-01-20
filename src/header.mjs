@@ -1,5 +1,5 @@
-import React, { useState } from './vendor/react.js'
-import ReactDOM from './vendor/react-dom.js'
+import React, { useState } from './vendor/react.mjs'
+import ReactDOM from './vendor/react-dom.mjs'
 
 function Header({ pageType }) {
   if (pageType === 'login') {
