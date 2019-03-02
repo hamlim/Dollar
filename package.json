@@ -13,6 +13,7 @@
     "@native-bundler/core": "0.0.6-alpha.4"
   },
   "scripts": {
-    "build": "babel src/ --out-dir dist/ --keep-file-extension"
+    "build": "babel src/ --out-dir dist/ --keep-file-extension",
+    "serve": "serve -s ./"
   }
 }
