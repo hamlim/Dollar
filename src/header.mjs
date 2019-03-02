@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs'
-import { Dollar, Chart, FlyingMoney, Gear } from './icons.mjs'
+import { Dollar, Chart, FlyingMoney, Gear, BallotBox } from './icons.mjs'
 
 function Header({ pageType }) {
   if (pageType === 'login') {
@@ -44,9 +44,7 @@ function Header({ pageType }) {
               <Chart style={{ height: 50, width: 50 }} aria-label="Analysis" />
             </a>
             <a href="./budgets.html">
-              <span className="emoji navmoji" id="budget" aria-label="Budgets">
-                :ballot_box_with_check:
-              </span>
+              <BallotBox style={{ height: 50, width: 50 }} aria-label="Budgets" />
             </a>
             <a href="./account.html">
               <Gear style={{ height: 50, width: 50 }} aria-label="Settings" />

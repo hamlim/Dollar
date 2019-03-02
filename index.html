@@ -22,9 +22,6 @@
 
     <link rel="stylesheet" href="./css/custom.css" />
 
-    <!-- Emoji One -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/2.0.1/assets/css/emojione.min.css" />
-
     <!-- Favicons
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png" />
@@ -91,16 +88,6 @@
     <script src="https://unpkg.com/@reroute/browser@0.1.0/dist/index.umd.js"></script>
 
     <script type="module" src="./dist/pages/index.mjs"></script>
-    <script src="//cdn.jsdelivr.net/emojione/2.0.1/lib/js/emojione.min.js"></script>
-    <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', () => {
-        ;[...document.querySelectorAll('.emoji')].forEach(element => {
-          const original = element.textContent
-          const converted = emojione.toImage(original)
-          element.innerHTML = converted
-        })
-      })
-    </script>
 
     <!-- Google Analytics -->
     <script>

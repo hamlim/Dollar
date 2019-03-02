@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs';
-import { Dollar, Chart, FlyingMoney, Gear } from './icons.mjs';
+import { Dollar, Chart, FlyingMoney, Gear, BallotBox } from './icons.mjs';
 
 function Header(_ref) {
   var pageType = _ref.pageType;
@@ -71,11 +71,13 @@ function Header(_ref) {
     "aria-label": "Analysis"
   })), React.createElement("a", {
     href: "./budgets.html"
-  }, React.createElement("span", {
-    className: "emoji navmoji",
-    id: "budget",
+  }, React.createElement(BallotBox, {
+    style: {
+      height: 50,
+      width: 50
+    },
     "aria-label": "Budgets"
-  }, ":ballot_box_with_check:")), React.createElement("a", {
+  })), React.createElement("a", {
     href: "./account.html"
   }, React.createElement(Gear, {
     style: {
