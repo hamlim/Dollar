@@ -1,3 +1,4 @@
-import React from './react.mjs';
-import makeReactDOM from 'https://unpkg.com/@matthamlin/react@1.0.5/danger/react-dom.js';
-export default makeReactDOM(React);
+var ReactDOM = window.ReactDOM;
+export default ReactDOM;
+export var render = ReactDOM.render;
+export var createRoot = ReactDOM.unstable_createRoot;

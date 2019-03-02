@@ -7,7 +7,7 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 import React, { useState } from '../vendor/react.mjs';
-import ReactDOM from '../vendor/react-dom.mjs';
+import ReactDOM, { createRoot } from '../vendor/react-dom.mjs';
 import App from './app.mjs';
 import Login from './login.mjs';
 import { Router, Route, Link } from '../vendor/reroute.mjs';
@@ -64,7 +64,6 @@ function Landing() {
   }));
 }
 
-var createRoot = ReactDOM.createRoot;
 var mountNode = document.querySelector('#react-app-mount');
 
 if (mountNode) {

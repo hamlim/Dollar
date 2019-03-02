@@ -1,7 +1,9 @@
-import React, { useReducer, useCallback } from '../vendor/react.mjs'
+import React from '../vendor/react.mjs'
 import ReactDOM from '../vendor/react-dom.mjs'
 import Header from '../header.mjs'
 import Footer from '../footer.mjs'
+
+const { useReducer, useCallback } = React
 
 function formatDate() {
   let date = new Date()
@@ -76,7 +78,9 @@ function makeAction(type, dispatch) {
 }
 
 function AppForm() {
-  const [state, dispatch] = useReducer(appFormReducer, undefined, { type: '@@INIT' })
+  const [state, dispatch] = useReducer(appFormReducer, undefined, () =>
+    appFormReducer(undefined, { type: '@@INIT' }),
+  )
 
   const amountUpdater = makeAction(UPDATE_AMOUNT)
   const tagUpdater = makeAction(UPDATE_TAG)

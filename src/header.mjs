@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs'
-import ReactDOM from './vendor/react-dom.mjs'
+import { Dollar, Chart, FlyingMoney, Gear } from './icons.mjs'
 
 function Header({ pageType }) {
   if (pageType === 'login') {
@@ -8,9 +8,7 @@ function Header({ pageType }) {
         <section className="row">
           <div className="one-full-column text-center">
             <a href="./index.html">
-              <span className="emoji navmoji" aria-label="Dollar">
-                :dollar:
-              </span>
+              <Dollar style={{ height: 50, width: 50 }} aria-label="Dollar" />
             </a>
             <span>
               <a href="./login.html" className="selected">
@@ -35,19 +33,15 @@ function Header({ pageType }) {
         <div className="one-full column text-middle">
           <a href="./index.html">
             <span className="emoji navmoji" aria-label="Dollar">
-              :dollar:
+              <Dollar style={{ height: 50, width: 50 }} aria-label="Dollar" />
             </span>
           </a>
           <span>
             <a href="./app.html" className="selected">
-              <span className="emoji navmoji" id="cash" aria-label="Form">
-                :money_with_wings:
-              </span>
+              <FlyingMoney style={{ height: 50, width: 50 }} aria-label="Application" />
             </a>
             <a href="./analysis.html">
-              <span className="emoji navmoji" id="analysis" aria-label="Analysis">
-                :chart_with_upwards_trend:
-              </span>
+              <Chart style={{ height: 50, width: 50 }} aria-label="Analysis" />
             </a>
             <a href="./budgets.html">
               <span className="emoji navmoji" id="budget" aria-label="Budgets">
@@ -55,26 +49,13 @@ function Header({ pageType }) {
               </span>
             </a>
             <a href="./account.html">
-              <span className="emoji navmoji" id="account" aria-label="Settings">
-                :gear:
-              </span>
+              <Gear style={{ height: 50, width: 50 }} aria-label="Settings" />
             </a>
           </span>
         </div>
       </section>
     </nav>
   )
-}
-
-const header = document.querySelector('[data-header]')
-
-if (header) {
-  const pageType =
-    typeof header.getAttribute('data-header') === 'string'
-      ? header.getAttribute('data-header')
-      : 'ERR'
-
-  ReactDOM.render(<Header pageType={pageType} />, header)
 }
 
 export default Header

@@ -1,3 +1,3 @@
-import { Router, Route, Link } from 'https://unpkg.com/@reroute/browser@0.0.10/dist/index.mjs'
+const { Router, Route, Link } = window.browser
 
 export { Router, Route, Link }

@@ -1,8 +1,10 @@
-import React, { useState } from '../vendor/react.mjs'
+import React from '../vendor/react.mjs'
 import ReactDOM from '../vendor/react-dom.mjs'
 import Header from '../header.mjs'
 import Footer from '../footer.mjs'
 import { Route } from '../vendor/reroute.mjs'
+
+const { useState } = React
 
 function LoginForm({ setLoggedIn }) {
   const [username, setUsername] = useState('')

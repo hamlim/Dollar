@@ -6,11 +6,12 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-import React, { useState } from '../vendor/react.mjs';
+import React from '../vendor/react.mjs';
 import ReactDOM from '../vendor/react-dom.mjs';
 import Header from '../header.mjs';
 import Footer from '../footer.mjs';
 import { Route } from '../vendor/reroute.mjs';
+var useState = React.useState;
 
 function LoginForm(_ref) {
   var setLoggedIn = _ref.setLoggedIn;

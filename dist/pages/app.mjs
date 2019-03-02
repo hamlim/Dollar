@@ -10,10 +10,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { useReducer, useCallback } from '../vendor/react.mjs';
+import React from '../vendor/react.mjs';
 import ReactDOM from '../vendor/react-dom.mjs';
 import Header from '../header.mjs';
 import Footer from '../footer.mjs';
+var useReducer = React.useReducer,
+    useCallback = React.useCallback;
 
 function formatDate() {
   var date = new Date(); // yyyy-MM-dd
@@ -97,8 +99,10 @@ function makeAction(type, dispatch) {
 }
 
 function AppForm() {
-  var _useReducer = useReducer(appFormReducer, undefined, {
-    type: '@@INIT'
+  var _useReducer = useReducer(appFormReducer, undefined, function () {
+    return appFormReducer(undefined, {
+      type: '@@INIT'
+    });
   }),
       _useReducer2 = _slicedToArray(_useReducer, 2),
       state = _useReducer2[0],

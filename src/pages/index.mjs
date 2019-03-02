@@ -1,5 +1,5 @@
 import React, { useState } from '../vendor/react.mjs'
-import ReactDOM from '../vendor/react-dom.mjs'
+import ReactDOM, { createRoot } from '../vendor/react-dom.mjs'
 import App from './app.mjs'
 import Login from './login.mjs'
 
@@ -47,8 +47,6 @@ function Landing() {
     </Router>
   )
 }
-
-const { createRoot } = ReactDOM
 
 const mountNode = document.querySelector('#react-app-mount')
 if (mountNode) {

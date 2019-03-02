@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs';
-import ReactDOM from './vendor/react-dom.mjs';
+import { Dollar, Chart, FlyingMoney, Gear } from './icons.mjs';
 
 function Header(_ref) {
   var pageType = _ref.pageType;
@@ -13,10 +13,13 @@ function Header(_ref) {
       className: "one-full-column text-center"
     }, React.createElement("a", {
       href: "./index.html"
-    }, React.createElement("span", {
-      className: "emoji navmoji",
+    }, React.createElement(Dollar, {
+      style: {
+        height: 50,
+        width: 50
+      },
       "aria-label": "Dollar"
-    }, ":dollar:")), React.createElement("span", null, React.createElement("a", {
+    })), React.createElement("span", null, React.createElement("a", {
       href: "./login.html",
       className: "selected"
     }, React.createElement("span", {
@@ -43,20 +46,30 @@ function Header(_ref) {
   }, React.createElement("span", {
     className: "emoji navmoji",
     "aria-label": "Dollar"
-  }, ":dollar:")), React.createElement("span", null, React.createElement("a", {
+  }, React.createElement(Dollar, {
+    style: {
+      height: 50,
+      width: 50
+    },
+    "aria-label": "Dollar"
+  }))), React.createElement("span", null, React.createElement("a", {
     href: "./app.html",
     className: "selected"
-  }, React.createElement("span", {
-    className: "emoji navmoji",
-    id: "cash",
-    "aria-label": "Form"
-  }, ":money_with_wings:")), React.createElement("a", {
+  }, React.createElement(FlyingMoney, {
+    style: {
+      height: 50,
+      width: 50
+    },
+    "aria-label": "Application"
+  })), React.createElement("a", {
     href: "./analysis.html"
-  }, React.createElement("span", {
-    className: "emoji navmoji",
-    id: "analysis",
+  }, React.createElement(Chart, {
+    style: {
+      height: 50,
+      width: 50
+    },
     "aria-label": "Analysis"
-  }, ":chart_with_upwards_trend:")), React.createElement("a", {
+  })), React.createElement("a", {
     href: "./budgets.html"
   }, React.createElement("span", {
     className: "emoji navmoji",
@@ -64,20 +77,13 @@ function Header(_ref) {
     "aria-label": "Budgets"
   }, ":ballot_box_with_check:")), React.createElement("a", {
     href: "./account.html"
-  }, React.createElement("span", {
-    className: "emoji navmoji",
-    id: "account",
+  }, React.createElement(Gear, {
+    style: {
+      height: 50,
+      width: 50
+    },
     "aria-label": "Settings"
-  }, ":gear:"))))));
-}
-
-var header = document.querySelector('[data-header]');
-
-if (header) {
-  var pageType = typeof header.getAttribute('data-header') === 'string' ? header.getAttribute('data-header') : 'ERR';
-  ReactDOM.render(React.createElement(Header, {
-    pageType: pageType
-  }), header);
+  }))))));
 }
 
 export default Header;
