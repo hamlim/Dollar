@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs';
-import { Dollar, Chart, FlyingMoney, Gear, BallotBox } from './icons.mjs';
+import { Dollar, Chart, FlyingMoney, Gear, BallotBox, LoginLock, SignupLock } from './icons.mjs';
 
 function Header(_ref) {
   var pageType = _ref.pageType;
@@ -22,17 +22,21 @@ function Header(_ref) {
     })), React.createElement("span", null, React.createElement("a", {
       href: "./login.html",
       className: "selected"
-    }, React.createElement("span", {
-      className: "emoji navmoji",
-      id: "dollar-login-login_emoji",
+    }, React.createElement(LoginLock, {
+      style: {
+        height: 50,
+        width: 50
+      },
       "aria-label": "Login"
-    }, ":closed_lock_with_key:")), React.createElement("a", {
+    })), React.createElement("a", {
       href: "./signup.html"
-    }, React.createElement("span", {
-      className: "emoji navmoji",
-      id: "dollar-login-signup_emoji",
-      "aria-label": "Sign up"
-    }, ":lock_with_ink_pen:"))))));
+    }, React.createElement(SignupLock, {
+      style: {
+        height: 50,
+        width: 50
+      },
+      "aria-label": "Signup"
+    }))))));
   }
 
   return React.createElement("nav", {

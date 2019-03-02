@@ -1,5 +1,5 @@
 import React, { useState } from './vendor/react.mjs'
-import { Dollar, Chart, FlyingMoney, Gear, BallotBox } from './icons.mjs'
+import { Dollar, Chart, FlyingMoney, Gear, BallotBox, LoginLock, SignupLock } from './icons.mjs'
 
 function Header({ pageType }) {
   if (pageType === 'login') {
@@ -12,14 +12,10 @@ function Header({ pageType }) {
             </a>
             <span>
               <a href="./login.html" className="selected">
-                <span className="emoji navmoji" id="dollar-login-login_emoji" aria-label="Login">
-                  :closed_lock_with_key:
-                </span>
+                <LoginLock style={{ height: 50, width: 50 }} aria-label="Login" />
               </a>
               <a href="./signup.html">
-                <span className="emoji navmoji" id="dollar-login-signup_emoji" aria-label="Sign up">
-                  :lock_with_ink_pen:
-                </span>
+                <SignupLock style={{ height: 50, width: 50 }} aria-label="Signup" />
               </a>
             </span>
           </div>
